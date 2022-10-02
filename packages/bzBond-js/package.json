@@ -2,6 +2,21 @@
   "name": "@beezwax/bzBond-js",
   "version": "0.0.0",
   "description": "JavaScript assets for bzBond",
+  "main": "bzBond.js",
   "author": "Beezwax",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run test && webpack --config webpack.config.js",
+    "test": "jest tests/bzBond.test.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-loader": "^8.2.2",
+    "core-js": "^3.11.3",
+    "jest": "^27.3.1",
+    "rewire": "^3.0.2",
+    "webpack": "^5.38.0",
+    "webpack-cli": "^4.2.0"
+  }
 }
