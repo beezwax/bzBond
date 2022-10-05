@@ -1,0 +1,39 @@
+{
+  "name": "@beezwax/bzBond-web-template",
+  "version": "0.0.0",
+  "description": "bzBond web template",
+  "author": "Beezwax",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --open --config webpack.dev.js",
+    "start_silent": "webpack serve --no-open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "dependencies": {
+    "bzBond-js": "*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/plugin-transform-runtime": "^7.12.15",
+    "@babel/preset-env": "^7.12.13",
+    "@babel/runtime-corejs3": "^7.12.13",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "core-js": "^3.10.1",
+    "css-loader": "^5.0.1",
+    "find-process": "^1.4.7",
+    "html-webpack-plugin": "^5.5.0",
+    "node-fetch": "^2.6.7",
+    "open": "^8.4.0",
+    "sass": "^1.32.6",
+    "sass-loader": "^10.1.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.68",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4",
+    "webpack-merge": "^5.8.0",
+    "whatwg-fetch": "^3.6.2"
+  }
+}
