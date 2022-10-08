@@ -12,7 +12,7 @@
     "build": "webpack --config webpack.prod.js"
   },
   "dependencies": {
-    "bzBond-js": "*"
+    "@beezwax/bzbond-js": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",
