@@ -1,7 +1,7 @@
 {
   "name": "@beezwax/bzbond-claris",
-  "version": "0.1.1",
-  "description": "Claris platform assets for bzBond",
+  "version": "0.1.2",
+  "description": "Claris platform assets for bzBond toolset",
   "author": "Beezwax",
   "license": "MIT"
 }
