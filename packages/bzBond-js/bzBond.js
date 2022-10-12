@@ -293,7 +293,7 @@ callTypeMap
 
 /* Default options used in every call. Can be overridden by the options parameter in .PerformScript */
 const DEFAULT_CALL_OPTIONS = {
-  // null|number in milliseconds to wait before rejecting.
+  /* null|number in milliseconds to wait before rejecting. */
   timeout: null,
 
   // False = Will return FileMaker's result as a promise
