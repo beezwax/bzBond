@@ -35,6 +35,7 @@ module.exports = class CLI {
           `move cbza-temp/packages/bzBond-web-template ${repoPath} && move cbza-temp/packages/bzBond-claris/bzBond-claris.fmp12 ${repoPath}/src/filemaker/${repoName}.fmp12 && rmdir /s /q cbza-temp`
       ),
       new Command (`cd ${repoPath} && npm install`),
+      new Command (`cd ${repoPath} && git init`),
       new FunctionCommand (() => {
         const packageJson = path.join(repoPath, 'package.json');
         const json = JSON.parse(fs.readFileSync(packageJson, 'utf8'));
