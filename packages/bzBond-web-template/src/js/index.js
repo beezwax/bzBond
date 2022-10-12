@@ -1,4 +1,4 @@
-import FMBond from "@beezwax/fmbond";
+import bzBond from "@beezwax/bzbond-js";
 import "../scss/app.scss";
 
 const main = document.createElement("main");
@@ -7,7 +7,7 @@ const heading = document.createElement("h1");
 heading.innerHTML = "FMBond";
 
 const subheading = document.createElement("h2");
-subheading.innerText = typeof FMBond === "function" ? "is working for you" : "is having issues";
+subheading.innerText = typeof bzBond === "function" ? "is working for you" : "is having issues";
 
 const logo = document.createElement("div");
 logo.classList.add("logo");
@@ -29,7 +29,7 @@ fetch(document.location)
 
 const learn = document.createElement("p");
 const learnLink = document.createElement("a");
-learnLink.setAttribute("href", "https://github.com/beezwax/fmbond-js");
+learnLink.setAttribute("href", "https://github.com/beezwax/bzBond");
 learnLink.setAttribute("target", "_blank");
 learnLink.innerText = `Learn FMBond`;
 learn.appendChild(learnLink);
