@@ -1,3 +1,5 @@
 node_modules
-dist
+!dist
+dist/*
+!dist/index.html
 .DS_Store
