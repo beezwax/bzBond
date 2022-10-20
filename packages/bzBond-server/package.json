@@ -1,6 +1,6 @@
 {
   "name": "@beezwax/bzbond-server",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "Extensible JavaScript microservice for bzBond",
   "author": "Beezwax",
   "license": "MIT",
@@ -8,7 +8,7 @@
     "dev": "fastify start -l info --watch --pretty-logs server.js"
   },
   "dependencies": {
-    "@beezwax/bzBond": "*",
+    "@beezwax/bzbond-js": "*",
     "fastify": "^3.27.4",
     "vm2": "^3.9.11"
   },
