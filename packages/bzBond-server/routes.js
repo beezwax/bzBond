@@ -1,5 +1,5 @@
 import { VM } from "vm2";
-import FMBond from "@beezwax/fmbond";
+import bzBond from "@beezwax/bzbond-js";
 
 const MAX_TIMEOUT = 45000;
 const BODY_LIMIT = 104857600;
@@ -40,11 +40,11 @@ async function routes(fastify, options) {
       timeout,
       allowAsync: false,
       sandbox: {
-        FMBond,
+        bzBond,
         func
       }
     });
-    return vm.run(`FMBond(func, ...${argumentString})`);
+    return vm.run(`bzBond(func, ...${argumentString})`);
   });
 
   fastify.post('/code', { schema: codeSchema, bodyLimit: BODY_LIMIT }, (request, reply) => {
