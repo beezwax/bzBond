@@ -44,6 +44,6 @@ WantedBy=multi-user.target
 
 1: [https://nodesource.com/blog/running-your-node-js-app-with-systemd-part-1/](https://nodesource.com/blog/running-your-node-js-app-with-systemd-part-1/)
 
-## macOs Installation
+## macOS Installation
 
 ## Windows Server Installation
