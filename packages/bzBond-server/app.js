@@ -1,16 +1,14 @@
 import fastify from "fastify";
 import routes from "./routes.js";
-import plugins from "./plugins.js";
 
 const DEFAULT_OPTIONS = {
   logger: true,
 };
 
-const build = async (options = DEFAULT_OPTIONS) => {
+const build = async ({ options = DEFAULT_OPTIONS, plugins = [] } = {}) => {
   const app = fastify(options);
 
-  const installedPlugins = await plugins();
-  installedPlugins.forEach((plugin) => app.register(plugin.default));
+  plugins.forEach((plugin) => app.register(plugin));
 
   app.register(routes);
 
