@@ -4,31 +4,27 @@ import bzBond from "@beezwax/bzbond-js";
 const MAX_TIMEOUT = 45000;
 const BODY_LIMIT = 104857600;
 
-const functionBodyJsonSchema = {
-  type: "object",
-  required: ["func"],
-  properties: {
-    func: { type: "string", minLength: 1 },
-    arguments: { type: "array" },
-    timeout: { type: "number" },
-  },
-};
-
 const functionSchema = {
-  body: functionBodyJsonSchema,
-};
-
-const codeBodyJsonSchema = {
-  type: "object",
-  required: ["jsCode"],
-  properties: {
-    jsCode: { type: "string", minLength: 1 },
-    timeout: { type: "number" },
+  body: {
+    type: "object",
+    required: ["func"],
+    properties: {
+      func: { type: "string", minLength: 1 },
+      arguments: { type: "array" },
+      timeout: { type: "number" },
+    },
   },
 };
 
 const codeSchema = {
-  body: codeBodyJsonSchema,
+  body: {
+    type: "object",
+    required: ["jsCode"],
+    properties: {
+      jsCode: { type: "string", minLength: 1 },
+      timeout: { type: "number" },
+    },
+  },
 };
 
 async function routes(fastify, options) {
