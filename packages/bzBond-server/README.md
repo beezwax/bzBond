@@ -1,4 +1,4 @@
-# fmbond-server
+# bzbond-server
 
 # Introduction
 
@@ -19,9 +19,10 @@ These installations assume a default installation of Claris/FileMaker Server on 
 ### Setup management with systemd<sup>1</sup>
 
 1. Create the following file in `/lib/systemd/system/bzbond-server.service`
+
 ```
 [Unit]
-Description=fmbond-server – JavaScript microservice for FileMaker Server
+Description=bzbond-server – JavaScript microservice for FileMaker Server
 Documentation=https://github.com/beezwax/bzbond
 After=network.target
 
@@ -34,12 +35,12 @@ Restart=on-failure
 [Install]
 WantedBy=multi-user.target
 ```
-2. Run the command `sudo systemctl daemon-reload` to refresh systemd
-3. Launch fmbond-server with the command `sudo systemctl start bzbond-server`
-4. Test the fmbond-server is running with the command `curl http://localhost:8999` this should output `{"message":"Route GET:/ not found","error":"Not Found","statusCode":404}`
-5. Check the status of bzbond-server with the command `sudo systemctl status bzbond-server`
-6. Ensure fmbond-server starts with the system with the command `sudo systemctl enable bzbond-server`
 
+2. Run the command `sudo systemctl daemon-reload` to refresh systemd
+3. Launch bzbond-server with the command `sudo systemctl start bzbond-server`
+4. Test the bzbond-server is running with the command `curl http://localhost:8999` this should output `{"message":"Route GET:/ not found","error":"Not Found","statusCode":404}`
+5. Check the status of bzbond-server with the command `sudo systemctl status bzbond-server`
+6. Ensure bzbond-server starts with the system with the command `sudo systemctl enable bzbond-server`
 
 1: [https://nodesource.com/blog/running-your-node-js-app-with-systemd-part-1/](https://nodesource.com/blog/running-your-node-js-app-with-systemd-part-1/)
 
