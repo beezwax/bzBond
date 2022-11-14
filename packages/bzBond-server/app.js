@@ -8,7 +8,9 @@ const DEFAULT_OPTIONS = {
 const build = async ({ options = DEFAULT_OPTIONS, plugins = [] } = {}) => {
   const app = fastify(options);
 
-  plugins.forEach((plugin) => app.register(plugin));
+  plugins.forEach((plugin) =>
+    app.register(plugin.plugin, plugin.options || {})
+  );
 
   app.register(routes);
 
