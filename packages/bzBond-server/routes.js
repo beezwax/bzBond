@@ -4,6 +4,12 @@ import bzBond from "@beezwax/bzbond-js";
 const MAX_TIMEOUT = 45000;
 const BODY_LIMIT = 104857600;
 
+// This is used for testing. A simple mock around bzBond which simply returns
+// what it received.
+const testBzBond = (func, ...args) => {
+  return { func, args };
+};
+
 const functionSchema = {
   body: {
     type: "object",
@@ -36,16 +42,21 @@ async function routes(fastify, options) {
       const timeout = request.body.timeout
         ? Math.min(MAX_TIMEOUT, request.body.timeout)
         : MAX_TIMEOUT;
-      const argumentString = JSON.stringify(request.body.arguments);
       const vm = new VM({
         timeout,
         allowAsync: false,
         sandbox: {
-          bzBond,
+          bzBond: process.env.NODE_ENV === "test" ? testBzBond : bzBond,
           func,
         },
       });
-      return vm.run(`bzBond(func, ...${argumentString})`);
+
+      if (request.body.arguments) {
+        const argumentString = JSON.stringify(request.body.arguments);
+        return vm.run(`bzBond(func, ...${argumentString})`);
+      } else {
+        return vm.run(`bzBond(func)`);
+      }
     }
   );
 

@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "fastify start -l info --watch --pretty-logs server.js",
-    "test": "mocha"
+    "test": "NODE_ENV=test mocha"
   },
   "dependencies": {
     "@beezwax/bzbond-js": "*",
