@@ -33,7 +33,7 @@ describe("routes", function () {
       expect(JSON.parse(response.body).func).to.eq("foo");
     });
 
-    it("calls the function with no parameters", async function () {
+    it("calls the function with parameters", async function () {
       const app = await build({ options: { logger: false } });
 
       const response = await app.inject({
