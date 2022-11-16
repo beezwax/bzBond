@@ -46,4 +46,6 @@ WantedBy=multi-user.target
 
 ## macOS Installation
 
+Coming soon
+
 ## Windows Server Installation
