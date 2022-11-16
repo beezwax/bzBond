@@ -16,5 +16,12 @@
 
 ## Getting started
 
+### Claris focused quick start
+
+1. Install [FileMaker or Claris Pro](https://www.claris.com/)
+2. Download [bzbond-claris.fmp12](packages/bzBond-claris/bzBond-claris.fmp12) 
+
+### Web focused quick start
+
 Along with [FileMaker Pro or Claris Pro](https://www.claris.com/), you'll need to install [node/npm](https://nodejs.org/en/download/) and [git](https://git-scm.com/downloads).
 
