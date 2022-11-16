@@ -1,27 +1,17 @@
-import Fastify from "fastify";
-import routes from "./routes.js";
+import build from "./app.js";
 import plugins from "./plugins.js";
 
 // Run the server!
 const start = async () => {
-
-  const installedPlugins = await plugins();
-
-  const fastify = Fastify({
-    logger: true
-  });
-
-  installedPlugins.forEach(plugin =>
-    fastify.register(plugin.default)
-  );
-
-  fastify.register(routes);
+  let app;
 
   try {
-    await fastify.listen(8999)
+    app = await build({ plugins: await plugins() });
+    await app.listen(8999);
   } catch (err) {
-    fastify.log.error(err)
-    process.exit(1)
+    app.log.error(err);
+    process.exit(1);
   }
 };
+
 start();

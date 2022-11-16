@@ -5,7 +5,8 @@
   "author": "Beezwax",
   "license": "MIT",
   "scripts": {
-    "dev": "fastify start -l info --watch --pretty-logs server.js"
+    "dev": "fastify start -l info --watch --pretty-logs server.js",
+    "test": "NODE_ENV=test mocha"
   },
   "dependencies": {
     "@beezwax/bzbond-js": "*",
@@ -15,5 +16,10 @@
   "type": "module",
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.1.0",
+    "prettier": "^2.7.1"
   }
 }

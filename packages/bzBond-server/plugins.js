@@ -1,5 +1,3 @@
-const plugins = async () => ([
-  
-]);
+const plugins = async () => [];
 
 export default plugins;
