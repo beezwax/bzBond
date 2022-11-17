@@ -1,5 +1,5 @@
-import build from "./app.js";
-import plugins from "./plugins.js";
+const build = require("./app.js");
+const plugins = require("./plugins.js");
 
 // Run the server!
 const start = async () => {

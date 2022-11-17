@@ -1,5 +1,5 @@
-import { expect } from "chai";
-import build from "../app.js";
+const { expect } = require("chai");
+const build = require("../app.js");
 
 describe("routes", function () {
   describe("/code", function () {

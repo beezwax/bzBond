@@ -4,23 +4,21 @@
   "description": "Extensible JavaScript microservice for bzBond",
   "author": "Beezwax",
   "license": "MIT",
-  "main": "dist/server.js",
   "scripts": {
     "dev": "fastify start -l info --watch --pretty-logs server.js",
     "test": "NODE_ENV=test mocha",
-    "build": "bunchee ./server.js"
+    "build": "ncc build ./server.js -o dist"
   },
   "dependencies": {
     "@beezwax/bzbond-js": "^0.4.0",
     "fastify": "^3.27.4",
     "vm2": "^3.9.11"
   },
-  "type": "module",
   "publishConfig": {
     "access": "public"
   },
   "devDependencies": {
-    "bunchee": "^2.1.6",
+    "@vercel/ncc": "^0.34.0",
     "chai": "^4.3.7",
     "mocha": "^10.1.0",
     "prettier": "^2.7.1"

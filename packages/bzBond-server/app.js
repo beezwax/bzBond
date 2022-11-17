@@ -1,5 +1,5 @@
-import fastify from "fastify";
-import routes from "./routes.js";
+const fastify = require("fastify");
+const routes = require("./routes.js");
 
 const DEFAULT_OPTIONS = {
   logger: true,
@@ -17,4 +17,4 @@ const build = async ({ options = DEFAULT_OPTIONS, plugins = [] } = {}) => {
   return app;
 };
 
-export default build;
+module.exports = build;

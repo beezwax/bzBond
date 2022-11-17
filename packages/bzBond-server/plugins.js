@@ -1,3 +1,3 @@
 const plugins = async () => [];
 
-export default plugins;
+module.exports = plugins;

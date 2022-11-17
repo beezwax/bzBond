@@ -1,5 +1,5 @@
-import { VM } from "vm2";
-import bzBond from "@beezwax/bzbond-js";
+const { VM } = require("vm2");
+const bzBond = require("@beezwax/bzbond-js");
 
 const MAX_TIMEOUT = 45000;
 const BODY_LIMIT = 104857600;
@@ -76,4 +76,4 @@ async function routes(fastify, options) {
   );
 }
 
-export default routes;
+module.exports = routes;

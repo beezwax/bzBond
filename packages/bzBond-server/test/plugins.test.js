@@ -1,5 +1,5 @@
-import { expect } from "chai";
-import build from "../app.js";
+const { expect } = require("chai");
+const build = require("../app.js");
 
 describe("plugins", function () {
   it("simple plugins", async function () {
