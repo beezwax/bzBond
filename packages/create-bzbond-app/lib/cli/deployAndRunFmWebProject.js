@@ -39,7 +39,7 @@ module.exports = (repoPath) => {
 
     if(port) {
       console.log("\x1b[33mWeb server ready\x1b[0m");
-      openFmFile(repoPath).then(() => {
+      openFmFile(repoPath, ["src", "filemaker"]).then(() => {
         const script = "bzBond Launch From Create bzBond App";
         const url = `file://${path.join(repoPathFull, "dist", "index.html")}`;
         const debugUrl = `http://localhost:${port}`;
