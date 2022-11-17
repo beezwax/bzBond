@@ -2,13 +2,14 @@ const open = require("open");
 const path = require("path");
 const find = require("find-process");
 
-module.exports = (repoPath) => {
+module.exports = (repoPath, onwardPath = []) => {
 
   const repoPathFull = path.resolve(repoPath);
 
   const { name: repoName } = path.parse(repoPath);
 
-  const filePath = path.join(repoPathFull, "src", "filemaker", `${repoName}.fmp12`);
+  const filePath = path.join(repoPathFull, ...onwardPath, `${repoName}.fmp12`);
+  console.log(filePath);
   open(filePath);
   return new Promise((resolve, reject) => {
     const timeout = 10000;
