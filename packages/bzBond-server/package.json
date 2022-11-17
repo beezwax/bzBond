@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "fastify start -l info --watch --pretty-logs server.js",
-    "test": "NODE_ENV=test mocha"
+    "test": "NODE_ENV=test mocha",
+    "build": "bunchee ./server.js -o dist/server.js"
   },
   "dependencies": {
     "@beezwax/bzbond-js": "^0.3.0",
@@ -18,6 +19,7 @@
     "access": "public"
   },
   "devDependencies": {
+    "bunchee": "^2.1.6",
     "chai": "^4.3.7",
     "mocha": "^10.1.0",
     "prettier": "^2.7.1"

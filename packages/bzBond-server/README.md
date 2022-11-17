@@ -49,3 +49,9 @@ WantedBy=multi-user.target
 Coming soon
 
 ## Windows Server Installation
+
+# Build
+
+To generate a new build into `./dist`, use:
+
+    $ npm run build
