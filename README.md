@@ -12,12 +12,12 @@
 
 ## Table of contents
 
-- Getting started
+- Quick start
 - The tools
   - bzBond-js
   - bzBond-claris
 
-## Getting started
+## Quick start
 
 ### Claris focused quick start
 
@@ -44,23 +44,40 @@ bzBond-js is a javascript library that manages interactions between FileMaker/Cl
 
 ### bzBond-claris
 
-bzBond-claris is a FileMaker Pro file that includes the following tools
-- The bzBondRelay script
-- The bzBond web project manager schema scripts and layouts
-- Educational material and examples
+bzBond-claris is a FileMaker Pro file containing tools to manage interactions with bzbond-js and store and deploy bzbond web project code. It also includes educational material and examples to help you get started with bzBond.
 
 [Learn more about bzBond-claris](packages/bzBond-claris/README.md)
 
-### bzBond-server
+### create-bzbond-app
 
-bzBond-server is a microservice that works with the bzBondRelay script to allow JavaScript to be run on FileMaker/Claris Server.
+create-bzbond-app is the best way to create new bzBond projects. It requires [node/npm](https://nodejs.org/en/download/) and [git](https://git-scm.com/downloads).
 
-[Learn more about bzBond-server](packages/bzBond-server/README.md)
+[Learn more about create-bzBond-app](packages/bzBond-claris/README.md)
+
+#### Create an all-in-one project with create-bzbond-app
+
+```
+npx -y @beezwax/create-bzbond-app <app-name>
+// e.g
+npx -y @beezwax/create-bzbond-app my-aio-app
+```
+
+#### Create a web-only project with create-bzbond-app
+
+```
+npx -y @beezwax/create-bzbond-app <app-name> --web-only
+// e.g
+npx -y @beezwax/create-bzbond-app my-web-only-app --web-only
+```
 
 ### bzBond-web-template
 
-bzBond-web-template is a template for creating bzBond web projects. It includes bzBond-js and a build config that creates a single html file that can be used as the source for a bzBond web project.
+bzBond-web-template forms the core of [create-bzbond-app](#create-bzbond-app). It includes bzBond-js and a build config that creates a single html file that can be used as the source for a bzBond web project. bzbond-web-template 
 
-### create-bzbond-app
+[Learn more about bzBond-server](packages/bzBond-server/README.md)
 
-create-bzbond-app is a bootstrapper for creating bzBond web projects.
+### bzBond-server
+
+bzBond-server is a server-based microservice that works with the bzBondRelay script to allow JavaScript to be run on FileMaker/Claris Server.
+
+[Learn more about bzBond-server](packages/bzBond-server/README.md)
