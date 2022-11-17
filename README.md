@@ -24,7 +24,7 @@
 You'll need [FileMaker or Claris Pro](https://www.claris.com/) installed
 
 1. Download [bzBond-claris.fmp12](packages/bzBond-claris/bzBond-claris.fmp12)
-2. Open bzBond-claris.fmp12 and follow the instructions
+2. Open bzBond-claris.fmp12 and explore
 
 ### Web focused quick start
 
@@ -38,4 +38,29 @@ A FileMaker file with the same name as your project should open
 
 ### bzBond-js
 
-bzBond-js is a javascript library that manages interactions between FileMaker/Claris Pro scripts and web viewer layout objects. It can be installed using the command `npm install @beezwax/bzbond-js`.
+bzBond-js is a javascript library that manages interactions between FileMaker/Claris Pro scripts and web viewer layout objects. It can be installed using the command `npm install @beezwax/bzbond-js`. bzBond-js calls the script bzBondRelay, which is in the [bzBond-claris.fmp12](#bzbond-claris) file.
+
+[Learn more about bzBond-js](packages/bzBond-js/README.md)
+
+### bzBond-claris
+
+bzBond-claris is a FileMaker Pro file that includes the following tools
+- The bzBondRelay script
+- The bzBond web project manager schema scripts and layouts
+- Educational material and examples
+
+[Learn more about bzBond-claris](packages/bzBond-claris/README.md)
+
+### bzBond-server
+
+bzBond-server is a microservice that works with the bzBondRelay script to allow JavaScript to be run on FileMaker/Claris Server.
+
+[Learn more about bzBond-server](packages/bzBond-server/README.md)
+
+### bzBond-web-template
+
+bzBond-web-template is a template for creating bzBond web projects. It includes bzBond-js and a build config that creates a single html file that can be used as the source for a bzBond web project.
+
+### create-bzbond-app
+
+create-bzbond-app is a bootstrapper for creating bzBond web projects.
