@@ -1,6 +1,11 @@
-import fastify from 'fastify';
-import { VM } from 'vm2';
-import bzBond from '@beezwax/bzbond-js';
+var fastify = require('fastify');
+var vm2 = require('vm2');
+var bzBond = require('@beezwax/bzbond-js');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var fastify__default = /*#__PURE__*/_interopDefaultLegacy(fastify);
+var bzBond__default = /*#__PURE__*/_interopDefaultLegacy(bzBond);
 
 function asyncGeneratorStep$3(gen, resolve, reject, _next, _throw, key, arg) {
     try {
@@ -188,11 +193,11 @@ function _routes() {
             }, function(request, reply) {
                 var func = request.body.func;
                 var timeout = request.body.timeout ? Math.min(MAX_TIMEOUT, request.body.timeout) : MAX_TIMEOUT;
-                var vm = new VM({
+                var vm = new vm2.VM({
                     timeout: timeout,
                     allowAsync: false,
                     sandbox: {
-                        bzBond: process.env.NODE_ENV === "test" ? testBzBond : bzBond,
+                        bzBond: process.env.NODE_ENV === "test" ? testBzBond : bzBond__default["default"],
                         func: func
                     }
                 });
@@ -208,7 +213,7 @@ function _routes() {
                 bodyLimit: BODY_LIMIT
             }, function(request, reply) {
                 var timeout = request.body.timeout ? Math.min(MAX_TIMEOUT, request.body.timeout) : MAX_TIMEOUT;
-                var vm = new VM({
+                var vm = new vm2.VM({
                     timeout: timeout,
                     allowAsync: false
                 });
@@ -353,7 +358,7 @@ var build = /*#__PURE__*/ _asyncToGenerator$2(function(param) {
     var _ref, _ref_options, options, _ref_plugins, plugins, app;
     return __generator$2(this, function(_state) {
         _ref = param === void 0 ? {} : param, _ref_options = _ref.options, options = _ref_options === void 0 ? DEFAULT_OPTIONS : _ref_options, _ref_plugins = _ref.plugins, plugins = _ref_plugins === void 0 ? [] : _ref_plugins;
-        app = fastify(options);
+        app = fastify__default["default"](options);
         plugins.forEach(function(plugin) {
             return app.register(plugin.plugin, plugin.options || {});
         });
