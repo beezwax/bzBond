@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# TODO: Check fmserver user exists
+if ! id fmserver &>/dev/null; then
+  echo "The 'fmserver' user was not found in this system."
+  exit
+fi
+
+# TODO: Check FileMaker node binary exists
+
 # Installation process (tested on Ubuntu 18)
 cd /tmp
 git clone https://github.com/beezwax/bzBond.git
