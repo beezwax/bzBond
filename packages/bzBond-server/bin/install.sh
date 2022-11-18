@@ -10,10 +10,10 @@ if ! id fmserver &>/dev/null; then
   exit
 fi
 
-NODE_PATH="/opt/FileMaker/FileMaker Server/node/bin/node"
+NODE_PATH="/opt/FileMaker/FileMaker\ Server/node/bin/node"
 # For testing
 # NODE_PATH=$(which node)
-if ! command -v "$NODE_PATH" &> /dev/null; then
+if ! command -v $NODE_PATH &> /dev/null; then
   echo "ERROR: Could not find node binary at '$NODE_PATH'."
   echo "Nothing was installed."
   exit
