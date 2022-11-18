@@ -4,14 +4,20 @@ echo "=========================="
 echo "bzBond Server Installation"
 echo "=========================="
 
-# TODO: Check fmserver user exists
 if ! id fmserver &>/dev/null; then
   echo "ERROR: The 'fmserver' user was not found in this system."
   echo "Nothing was installed."
   exit
 fi
 
-# TODO: Check FileMaker node binary exists
+NODE_PATH="/opt/FileMaker/FileMaker Server/node/bin/node"
+# For testing
+# NODE_PATH=$(which node)
+if ! command -v "$NODE_PATH" &> /dev/null; then
+  echo "ERROR: Could not find node binary at '$NODE_PATH'."
+  echo "Nothing was installed."
+  exit
+fi
 
 # Installation process (tested on Ubuntu 18)
 cd /tmp
@@ -21,9 +27,6 @@ sudo cp -r /tmp/bzBond/packages/bzBond-server/dist/* /var/www/bzbond-server
 rm -rf /tmp/bzBond
 sudo chown -R root:root /var/www/bzbond-server
 sudo chmod -R 755 /var/www/bzbond-server
-
-# TODO: Replace this with FileMaker's node path
-NODE_PATH=$(which node)
 
 sudo tee -a /lib/systemd/system/bzbond-server.service <<EOF
 [Unit]
