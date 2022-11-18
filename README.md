@@ -44,7 +44,34 @@
 E.g. `npx -y @beezwax/create-bzbond-app testing-bzbond`<br>
 An all in one FileMaker/Web Project file with the same name as your project should open
 
-## bzBond Tools
+## Usage
+
+FileMaker/Claris Pro can harness the power of web technologies to enhance user and developer experience. bzBond provides tools to make it easier to leverage web technologies. Here's some of the things you can do.
+
+### Control web viewer scripting with promises
+
+bzBond treats script calls from web viewers as promises, letting you chain them or use async/await.
+```
+bzBond.PerformScript("Get User")
+  .then(userId => {
+    status.textContent = `User ID is ${userId}`;
+    const group = "bzBuzz"
+    bzBond.PerformScript("Add User To Group", {userId, group})
+  })
+  .then(groupSize => {
+    status.textContent = `There ${groupSize > 1 ? `are ${groupSize} people` : "is 1 person" } in the group`;
+  });
+```
+
+### Add a JavaScript calculator to your scripts
+
+
+
+#### Works on server!
+With bzBond-server installed on FileMaker/Claris Server the same pattern will work on the Server without any script changes 
+
+
+## The tools
 
 ### bzBond-js
 
@@ -90,12 +117,12 @@ npx -y @beezwax/create-bzbond-app my-claris-only-app --claris-only
 
 ### bzBond-web-template
 
-bzBond-web-template forms the core of [create-bzbond-app](#create-bzbond-app). It includes bzBond-js and a build config that creates a single html file that can be used as the source for a bzBond web project. bzbond-web-template 
+bzBond-web-template forms the core of [create-bzbond-app](#create-bzbond-app). It includes [bzBond-js](#bzbond-js) and a build config that creates a single html file that can be used as the source for a bzBond web project.
 
 [Learn more about bzBond-server](packages/bzBond-server/README.md)
 
 ### bzBond-server
 
-bzBond-server is a server-based microservice that works with the bzBondRelay script to allow JavaScript to be run on FileMaker/Claris Server.
+bzBond-server is a server-based microservice that works with the `bzBondRelay` script to allow JavaScript to be run on FileMaker/Claris Server.
 
 [Learn more about bzBond-server](packages/bzBond-server/README.md)
