@@ -11,6 +11,7 @@ rm -rf /tmp/bzBond
 echo "Removing bzbond-server files...."
 sudo rm -rf /var/www/bzbond-server
 
+# Ubuntu uninstall
 echo "Removing daemon..."
 sudo systemctl stop bzbond-server
 sudo systemctl disable bzbond-server

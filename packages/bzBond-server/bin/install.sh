@@ -19,7 +19,6 @@ if ! command -v "$NODE_PATH" &> /dev/null; then
   exit
 fi
 
-# Installation process (tested on Ubuntu 18)
 cd /tmp
 git clone https://github.com/beezwax/bzBond.git
 sudo mkdir -p /var/www/bzbond-server
@@ -28,6 +27,7 @@ rm -rf /tmp/bzBond
 sudo chown -R root:root /var/www/bzbond-server
 sudo chmod -R 755 /var/www/bzbond-server
 
+# Ubuntu installation
 sudo tee -a /lib/systemd/system/bzbond-server.service &> /dev/null <<EOF
 [Unit]
 Description=bzbond-server – JavaScript microservice for FileMaker Server
