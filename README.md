@@ -63,9 +63,11 @@ bzBond.PerformScript("Get User")
   });
 ```
 
-### Add a JavaScript calculator to your scripts
+### Add a JavaScript function runner to your scripts
 
+In the script below we are sorting a JSON array, something that is extremely complex to code and slow to run when done natively. With bzBond we are using just a few lines of JavaScript and the script takes just 250ms to run. Sorted!
 
+<img src="perform_javascript.png" />
 
 #### Works on server!
 With bzBond-server installed on FileMaker/Claris Server the same pattern will work on the Server without any script changes 
