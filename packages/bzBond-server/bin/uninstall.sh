@@ -16,5 +16,6 @@ sudo systemctl stop bzbond-server
 sudo systemctl disable bzbond-server
 sudo rm /lib/systemd/system/bzbond-server.service
 sudo systemctl daemon-reload
+sudo systemctl reset-failed
 
 echo "bzBond server uninstalled!"
