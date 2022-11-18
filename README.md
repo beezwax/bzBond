@@ -4,7 +4,7 @@
 
 😎 Reliably run web UIs and JavaScript libraries in web viewers
 
-🏃🏼 Speed up FileMaker scripts with JavaScript functions
+⏩ Speed up FileMaker scripts with JavaScript functions
 
 💾 Store and deploy web code
 
@@ -19,20 +19,30 @@
 
 ## Quick start
 
-### Claris focused quick start
+### Claris-focused quick start
 
-You'll need [FileMaker or Claris Pro](https://www.claris.com/) installed
+#### Requirements
+
+- [FileMaker or Claris Pro](https://www.claris.com/)
+
+#### Instructions
 
 1. Download [bzBond-claris.fmp12](packages/bzBond-claris/bzBond-claris.fmp12)
 2. Open bzBond-claris.fmp12 and explore
 
-### Web focused quick start
+### Web-focused quick start
 
-Along with [FileMaker Pro or Claris Pro](https://www.claris.com/), you'll need to install [node/npm](https://nodejs.org/en/download/) and [git](https://git-scm.com/downloads).
+#### Requirements
 
-1. In the command line run `npx -y @beezwax/create-bzbond-app <project-name>`.<br>
+- [FileMaker or Claris Pro](https://www.claris.com/)
+- [node/npm](https://nodejs.org/en/download/)
+- [git](https://git-scm.com/downloads)
+
+#### Instructions
+
+1. On the command line run `npx -y @beezwax/create-bzbond-app <project-name>`.<br>
 E.g. `npx -y @beezwax/create-bzbond-app testing-bzbond`<br>
-A FileMaker file with the same name as your project should open
+An all in one FileMaker/Web Project file with the same name as your project should open
 
 ## bzBond Tools
 
@@ -68,6 +78,14 @@ npx -y @beezwax/create-bzbond-app my-aio-app
 npx -y @beezwax/create-bzbond-app <app-name> --web-only
 // e.g
 npx -y @beezwax/create-bzbond-app my-web-only-app --web-only
+```
+
+#### Create a web-only project with create-bzbond-app
+
+```
+npx -y @beezwax/create-bzbond-app <app-name> --claris-only
+// e.g
+npx -y @beezwax/create-bzbond-app my-claris-only-app --claris-only
 ```
 
 ### bzBond-web-template
