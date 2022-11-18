@@ -28,7 +28,7 @@ rm -rf /tmp/bzBond
 sudo chown -R root:root /var/www/bzbond-server
 sudo chmod -R 755 /var/www/bzbond-server
 
-cat > /lib/systemd/system/bzbond-server.service <<EOF
+sudo tee -a /lib/systemd/system/bzbond-server.service &> /dev/null <<EOF
 [Unit]
 Description=bzbond-server – JavaScript microservice for FileMaker Server
 Documentation=https://github.com/beezwax/bzbond
