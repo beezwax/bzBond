@@ -1,8 +1,12 @@
 #!/bin/bash
 
+echo "bzBond Server Installation"
+echo "=========================="
+
 # TODO: Check fmserver user exists
 if ! id fmserver &>/dev/null; then
-  echo "The 'fmserver' user was not found in this system."
+  echo "ERROR: The 'fmserver' user was not found in this system."
+  echo "Nothing was installed."
   exit
 fi
 

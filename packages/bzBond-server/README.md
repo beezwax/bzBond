@@ -8,6 +8,12 @@ bzbond-server is a microservice that runs on your Claris/FileMaker server and al
 
 These installations assume a default installation of Claris/FileMaker Server on the specified platform
 
+    $ curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.sh | bash
+
+Or using `wget`
+
+    $ wget -qO- curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.sh | bash
+
 ## Ubuntu Linux Installation
 
 ### Add files
