@@ -46,31 +46,44 @@ An all in one FileMaker/Web Project file with the same name as your project shou
 
 ## Usage
 
-FileMaker/Claris Pro can harness the power of web technologies to enhance user and developer experience. bzBond provides tools to make it easier to leverage web technologies. Here's some of the things you can do.
+FileMaker/Claris Pro can harness the power of web technologies to enhance user and developer experience. bzBond provides tools to make it easier to do this. Here's some of the things you can do.
 
 ### Control web viewer scripting with promises
 
 bzBond treats script calls from web viewers as promises, letting you chain them or use async/await.
+
+In the code below we want to add the current user to a group. First we need to get their account name, then we want to add them to the group. In order to do these things in order we chain two scripts together, using the result of the first script in the parameter of the second script. We update the UI at each point in the process 
 ```
-bzBond.PerformScript("Get User")
-  .then(userId => {
-    status.textContent = `User ID is ${userId}`;
-    const group = "bzBuzz"
-    bzBond.PerformScript("Add User To Group", {userId, group})
+// Get the UI html element to update
+status = document.getElement("#status");
+
+// Run FileMaker scripts to add the current user to a group
+// First FileMaker script gets the user's account name
+bzBond.PerformScript("Get Account Name")
+  .then(accountName => {
+
+    // Update the UI with the result of the first FileMaker script
+    status.textContent = `Account Name is ${accountName}`;
+
+    // Second FileMaker script adds the user to the group "bzBuzz"
+    bzBond.PerformScript("Add User To Group", {accountName, group: "bzBuzz"})
   })
   .then(groupSize => {
+
+    // Update the UI with the result of the second FileMaker script
     status.textContent = `There ${groupSize > 1 ? `are ${groupSize} people` : "is 1 person" } in the group`;
   });
 ```
 
 ### Add a JavaScript function runner to your scripts
 
-In the script below we are sorting a JSON array, something that is extremely complex to code and slow to run when done natively. With bzBond we are using just a few lines of JavaScript and the script takes just 250ms to run. Sorted!
+In the script below we are sorting a JSON array, something that is extremely complex to code and slow to run when done natively. With bzBond we are using just a few lines of JavaScript and the script takes only 250ms to run. Sorted!
 
 <img src="perform_javascript.png" />
 
 #### Works on server!
-With bzBond-server installed on FileMaker/Claris Server the same pattern will work on the Server without any script changes 
+
+With bzBond-server installed on FileMaker/Claris Server the will work on the Server without any changes. 
 
 
 ## The tools
