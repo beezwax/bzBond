@@ -77,7 +77,7 @@ bzBond.PerformScript("Get Account Name")
 
 ### Add a JavaScript function runner to your scripts
 
-In the script below we are sorting a JSON array, something that is extremely complex to code and slow to run when done natively. With bzBond we are using just a few lines of JavaScript and the script takes only 250ms to run. Sorted!
+In the script below we are sorting a JSON array, something that is complex to code and slow to run when done natively. With bzBond we are using just a few lines of JavaScript and the script takes only 250ms to run. Sorted!
 
 <img src="perform_javascript.png" />
 
