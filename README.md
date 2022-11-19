@@ -52,10 +52,12 @@ FileMaker/Claris Pro can harness the power of web technologies to enhance user a
 
 bzBond treats script calls from web viewers as promises, letting you chain them or use async/await.
 
-In the code below we want to add the current user to a group. First we need to get their account name, then we want to add them to the group. In order to do these things in order we chain two scripts together, using the result of the first script in the parameter of the second script. We update the UI at each point in the process 
+In the code below we want to add the current user to a group. First we need to get their account name, then we want to add them to the group. To synchronize these operations we chain two scripts together, using the result of the first script in the parameter of the second script. The UI is update at each point in the process. 
 ```
 // Get the UI html element to update
 status = document.getElement("#status");
+// Update the UI to show process is about to run 
+status.textContent = "Adding user to group...";
 
 // Run FileMaker scripts to add the current user to a group
 // First FileMaker script gets the user's account name
@@ -71,7 +73,7 @@ bzBond.PerformScript("Get Account Name")
   .then(groupSize => {
 
     // Update the UI with the result of the second FileMaker script
-    status.textContent = `There ${groupSize > 1 ? `are ${groupSize} people` : "is 1 person" } in the group`;
+    status.textContent = `Group size is ${groupSize}`;
   });
 ```
 
