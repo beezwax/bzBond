@@ -1,4 +1,4 @@
-<p align="center"><img src="bzbond_logo.png" width="75"/></p>
+<p align="center"><img src="logo.png" width="75"/></p>
 
 <h2 align="center">Quality tools for Claris Web Integrations</h1>
 
@@ -13,9 +13,13 @@
 ## Table of contents
 
 - Quick start
-- The tools
+- Usage
+- The Tools
   - bzBond-js
   - bzBond-claris
+  - create-bzbond-app
+  - bzBond-web-template
+  - bzBond-server
 
 ## Quick start
 
@@ -85,14 +89,38 @@ In the script below we are sorting a JSON array, something that is complex to co
 
 #### Works on server!
 
-With bzBond-server installed on FileMaker/Claris Server the will work on the Server without any changes. 
+With bzBond-server installed on FileMaker/Claris Server the script will work on the Server without any changes.
 
+### Easily compile to a single file
 
-## The tools
+Every web project created with [create-bzbond-app](packages/create-bzbond-app/README.md) can be compiled to a single file web project by simply running the build script: `npm run build`
+
+### Lighten the load of loading code
+
+Store your single file web projects in the simple bzBond web project manager
+;
+
+<img src="web_project_manager.png" />
+
+To deploy in a web viewer, reference the project name in the web viewer calculation dialog:
+
+<img src="web_viewer_setup.png" />
+
+And call a configurable script to precisely control the load process:
+
+<img src="layout_triggers.png" />
+
+#### Fully integrated debugging/dev server
+
+When it comes to real-time code updates, FileMaker is the OG. The bzBond web project manager stays true to its roots and lets you see web code updates in real-time. Simply switch on debugging at the web project or web viewer level:
+
+<img src="debug_mode.png" />
+
+## The Tools
 
 ### bzBond-js
 
-bzBond-js is a javascript library that manages interactions between FileMaker/Claris Pro scripts and web viewer layout objects. It can be installed using the command `npm install @beezwax/bzbond-js`. bzBond-js calls the script bzBondRelay, which is in the [bzBond-claris.fmp12](#bzbond-claris) file.
+bzBond-js is a javascript library that manages interactions between FileMaker/Claris Pro scripts and web viewer layout objects. It can be installed in an npm project using the command `npm install @beezwax/bzbond-js`. To communicate with FileMaker, bzBond-js calls the script bzBondRelay, which is in the [bzBond-claris.fmp12](#bzbond-claris) file.
 
 [Learn more about bzBond-js](packages/bzBond-js/README.md)
 
@@ -107,30 +135,6 @@ bzBond-claris is a FileMaker Pro file containing tools to manage interactions wi
 create-bzbond-app is the best way to create new bzBond projects. It requires [node/npm](https://nodejs.org/en/download/) and [git](https://git-scm.com/downloads).
 
 [Learn more about create-bzBond-app](packages/bzBond-claris/README.md)
-
-#### Create an all-in-one project with create-bzbond-app
-
-```
-npx -y @beezwax/create-bzbond-app <app-name>
-// e.g
-npx -y @beezwax/create-bzbond-app my-aio-app
-```
-
-#### Create a web-only project with create-bzbond-app
-
-```
-npx -y @beezwax/create-bzbond-app <app-name> --web-only
-// e.g
-npx -y @beezwax/create-bzbond-app my-web-only-app --web-only
-```
-
-#### Create a web-only project with create-bzbond-app
-
-```
-npx -y @beezwax/create-bzbond-app <app-name> --claris-only
-// e.g
-npx -y @beezwax/create-bzbond-app my-claris-only-app --claris-only
-```
 
 ### bzBond-web-template
 
