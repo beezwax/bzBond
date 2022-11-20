@@ -56,7 +56,7 @@ FileMaker/Claris Pro can harness the power of web technologies to enhance user a
 
 bzBond treats script calls from web viewers as promises, letting you chain them or use async/await.
 
-In the code below we want to add the current user to a group. First we need to get their account name, then we want to add them to the group. To synchronize these operations we chain two scripts together, using the result of the first script in the parameter of the second script. The UI is update at each point in the process. 
+In the code below we want to add the current user to a group. First we need to get their account name, then we want to add them to the group. To synchronize these operations we chain two scripts together, using the result of the first script in the parameter of the second script. The UI is updated at each point in the process. 
 ```
 // Get the UI html element to update
 status = document.getElement("#status");
@@ -89,7 +89,7 @@ In the script below we are sorting a JSON array, something that is complex to co
 
 #### Works on server!
 
-With bzBond-server installed on FileMaker/Claris Server the script will work on the Server without any changes.
+With bzBond-server installed on FileMaker/Claris Server the script will work on the server without any changes.
 
 ### Easily compile to a single file
 
@@ -97,8 +97,7 @@ Every web project created with [create-bzbond-app](packages/create-bzbond-app/RE
 
 ### Lighten the load of loading code
 
-Store your single file web projects in the simple bzBond web project manager
-;
+Store your single file web projects in the simple bzBond web project manager:
 
 <img src="web_project_manager.png" />
 
