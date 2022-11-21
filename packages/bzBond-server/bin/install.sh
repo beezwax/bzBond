@@ -4,18 +4,19 @@ echo "=========================="
 echo "bzBond Server Installation"
 echo "=========================="
 
+# Check fmserver user exists
 if ! id fmserver &>/dev/null; then
   echo "ERROR: The 'fmserver' user was not found in this system."
   echo "Nothing was installed."
   exit
 fi
 
+# Check FileMaker's node
 NODE_PATH="/opt/FileMaker/FileMaker Server/node/bin/node"
 if [ "$(uname)" = "Darwin" ]; then
   NODE_PATH="/Library/FileMaker Server/node/bin/node"
 fi
-# For testing
-# NODE_PATH=$(which node)
+
 if ! command -v "$NODE_PATH" &> /dev/null; then
   echo "ERROR: Could not find node binary at '$NODE_PATH'."
   echo "Nothing was installed."
@@ -31,6 +32,7 @@ sudo chown -R root:root /var/www/bzbond-server
 sudo chmod -R 755 /var/www/bzbond-server
 
 if [ "$(uname)" = "Darwin" ]; then
+  # macOS installation
   sudo tee -a /Library/LaunchDaemons/net.beezwax.bzbond-server.plist &> /dev/null <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -67,7 +69,6 @@ EOF
   launchctl start net.beezwax.bzbond-server
 
   echo "bzBond server installed!"
-  # echo "Use 'sudo launchctl status bzbond-server' to check its status"
 else
   # Ubuntu installation
   sudo tee -a /lib/systemd/system/bzbond-server.service &> /dev/null <<EOF

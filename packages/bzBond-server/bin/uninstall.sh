@@ -11,12 +11,13 @@ rm -rf /tmp/bzBond
 echo "Removing bzbond-server files...."
 sudo rm -rf /var/www/bzbond-server
 
-# Ubuntu uninstall
 echo "Removing daemon..."
 if [ "$(uname)" = "Darwin" ]; then
+  # macOS uninstall
   sudo launchctl remove net.beezwax.bzbond-server
   sudo rm /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
 else
+  # Ubuntu uninstall
   sudo systemctl stop bzbond-server
   sudo systemctl disable bzbond-server
   sudo rm /lib/systemd/system/bzbond-server.service
