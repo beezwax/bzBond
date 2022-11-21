@@ -2,11 +2,18 @@
 
 # Introduction
 
-bzbond-server is a microservice that runs on your Claris/FileMaker server and allows you to run JavaScript code. It is intended to be accessed through the bzBond relay script in the mode `PERFORM_JAVASCRIPT` only when the script is running on the server.
+bzbond-server is a microservice that runs on your Claris/FileMaker server and
+allows you to run JavaScript code. It is intended to be accessed through the
+bzBond relay script in the mode `PERFORM_JAVASCRIPT` only when the script is
+running on the server.
 
 # Installation
 
-These installations assume a default installation of Claris/FileMaker Server on the specified platform
+These installations assume a default installation of Claris/FileMaker Server
+on the specified platform.
+
+If you are using macOS or Linux, you can use the following command to install
+bzbond-server:
 
     $ curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.sh | bash
 
@@ -14,15 +21,16 @@ Or using `wget`
 
     $ wget -qO- curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.sh | bash
 
-## Manual Installation: Ubuntu Linux
+## Manual Installation: Ubuntu and macOS
 
-### Add files
-
-1. Unzip the application files to `/usr/bin/bzbond-server`
+1. Download a ZIP with the repo using [this
+   link](https://github.com/beezwax/bzBond/archive/refs/heads/main.zip)
+1. Unzip the repository and copy the files inside the `./packages/bzBond/dist/` directory into `/var/www/bzbond-server`
 1. Ensure `root` is the owner and group for the directory and its contents
-1. Ensure the permissions are rwxr-xr-x for the directory and its contents (755)
+   (`chown -R root:root /var/www/bzbond-server`)
+1. Ensure the permissions are rwxr-xr-x for the directory and its contents (755) (`chmod -R 755 /var/www/bzbond-server`)
 
-### Setup management with systemd<sup>1</sup>
+### Ubuntu
 
 1. Create the following file in `/lib/systemd/system/bzbond-server.service`
 
@@ -35,7 +43,7 @@ After=network.target
 [Service]
 Type=simple
 User=fmserver
-ExecStart="/opt/FileMaker/FileMaker Server/node/bin/node" /usr/bin/bzbond-server/server.js
+ExecStart="/opt/FileMaker/FileMaker Server/node/bin/node" /var/www/bzbond-server/server.js
 Restart=on-failure
 
 [Install]
@@ -50,11 +58,49 @@ WantedBy=multi-user.target
 
 1: [https://nodesource.com/blog/running-your-node-js-app-with-systemd-part-1/](https://nodesource.com/blog/running-your-node-js-app-with-systemd-part-1/)
 
-## macOS Installation
+### macOS
 
-Coming soon
+1. Create the following file in `/Library/LaunchDaemons/net.beezwax.bzbond-server.plist`
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>net.beezwax.bzbond-server</string>
+
+    <key>ProgramArguments</key>
+    <array>
+      <string>/Library/FileMaker Server/node/bin/node</string>
+      <string>/var/www/bzbond-server/index.js</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/var/www/bzbond-server</string>
+
+    <key>StandardOutPath</key>
+    <string>/var/log/bzbond-server/access.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/var/log/bzbond-server/error.log</string>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <true/>
+  </dict>
+</plist>
+```
+
+2. Load the daemon with `launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server.plist`
+3. Launch bzbond-server with the command `launchctl start net.beezwax.bzbond-server`
+4. Test the bzbond-server is running with the command `curl http://localhost:8999` this should output `{"message":"Route GET:/ not found","error":"Not Found","statusCode":404}`
 
 ## Windows Server Installation
+
+Coming soon
 
 # Build
 
