@@ -14,7 +14,7 @@ Or using `wget`
 
     $ wget -qO- curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.sh | bash
 
-## Ubuntu Linux Installation
+## Manual Installation: Ubuntu Linux
 
 ### Add files
 

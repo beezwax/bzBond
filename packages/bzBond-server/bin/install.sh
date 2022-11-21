@@ -11,6 +11,9 @@ if ! id fmserver &>/dev/null; then
 fi
 
 NODE_PATH="/opt/FileMaker/FileMaker Server/node/bin/node"
+if [ "$(uname)" = "Darwin" ]; then
+  NODE_PATH="/Library/FileMaker Server/node/bin/node"
+fi
 # For testing
 # NODE_PATH=$(which node)
 if ! command -v "$NODE_PATH" &> /dev/null; then
@@ -27,8 +30,47 @@ rm -rf /tmp/bzBond
 sudo chown -R root:root /var/www/bzbond-server
 sudo chmod -R 755 /var/www/bzbond-server
 
-# Ubuntu installation
-sudo tee -a /lib/systemd/system/bzbond-server.service &> /dev/null <<EOF
+if [ "$(uname)" = "Darwin" ]; then
+  sudo tee -a /Library/LaunchDaemons/net.beezwax.bzbond-server.plist &> /dev/null <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>net.beezwax.bzbond-server</string>
+
+    <key>ProgramArguments</key>
+    <array>
+      <string>$NODE_PATH</string>
+      <string>/var/www/bzbond-server/index.js</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/var/www/bzbond-server</string>
+
+    <key>StandardOutPath</key>
+    <string>/var/log/bzbond-server/access.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/var/log/bzbond-server/error.log</string>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <true/>
+  </dict>
+</plist>
+EOF
+
+  launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
+  launchctl start net.beezwax.bzbond-server
+
+  echo "bzBond server installed!"
+  # echo "Use 'sudo launchctl status bzbond-server' to check its status"
+else
+  # Ubuntu installation
+  sudo tee -a /lib/systemd/system/bzbond-server.service &> /dev/null <<EOF
 [Unit]
 Description=bzbond-server – JavaScript microservice for FileMaker Server
 Documentation=https://github.com/beezwax/bzbond
@@ -44,9 +86,10 @@ Restart=on-failure
 WantedBy=multi-user.target
 EOF
 
-sudo systemctl daemon-reload
-sudo systemctl start bzbond-server
-sudo systemctl enable bzbond-server
+  sudo systemctl daemon-reload
+  sudo systemctl start bzbond-server
+  sudo systemctl enable bzbond-server
 
-echo "bzBond server installed!"
-echo "Use 'sudo systemctl status bzbond-server' to check its status"
+  echo "bzBond server installed!"
+  echo "Use 'sudo systemctl status bzbond-server' to check its status"
+fi
