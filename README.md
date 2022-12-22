@@ -1,6 +1,6 @@
-<p align="center"><img src="logo.png" width="75"/></p>
+<p align="center"><img src="bzBond-logo.png" width="75"/></p>
 
-<h2 align="center">Quality tools for Claris Web Integrations</h1>
+<h2 align="center">Quality tools for Claris Web Integrations</h2>
 
 😎 Reliably run web UIs and JavaScript libraries in web viewers
 
