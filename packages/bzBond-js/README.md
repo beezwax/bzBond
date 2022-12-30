@@ -22,14 +22,13 @@
 
 ## Introduction
 
-bzBond-js is part of the bzBond toolset. It manages interactions between FileMaker scripts and FileMaker Web Viewers.
+bzBond-js is part of the bzBond toolset. It manages interactions between FileMaker scripts and FileMaker Web Viewers. It requires [bzBond-claris](../bzBond-claris/README.md).
 
 ### Features
 
-- Perform FileMaker scripts, return the script result as **JavaScript Promises**.
-- Perform JavaScript from FileMaker, return the JS result back into FileMaker.
+- Call FileMaker scripts from web viewers using `bzBond.PerformScript`. This function returns a **JavaScript Promise** including the script result.
+- Use JavaScript functions in FileMaker scripts by calling the `bzBondRelay` script. Function results can be accessed in `Get ( ScriptResult )`
 - Extensible through a built-in plugin registration system.
-- bzBond-js is also used as the function runner for the bzBond-server web service, allowing you to perform JavaScript on server.
 
 ## Installation
 
@@ -38,19 +37,17 @@ bzBond-js is part of the bzBond toolset. It manages interactions between FileMak
 npm i @beezwax/bzbond-js
 ```
 
-<!-- TODO: Update location/name of FM file/script for download -->
-2. Download the following FileMaker file, and copy the `bzBondRelay` script into the target FileMaker file.
-```
-curl -O https://github.com/beezwax/bzbond-relay-script/raw/main/bzbond-relay-script.fmp12
-```
-<!-- TODO: Update location/name of FM file/script for download -->
+2. Download the [bzBond-claris.fmp12](https://github.com/beezwax/bzbond/blob/main/packages/bzBond-claris/bzBond-claris.fmp12?raw=true) FileMaker file, and copy the `bzBondRelay` script into the target FileMaker file.
 
 ## Requirements
 
 - FileMaker >=19.3.
 - Web Viewers that host the bzBond code must:
-  - Have a **name** (via FileMaker layout inspector).
-  - Have the **'Allow JavaScript to perform FileMaker scripts'** option on Web Viewers checked.
+  - Have an **object name** assigned in Layout inspector:
+  <img src="web_viewer_name.png" />
+
+  - Have the **'Allow JavaScript to perform FileMaker scripts'** option on in the Web Viewer Setup dialog checked:
+  <img src="web_viewer_setup.png" />
 
 ---
 
@@ -58,7 +55,7 @@ curl -O https://github.com/beezwax/bzbond-relay-script/raw/main/bzbond-relay-scr
 
 ### Performing FileMaker Scripts from JavaScript
 
-#### bzBond.PerformScript(scriptName, scriptParameter [, options])
+#### bzBond.PerformScript(scriptName, [scriptParameter, options])
 
 ```
 bzBond.PerformScript("add two numbers", { firstNum: 1, secondNum: 2 })
@@ -69,7 +66,6 @@ bzBond.PerformScript("Get User Data", "user-123", { timeout: 3000 })
     .catch((e) => console.log('request took too long', e));
 ```
 
-<!-- TODO: name of Relay Script file/script for download -->
 The (optional) **options** parameter can contain any of the following (defaults shown):
 ```
 {
@@ -136,33 +132,18 @@ bzBond.SetRelayScriptName("My Relay Script");
 bzBond.GetRelayScriptName(); // "My Relay Script"
 ```
 
-<!-- TODO: Need clarity on what to update this section to -->
 #### bzBond.SyncConfig()
 
-By defining a JSON blob in the `Web Address` portion of the Web Viewer:
-- `SyncConfig` returns the Web Viewer JSON configuration as a **promise** result.
-- `SetWebViewerConfigFromFM` calls FileMaker and updates the configuration stored in bzBond.
-- `SetWebViewerConfig(webViewerConfig)` allows manual overwrite of the configuration stored in bzBond.
-- `GetConfig` returns the current configuration stored in bzBond.
+To learn more about web viewer config see [bzBond-claris](../bzBond-claris/README.md#web-viewer-config)
 
-```
-// For example:
-// • A Web Viewer is in the context of the PERSON table.
-// • The PERSON::NAME field is "John Smith".
-// • This Web Viewer's Web Address is set to JSONSetElement( "{}" ; "NAME" ; PERSON::NAME ; JSONString )
-
-bzBond.GetConfig() // "{}"
-bzBond.SetConfig({"NAME": "Kevin Puddlefoot"});
-bzBond.GetConfig() // { "NAME": "Kevin Puddlefoot" }
-bzBond.SyncConfig().then((config) => {
-    console.log(config.NAME) // "John Smith"
-});
-```
-
+- `SyncConfig` returns the Web Viewer JSON config as a **promise** result.
+- `SetWebViewerConfigFromClaris` gets the current web viewer config state from FileMaker and updates the config stored in bzBond-js.
+- `SetWebViewerConfig(webViewerConfig)` allows manual overwrite of the configuration stored in bzBond-js.
+- `GetConfig` returns the current configuration stored in bzBond-js.
 
 #### bzBond.RegisterScript(pluginOptions)
 
-It possible to extend bzBond by registering custom FileMaker scripts, which can then be can be called as methods.
+It possible to extend bzBond-js by registering custom FileMaker scripts, which can then be can be called as methods.
 
 1. Create a script in FileMaker.
 2. Perform `bzBond.RegisterScript` giving it the appropriate **pluginOptions**:
@@ -206,7 +187,7 @@ bzBond.executeDataApi(myQuery, { timeout: 3000, callType: "interrupt" })
         console.log('query failed', e.toString());
     });
 ```
----
+
 ### Promise rejection and Error Handling
 
 The promises settled by the bzBond relay script will only reject when the specified FileMaker script is missing.
@@ -215,106 +196,11 @@ Otherwise, the result of the script's `Exit Script[]` step will be returned as t
 
 Note that when registering a plugin, the `throwIf` parameter can be used set the result state(s) that should throw errors.
 
----
+### Integrating JavaScript functions with FileMaker scripts
 
-### Performing JavaScript functions from FileMaker
+bzBond-js works with bzBond-claris to allow Javascript functions defined in FileMaker scripts to run and return results in the regular FileMaker script flow. See the [bzBond-claris](../bzBond-claris/README.md#integrating-javascript-functions-with-filemaker-scripts) documentation for more details
 
-A web viewer that contains the bzBond class can return the result of a JavaScript function performed by FileMaker's `Perform Javascript in Web Viewer` script step. This allows the following FileMaker scripting pattern:
 
-```
-Perform JavaScript in Web Viewer [ ... ]
-Set Variable[ $javaScriptResult; Get ( ScriptResult ) ]
-```
-
-Results of functions called using `Perform Javascript in Web Viewer` can be captured inline with minimal impact on the normal FileMaker script flow.
-
-To utilize this feature configure the `Perform Javascript in Web Viewer` script step as follows:
-
-- Function Name: `bzBond`
-- First parameter either
-    - a function in the global (window) JavaScript context of the web viewer OR
-    - a JavaScript function (arrow or classic) defined as a string
-- Subsequent parameters will be passed into the function. To treat a JavaScript parameter as a callback function, prefix it with the 'ƒ' symbol (⌥ + f on macs).
-
-Results are always obtained via `Get ( ScriptResult )`, nested in the `response.result` key. The `response.result` prop will be appropriately formatted (eg: as a number for numbers, string for strings, object for objects, etc...).
-
-**Example 1** Calling a function AddTwoNumbers that is accessible via `window.AddTwoNumbers` in the web viewer.
-
-```
-Perform JavaScript in Web Viewer [
-    Object Name: "MyWebViewer" ;
-    Function Name: "bzBond" ;
-    Parameters: "AddTwoNumbers", 3, 5 
-]
-
-Set Variable [
-    $_new_number ;
-    Value: JSONGetElement ( Get ( ScriptResult ) ; "response.result" )
-]
-// $_new_number = 8
-```
-
-**Example 2** Calling a JS function defined in FileMaker as a string (allowing you to define and run JavaScript on the fly in FileMaker).
-
-```
-Set Variable [
-    $_add_two_numbers_func ;
-    Value: "(a, b) => a + b"
-]
-
-Perform JavaScript in Web Viewer [
-    Object Name: "MyWebViewer" ;
-    Function Name: "bzBond" ;
-    Parameters: $_add_two_numbers_func, 3, 5
-]
-
-Set Variable [
-    $_new_number ;
-    Value: JSONGetElement ( Get ( ScriptResult ) ; "response.result" )
-]
-// $_new_number = 8
-```
-
-**Example 3** Support for Callbacks (remember to prefix with an 'ƒ')
-
-```
-Set Variable [
-    $_add_number_with_callback ;
-    Value: "function (myCallbackForC, a, b, c) { return a + b + myCallbackForC(c); }"
-]
-
-Set Variable [
-    $_times_two ;
-    Value: "ƒ(value) => value * 2"
-]
-
-Perform JavaScript in Web Viewer [
-    Object Name: "MyWebViewer" ;
-    Function Name: "bzBond" ;
-    Parameters: $_add_two_numbers_func, $_times_two, 3, 5, 50
-]
-
-Set Variable [
-    $_new_number ;
-    Value: JSONGetElement ( Get ( ScriptResult ) ; "response.result" )
-]
-// $_new_number = 108
-
-// The full "Get ( ScriptResult )" response:
-{
-	"messages" :
-	[
-		{
-			"code" : "0",
-			"message" : "OK"
-		}
-	],
-	"response" :
-	{
-		"result" : 108
-	}
-}
-```
 
 **Errors** are captured and returned for the following scenarios:
 
@@ -335,8 +221,6 @@ Set Variable [
 	"response" : {}
 }
 ```
-
----
 
 ## Contributors
 
