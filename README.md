@@ -139,7 +139,7 @@ create-bzbond-app is the best way to create new bzBond projects. It requires [no
 
 bzBond-web-template forms the core of [create-bzbond-app](#create-bzbond-app). It includes [bzBond-js](#bzbond-js) and a build config that creates a single html file that can be used as the source for a bzBond web project.
 
-[Learn more about bzBond-server](packages/bzBond-server/README.md)
+[Learn more about bzBond-web-template](packages/bzBond-web-template/README.md)
 
 ### bzBond-server
 
