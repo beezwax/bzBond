@@ -12,14 +12,14 @@
 
 ## Table of contents
 
-- Quick start
-- Usage
-- The Tools
-  - bzBond-js
-  - bzBond-claris
-  - create-bzbond-app
-  - bzBond-web-template
-  - bzBond-server
+- [Quick start](#quick-start)
+- [Usage](#usage)
+- [The Tools](#the-tools)
+  - [bzBond-js](#bzbond-js)
+  - [bzBond-claris](#bzbond-claris)
+  - [create-bzbond-app](#create-bzbond-app)
+  - [bzBond-web-template](#bzbond-web-template)
+  - [bzBond-server](#bzbond-server)
 
 ## Quick start
 
