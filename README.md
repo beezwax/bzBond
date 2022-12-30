@@ -89,7 +89,7 @@ In the script below we are sorting a JSON array, something that is complex to co
 
 #### Works on server!
 
-With bzBond-server installed on FileMaker/Claris Server the script will work on the server without any changes.
+With [bzBond-server](packages/bzBond-server/) installed on FileMaker/Claris Server the script will work on the server without any changes.
 
 ### Easily compile to a single file
 
