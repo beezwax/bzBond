@@ -107,3 +107,8 @@ Coming soon
 To generate a new build into `./dist`, use:
 
     $ npm run build
+
+# Logs
+
+You can see the logs for bzBond server with `tail /var/log/bzbond-server` in
+macOS and `journalctl -u bzbond-server.service` in Ubuntu.
