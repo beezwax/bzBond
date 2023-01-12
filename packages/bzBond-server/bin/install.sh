@@ -28,8 +28,6 @@ git clone https://github.com/beezwax/bzBond.git
 sudo mkdir -p /var/www/bzbond-server
 sudo cp -r /tmp/bzBond/packages/bzBond-server/dist/* /var/www/bzbond-server
 rm -rf /tmp/bzBond
-sudo chown -R root:root /var/www/bzbond-server
-sudo chmod -R 755 /var/www/bzbond-server
 
 if [ "$(uname)" = "Darwin" ]; then
   # macOS installation
@@ -71,6 +69,9 @@ EOF
   echo "bzBond server installed!"
 else
   # Ubuntu installation
+  sudo chown -R root:root /var/www/bzbond-server
+  sudo chmod -R 755 /var/www/bzbond-server
+
   sudo tee -a /lib/systemd/system/bzbond-server.service &> /dev/null <<EOF
 [Unit]
 Description=bzbond-server – JavaScript microservice for FileMaker Server
