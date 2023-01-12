@@ -63,8 +63,8 @@ if [ "$(uname)" = "Darwin" ]; then
 </plist>
 EOF
 
-  launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
-  launchctl start net.beezwax.bzbond-server
+  sudo launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
+  sudo launchctl start net.beezwax.bzbond-server
 
   echo "bzBond server installed!"
 else
