@@ -102,6 +102,38 @@ WantedBy=multi-user.target
 
 Coming soon
 
+# Uninstall
+
+If you are using macOS or Linux, you can use the following command to uninstall
+bzbond-server:
+
+    $ curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/uninstall.sh | bash
+
+Or using `wget`
+
+    $ wget -qO- curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/uninstall.sh | bash
+
+## Manual uninstall: macOS
+
+```
+rm -rf /tmp/bzBond
+sudo rm -rf /var/www/bzbond-server
+sudo launchctl remove net.beezwax.bzbond-server
+sudo rm /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
+```
+
+## Manual Uninstall: Ubuntu
+
+```
+rm -rf /tmp/bzBond
+sudo rm -rf /var/www/bzbond-server
+sudo systemctl stop bzbond-server
+sudo systemctl disable bzbond-server
+sudo rm /lib/systemd/system/bzbond-server.service
+sudo systemctl daemon-reload
+sudo systemctl reset-failed
+```
+
 # Build
 
 To generate a new build into `./dist`, use:
