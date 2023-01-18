@@ -1,0 +1,2079 @@
+﻿
+<DynamicTemplateString>
+	<StringID>com.fmi.basedirectory.28D88C77235C0656A25103933C39AF9F</StringID>
+	<SourceText>fmbond-web-project-manager/</SourceText>
+	<TargetText>fmbond-web-project-manager/</TargetText>
+	<Comment>com.fmi.basedirectory.fmbond-web-project-manager/</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.3BD994E39D569C138FCC8063BADAF702</StringID>
+	<SourceText>WEB_PROJECT</SourceText>
+	<TargetText>WEB_PROJECT</TargetText>
+	<Comment>com.fmi.basetable.WEB_PROJECT</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.WEB_PROJECT::07805BBE9612EE36FD3E7630ECF5787C</StringID>
+	<SourceText>ID</SourceText>
+	<TargetText>ID</TargetText>
+	<Comment>com.fmi.basetable.field.WEB_PROJECT::ID</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.WEB_PROJECT::1F4BC13C5D877EA23F5FFE28FDA64377</StringID>
+	<SourceText>URL</SourceText>
+	<TargetText>URL</TargetText>
+	<Comment>com.fmi.basetable.field.WEB_PROJECT::URL</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.WEB_PROJECT::5BAF720253FD6D9D107E0AAA5E781C81</StringID>
+	<SourceText>DESCRIPTION</SourceText>
+	<TargetText>DESCRIPTION</TargetText>
+	<Comment>com.fmi.basetable.field.WEB_PROJECT::DESCRIPTION</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.WEB_PROJECT::6F0078904504BF938D84206AB6EE8346</StringID>
+	<SourceText>SOURCE_CODE</SourceText>
+	<TargetText>SOURCE_CODE</TargetText>
+	<Comment>com.fmi.basetable.field.WEB_PROJECT::SOURCE_CODE</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.WEB_PROJECT::78F408DA9CB626A21EF01D75C1E12656</StringID>
+	<SourceText>SIZE</SourceText>
+	<TargetText>SIZE</TargetText>
+	<Comment>com.fmi.basetable.field.WEB_PROJECT::SIZE</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.WEB_PROJECT::935D7D391118D1E1092B78A163C0B558</StringID>
+	<SourceText>NAME</SourceText>
+	<TargetText>NAME</TargetText>
+	<Comment>com.fmi.basetable.field.WEB_PROJECT::NAME</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0217B812A5C5B11AA3E13379C2D6ECD2</StringID>
+	<SourceText>response</SourceText>
+	<TargetText>response</TargetText>
+	<Comment>com.fmi.calculation.text.response</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0268D4B0F39FC90F78170F68AA10FACB</StringID>
+	<SourceText>]code</SourceText>
+	<TargetText>]code</TargetText>
+	<Comment>com.fmi.calculation.text.]code</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.07D34851FFEB996C64264381A901A0D7</StringID>
+	<SourceText>116</SourceText>
+	<TargetText>116</TargetText>
+	<Comment>com.fmi.calculation.text.116</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.07D4CC6E77594223F61256ED51C2FCC8</StringID>
+	<SourceText><CR/><TAB/><TAB/>WHERE </SourceText>
+	<TargetText><CR/><TAB/><TAB/>WHERE </TargetText>
+	<Comment>com.fmi.calculation.text._CR/__TAB/__TAB/_WHERE</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.07FD75C35AEB713C3F6922A0FB81FD01</StringID>
+	<SourceText>Server</SourceText>
+	<TargetText>Server</TargetText>
+	<Comment>com.fmi.calculation.text.Server</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0817463E6948C30BAFDA2F5F54695621</StringID>
+	<SourceText>. Insert From URL returned a FileMaker error</SourceText>
+	<TargetText>. Insert From URL returned a FileMaker error</TargetText>
+	<Comment>com.fmi.calculation.text.. Insert From URL returned a FileMaker error</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0957A19A9EC712B692945475B0BA1842</StringID>
+	<SourceText>options.customUrl</SourceText>
+	<TargetText>options.customUrl</TargetText>
+	<Comment>com.fmi.calculation.text.options.customUrl</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0A2A6F666A2955B3C0D398EA50924A61</StringID>
+	<SourceText>code</SourceText>
+	<TargetText>code</TargetText>
+	<Comment>com.fmi.calculation.text.code</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0B0CB3BB2F0CF5B52FCF7721EB59E14D</StringID>
+	<SourceText>clearCache</SourceText>
+	<TargetText>clearCache</TargetText>
+	<Comment>com.fmi.calculation.text.clearCache</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0B0D1BE02877FE62BD3F13E3207E55D0</StringID>
+	<SourceText>Web Project Name</SourceText>
+	<TargetText>Web Project Name</TargetText>
+	<Comment>com.fmi.calculation.text.Web Project Name</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0BED0FB9DCA2BB88661F98EF9E41548B</StringID>
+	<SourceText> = ?</SourceText>
+	<TargetText> = ?</TargetText>
+	<Comment>com.fmi.calculation.text. = ?</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0CF14DB6992833A6BDC4E1E49DD8B28D</StringID>
+	<SourceText>message</SourceText>
+	<TargetText>message</TargetText>
+	<Comment>com.fmi.calculation.text.message</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0F6E40E32A281238FC4DDC24D3D2736C</StringID>
+	<SourceText>mode</SourceText>
+	<TargetText>mode</TargetText>
+	<Comment>com.fmi.calculation.text.mode</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.114574D84720FF75E6921A0B8D50B543</StringID>
+	<SourceText>RETURN_JAVASCRIPT_RESULT</SourceText>
+	<TargetText>RETURN_JAVASCRIPT_RESULT</TargetText>
+	<Comment>com.fmi.calculation.text.RETURN_JAVASCRIPT_RESULT</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.172A93787E213904652105C94155D01B</StringID>
+	<SourceText>HTTP</SourceText>
+	<TargetText>HTTP</TargetText>
+	<Comment>com.fmi.calculation.text.HTTP</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.1CC0D2D8689E31F5A973BE4F649EE9AE</StringID>
+	<SourceText>Turn off debug mode for all web viewers?</SourceText>
+	<TargetText>Turn off debug mode for all web viewers?</TargetText>
+	<Comment>com.fmi.calculation.text.Turn off debug mode for all web viewers?</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.1DF695809BD641C156981B272113AD22</StringID>
+	<SourceText>DebugManager</SourceText>
+	<TargetText>DebugManager</TargetText>
+	<Comment>com.fmi.calculation.text.DebugManager</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.1F4BC13C5D877EA23F5FFE28FDA64377</StringID>
+	<SourceText>URL</SourceText>
+	<TargetText>URL</TargetText>
+	<Comment>com.fmi.calculation.text.URL</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.22FB870EE7AB348C700B68C887AFCC25</StringID>
+	<SourceText>{}</SourceText>
+	<TargetText>{}</TargetText>
+	<Comment>com.fmi.calculation.text.{}</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.2531367329E32A5ABD7F5870E55C5442</StringID>
+	<SourceText>Parameter &apos;promiseUUID&apos; is missing</SourceText>
+	<TargetText>Parameter &apos;promiseUUID&apos; is missing</TargetText>
+	<Comment>com.fmi.calculation.text.Parameter &apos;promiseUUID&apos; is missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.270628AB0D80EE428B35DFE9E89AAFF7</StringID>
+	<SourceText>.</SourceText>
+	<TargetText>.</TargetText>
+	<Comment>com.fmi.calculation.text..</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.27DB2D4BA949B4D9E0B020AA0C4CFA20</StringID>
+	<SourceText>timeout</SourceText>
+	<TargetText>timeout</TargetText>
+	<Comment>com.fmi.calculation.text.timeout</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.27E10F96F335CAD0A3B05F06C4E26734</StringID>
+	<SourceText>arguments</SourceText>
+	<TargetText>arguments</TargetText>
+	<Comment>com.fmi.calculation.text.arguments</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.2CD4BA82E6ECC81FDF5C724390974371</StringID>
+	<SourceText>options.webViewerName</SourceText>
+	<TargetText>options.webViewerName</TargetText>
+	<Comment>com.fmi.calculation.text.options.webViewerName</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.2F37515C9EEB35B615896024D2C6BEC6</StringID>
+	<SourceText>\&quot; does not contain the bzBond class or did not originate this Claris script. Make sure the correct web viewer name is referenced in your JavaScript code.</SourceText>
+	<TargetText>\&quot; does not contain the bzBond class or did not originate this Claris script. Make sure the correct web viewer name is referenced in your JavaScript code.</TargetText>
+	<Comment>com.fmi.calculation.text.\&quot; does not contain the bzBond class or did not originate this Claris script. Make sure the correct web viewer name is referenced in your JavaScript code.</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.2FD97E3527CE1EF47C179710C9394D2B</StringID>
+	<SourceText>\&quot;</SourceText>
+	<TargetText>\&quot;</TargetText>
+	<Comment>com.fmi.calculation.text.\&quot;</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.32967C2C31756E8D5B1D37F036542096</StringID>
+	<SourceText>&apos;.</SourceText>
+	<TargetText>&apos;.</TargetText>
+	<Comment>com.fmi.calculation.text.&apos;.</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.34EC214B58621124356E151DF442BD0E</StringID>
+	<SourceText>script.parameter</SourceText>
+	<TargetText>script.parameter</TargetText>
+	<Comment>com.fmi.calculation.text.script.parameter</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.3517D25A27D0B5E3B0A4CF67BCB041F9</StringID>
+	<SourceText><CR/><TAB/><TAB/><TAB/><TAB/><TAB/><TAB/><TAB/>FETCH FIRST 1 ROW ONLY</SourceText>
+	<TargetText><CR/><TAB/><TAB/><TAB/><TAB/><TAB/><TAB/><TAB/>FETCH FIRST 1 ROW ONLY</TargetText>
+	<Comment>com.fmi.calculation.text._CR/__TAB/__TAB/__TAB/__TAB/__TAB/__TAB/__TAB/_FETCH FIRST 1 ROW ONLY</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.393DE2B027E1F15C0FEFE713B3BF2FD4</StringID>
+	<SourceText>0</SourceText>
+	<TargetText>0</TargetText>
+	<Comment>com.fmi.calculation.text.0</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.3CD55711E329B05C54C90CD2AE84F2F5</StringID>
+	<SourceText>\&quot;.\&quot;</SourceText>
+	<TargetText>\&quot;.\&quot;</TargetText>
+	<Comment>com.fmi.calculation.text.\&quot;.\&quot;</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.3FD74983C394966C2D1F9D3FDA622BCC</StringID>
+	<SourceText>;<CR/>    const webViewers = </SourceText>
+	<TargetText>;<CR/>    const webViewers = </TargetText>
+	<Comment>com.fmi.calculation.text.;_CR/_    const webViewers =</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.42D582097BC31476EA73935D4CDD61FF</StringID>
+	<SourceText>:</SourceText>
+	<TargetText>:</TargetText>
+	<Comment>com.fmi.calculation.text.:</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.43985C79C25D41D73D091050A3F2409F</StringID>
+	<SourceText>The web viewer \&quot;</SourceText>
+	<TargetText>The web viewer \&quot;</TargetText>
+	<Comment>com.fmi.calculation.text.The web viewer \&quot;</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.4399CEF955C03B8E92D48E0016E53651</StringID>
+	<SourceText>jsCode</SourceText>
+	<TargetText>jsCode</TargetText>
+	<Comment>com.fmi.calculation.text.jsCode</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.44C175B4DC316B1240D6A83804B43185</StringID>
+	<SourceText>Turn on Debug Mode for Web Project</SourceText>
+	<TargetText>Turn on Debug Mode for Web Project</TargetText>
+	<Comment>com.fmi.calculation.text.Turn on Debug Mode for Web Project</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.46BAAB343C7BFA15EE4EDE3643A19EAD</StringID>
+	<SourceText>url</SourceText>
+	<TargetText>url</TargetText>
+	<Comment>com.fmi.calculation.text.url</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.4898691AC9543672801B4213CD672BC9</StringID>
+	<SourceText>data:text/html,<CR/>&lt;!DOCTYPE html&gt;<CR/>&lt;html lang=&apos;en&apos;&gt;<CR/>&lt;head&gt;<CR/>  &lt;meta charset=&apos;UTF-8&apos;&gt;<CR/>  &lt;meta http-equiv=&apos;X-UA-Compatible&apos; content=&apos;IE=edge&apos;&gt;<CR/>  &lt;meta name=&apos;viewport&apos; content=&apos;width=device-width, initial-scale=1.0&apos;&gt;<CR/>  &lt;title&gt;Code Manager Debug Interface&lt;/title&gt;<CR/>  &lt;style&gt;<CR/>    * {<CR/>      font-family: &apos;Helvetica Neue&apos;, Arial, sans-serif;<CR/>      font-weight: 200;<CR/>      font-size: 12px;<CR/>    }<CR/><CR/>    body {<CR/>      margin: 0;<CR/>    }<CR/><CR/>    h2 {<CR/>      font-size: 16px;<CR/>      font-weight: bold;<CR/>    }<CR/><CR/>    div {<CR/>      width:100%;<CR/>    }<CR/><CR/>    table {<CR/>      width: 100%;<CR/>      border-collapse: collapse;<CR/>    }<CR/><CR/>    th {<CR/>      font-weight: normal;<CR/>    }<CR/><CR/>    th, td {<CR/>      border: 1px solid #999;<CR/>      padding: 0.5rem;<CR/>      text-align: left;<CR/>    }<CR/><CR/>    th:nth-child(1), td:nth-child(1) {<CR/>      width: 50%;<CR/>    }<CR/><CR/>    th:nth-child(2), td:nth-child(2) {<CR/>      width: 40%;<CR/>    }<CR/><CR/>    th:nth-child(3),td:nth-child(3) {<CR/>      width: 10%;<CR/>      text-align: center;<CR/>    }<CR/><CR/>    [contentEditable=&apos;true&apos;]::after {<CR/>      content: &apos; \270E&apos;;<CR/>    }<CR/><CR/>    [contentEditable=&apos;true&apos;]:focus::after {<CR/>      content: &apos;&apos;;<CR/>    }<CR/><CR/>    button {<CR/>      border: none;<CR/>      background-color: white;<CR/>      cursor: pointer;<CR/>    }<CR/>  &lt;/style&gt;<CR/>&lt;/head&gt;<CR/>&lt;body&gt;<CR/>  &lt;div class=&apos;web-projects&apos;&gt;<CR/>    &lt;h2&gt;Web Projects&lt;/h2&gt;<CR/>    &lt;table&gt;<CR/>      &lt;thead&gt;<CR/>        &lt;tr&gt;<CR/>          &lt;th&gt;Project Name&lt;/th&gt;<CR/>          &lt;th&gt;Debug URL&lt;/th&gt;<CR/>          &lt;th&gt;Clear&lt;/th&gt;<CR/>        &lt;/tr&gt;<CR/>      &lt;/thead&gt;<CR/>      &lt;tbody&gt;<CR/><CR/>      &lt;/tbody&gt;<CR/>    &lt;/table&gt;<CR/>  &lt;/div&gt;<CR/>  &lt;div class=&apos;web-viewers&apos;&gt;<CR/>    &lt;h2&gt;Web Viewers&lt;/h2&gt;<CR/>    &lt;table&gt;<CR/>      &lt;thead&gt;<CR/>        &lt;tr&gt;<CR/>          &lt;th&gt;Web Viewer Name&lt;/th&gt;<CR/>          &lt;th&gt;Debug URL&lt;/th&gt;<CR/>          &lt;th&gt;Clear&lt;/th&gt;<CR/>        &lt;/tr&gt;<CR/>      &lt;/thead&gt;<CR/>      &lt;tbody&gt;&lt;/tbody&gt;<CR/>    &lt;/table&gt;<CR/>  &lt;/div&gt;<CR/>  &lt;script&gt;<CR/>    const webProjects = </SourceText>
+	<TargetText>data:text/html,<CR/>&lt;!DOCTYPE html&gt;<CR/>&lt;html lang=&apos;en&apos;&gt;<CR/>&lt;head&gt;<CR/>  &lt;meta charset=&apos;UTF-8&apos;&gt;<CR/>  &lt;meta http-equiv=&apos;X-UA-Compatible&apos; content=&apos;IE=edge&apos;&gt;<CR/>  &lt;meta name=&apos;viewport&apos; content=&apos;width=device-width, initial-scale=1.0&apos;&gt;<CR/>  &lt;title&gt;Code Manager Debug Interface&lt;/title&gt;<CR/>  &lt;style&gt;<CR/>    * {<CR/>      font-family: &apos;Helvetica Neue&apos;, Arial, sans-serif;<CR/>      font-weight: 200;<CR/>      font-size: 12px;<CR/>    }<CR/><CR/>    body {<CR/>      margin: 0;<CR/>    }<CR/><CR/>    h2 {<CR/>      font-size: 16px;<CR/>      font-weight: bold;<CR/>    }<CR/><CR/>    div {<CR/>      width:100%;<CR/>    }<CR/><CR/>    table {<CR/>      width: 100%;<CR/>      border-collapse: collapse;<CR/>    }<CR/><CR/>    th {<CR/>      font-weight: normal;<CR/>    }<CR/><CR/>    th, td {<CR/>      border: 1px solid #999;<CR/>      padding: 0.5rem;<CR/>      text-align: left;<CR/>    }<CR/><CR/>    th:nth-child(1), td:nth-child(1) {<CR/>      width: 50%;<CR/>    }<CR/><CR/>    th:nth-child(2), td:nth-child(2) {<CR/>      width: 40%;<CR/>    }<CR/><CR/>    th:nth-child(3),td:nth-child(3) {<CR/>      width: 10%;<CR/>      text-align: center;<CR/>    }<CR/><CR/>    [contentEditable=&apos;true&apos;]::after {<CR/>      content: &apos; \270E&apos;;<CR/>    }<CR/><CR/>    [contentEditable=&apos;true&apos;]:focus::after {<CR/>      content: &apos;&apos;;<CR/>    }<CR/><CR/>    button {<CR/>      border: none;<CR/>      background-color: white;<CR/>      cursor: pointer;<CR/>    }<CR/>  &lt;/style&gt;<CR/>&lt;/head&gt;<CR/>&lt;body&gt;<CR/>  &lt;div class=&apos;web-projects&apos;&gt;<CR/>    &lt;h2&gt;Web Projects&lt;/h2&gt;<CR/>    &lt;table&gt;<CR/>      &lt;thead&gt;<CR/>        &lt;tr&gt;<CR/>          &lt;th&gt;Project Name&lt;/th&gt;<CR/>          &lt;th&gt;Debug URL&lt;/th&gt;<CR/>          &lt;th&gt;Clear&lt;/th&gt;<CR/>        &lt;/tr&gt;<CR/>      &lt;/thead&gt;<CR/>      &lt;tbody&gt;<CR/><CR/>      &lt;/tbody&gt;<CR/>    &lt;/table&gt;<CR/>  &lt;/div&gt;<CR/>  &lt;div class=&apos;web-viewers&apos;&gt;<CR/>    &lt;h2&gt;Web Viewers&lt;/h2&gt;<CR/>    &lt;table&gt;<CR/>      &lt;thead&gt;<CR/>        &lt;tr&gt;<CR/>          &lt;th&gt;Web Viewer Name&lt;/th&gt;<CR/>          &lt;th&gt;Debug URL&lt;/th&gt;<CR/>          &lt;th&gt;Clear&lt;/th&gt;<CR/>        &lt;/tr&gt;<CR/>      &lt;/thead&gt;<CR/>      &lt;tbody&gt;&lt;/tbody&gt;<CR/>    &lt;/table&gt;<CR/>  &lt;/div&gt;<CR/>  &lt;script&gt;<CR/>    const webProjects = </TargetText>
+	<Comment>com.fmi.calculation.text.data:text/html,_CR/_&lt;!DOCTYPE html&gt;_CR/_&lt;html lang=&apos;en&apos;&gt;_CR/_&lt;head&gt;_CR/_  &lt;meta charset=&apos;UTF-8&apos;&gt;_CR/_  &lt;meta http-equiv=&apos;X-UA-Compatible&apos; content=&apos;IE=edge&apos;&gt;_CR/_  &lt;meta name=&apos;viewport&apos; content=&apos;width=device-width, initial-scale=1.0&apos;&gt;_CR/_  &lt;title&gt;Code Manager Debug Interface&lt;/title&gt;_CR/_  &lt;style&gt;_CR/_    * {_CR/_      font-family: &apos;Helvetica Neue&apos;, Arial, sans-serif;_CR/_      font-weight: 200;_CR/_      font-size: 12px;_CR/_    }_CR/__CR/_    body {_CR/_      margin: 0;_CR/_    }_CR/__CR/_    h2 {_CR/_      font-size: 16px;_CR/_      font-weight: bold;_CR/_    }_CR/__CR/_    div {_CR/_      width:100%;_CR/_    }_CR/__CR/_    table {_CR/_      width: 100%;_CR/_      border-collapse: collapse;_CR/_    }_CR/__CR/_    th {_CR/_      font-weight: normal;_CR/_    }_CR/__CR/_    th, td {_CR/_      border: 1px solid #999;_CR/_      padding: 0.5rem;_CR/_      text-align: left;_CR/_    }_CR/__CR/_    th:nth-child(1), td:nth-child(1) {_CR/_      width: 50%;_CR/_    }_CR/__CR/_    th:nth-child(2), td:nth-child(2) {_CR/_      width: 40%;_CR/_    }_CR/__CR/_    th:nth-child(3),td:nth-child(3) {_CR/_      width: 10%;_CR/_      text-align: center;_CR/_    }_CR/__CR/_    [contentEditable=&apos;true&apos;]::after {_CR/_      content: &apos; \270E&apos;;_CR/_    }_CR/__CR/_    [contentEditable=&apos;true&apos;]:focus::after {_CR/_      content: &apos;&apos;;_CR/_    }_CR/__CR/_    button {_CR/_      border: none;_CR/_      background-color: white;_CR/_      cursor: pointer;_CR/_    }_CR/_  &lt;/style&gt;_CR/_&lt;/head&gt;_CR/_&lt;body&gt;_CR/_  &lt;div class=&apos;web-projects&apos;&gt;_CR/_    &lt;h2&gt;Web Projects&lt;/h2&gt;_CR/_    &lt;table&gt;_CR/_      &lt;thead&gt;_CR/_        &lt;tr&gt;_CR/_          &lt;th&gt;Project Name&lt;/th&gt;_CR/_          &lt;th&gt;Debug URL&lt;/th&gt;_CR/_          &lt;th&gt;Clear&lt;/th&gt;_CR/_        &lt;/tr&gt;_CR/_      &lt;/thead&gt;_CR/_      &lt;tbody&gt;_CR/__CR/_      &lt;/tbody&gt;_CR/_    &lt;/table&gt;_CR/_  &lt;/div&gt;_CR/_  &lt;div class=&apos;web-viewers&apos;&gt;_CR/_    &lt;h2&gt;Web Viewers&lt;/h2&gt;_CR/_    &lt;table&gt;_CR/_      &lt;thead&gt;_CR/_        &lt;tr&gt;_CR/_          &lt;th&gt;Web Viewer Name&lt;/th&gt;_CR/_          &lt;th&gt;Debug URL&lt;/th&gt;_CR/_          &lt;th&gt;Clear&lt;/th&gt;_CR/_        &lt;/tr&gt;_CR/_      &lt;/thead&gt;_CR/_      &lt;tbody&gt;&lt;/tbody&gt;_CR/_    &lt;/table&gt;_CR/_  &lt;/div&gt;_CR/_  &lt;script&gt;_CR/_    const webProjects =</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.489EFFDE09E35DAE5F5C5A5D7F7C61EC</StringID>
+	<SourceText>\&quot; does not exist. Make sure web viewers are named correctly in the Claris object inspector, and referenced with that name in JavaScript code.</SourceText>
+	<TargetText>\&quot; does not exist. Make sure web viewers are named correctly in the Claris object inspector, and referenced with that name in JavaScript code.</TargetText>
+	<Comment>com.fmi.calculation.text.\&quot; does not exist. Make sure web viewers are named correctly in the Claris object inspector, and referenced with that name in JavaScript code.</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.4A8AF54C4C551A2432C50B7428C43696</StringID>
+	<SourceText>Are you sure you want to set the source code from the URL: </SourceText>
+	<TargetText>Are you sure you want to set the source code from the URL: </TargetText>
+	<Comment>com.fmi.calculation.text.Are you sure you want to set the source code from the URL:</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.4AD829AD8D8E39D6430D0FDAEFE733A6</StringID>
+	<SourceText>SELECT </SourceText>
+	<TargetText>SELECT </TargetText>
+	<Comment>com.fmi.calculation.text.SELECT</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.4CD7934EEB04C97668003634B8FA809E</StringID>
+	<SourceText>waitForLoad</SourceText>
+	<TargetText>waitForLoad</TargetText>
+	<Comment>com.fmi.calculation.text.waitForLoad</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.4CF2FB389F86E455AE7532F3260FE7CE</StringID>
+	<SourceText>objectType</SourceText>
+	<TargetText>objectType</TargetText>
+	<Comment>com.fmi.calculation.text.objectType</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.4D94F9B4648B15B82E8C46097CBAA185</StringID>
+	<SourceText>·</SourceText>
+	<TargetText>·</TargetText>
+	<Comment>com.fmi.calculation.text.·</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.4DEEDC41A895D1E02071EDB69FF95FC4</StringID>
+	<SourceText>bzBond.PerformJavaScript</SourceText>
+	<TargetText>bzBond.PerformJavaScript</TargetText>
+	<Comment>com.fmi.calculation.text.bzBond.PerformJavaScript</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.509FFCCE46D2088031AFC02DC1BF76C7</StringID>
+	<SourceText>response.promiseUUID</SourceText>
+	<TargetText>response.promiseUUID</TargetText>
+	<Comment>com.fmi.calculation.text.response.promiseUUID</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.52BB676B54C668F286E3EEA4CCB2DFA3</StringID>
+	<SourceText>promiseUUID</SourceText>
+	<TargetText>promiseUUID</TargetText>
+	<Comment>com.fmi.calculation.text.promiseUUID</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.538E168FC230A303B969CDB8B3426B86</StringID>
+	<SourceText>Unable to execute JavaScript in Web Viewer.</SourceText>
+	<TargetText>Unable to execute JavaScript in Web Viewer.</TargetText>
+	<Comment>com.fmi.calculation.text.Unable to execute JavaScript in Web Viewer.</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.540655401B4D03FDD380CAE60CC037D7</StringID>
+	<SourceText>data:text/html;base64,</SourceText>
+	<TargetText>data:text/html;base64,</TargetText>
+	<Comment>com.fmi.calculation.text.data:text/html;base64,</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.544D936286D398573A937980538BF03E</StringID>
+	<SourceText>messages[0].code</SourceText>
+	<TargetText>messages[0].code</TargetText>
+	<Comment>com.fmi.calculation.text.messages[0].code</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.55F35A86A41565F60F9316BCE9727E9F</StringID>
+	<SourceText>waitForConfig</SourceText>
+	<TargetText>waitForConfig</TargetText>
+	<Comment>com.fmi.calculation.text.waitForConfig</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.56808B25D4C52E350FDFC55E2FE27C5E</StringID>
+	<SourceText>Enter debug url for project &apos;</SourceText>
+	<TargetText>Enter debug url for project &apos;</TargetText>
+	<Comment>com.fmi.calculation.text.Enter debug url for project &apos;</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.592C302E6D5E0A59046214781502EDBB</StringID>
+	<SourceText>Name</SourceText>
+	<TargetText>Name</TargetText>
+	<Comment>com.fmi.calculation.text.Name</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.5986FABB9E692F5D138F5024B51A1D45</StringID>
+	<SourceText>. Insert From URL returned a HTTP error</SourceText>
+	<TargetText>. Insert From URL returned a HTTP error</TargetText>
+	<Comment>com.fmi.calculation.text.. Insert From URL returned a HTTP error</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.5D4B15CC72C64B5862FBABDF32422439</StringID>
+	<SourceText>Toggle Debug Mode For Web Viewer</SourceText>
+	<TargetText>Toggle Debug Mode For Web Viewer</TargetText>
+	<Comment>com.fmi.calculation.text.Toggle Debug Mode For Web Viewer</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.5DDA7AF9C881C2F23F69BCA03461A7B4</StringID>
+	<SourceText>function</SourceText>
+	<TargetText>function</TargetText>
+	<Comment>com.fmi.calculation.text.function</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.5EB445F26C7A13A09AD9CF5343EB63E8</StringID>
+	<SourceText>::</SourceText>
+	<TargetText>::</TargetText>
+	<Comment>com.fmi.calculation.text.::</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.5ECD2AA0A08E63C1A2E0B289D501AD94</StringID>
+	<SourceText>-D $responseHeader</SourceText>
+	<TargetText>-D $responseHeader</TargetText>
+	<Comment>com.fmi.calculation.text.-D $responseHeader</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.5EF33D02975B0965B0F73B538F4E419A</StringID>
+	<SourceText>options.clarisDebug</SourceText>
+	<TargetText>options.clarisDebug</TargetText>
+	<Comment>com.fmi.calculation.text.options.clarisDebug</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.5F856F3A7213AC803B04E020AFA52091</StringID>
+	<SourceText>messages[0].message</SourceText>
+	<TargetText>messages[0].message</TargetText>
+	<Comment>com.fmi.calculation.text.messages[0].message</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.61AEF835B4B94C348B6FEF5ABA53BD70</StringID>
+	<SourceText>port</SourceText>
+	<TargetText>port</TargetText>
+	<Comment>com.fmi.calculation.text.port</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.63392407699E92BF9C6C1E8F0BD438E1</StringID>
+	<SourceText>script.name</SourceText>
+	<TargetText>script.name</TargetText>
+	<Comment>com.fmi.calculation.text.script.name</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.6F3E6FF6B12F48CE080D1177A3E70C1A</StringID>
+	<SourceText> -d @$body</SourceText>
+	<TargetText> -d @$body</TargetText>
+	<Comment>com.fmi.calculation.text. -d @$body</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.725C969C020B852DE145563F87867517</StringID>
+	<SourceText>Clear web project cache?</SourceText>
+	<TargetText>Clear web project cache?</TargetText>
+	<Comment>com.fmi.calculation.text.Clear web project cache?</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.74F58025C31EAF2F76C4ACE76D79B867</StringID>
+	<SourceText>TurnOnProjectDebugging</SourceText>
+	<TargetText>TurnOnProjectDebugging</TargetText>
+	<Comment>com.fmi.calculation.text.TurnOnProjectDebugging</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.75C82D16D5BD34E96D896DA826406469</StringID>
+	<SourceText>goToWebViewer</SourceText>
+	<TargetText>goToWebViewer</TargetText>
+	<Comment>com.fmi.calculation.text.goToWebViewer</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.79EE96E8AF3F75EDF0C723038E323DD2</StringID>
+	<SourceText>route</SourceText>
+	<TargetText>route</TargetText>
+	<Comment>com.fmi.calculation.text.route</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.7D1170F121C1516C8A3CD44EDA38E8B3</StringID>
+	<SourceText>[]</SourceText>
+	<TargetText>[]</TargetText>
+	<Comment>com.fmi.calculation.text.[]</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.7D894CFDA093D6504EB6BFC31C8466E4</StringID>
+	<SourceText>debugUrl</SourceText>
+	<TargetText>debugUrl</TargetText>
+	<Comment>com.fmi.calculation.text.debugUrl</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.81DDA427909D1792D7E52F1849852EFC</StringID>
+	<SourceText>error</SourceText>
+	<TargetText>error</TargetText>
+	<Comment>com.fmi.calculation.text.error</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.831F793B5DDF9AC1DA45682DD85C94A3</StringID>
+	<SourceText>;<CR/>    const webProjectTable = document.querySelector(&apos;.web-projects table tbody&apos;);<CR/>    const webViewerTable = document.querySelector(&apos;.web-viewers table tbody&apos;);<CR/>    Object.keys(webProjects).forEach(webProjectKey =&gt; {<CR/>      const row = document.createElement(&apos;tr&apos;);<CR/>      row.setAttribute(&apos;data-webProject&apos;, webProjectKey);<CR/>      const nameCell = document.createElement(&apos;td&apos;);<CR/>      const urlCell = document.createElement(&apos;td&apos;);<CR/>      const buttonCell = document.createElement(&apos;td&apos;);<CR/>      const button = document.createElement(&apos;button&apos;);<CR/>      button.textContent = &apos;\u2573&apos;;<CR/>      button.addEventListener(&apos;click&apos;, (e) =&gt; {<CR/>        FileMaker.PerformScript(<CR/>          &apos;bzBond Toggle Web Project Debug Mode&apos;,<CR/>          JSON.stringify(<CR/>            {<CR/>              &apos;webProject&apos;: e.target.parentElement.parentElement.getAttribute(&apos;data-webProject&apos;)<CR/>            }<CR/>          )<CR/>        );<CR/>        e.target.parentElement.parentElement.remove();<CR/>      });<CR/>      buttonCell.appendChild(button);<CR/>      nameCell.textContent = webProjectKey;<CR/>      urlCell.textContent = webProjects[webProjectKey];<CR/>      urlCell.setAttribute(&apos;contentEditable&apos;, true);<CR/>      urlCell.addEventListener(&apos;blur&apos;, (e) =&gt; {<CR/>        FileMaker.PerformScript(<CR/>          &apos;bzBond Toggle Web Project Debug Mode&apos;,<CR/>          JSON.stringify(<CR/>            {<CR/>              &apos;webProject&apos;: e.target.parentElement.getAttribute(&apos;data-webProject&apos;),<CR/>              &apos;debugUrl&apos;: e.target.textContent<CR/>            }<CR/>          )<CR/>        );<CR/>      });<CR/>      urlCell.addEventListener(&apos;keydown&apos;, (e) =&gt; {<CR/>        if(event.keyCode === 10 || event.keyCode === 13) {<CR/>          e.preventDefault();<CR/>          e.target.blur();<CR/>        }<CR/>      });<CR/>      row.appendChild(nameCell);<CR/>      row.appendChild(urlCell);<CR/>      row.appendChild(buttonCell);<CR/>      webProjectTable.appendChild(row);<CR/>    });<CR/>    Object.keys(webViewers).forEach(webViewerKey =&gt; {<CR/>      const row = document.createElement(&apos;tr&apos;);<CR/>      row.setAttribute(&apos;data-webViewer&apos;, webViewerKey);<CR/>      const nameCell = document.createElement(&apos;td&apos;);<CR/>      const urlCell = document.createElement(&apos;td&apos;);<CR/>      const buttonCell = document.createElement(&apos;td&apos;);<CR/>      const button = document.createElement(&apos;button&apos;);<CR/>      button.textContent = &apos;\u2573&apos;;<CR/>      button.addEventListener(&apos;click&apos;, (e) =&gt; {<CR/>        FileMaker.PerformScript(<CR/>          &apos;bzBond Toggle Web Viewer Debug Mode&apos;,<CR/>          JSON.stringify(<CR/>            {<CR/>              &apos;webViewer&apos;: e.target.parentElement.parentElement.getAttribute(&apos;data-webViewer&apos;)<CR/>            }<CR/>          )<CR/>        );<CR/>        e.target.parentElement.parentElement.remove();<CR/>      });<CR/>      buttonCell.appendChild(button);<CR/>      nameCell.textContent = webViewerKey;<CR/>      urlCell.textContent = webViewers[webViewerKey];<CR/>      urlCell.setAttribute(&apos;contentEditable&apos;, true); urlCell.addEventListener(&apos;blur&apos;, (e) =&gt; {<CR/>        FileMaker.PerformScript(<CR/>          &apos;bzBond Toggle Web Viewer Debug Mode&apos;,<CR/>          JSON.stringify(<CR/>            {<CR/>              &apos;webViewer&apos;: e.target.parentElement.getAttribute(&apos;data-webViewer&apos;),<CR/>              &apos;debugUrl&apos;: e.target.textContent<CR/>            }<CR/>          )<CR/>        );<CR/>      });<CR/>      urlCell.addEventListener(&apos;keydown&apos;, (e) =&gt; {<CR/>        if(event.keyCode === 10 || event.keyCode === 13) {<CR/>          e.preventDefault();<CR/>          e.target.blur();<CR/>        }<CR/>      });<CR/>      row.appendChild(nameCell);<CR/>      row.appendChild(urlCell);<CR/>      row.appendChild(buttonCell);<CR/>      webViewerTable.appendChild(row);<CR/>    });<CR/>  &lt;/script&gt;<CR/>&lt;/body&gt;<CR/>&lt;/html&gt;</SourceText>
+	<TargetText>;<CR/>    const webProjectTable = document.querySelector(&apos;.web-projects table tbody&apos;);<CR/>    const webViewerTable = document.querySelector(&apos;.web-viewers table tbody&apos;);<CR/>    Object.keys(webProjects).forEach(webProjectKey =&gt; {<CR/>      const row = document.createElement(&apos;tr&apos;);<CR/>      row.setAttribute(&apos;data-webProject&apos;, webProjectKey);<CR/>      const nameCell = document.createElement(&apos;td&apos;);<CR/>      const urlCell = document.createElement(&apos;td&apos;);<CR/>      const buttonCell = document.createElement(&apos;td&apos;);<CR/>      const button = document.createElement(&apos;button&apos;);<CR/>      button.textContent = &apos;\u2573&apos;;<CR/>      button.addEventListener(&apos;click&apos;, (e) =&gt; {<CR/>        FileMaker.PerformScript(<CR/>          &apos;bzBond Toggle Web Project Debug Mode&apos;,<CR/>          JSON.stringify(<CR/>            {<CR/>              &apos;webProject&apos;: e.target.parentElement.parentElement.getAttribute(&apos;data-webProject&apos;)<CR/>            }<CR/>          )<CR/>        );<CR/>        e.target.parentElement.parentElement.remove();<CR/>      });<CR/>      buttonCell.appendChild(button);<CR/>      nameCell.textContent = webProjectKey;<CR/>      urlCell.textContent = webProjects[webProjectKey];<CR/>      urlCell.setAttribute(&apos;contentEditable&apos;, true);<CR/>      urlCell.addEventListener(&apos;blur&apos;, (e) =&gt; {<CR/>        FileMaker.PerformScript(<CR/>          &apos;bzBond Toggle Web Project Debug Mode&apos;,<CR/>          JSON.stringify(<CR/>            {<CR/>              &apos;webProject&apos;: e.target.parentElement.getAttribute(&apos;data-webProject&apos;),<CR/>              &apos;debugUrl&apos;: e.target.textContent<CR/>            }<CR/>          )<CR/>        );<CR/>      });<CR/>      urlCell.addEventListener(&apos;keydown&apos;, (e) =&gt; {<CR/>        if(event.keyCode === 10 || event.keyCode === 13) {<CR/>          e.preventDefault();<CR/>          e.target.blur();<CR/>        }<CR/>      });<CR/>      row.appendChild(nameCell);<CR/>      row.appendChild(urlCell);<CR/>      row.appendChild(buttonCell);<CR/>      webProjectTable.appendChild(row);<CR/>    });<CR/>    Object.keys(webViewers).forEach(webViewerKey =&gt; {<CR/>      const row = document.createElement(&apos;tr&apos;);<CR/>      row.setAttribute(&apos;data-webViewer&apos;, webViewerKey);<CR/>      const nameCell = document.createElement(&apos;td&apos;);<CR/>      const urlCell = document.createElement(&apos;td&apos;);<CR/>      const buttonCell = document.createElement(&apos;td&apos;);<CR/>      const button = document.createElement(&apos;button&apos;);<CR/>      button.textContent = &apos;\u2573&apos;;<CR/>      button.addEventListener(&apos;click&apos;, (e) =&gt; {<CR/>        FileMaker.PerformScript(<CR/>          &apos;bzBond Toggle Web Viewer Debug Mode&apos;,<CR/>          JSON.stringify(<CR/>            {<CR/>              &apos;webViewer&apos;: e.target.parentElement.parentElement.getAttribute(&apos;data-webViewer&apos;)<CR/>            }<CR/>          )<CR/>        );<CR/>        e.target.parentElement.parentElement.remove();<CR/>      });<CR/>      buttonCell.appendChild(button);<CR/>      nameCell.textContent = webViewerKey;<CR/>      urlCell.textContent = webViewers[webViewerKey];<CR/>      urlCell.setAttribute(&apos;contentEditable&apos;, true); urlCell.addEventListener(&apos;blur&apos;, (e) =&gt; {<CR/>        FileMaker.PerformScript(<CR/>          &apos;bzBond Toggle Web Viewer Debug Mode&apos;,<CR/>          JSON.stringify(<CR/>            {<CR/>              &apos;webViewer&apos;: e.target.parentElement.getAttribute(&apos;data-webViewer&apos;),<CR/>              &apos;debugUrl&apos;: e.target.textContent<CR/>            }<CR/>          )<CR/>        );<CR/>      });<CR/>      urlCell.addEventListener(&apos;keydown&apos;, (e) =&gt; {<CR/>        if(event.keyCode === 10 || event.keyCode === 13) {<CR/>          e.preventDefault();<CR/>          e.target.blur();<CR/>        }<CR/>      });<CR/>      row.appendChild(nameCell);<CR/>      row.appendChild(urlCell);<CR/>      row.appendChild(buttonCell);<CR/>      webViewerTable.appendChild(row);<CR/>    });<CR/>  &lt;/script&gt;<CR/>&lt;/body&gt;<CR/>&lt;/html&gt;</TargetText>
+	<Comment>com.fmi.calculation.text.;_CR/_    const webProjectTable = document.querySelector(&apos;.web-projects table tbody&apos;);_CR/_    const webViewerTable = document.querySelector(&apos;.web-viewers table tbody&apos;);_CR/_    Object.keys(webProjects).forEach(webProjectKey =&gt; {_CR/_      const row = document.createElement(&apos;tr&apos;);_CR/_      row.setAttribute(&apos;data-webProject&apos;, webProjectKey);_CR/_      const nameCell = document.createElement(&apos;td&apos;);_CR/_      const urlCell = document.createElement(&apos;td&apos;);_CR/_      const buttonCell = document.createElement(&apos;td&apos;);_CR/_      const button = document.createElement(&apos;button&apos;);_CR/_      button.textContent = &apos;\u2573&apos;;_CR/_      button.addEventListener(&apos;click&apos;, (e) =&gt; {_CR/_        FileMaker.PerformScript(_CR/_          &apos;bzBond Toggle Web Project Debug Mode&apos;,_CR/_          JSON.stringify(_CR/_            {_CR/_              &apos;webProject&apos;: e.target.parentElement.parentElement.getAttribute(&apos;data-webProject&apos;)_CR/_            }_CR/_          )_CR/_        );_CR/_        e.target.parentElement.parentElement.remove();_CR/_      });_CR/_      buttonCell.appendChild(button);_CR/_      nameCell.textContent = webProjectKey;_CR/_      urlCell.textContent = webProjects[webProjectKey];_CR/_      urlCell.setAttribute(&apos;contentEditable&apos;, true);_CR/_      urlCell.addEventListener(&apos;blur&apos;, (e) =&gt; {_CR/_        FileMaker.PerformScript(_CR/_          &apos;bzBond Toggle Web Project Debug Mode&apos;,_CR/_          JSON.stringify(_CR/_            {_CR/_              &apos;webProject&apos;: e.target.parentElement.getAttribute(&apos;data-webProject&apos;),_CR/_              &apos;debugUrl&apos;: e.target.textContent_CR/_            }_CR/_          )_CR/_        );_CR/_      });_CR/_      urlCell.addEventListener(&apos;keydown&apos;, (e) =&gt; {_CR/_        if(event.keyCode === 10 || event.keyCode === 13) {_CR/_          e.preventDefault();_CR/_          e.target.blur();_CR/_        }_CR/_      });_CR/_      row.appendChild(nameCell);_CR/_      row.appendChild(urlCell);_CR/_      row.appendChild(buttonCell);_CR/_      webProjectTable.appendChild(row);_CR/_    });_CR/_    Object.keys(webViewers).forEach(webViewerKey =&gt; {_CR/_      const row = document.createElement(&apos;tr&apos;);_CR/_      row.setAttribute(&apos;data-webViewer&apos;, webViewerKey);_CR/_      const nameCell = document.createElement(&apos;td&apos;);_CR/_      const urlCell = document.createElement(&apos;td&apos;);_CR/_      const buttonCell = document.createElement(&apos;td&apos;);_CR/_      const button = document.createElement(&apos;button&apos;);_CR/_      button.textContent = &apos;\u2573&apos;;_CR/_      button.addEventListener(&apos;click&apos;, (e) =&gt; {_CR/_        FileMaker.PerformScript(_CR/_          &apos;bzBond Toggle Web Viewer Debug Mode&apos;,_CR/_          JSON.stringify(_CR/_            {_CR/_              &apos;webViewer&apos;: e.target.parentElement.parentElement.getAttribute(&apos;data-webViewer&apos;)_CR/_            }_CR/_          )_CR/_        );_CR/_        e.target.parentElement.parentElement.remove();_CR/_      });_CR/_      buttonCell.appendChild(button);_CR/_      nameCell.textContent = webViewerKey;_CR/_      urlCell.textContent = webViewers[webViewerKey];_CR/_      urlCell.setAttribute(&apos;contentEditable&apos;, true); urlCell.addEventListener(&apos;blur&apos;, (e) =&gt; {_CR/_        FileMaker.PerformScript(_CR/_          &apos;bzBond Toggle Web Viewer Debug Mode&apos;,_CR/_          JSON.stringify(_CR/_            {_CR/_              &apos;webViewer&apos;: e.target.parentElement.getAttribute(&apos;data-webViewer&apos;),_CR/_              &apos;debugUrl&apos;: e.target.textContent_CR/_            }_CR/_          )_CR/_        );_CR/_      });_CR/_      urlCell.addEventListener(&apos;keydown&apos;, (e) =&gt; {_CR/_        if(event.keyCode === 10 || event.keyCode === 13) {_CR/_          e.preventDefault();_CR/_          e.target.blur();_CR/_        }_CR/_      });_CR/_      row.appendChild(nameCell);_CR/_      row.appendChild(urlCell);_CR/_      row.appendChild(buttonCell);_CR/_      webViewerTable.appendChild(row);_CR/_    });_CR/_  &lt;/script&gt;_CR/_&lt;/body&gt;_CR/_&lt;/html&gt;</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.849F120819FEF9788C6331582254AFEB</StringID>
+	<SourceText>jsResult</SourceText>
+	<TargetText>jsResult</TargetText>
+	<Comment>com.fmi.calculation.text.jsResult</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.85F18E33BDA7B8A51B77274CDE0168C2</StringID>
+	<SourceText>.js</SourceText>
+	<TargetText>.js</TargetText>
+	<Comment>com.fmi.calculation.text..js</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.8707CB82B8627E58DCCFC25F00E4F906</StringID>
+	<SourceText>Cloud</SourceText>
+	<TargetText>Cloud</TargetText>
+	<Comment>com.fmi.calculation.text.Cloud</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.885BF69DC0168F3624435346D7BF4836</StringID>
+	<SourceText>/</SourceText>
+	<TargetText>/</TargetText>
+	<Comment>com.fmi.calculation.text./</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.8BBDCCB46F26A595FBE151B811317468</StringID>
+	<SourceText>? The existing code will be overwritten?</SourceText>
+	<TargetText>? The existing code will be overwritten?</TargetText>
+	<Comment>com.fmi.calculation.text.? The existing code will be overwritten?</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.8C18D5C1B9BEBDAF5FA496B8D44D344B</StringID>
+	<SourceText>0123456789</SourceText>
+	<TargetText>0123456789</TargetText>
+	<Comment>com.fmi.calculation.text.0123456789</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.91FEA917ED77DA817547A579E4F3E1D3</StringID>
+	<SourceText>func</SourceText>
+	<TargetText>func</TargetText>
+	<Comment>com.fmi.calculation.text.func</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9286618FE0B2C104A3FBBEC4C6CD20A4</StringID>
+	<SourceText> </SourceText>
+	<TargetText> </TargetText>
+	<Comment>com.fmi.calculation.text.</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.92D130468380DDD9E78A17E2B025AE8F</StringID>
+	<SourceText><CR/><TAB/><TAB/>FROM </SourceText>
+	<TargetText><CR/><TAB/><TAB/>FROM </TargetText>
+	<Comment>com.fmi.calculation.text._CR/__TAB/__TAB/_FROM</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.945F9C3AE4CB80E18B1B8A2F397E46A5</StringID>
+	<SourceText>bzBond</SourceText>
+	<TargetText>bzBond</TargetText>
+	<Comment>com.fmi.calculation.text.bzBond</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.96A8AD6328EB70703D77684756ABAC2A</StringID>
+	<SourceText>OK</SourceText>
+	<TargetText>OK</TargetText>
+	<Comment>com.fmi.calculation.text.OK</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.97BFD8D5CD95D4164FE49503FDE02CE6</StringID>
+	<SourceText>options.useBbox</SourceText>
+	<TargetText>options.useBbox</TargetText>
+	<Comment>com.fmi.calculation.text.options.useBbox</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9958C3A0A52A6EE575C098EB2F46BF0E</StringID>
+	<SourceText>messages[0]code</SourceText>
+	<TargetText>messages[0]code</TargetText>
+	<Comment>com.fmi.calculation.text.messages[0]code</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.99E35776409D199302DACACD45CE5A05</StringID>
+	<SourceText>Turn off debug mode for project &apos;</SourceText>
+	<TargetText>Turn off debug mode for project &apos;</TargetText>
+	<Comment>com.fmi.calculation.text.Turn off debug mode for project &apos;</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9AE901C6FDBAB2BF3F924F2A09A5D1C8</StringID>
+	<SourceText>Set Source Code From URL</SourceText>
+	<TargetText>Set Source Code From URL</TargetText>
+	<Comment>com.fmi.calculation.text.Set Source Code From URL</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9BA8BC6A53AAD29DAD06627BDD7857AA</StringID>
+	<SourceText>PERFORM_JAVASCRIPT</SourceText>
+	<TargetText>PERFORM_JAVASCRIPT</TargetText>
+	<Comment>com.fmi.calculation.text.PERFORM_JAVASCRIPT</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9C58200CD8BD2E8E7A9FB9E615F90217</StringID>
+	<SourceText>messages[0]message</SourceText>
+	<TargetText>messages[0]message</TargetText>
+	<Comment>com.fmi.calculation.text.messages[0]message</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9C78A3BD960A28FCB37CF939101A326F</StringID>
+	<SourceText>Turn off Debug Mode for Web Project</SourceText>
+	<TargetText>Turn off Debug Mode for Web Project</TargetText>
+	<Comment>com.fmi.calculation.text.Turn off Debug Mode for Web Project</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9F82C0632300B2626C5E9297B0832CE1</StringID>
+	<SourceText>messages</SourceText>
+	<TargetText>messages</TargetText>
+	<Comment>com.fmi.calculation.text.messages</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.A05E84459E52183CADE86EE69586094F</StringID>
+	<SourceText>response.result</SourceText>
+	<TargetText>response.result</TargetText>
+	<Comment>com.fmi.calculation.text.response.result</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.A36A293235E44E2221DFBCC575323D85</StringID>
+	<SourceText>Ok</SourceText>
+	<TargetText>Ok</TargetText>
+	<Comment>com.fmi.calculation.text.Ok</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.A55D65C8777AF730FA515186E52C3BF1</StringID>
+	<SourceText>noCache</SourceText>
+	<TargetText>noCache</TargetText>
+	<Comment>com.fmi.calculation.text.noCache</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.A5774981A4A07C263178406F9525FB10</StringID>
+	<SourceText>&apos; is missing</SourceText>
+	<TargetText>&apos; is missing</TargetText>
+	<Comment>com.fmi.calculation.text.&apos; is missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.A57CA767E3AA22745D26663D6B22A815</StringID>
+	<SourceText>-6</SourceText>
+	<TargetText>-6</TargetText>
+	<Comment>com.fmi.calculation.text.-6</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.A6F8DF12BB97743E4ED2A2BA526799BA</StringID>
+	<SourceText>Source Code</SourceText>
+	<TargetText>Source Code</TargetText>
+	<Comment>com.fmi.calculation.text.Source Code</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.A7B32824D9384C06EDC80CEE3694340D</StringID>
+	<SourceText>TurnOffProjectDebugging</SourceText>
+	<TargetText>TurnOffProjectDebugging</TargetText>
+	<Comment>com.fmi.calculation.text.TurnOffProjectDebugging</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.A803EC695ABD049BF9078E812F4E5427</StringID>
+	<SourceText>Turn off debug mode for all web projects?</SourceText>
+	<TargetText>Turn off debug mode for all web projects?</TargetText>
+	<Comment>com.fmi.calculation.text.Turn off debug mode for all web projects?</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.A885273C8732BD3BA5DBED43BC254411</StringID>
+	<SourceText>[</SourceText>
+	<TargetText>[</TargetText>
+	<Comment>com.fmi.calculation.text.[</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.ABAF7F90CA55C977743676A8B1545DDB</StringID>
+	<SourceText>: </SourceText>
+	<TargetText>: </TargetText>
+	<Comment>com.fmi.calculation.text.:</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.AC8B72D97C879FD09B9E8B5E36CE77D2</StringID>
+	<SourceText>GET_WEB_VIEWER_NAME</SourceText>
+	<TargetText>GET_WEB_VIEWER_NAME</TargetText>
+	<Comment>com.fmi.calculation.text.GET_WEB_VIEWER_NAME</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.ACA5337DCA3DE218533E907E896F0564</StringID>
+	<SourceText>file</SourceText>
+	<TargetText>file</TargetText>
+	<Comment>com.fmi.calculation.text.file</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.AE915E2C4A21C7F481D07CA866D14801</StringID>
+	<SourceText>;</SourceText>
+	<TargetText>;</TargetText>
+	<Comment>com.fmi.calculation.text.;</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.AF57223E36CDC7BFCE5B62C3BEBA0337</StringID>
+	<SourceText>Error</SourceText>
+	<TargetText>Error</TargetText>
+	<Comment>com.fmi.calculation.text.Error</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.B0FF5FB12BBC97BAF49DC09388F82E04</StringID>
+	<SourceText>data:text/html,</SourceText>
+	<TargetText>data:text/html,</TargetText>
+	<Comment>com.fmi.calculation.text.data:text/html,</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.B9D4DC5D05FBAC80FC50BB60281E6FC6</StringID>
+	<SourceText>&apos;?</SourceText>
+	<TargetText>&apos;?</TargetText>
+	<Comment>com.fmi.calculation.text.&apos;?</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.BA16D54F8691FD3CA25733B1F336FD6B</StringID>
+	<SourceText>parameters</SourceText>
+	<TargetText>parameters</TargetText>
+	<Comment>com.fmi.calculation.text.parameters</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.BB7637EF0E2B8CD32937F0C0ED08620A</StringID>
+	<SourceText>Active object is not a web viewer or has no name</SourceText>
+	<TargetText>Active object is not a web viewer or has no name</TargetText>
+	<Comment>com.fmi.calculation.text.Active object is not a web viewer or has no name</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.BB9F4CA3019B651FAD180F1907E64BEC</StringID>
+	<SourceText>options.customHeaders</SourceText>
+	<TargetText>options.customHeaders</TargetText>
+	<Comment>com.fmi.calculation.text.options.customHeaders</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.BC6A93BFA996C177371F98142884F005</StringID>
+	<SourceText>PERFORM_SCRIPT</SourceText>
+	<TargetText>PERFORM_SCRIPT</TargetText>
+	<Comment>com.fmi.calculation.text.PERFORM_SCRIPT</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.BF260A0069D595A9F6A99BF63FE49CBA</StringID>
+	<SourceText>webViewerName</SourceText>
+	<TargetText>webViewerName</TargetText>
+	<Comment>com.fmi.calculation.text.webViewerName</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.BF27CA10BA6CC8943349796AD49F4166</StringID>
+	<SourceText>result</SourceText>
+	<TargetText>result</TargetText>
+	<Comment>com.fmi.calculation.text.result</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C00067F94888116098F357AE482D892E</StringID>
+	<SourceText> -H \&quot;Content-Type: application/json\&quot;</SourceText>
+	<TargetText> -H \&quot;Content-Type: application/json\&quot;</TargetText>
+	<Comment>com.fmi.calculation.text. -H \&quot;Content-Type: application/json\&quot;</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C18122B3A874E13ADFE927C1F6390BDB</StringID>
+	<SourceText>response.scriptResult</SourceText>
+	<TargetText>response.scriptResult</TargetText>
+	<Comment>com.fmi.calculation.text.response.scriptResult</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C1B6630E6D2C355DD7244013BBEACDFD</StringID>
+	<SourceText>Debug URL</SourceText>
+	<TargetText>Debug URL</TargetText>
+	<Comment>com.fmi.calculation.text.Debug URL</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C3040F265610CC793CC959136E82BCCE</StringID>
+	<SourceText>Script &apos;</SourceText>
+	<TargetText>Script &apos;</TargetText>
+	<Comment>com.fmi.calculation.text.Script &apos;</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C34E35A10F537BF45FB0A459650E4CF5</StringID>
+	<SourceText>webViewer</SourceText>
+	<TargetText>webViewer</TargetText>
+	<Comment>com.fmi.calculation.text.webViewer</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C3D4829757B5324ACDEEE3BCDA4B699C</StringID>
+	<SourceText>bBox;</SourceText>
+	<TargetText>bBox;</TargetText>
+	<Comment>com.fmi.calculation.text.bBox;</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C5C89D3440FFC6C3DF5869C893C459EC</StringID>
+	<SourceText>GET_CONFIG</SourceText>
+	<TargetText>GET_CONFIG</TargetText>
+	<Comment>com.fmi.calculation.text.GET_CONFIG</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C760230995D5888327213087C23ECCA2</StringID>
+	<SourceText>FM</SourceText>
+	<TargetText>FM</TargetText>
+	<Comment>com.fmi.calculation.text.FM</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.CCC92EC1A08BCE96D1B1170476893DF7</StringID>
+	<SourceText>Parameter &apos;script.name&apos; is missing</SourceText>
+	<TargetText>Parameter &apos;script.name&apos; is missing</TargetText>
+	<Comment>com.fmi.calculation.text.Parameter &apos;script.name&apos; is missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.CCF3C3B068C84781ED6D3975BC19FD00</StringID>
+	<SourceText>web viewer</SourceText>
+	<TargetText>web viewer</TargetText>
+	<Comment>com.fmi.calculation.text.web viewer</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.D00944D35B0F17F07DCC3314100A70AF</StringID>
+	<SourceText>Web Viewer Name</SourceText>
+	<TargetText>Web Viewer Name</TargetText>
+	<Comment>com.fmi.calculation.text.Web Viewer Name</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.D3CC1DBF6BD97507E42E2E51519FFA49</StringID>
+	<SourceText>response.webViewerName</SourceText>
+	<TargetText>response.webViewerName</TargetText>
+	<Comment>com.fmi.calculation.text.response.webViewerName</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.DBDC60FFDD1B8579A5E4BC83CC254FA7</StringID>
+	<SourceText>sourceCode</SourceText>
+	<TargetText>sourceCode</TargetText>
+	<Comment>com.fmi.calculation.text.sourceCode</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.DC1CCA8668278BE6CA60EA61E7505A71</StringID>
+	<SourceText>NameSize</SourceText>
+	<TargetText>NameSize</TargetText>
+	<Comment>com.fmi.calculation.text.NameSize</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.DE6A0DDEA0A537783DC90FB4DB029E42</StringID>
+	<SourceText>http://localhost</SourceText>
+	<TargetText>http://localhost</TargetText>
+	<Comment>com.fmi.calculation.text.http://localhost</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.DE7D9BCD8C083D0684382D07B7ABF403</StringID>
+	<SourceText>Description</SourceText>
+	<TargetText>Description</TargetText>
+	<Comment>com.fmi.calculation.text.Description</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.DF0C9A9ABB3EB7F96654F11240A726AD</StringID>
+	<SourceText>\&quot;jsResult\&quot;:\&quot;</SourceText>
+	<TargetText>\&quot;jsResult\&quot;:\&quot;</TargetText>
+	<Comment>com.fmi.calculation.text.\&quot;jsResult\&quot;:\&quot;</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.DFE83B6FF88CFB73FF21B31702F2E8BA</StringID>
+	<SourceText>WebViewer_Default</SourceText>
+	<TargetText>WebViewer_Default</TargetText>
+	<Comment>com.fmi.calculation.text.WebViewer_Default</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E010C6FCB66838CC66D573B07093DA7A</StringID>
+	<SourceText>-X POST</SourceText>
+	<TargetText>-X POST</TargetText>
+	<Comment>com.fmi.calculation.text.-X POST</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E5FE1DE9EF8A905DD182273FDEF267EA</StringID>
+	<SourceText>Source Code Updated</SourceText>
+	<TargetText>Source Code Updated</TargetText>
+	<Comment>com.fmi.calculation.text.Source Code Updated</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E65C0B07B3A6FACE8A459836087C3959</StringID>
+	<SourceText> 👍 Initiating web viewer found</SourceText>
+	<TargetText> 👍 Initiating web viewer found</TargetText>
+	<Comment>com.fmi.calculation.text. 👍 Initiating web viewer found</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E79CF3A076FC814DC4A084FCF30D0122</StringID>
+	<SourceText>utf-8</SourceText>
+	<TargetText>utf-8</TargetText>
+	<Comment>com.fmi.calculation.text.utf-8</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E86AC0D822C25A536D276ACD778C89F2</StringID>
+	<SourceText>{{$quotedFunction}}</SourceText>
+	<TargetText>{{$quotedFunction}}</TargetText>
+	<Comment>com.fmi.calculation.text.{{$quotedFunction}}</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E8D75FBC68C0728E656D6571CD682027</StringID>
+	<SourceText>Source code was updated successfully.</SourceText>
+	<TargetText>Source code was updated successfully.</TargetText>
+	<Comment>com.fmi.calculation.text.Source code was updated successfully.</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E9F44187A0B35A18BB56FC981CF880A0</StringID>
+	<SourceText>webProject</SourceText>
+	<TargetText>webProject</TargetText>
+	<Comment>com.fmi.calculation.text.webProject</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.EA506559A9AA26C3F6A158E20C8558EB</StringID>
+	<SourceText><CR/><TAB/><TAB/><TAB/><TAB/><TAB/><TAB/><TAB/>FROM </SourceText>
+	<TargetText><CR/><TAB/><TAB/><TAB/><TAB/><TAB/><TAB/><TAB/>FROM </TargetText>
+	<Comment>com.fmi.calculation.text._CR/__TAB/__TAB/__TAB/__TAB/__TAB/__TAB/__TAB/_FROM</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.EB51FA247B64D032CD86E64E98216A7C</StringID>
+	<SourceText>options.ignoreResult</SourceText>
+	<TargetText>options.ignoreResult</TargetText>
+	<Comment>com.fmi.calculation.text.options.ignoreResult</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.ED6F1463B712ED2EF72ADB93F1D0B56F</StringID>
+	<SourceText>fileSize</SourceText>
+	<TargetText>fileSize</TargetText>
+	<Comment>com.fmi.calculation.text.fileSize</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.EF6C17CD46EAB2E669222832852D568E</StringID>
+	<SourceText>Turn Off Debug</SourceText>
+	<TargetText>Turn Off Debug</TargetText>
+	<Comment>com.fmi.calculation.text.Turn Off Debug</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.F259A272B40B6126E2FFE147F38DBEDF</StringID>
+	<SourceText>==</SourceText>
+	<TargetText>==</TargetText>
+	<Comment>com.fmi.calculation.text.==</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.F8FF4B249BCB11A1CE8ACE5E68A2BC19</StringID>
+	<SourceText>5</SourceText>
+	<TargetText>5</TargetText>
+	<Comment>com.fmi.calculation.text.5</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.F9F1B90506D97E23E4B4E5A99889363E</StringID>
+	<SourceText>Source code could not be updated</SourceText>
+	<TargetText>Source code could not be updated</TargetText>
+	<Comment>com.fmi.calculation.text.Source code could not be updated</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.FF4A17346A1B0687C309E1FC7EE53116</StringID>
+	<SourceText>Confirm</SourceText>
+	<TargetText>Confirm</TargetText>
+	<Comment>com.fmi.calculation.text.Confirm</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.FFC80DF49AC2C8FE14AA21E3A89ACFB7</StringID>
+	<SourceText>{{$timeout}}</SourceText>
+	<TargetText>{{$timeout}}</TargetText>
+	<Comment>com.fmi.calculation.text.{{$timeout}}</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layout.6D9D8AD7D69E731E3D9C2140C1C2EC35</StringID>
+	<SourceText>bzBond Web Project Manager</SourceText>
+	<TargetText>bzBond Web Project Manager</TargetText>
+	<Comment>com.fmi.layout.bzBond Web Project Manager</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layout.E3B2410F6CDB3C22C09BDD3F6D24720D</StringID>
+	<SourceText>bzBond Default Web Viewer</SourceText>
+	<TargetText>bzBond Default Web Viewer</TargetText>
+	<Comment>com.fmi.layout.bzBond Default Web Viewer</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.1DF695809BD641C156981B272113AD22</StringID>
+	<SourceText>DebugManager</SourceText>
+	<TargetText>DebugManager</TargetText>
+	<Comment>com.fmi.layoutobject.DebugManager</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.592C302E6D5E0A59046214781502EDBB</StringID>
+	<SourceText>Name</SourceText>
+	<TargetText>Name</TargetText>
+	<Comment>com.fmi.layoutobject.Name</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.74F58025C31EAF2F76C4ACE76D79B867</StringID>
+	<SourceText>TurnOnProjectDebugging</SourceText>
+	<TargetText>TurnOnProjectDebugging</TargetText>
+	<Comment>com.fmi.layoutobject.TurnOnProjectDebugging</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.A7B32824D9384C06EDC80CEE3694340D</StringID>
+	<SourceText>TurnOffProjectDebugging</SourceText>
+	<TargetText>TurnOffProjectDebugging</TargetText>
+	<Comment>com.fmi.layoutobject.TurnOffProjectDebugging</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.DC1CCA8668278BE6CA60EA61E7505A71</StringID>
+	<SourceText>NameSize</SourceText>
+	<TargetText>NameSize</TargetText>
+	<Comment>com.fmi.layoutobject.NameSize</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.DFE83B6FF88CFB73FF21B31702F2E8BA</StringID>
+	<SourceText>WebViewer_Default</SourceText>
+	<TargetText>WebViewer_Default</TargetText>
+	<Comment>com.fmi.layoutobject.WebViewer_Default</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.0F1B0473D53FEEBCE4BE2E0CB319B19E</StringID>
+	<SourceText>Add Web Project</SourceText>
+	<TargetText>Add Web Project</TargetText>
+	<Comment>com.fmi.layoutobject.text.Add Web Project</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.1492334AE75BCA7A48796EF50C967F9F</StringID>
+	<SourceText>Source Code (&lt;&lt;SIZE&gt;&gt; bytes)</SourceText>
+	<TargetText>Source Code (&lt;&lt;SIZE&gt;&gt; bytes)</TargetText>
+	<Comment>com.fmi.layoutobject.text.Source Code (&lt;&lt;SIZE&gt;&gt; bytes)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.25E5FF59260FBA5E75978A9CAE53AB1D</StringID>
+	<SourceText>Turn On Debugging For This Project</SourceText>
+	<TargetText>Turn On Debugging For This Project</TargetText>
+	<Comment>com.fmi.layoutobject.text.Turn On Debugging For This Project</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.446D43902326DE8B2A555D6A5A27694F</StringID>
+	<SourceText>Clear All Web Project Debugging</SourceText>
+	<TargetText>Clear All Web Project Debugging</TargetText>
+	<Comment>com.fmi.layoutobject.text.Clear All Web Project Debugging</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.6372D93A406A888F78A262D92CEB6F9F</StringID>
+	<SourceText>Debug Web Viewer...</SourceText>
+	<TargetText>Debug Web Viewer...</TargetText>
+	<Comment>com.fmi.layoutobject.text.Debug Web Viewer...</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.8ECFDBE4D59CB790BFC9406A33E81C55</StringID>
+	<SourceText>Manage Debugging</SourceText>
+	<TargetText>Manage Debugging</TargetText>
+	<Comment>com.fmi.layoutobject.text.Manage Debugging</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.B6AC01C359E301ED3505918CC093384C</StringID>
+	<SourceText>Web Projects</SourceText>
+	<TargetText>Web Projects</TargetText>
+	<Comment>com.fmi.layoutobject.text.Web Projects</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.BAA9C34BDD13BC3D1834C7BD050A3E65</StringID>
+	<SourceText>Clear All Web Viewer Debugging</SourceText>
+	<TargetText>Clear All Web Viewer Debugging</TargetText>
+	<Comment>com.fmi.layoutobject.text.Clear All Web Viewer Debugging</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.CC7EDE76085522CD8688FDBA83637555</StringID>
+	<SourceText>bzBondWebProjectManager</SourceText>
+	<TargetText>bzBondWebProjectManager</TargetText>
+	<Comment>com.fmi.layoutobject.text.bzBondWebProjectManager</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.E910C988575BA9D1432B993E8E746D88</StringID>
+	<SourceText>&lt;&lt;NAME&gt;&gt;<CR/>&lt;&lt;SIZE&gt;&gt; bytes</SourceText>
+	<TargetText>&lt;&lt;NAME&gt;&gt;<CR/>&lt;&lt;SIZE&gt;&gt; bytes</TargetText>
+	<Comment>com.fmi.layoutobject.text.&lt;&lt;NAME&gt;&gt;_CR/_&lt;&lt;SIZE&gt;&gt; bytes</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.EFFAF242B42C00847DD54C220E6B178F</StringID>
+	<SourceText>Turn Off Debugging For This Project</SourceText>
+	<TargetText>Turn Off Debugging For This Project</TargetText>
+	<Comment>com.fmi.layoutobject.text.Turn Off Debugging For This Project</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.FCC1A9A29269C623FCF1267754A005DF</StringID>
+	<SourceText>Clear Web Project Cache</SourceText>
+	<TargetText>Clear Web Project Cache</TargetText>
+	<Comment>com.fmi.layoutobject.text.Clear Web Project Cache</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.script.050B858C7D4ED0CCC25515E3C8E886E3</StringID>
+	<SourceText>bzBond Turn Off Debug Mode For All Web Viewers OnClick</SourceText>
+	<TargetText>bzBond Turn Off Debug Mode For All Web Viewers OnClick</TargetText>
+	<Comment>com.fmi.script.bzBond Turn Off Debug Mode For All Web Viewers OnClick</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.script.09E2E086FDD465EC8CD0C90B4605641D</StringID>
+	<SourceText>bzBond Toggle Web Project Debug Mode OnClick</SourceText>
+	<TargetText>bzBond Toggle Web Project Debug Mode OnClick</TargetText>
+	<Comment>com.fmi.script.bzBond Toggle Web Project Debug Mode OnClick</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.script.0A0C9111CB1CE3075940923B304C21F9</StringID>
+	<SourceText>bzBond Clear Web Project Cache OnClick</SourceText>
+	<TargetText>bzBond Clear Web Project Cache OnClick</TargetText>
+	<Comment>com.fmi.script.bzBond Clear Web Project Cache OnClick</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.script.2821314E67040452F19930A44EAA5792</StringID>
+	<SourceText>bzBondRelay</SourceText>
+	<TargetText>bzBondRelay</TargetText>
+	<Comment>com.fmi.script.bzBondRelay</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.script.4777A8B6ED708CAC02D53E685C88538C</StringID>
+	<SourceText>bzBond Toggle Web Project Debug Mode</SourceText>
+	<TargetText>bzBond Toggle Web Project Debug Mode</TargetText>
+	<Comment>com.fmi.script.bzBond Toggle Web Project Debug Mode</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.script.4B0A71963D79FC7C864A74F54789A800</StringID>
+	<SourceText>bzBond Open Default Web Viewer In Debug Mode</SourceText>
+	<TargetText>bzBond Open Default Web Viewer In Debug Mode</TargetText>
+	<Comment>com.fmi.script.bzBond Open Default Web Viewer In Debug Mode</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.script.58534383328CF13248AB80579EC83C7B</StringID>
+	<SourceText>bzBond Load Web Viewer</SourceText>
+	<TargetText>bzBond Load Web Viewer</TargetText>
+	<Comment>com.fmi.script.bzBond Load Web Viewer</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.script.713BD6905472C221677B70A1BABC1BCB</StringID>
+	<SourceText>bzBond Clear Web Project Cache</SourceText>
+	<TargetText>bzBond Clear Web Project Cache</TargetText>
+	<Comment>com.fmi.script.bzBond Clear Web Project Cache</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.script.9518AE50C01575EA61E52498F25DABA6</StringID>
+	<SourceText>bzBond Turn Off Debug Mode For All Web Projects OnClick</SourceText>
+	<TargetText>bzBond Turn Off Debug Mode For All Web Projects OnClick</TargetText>
+	<Comment>com.fmi.script.bzBond Turn Off Debug Mode For All Web Projects OnClick</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.script.9656C3EBA502E29C2CDBB64719803190</StringID>
+	<SourceText>bzBond Set Source Code From URL</SourceText>
+	<TargetText>bzBond Set Source Code From URL</TargetText>
+	<Comment>com.fmi.script.bzBond Set Source Code From URL</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.script.97178B59565E959C6C9227504D2DBD9A</StringID>
+	<SourceText>bzBond Set Source Code From URL OnClick</SourceText>
+	<TargetText>bzBond Set Source Code From URL OnClick</TargetText>
+	<Comment>com.fmi.script.bzBond Set Source Code From URL OnClick</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.script.AE593F18690F6D2C0F1742E301A88B8D</StringID>
+	<SourceText>bzBond Load Web Viewers On Current Layout</SourceText>
+	<TargetText>bzBond Load Web Viewers On Current Layout</TargetText>
+	<Comment>com.fmi.script.bzBond Load Web Viewers On Current Layout</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.script.AFC8DF08AB6CE793713507E3EA9EBF66</StringID>
+	<SourceText>bzBond Upsert Web Project</SourceText>
+	<TargetText>bzBond Upsert Web Project</TargetText>
+	<Comment>com.fmi.script.bzBond Upsert Web Project</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.script.C2B7A3E6DC63063932343E015AD5AEB3</StringID>
+	<SourceText>bzBond Turn Off Debug Mode For All Web Viewers</SourceText>
+	<TargetText>bzBond Turn Off Debug Mode For All Web Viewers</TargetText>
+	<Comment>com.fmi.script.bzBond Turn Off Debug Mode For All Web Viewers</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.script.C330888B5C83A858A99BC166F5CED467</StringID>
+	<SourceText>bzBond Toggle Web Viewer Debug Mode</SourceText>
+	<TargetText>bzBond Toggle Web Viewer Debug Mode</TargetText>
+	<Comment>com.fmi.script.bzBond Toggle Web Viewer Debug Mode</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.script.D7289B0D9BE5BC6859A314885DACEAB4</StringID>
+	<SourceText>bzBond Toggle Web Viewer Debug Mode OnClick</SourceText>
+	<TargetText>bzBond Toggle Web Viewer Debug Mode OnClick</TargetText>
+	<Comment>com.fmi.script.bzBond Toggle Web Viewer Debug Mode OnClick</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.script.FA46BC885BD2FA12F343EE88E9A13D2C</StringID>
+	<SourceText>bzBond Launch From Create bzBond App</SourceText>
+	<TargetText>bzBond Launch From Create bzBond App</TargetText>
+	<Comment>com.fmi.script.bzBond Launch From Create bzBond App</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.script.FCBF0958BC4AD97994F8A5D4278B5B47</StringID>
+	<SourceText>bzBond Turn Off Debug Mode For All Web Projects</SourceText>
+	<TargetText>bzBond Turn Off Debug Mode For All Web Projects</TargetText>
+	<Comment>com.fmi.script.bzBond Turn Off Debug Mode For All Web Projects</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.script.folder.945F9C3AE4CB80E18B1B8A2F397E46A5</StringID>
+	<SourceText>bzBond</SourceText>
+	<TargetText>bzBond</TargetText>
+	<Comment>com.fmi.script.folder.bzBond</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.0091BEE3CA37A5E8BEDE795504A3D530</StringID>
+	<SourceText>Refresh UI</SourceText>
+	<TargetText>Refresh UI</TargetText>
+	<Comment>com.fmi.scriptstep.text.Refresh UI</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.05A03BA8FC527F81457DED1E3755F884</StringID>
+	<SourceText>Get config</SourceText>
+	<TargetText>Get config</TargetText>
+	<Comment>com.fmi.scriptstep.text.Get config</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.065EEE39D2B05312E076B76E6AFE5830</StringID>
+	<SourceText>Run JavaScript using bBox plugin</SourceText>
+	<TargetText>Run JavaScript using bBox plugin</TargetText>
+	<Comment>com.fmi.scriptstep.text.Run JavaScript using bBox plugin</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.08B852105CECB399612F801E13722DE5</StringID>
+	<SourceText>Get web viewer name and debug url</SourceText>
+	<TargetText>Get web viewer name and debug url</TargetText>
+	<Comment>com.fmi.scriptstep.text.Get web viewer name and debug url</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.0F2AA25ECF83753BC7F85FA8A7993E71</StringID>
+	<SourceText>Inform user of success</SourceText>
+	<TargetText>Inform user of success</TargetText>
+	<Comment>com.fmi.scriptstep.text.Inform user of success</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.11CADFDB2738937E064ED63ECEFDCDAA</StringID>
+	<SourceText>Find web project</SourceText>
+	<TargetText>Find web project</TargetText>
+	<Comment>com.fmi.scriptstep.text.Find web project</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.15B3E531F87C837F77B0FDCE381EC94E</StringID>
+	<SourceText>Load all named web viewers on the current layout</SourceText>
+	<TargetText>Load all named web viewers on the current layout</TargetText>
+	<Comment>com.fmi.scriptstep.text.Load all named web viewers on the current layout</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.182B21470A9908E759A8EC25EA7826DB</StringID>
+	<SourceText>$clarisDebug is a custom option that we have used to add debugging custom dialogs for certain fatal errors: missing parameter, missing target script</SourceText>
+	<TargetText>$clarisDebug is a custom option that we have used to add debugging custom dialogs for certain fatal errors: missing parameter, missing target script</TargetText>
+	<Comment>com.fmi.scriptstep.text.$clarisDebug is a custom option that we have used to add debugging custom dialogs for certain fatal errors: missing parameter, missing target script</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.1B271845791EF486AB4CF0F49DD8BA75</StringID>
+	<SourceText>Create and debug the web project in create-fmbond-app</SourceText>
+	<TargetText>Create and debug the web project in create-fmbond-app</TargetText>
+	<Comment>com.fmi.scriptstep.text.Create and debug the web project in create-fmbond-app</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.1C603C7055A833956144BCCDE9E54F12</StringID>
+	<SourceText>Get User confirmation and/or URL</SourceText>
+	<TargetText>Get User confirmation and/or URL</TargetText>
+	<Comment>com.fmi.scriptstep.text.Get User confirmation and/or URL</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.1DA62FBD896E4C01A99615CEB471C045</StringID>
+	<SourceText>Beezwax Implementation of bzBondRelay script</SourceText>
+	<TargetText>Beezwax Implementation of bzBondRelay script</TargetText>
+	<Comment>com.fmi.scriptstep.text.Beezwax Implementation of bzBondRelay script</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.1F22D881AF2F820DDA4D5CE75438E1FA</StringID>
+	<SourceText>MODE: Perform script</SourceText>
+	<TargetText>MODE: Perform script</TargetText>
+	<Comment>com.fmi.scriptstep.text.MODE: Perform script</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.240131728BFFFD5959188A676133E8AD</StringID>
+	<SourceText>Show a dialog when the result could not be returned and user has chosen to show a dialog in this case</SourceText>
+	<TargetText>Show a dialog when the result could not be returned and user has chosen to show a dialog in this case</TargetText>
+	<Comment>com.fmi.scriptstep.text.Show a dialog when the result could not be returned and user has chosen to show a dialog in this case</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.2448E22781062107E257E7205F8E1A57</StringID>
+	<SourceText>Get debug url</SourceText>
+	<TargetText>Get debug url</TargetText>
+	<Comment>com.fmi.scriptstep.text.Get debug url</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.28C6B66523A79F3B34C90DFFB0F9838D</StringID>
+	<SourceText>Create or update a web project</SourceText>
+	<TargetText>Create or update a web project</TargetText>
+	<Comment>com.fmi.scriptstep.text.Create or update a web project</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.290450084EA93DF20ECC9544487EBD28</StringID>
+	<SourceText>Perform Filemaker Script</SourceText>
+	<TargetText>Perform Filemaker Script</TargetText>
+	<Comment>com.fmi.scriptstep.text.Perform Filemaker Script</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.2C4D75313F6FD68C7071A669704681CC</StringID>
+	<SourceText>Search for web project record</SourceText>
+	<TargetText>Search for web project record</TargetText>
+	<Comment>com.fmi.scriptstep.text.Search for web project record</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.32B878C9225277B125D126A2595D0FC3</StringID>
+	<SourceText>If there is no web viewer code index search at the web project level</SourceText>
+	<TargetText>If there is no web viewer code index search at the web project level</TargetText>
+	<Comment>com.fmi.scriptstep.text.If there is no web viewer code index search at the web project level</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.33AB8426160A0E6ADA318CD7D06AC865</StringID>
+	<SourceText>MODE: Perform JavaScript</SourceText>
+	<TargetText>MODE: Perform JavaScript</TargetText>
+	<Comment>com.fmi.scriptstep.text.MODE: Perform JavaScript</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.416F39949030053964F829BF2B72CC86</StringID>
+	<SourceText>Load web viewer</SourceText>
+	<TargetText>Load web viewer</TargetText>
+	<Comment>com.fmi.scriptstep.text.Load web viewer</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.48D7B232871A33842BEE7C4FC3F6D65E</StringID>
+	<SourceText>Get config from global object</SourceText>
+	<TargetText>Get config from global object</TargetText>
+	<Comment>com.fmi.scriptstep.text.Get config from global object</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.4A0BAA1FFAD5359A9DB91F523388D012</StringID>
+	<SourceText>If we want to use the cache look for web code index</SourceText>
+	<TargetText>If we want to use the cache look for web code index</TargetText>
+	<Comment>com.fmi.scriptstep.text.If we want to use the cache look for web code index</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.4A346684DE03D87978A34A94D0930024</StringID>
+	<SourceText>Add the web viewer name to the result to prevent future calls also having a blank options.webViewerName property</SourceText>
+	<TargetText>Add the web viewer name to the result to prevent future calls also having a blank options.webViewerName property</TargetText>
+	<Comment>com.fmi.scriptstep.text.Add the web viewer name to the result to prevent future calls also having a blank options.webViewerName property</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.4AD6495B4557C31A4D367B6301A4F69B</StringID>
+	<SourceText>Set web project fields</SourceText>
+	<TargetText>Set web project fields</TargetText>
+	<Comment>com.fmi.scriptstep.text.Set web project fields</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.4EA84A49CD97F69AB1462467A7772815</StringID>
+	<SourceText>Get confirmation from user</SourceText>
+	<TargetText>Get confirmation from user</TargetText>
+	<Comment>com.fmi.scriptstep.text.Get confirmation from user</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.4FFFB0A509FE9AABA49C9AE3FA9FD8A3</StringID>
+	<SourceText>Create web project record if not found</SourceText>
+	<TargetText>Create web project record if not found</TargetText>
+	<Comment>com.fmi.scriptstep.text.Create web project record if not found</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.54379B44EB999A2E83FF5402CE110D41</StringID>
+	<SourceText>Open the FMBond default web viewer</SourceText>
+	<TargetText>Open the FMBond default web viewer</TargetText>
+	<Comment>com.fmi.scriptstep.text.Open the FMBond default web viewer</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.5A478D6BA3C5B5F34856F06547AA4537</StringID>
+	<SourceText>Handle parameters and constants</SourceText>
+	<TargetText>Handle parameters and constants</TargetText>
+	<Comment>com.fmi.scriptstep.text.Handle parameters and constants</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.5E92DD4043B568CABE4E6135027DAB17</StringID>
+	<SourceText>Set URL from web code</SourceText>
+	<TargetText>Set URL from web code</TargetText>
+	<Comment>com.fmi.scriptstep.text.Set URL from web code</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.613DFDC1E412C8EA0842CFB39619D348</StringID>
+	<SourceText>Return result to web viewer using promise UUID</SourceText>
+	<TargetText>Return result to web viewer using promise UUID</TargetText>
+	<Comment>com.fmi.scriptstep.text.Return result to web viewer using promise UUID</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.6A7C13D2480449A333A79DE2B61F5504</StringID>
+	<SourceText>Toggles debug mode on a web viewer</SourceText>
+	<TargetText>Toggles debug mode on a web viewer</TargetText>
+	<Comment>com.fmi.scriptstep.text.Toggles debug mode on a web viewer</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.6E3089210B5564EFD4316592F756B8B8</StringID>
+	<SourceText>If there is no web project code index create the cache and index</SourceText>
+	<TargetText>If there is no web project code index create the cache and index</TargetText>
+	<Comment>com.fmi.scriptstep.text.If there is no web project code index create the cache and index</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.70829674F558768F2AFD79F3B61974DD</StringID>
+	<SourceText>Handle constants</SourceText>
+	<TargetText>Handle constants</TargetText>
+	<Comment>com.fmi.scriptstep.text.Handle constants</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.786C74B4CB96DA5B2ACEBADD809A2ABD</StringID>
+	<SourceText>Wait for FMBond object</SourceText>
+	<TargetText>Wait for FMBond object</TargetText>
+	<Comment>com.fmi.scriptstep.text.Wait for FMBond object</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.7B7A0021FDA901ADE68AB95EB5D814B4</StringID>
+	<SourceText>Get data from url</SourceText>
+	<TargetText>Get data from url</TargetText>
+	<Comment>com.fmi.scriptstep.text.Get data from url</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.7DCCA4B33FD496563F6F720690C71997</StringID>
+	<SourceText>Find web viewers on layout</SourceText>
+	<TargetText>Find web viewers on layout</TargetText>
+	<Comment>com.fmi.scriptstep.text.Find web viewers on layout</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.8322A2228A469DE0F1E6EDA70858034F</StringID>
+	<SourceText>Update source code</SourceText>
+	<TargetText>Update source code</TargetText>
+	<Comment>com.fmi.scriptstep.text.Update source code</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.8482787A1A5860F68506265ECBD63D80</StringID>
+	<SourceText>Prepare request</SourceText>
+	<TargetText>Prepare request</TargetText>
+	<Comment>com.fmi.scriptstep.text.Prepare request</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.85115644EE452E23269FED731AD8139C</StringID>
+	<SourceText>customUrl and customHeaders are custom option for calling fmbond-server at a location other that localhost. customHeaders can be used to send authentication other other data </SourceText>
+	<TargetText>customUrl and customHeaders are custom option for calling fmbond-server at a location other that localhost. customHeaders can be used to send authentication other other data </TargetText>
+	<Comment>com.fmi.scriptstep.text.customUrl and customHeaders are custom option for calling fmbond-server at a location other that localhost. customHeaders can be used to send authentication other other data</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.86DE2986184B29BF0A7C8255C68E928B</StringID>
+	<SourceText>Handling for FileMaker -&gt; JS calls</SourceText>
+	<TargetText>Handling for FileMaker -&gt; JS calls</TargetText>
+	<Comment>com.fmi.scriptstep.text.Handling for FileMaker -&gt; JS calls</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.883625261CD35A322A48CEBB0DAFF406</StringID>
+	<SourceText>Run JavaScript function in web viewer on client</SourceText>
+	<TargetText>Run JavaScript function in web viewer on client</TargetText>
+	<Comment>com.fmi.scriptstep.text.Run JavaScript function in web viewer on client</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.8910D4797B9DD8C709219F10BB80758C</StringID>
+	<SourceText>Check for error detected by FileMaker</SourceText>
+	<TargetText>Check for error detected by FileMaker</TargetText>
+	<Comment>com.fmi.scriptstep.text.Check for error detected by FileMaker</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.8A646D553468EC72A0327090E518CBEE</StringID>
+	<SourceText>Handling for performing a FileMaker script and getting the result</SourceText>
+	<TargetText>Handling for performing a FileMaker script and getting the result</TargetText>
+	<Comment>com.fmi.scriptstep.text.Handling for performing a FileMaker script and getting the result</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.8C8C3650B7C18E661C12E8FA7F3AE259</StringID>
+	<SourceText>Attempt to return the script result to the candidate web viewer</SourceText>
+	<TargetText>Attempt to return the script result to the candidate web viewer</TargetText>
+	<Comment>com.fmi.scriptstep.text.Attempt to return the script result to the candidate web viewer</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.8D4C0654B195054CA83287D0F34355B4</StringID>
+	<SourceText>If we are clearing the cache reset it</SourceText>
+	<TargetText>If we are clearing the cache reset it</TargetText>
+	<Comment>com.fmi.scriptstep.text.If we are clearing the cache reset it</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.8EA0357ABA3AA3DED45610B0452F960F</StringID>
+	<SourceText>Toggle debug mode</SourceText>
+	<TargetText>Toggle debug mode</TargetText>
+	<Comment>com.fmi.scriptstep.text.Toggle debug mode</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.94897BDD824F5918A308E966E5285187</StringID>
+	<SourceText>Load named web viewer</SourceText>
+	<TargetText>Load named web viewer</TargetText>
+	<Comment>com.fmi.scriptstep.text.Load named web viewer</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.95A977B6069C9FC00551E6FA62656CC2</StringID>
+	<SourceText>If we are concerned with the cache get the web code index for this web viewer</SourceText>
+	<TargetText>If we are concerned with the cache get the web code index for this web viewer</TargetText>
+	<Comment>com.fmi.scriptstep.text.If we are concerned with the cache get the web code index for this web viewer</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.95CB1A2EE7C26DCE9441D1EAFA6FD31C</StringID>
+	<SourceText>Update web project indexes</SourceText>
+	<TargetText>Update web project indexes</TargetText>
+	<Comment>com.fmi.scriptstep.text.Update web project indexes</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.9603C39E63337F1383405E32D87E4F7C</StringID>
+	<SourceText>Turn off debug mode for all web projects</SourceText>
+	<TargetText>Turn off debug mode for all web projects</TargetText>
+	<Comment>com.fmi.scriptstep.text.Turn off debug mode for all web projects</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.97A74F1C0AB19A878F04389C9625333C</StringID>
+	<SourceText>Prepare result</SourceText>
+	<TargetText>Prepare result</TargetText>
+	<Comment>com.fmi.scriptstep.text.Prepare result</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.9C72930740C6816FCE8B62A276D9AC70</StringID>
+	<SourceText>Update debug url global variable</SourceText>
+	<TargetText>Update debug url global variable</TargetText>
+	<Comment>com.fmi.scriptstep.text.Update debug url global variable</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.9CD7A02299FAB4570AB6E6305415CDC9</StringID>
+	<SourceText>MODE: Get config</SourceText>
+	<TargetText>MODE: Get config</TargetText>
+	<Comment>com.fmi.scriptstep.text.MODE: Get config</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.9E25F946F27A04DDF99A46596311BA74</StringID>
+	<SourceText>Run JavaScript using bzBondServer web service</SourceText>
+	<TargetText>Run JavaScript using bzBondServer web service</TargetText>
+	<Comment>com.fmi.scriptstep.text.Run JavaScript using bzBondServer web service</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.A467BA8E34F63643A6889489D12C2834</StringID>
+	<SourceText>Debug mode</SourceText>
+	<TargetText>Debug mode</TargetText>
+	<Comment>com.fmi.scriptstep.text.Debug mode</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.A46A5576570BF8CAD693E25D3C58D470</StringID>
+	<SourceText>Load web viewers</SourceText>
+	<TargetText>Load web viewers</TargetText>
+	<Comment>com.fmi.scriptstep.text.Load web viewers</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.AA9CDFBC28C197CF76BF0A4D752DA8CA</StringID>
+	<SourceText>Update debug global variables</SourceText>
+	<TargetText>Update debug global variables</TargetText>
+	<Comment>com.fmi.scriptstep.text.Update debug global variables</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.ACF91607E44DDC031D5BE32BD7E94FCF</StringID>
+	<SourceText>usebBox is a custom option for using the bbox plugin for running JavaScript on the server</SourceText>
+	<TargetText>usebBox is a custom option for using the bbox plugin for running JavaScript on the server</TargetText>
+	<Comment>com.fmi.scriptstep.text.usebBox is a custom option for using the bbox plugin for running JavaScript on the server</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.AEFD3807C0B7D2376DFA47F90A73A64C</StringID>
+	<SourceText>Set web project source code from URL</SourceText>
+	<TargetText>Set web project source code from URL</TargetText>
+	<Comment>com.fmi.scriptstep.text.Set web project source code from URL</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.AFF761DEF6B321CC4D87A6420A4416A0</StringID>
+	<SourceText>Open default web viewer with this project</SourceText>
+	<TargetText>Open default web viewer with this project</TargetText>
+	<Comment>com.fmi.scriptstep.text.Open default web viewer with this project</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.B18A999D86A54B45CC41B79B7DAC091E</StringID>
+	<SourceText>Check for debug mode</SourceText>
+	<TargetText>Check for debug mode</TargetText>
+	<Comment>com.fmi.scriptstep.text.Check for debug mode</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.B1BF4C29CB33507B92F5E752949193FE</StringID>
+	<SourceText>Handle errors</SourceText>
+	<TargetText>Handle errors</TargetText>
+	<Comment>com.fmi.scriptstep.text.Handle errors</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.B58A67DBCB74086D33F2C256CFA5A43C</StringID>
+	<SourceText>Reset debug url global variable</SourceText>
+	<TargetText>Reset debug url global variable</TargetText>
+	<Comment>com.fmi.scriptstep.text.Reset debug url global variable</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.B59C5045B9C0A9D4C0E3A1AC59D8B1E9</StringID>
+	<SourceText>Get user confirmation</SourceText>
+	<TargetText>Get user confirmation</TargetText>
+	<Comment>com.fmi.scriptstep.text.Get user confirmation</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.BA0A28E546FFF77CDD6E7EDC17C22A9E</StringID>
+	<SourceText>If we are ignoring or clearing the cache get web code from web project table</SourceText>
+	<TargetText>If we are ignoring or clearing the cache get web code from web project table</TargetText>
+	<Comment>com.fmi.scriptstep.text.If we are ignoring or clearing the cache get web code from web project table</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.BB3FB8E0C98BCF5DEA355D9D8B0B7579</StringID>
+	<SourceText>const fs = require(&quot;fs&quot;);<CR/>const vm = require(&quot;vm&quot;);<CR/><CR/>const paramText = fs.readFileSync(process.stdin.fd).toString();<CR/><CR/>let paramArray;<CR/>let paramArrayText;<CR/><CR/>try {<CR/>  paramArray = JSON.parse(paramText);<CR/>} catch (error) {<CR/>}<CR/><CR/>if(Array.isArray(paramArray)) {<CR/>  paramArrayText = paramText;<CR/>} else {<CR/>  paramArrayText = `[${paramText}]`;<CR/>}<CR/><CR/>const func = new Function ( &quot;return &quot; + {{$quotedFunction}} )();<CR/>const contextObject = {func: func}<CR/>const context = vm.createContext(contextObject);<CR/><CR/>let result;<CR/>let resultObject;<CR/>let jsonResult;<CR/><CR/>try {<CR/>  result = vm.runInContext(`func(...${paramArrayText})`, context, {timeout: {{$timeout}}});<CR/>  resultObject = {jsResult: result};<CR/>  jsonResult = JSON.stringify(resultObject);<CR/>} catch (error) {<CR/>  resultObject = {error: {code: 5, message: error.toString()}};<CR/>  jsonResult = JSON.stringify(resultObject);<CR/>}<CR/><CR/>process.stdout.write(jsonResult);</SourceText>
+	<TargetText>const fs = require(&quot;fs&quot;);<CR/>const vm = require(&quot;vm&quot;);<CR/><CR/>const paramText = fs.readFileSync(process.stdin.fd).toString();<CR/><CR/>let paramArray;<CR/>let paramArrayText;<CR/><CR/>try {<CR/>  paramArray = JSON.parse(paramText);<CR/>} catch (error) {<CR/>}<CR/><CR/>if(Array.isArray(paramArray)) {<CR/>  paramArrayText = paramText;<CR/>} else {<CR/>  paramArrayText = `[${paramText}]`;<CR/>}<CR/><CR/>const func = new Function ( &quot;return &quot; + {{$quotedFunction}} )();<CR/>const contextObject = {func: func}<CR/>const context = vm.createContext(contextObject);<CR/><CR/>let result;<CR/>let resultObject;<CR/>let jsonResult;<CR/><CR/>try {<CR/>  result = vm.runInContext(`func(...${paramArrayText})`, context, {timeout: {{$timeout}}});<CR/>  resultObject = {jsResult: result};<CR/>  jsonResult = JSON.stringify(resultObject);<CR/>} catch (error) {<CR/>  resultObject = {error: {code: 5, message: error.toString()}};<CR/>  jsonResult = JSON.stringify(resultObject);<CR/>}<CR/><CR/>process.stdout.write(jsonResult);</TargetText>
+	<Comment>com.fmi.scriptstep.text.const fs = require(&quot;fs&quot;);_CR/_const vm = require(&quot;vm&quot;);_CR/__CR/_const paramText = fs.readFileSync(process.stdin.fd).toString();_CR/__CR/_let paramArray;_CR/_let paramArrayText;_CR/__CR/_try {_CR/_  paramArray = JSON.parse(paramText);_CR/_} catch (error) {_CR/_}_CR/__CR/_if(Array.isArray(paramArray)) {_CR/_  paramArrayText = paramText;_CR/_} else {_CR/_  paramArrayText = `[${paramText}]`;_CR/_}_CR/__CR/_const func = new Function ( &quot;return &quot; + {{$quotedFunction}} )();_CR/_const contextObject = {func: func}_CR/_const context = vm.createContext(contextObject);_CR/__CR/_let result;_CR/_let resultObject;_CR/_let jsonResult;_CR/__CR/_try {_CR/_  result = vm.runInContext(`func(...${paramArrayText})`, context, {timeout: {{$timeout}}});_CR/_  resultObject = {jsResult: result};_CR/_  jsonResult = JSON.stringify(resultObject);_CR/_} catch (error) {_CR/_  resultObject = {error: {code: 5, message: error.toString()}};_CR/_  jsonResult = JSON.stringify(resultObject);_CR/_}_CR/__CR/_process.stdout.write(jsonResult);</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.BB64A590437518DB79FCB5DDA83F54E8</StringID>
+	<SourceText>Run JavaScript</SourceText>
+	<TargetText>Run JavaScript</TargetText>
+	<Comment>com.fmi.scriptstep.text.Run JavaScript</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.BDA7BBA756FA893EBF847600BA835870</StringID>
+	<SourceText>If we have a web code index value but no web code get web code</SourceText>
+	<TargetText>If we have a web code index value but no web code get web code</TargetText>
+	<Comment>com.fmi.scriptstep.text.If we have a web code index value but no web code get web code</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.BE8842359E34D54EB157368A63A6E558</StringID>
+	<SourceText>MODE: Return JavaScript result</SourceText>
+	<TargetText>MODE: Return JavaScript result</TargetText>
+	<Comment>com.fmi.scriptstep.text.MODE: Return JavaScript result</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.C05FAFFA0011D0BD845BF08B9E184D8A</StringID>
+	<SourceText>If there is only a web project code index copy it to the web viewer code index</SourceText>
+	<TargetText>If there is only a web project code index copy it to the web viewer code index</TargetText>
+	<Comment>com.fmi.scriptstep.text.If there is only a web project code index copy it to the web viewer code index</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.C071FD8F0B1B0CAF239F426D8C853910</StringID>
+	<SourceText>Exit</SourceText>
+	<TargetText>Exit</TargetText>
+	<Comment>com.fmi.scriptstep.text.Exit</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.C0B027D8E320C2DC62314E7C92F5A46D</StringID>
+	<SourceText>Set source code from url</SourceText>
+	<TargetText>Set source code from url</TargetText>
+	<Comment>com.fmi.scriptstep.text.Set source code from url</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.C666B5EF3232E9A55AF9861ED1C14387</StringID>
+	<SourceText>Handle parameters</SourceText>
+	<TargetText>Handle parameters</TargetText>
+	<Comment>com.fmi.scriptstep.text.Handle parameters</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.C692FE75055DD7DCC9BD30CC664B5C6B</StringID>
+	<SourceText>If no web viewer name is provided check each web viewer on the layout until the initiating web viewer is found</SourceText>
+	<TargetText>If no web viewer name is provided check each web viewer on the layout until the initiating web viewer is found</TargetText>
+	<Comment>com.fmi.scriptstep.text.If no web viewer name is provided check each web viewer on the layout until the initiating web viewer is found</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.C6E8B5B183BDA2A3BCB4B285AB73BE21</StringID>
+	<SourceText>Upsert web project</SourceText>
+	<TargetText>Upsert web project</TargetText>
+	<Comment>com.fmi.scriptstep.text.Upsert web project</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.C856206DF9F2403E53D45C12D3D130E9</StringID>
+	<SourceText>const fs = require(&quot;fs&quot;);<CR/>const vm = require(&quot;vm&quot;);<CR/><CR/>const scriptSource = fs.readFileSync(process.stdin.fd).toString();<CR/><CR/>const script = new vm.Script(scriptSource);<CR/><CR/>let result;<CR/>let resultObject;<CR/>let jsonResult;<CR/><CR/>try {<CR/>  result = script.runInNewContext(undefined,{timeout: {{$timeout}}});<CR/>  resultObject = {jsResult: result};<CR/>  jsonResult = JSON.stringify(resultObject);<CR/>} catch (error) {<CR/>  resultObject = {error: {code: 5, message: error.toString()}};<CR/>  jsonResult = JSON.stringify(resultObject);<CR/>}<CR/><CR/>process.stdout.write(jsonResult);</SourceText>
+	<TargetText>const fs = require(&quot;fs&quot;);<CR/>const vm = require(&quot;vm&quot;);<CR/><CR/>const scriptSource = fs.readFileSync(process.stdin.fd).toString();<CR/><CR/>const script = new vm.Script(scriptSource);<CR/><CR/>let result;<CR/>let resultObject;<CR/>let jsonResult;<CR/><CR/>try {<CR/>  result = script.runInNewContext(undefined,{timeout: {{$timeout}}});<CR/>  resultObject = {jsResult: result};<CR/>  jsonResult = JSON.stringify(resultObject);<CR/>} catch (error) {<CR/>  resultObject = {error: {code: 5, message: error.toString()}};<CR/>  jsonResult = JSON.stringify(resultObject);<CR/>}<CR/><CR/>process.stdout.write(jsonResult);</TargetText>
+	<Comment>com.fmi.scriptstep.text.const fs = require(&quot;fs&quot;);_CR/_const vm = require(&quot;vm&quot;);_CR/__CR/_const scriptSource = fs.readFileSync(process.stdin.fd).toString();_CR/__CR/_const script = new vm.Script(scriptSource);_CR/__CR/_let result;_CR/_let resultObject;_CR/_let jsonResult;_CR/__CR/_try {_CR/_  result = script.runInNewContext(undefined,{timeout: {{$timeout}}});_CR/_  resultObject = {jsResult: result};_CR/_  jsonResult = JSON.stringify(resultObject);_CR/_} catch (error) {_CR/_  resultObject = {error: {code: 5, message: error.toString()}};_CR/_  jsonResult = JSON.stringify(resultObject);_CR/_}_CR/__CR/_process.stdout.write(jsonResult);</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.C8C8160A359093941D8757AAAB6EF9D4</StringID>
+	<SourceText>Calculate url</SourceText>
+	<TargetText>Calculate url</TargetText>
+	<Comment>com.fmi.scriptstep.text.Calculate url</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.D680BB79C2FC38288642414426C509DB</StringID>
+	<SourceText>Turn off debug mode for all web viewers</SourceText>
+	<TargetText>Turn off debug mode for all web viewers</TargetText>
+	<Comment>com.fmi.scriptstep.text.Turn off debug mode for all web viewers</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.D957E3D31DBD5FB6E364A1D8F7A405EF</StringID>
+	<SourceText>Create JavaScript file to run</SourceText>
+	<TargetText>Create JavaScript file to run</TargetText>
+	<Comment>com.fmi.scriptstep.text.Create JavaScript file to run</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.DCFE5924E52B4ACAED7258F5795462F4</StringID>
+	<SourceText>Run request</SourceText>
+	<TargetText>Run request</TargetText>
+	<Comment>com.fmi.scriptstep.text.Run request</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.DFD77DC1ADA48F60809E84E97AC6DA07</StringID>
+	<SourceText>Clear the bzBond web project cache click handler</SourceText>
+	<TargetText>Clear the bzBond web project cache click handler</TargetText>
+	<Comment>com.fmi.scriptstep.text.Clear the bzBond web project cache click handler</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.E18898876B158C6952DABCFADA65035A</StringID>
+	<SourceText>Prepare template and variables</SourceText>
+	<TargetText>Prepare template and variables</TargetText>
+	<Comment>com.fmi.scriptstep.text.Prepare template and variables</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.E3060B306389AAD42D2E655B028D67B7</StringID>
+	<SourceText>MODE: Get web viewer name</SourceText>
+	<TargetText>MODE: Get web viewer name</TargetText>
+	<Comment>com.fmi.scriptstep.text.MODE: Get web viewer name</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.E6D9C33F7CCAE81ACD3259FEAAA66F14</StringID>
+	<SourceText>Clear global variables</SourceText>
+	<TargetText>Clear global variables</TargetText>
+	<Comment>com.fmi.scriptstep.text.Clear global variables</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.E70F5C7D8445B75B4272ABA1D82ECACC</StringID>
+	<SourceText>Toggle debug mode on a web project</SourceText>
+	<TargetText>Toggle debug mode on a web project</TargetText>
+	<Comment>com.fmi.scriptstep.text.Toggle debug mode on a web project</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.E74F9F7D69F079AED040E82FD9C017FD</StringID>
+	<SourceText>Handling for performing JavaScript in a web viewer or on the server</SourceText>
+	<TargetText>Handling for performing JavaScript in a web viewer or on the server</TargetText>
+	<Comment>com.fmi.scriptstep.text.Handling for performing JavaScript in a web viewer or on the server</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.E753B8F51AB5F82BF82D0EB2DF3EA053</StringID>
+	<SourceText>Set web viewer</SourceText>
+	<TargetText>Set web viewer</TargetText>
+	<Comment>com.fmi.scriptstep.text.Set web viewer</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.E79F20D072CBFE5632590DF29BB6E14D</StringID>
+	<SourceText>Set source code field</SourceText>
+	<TargetText>Set source code field</TargetText>
+	<Comment>com.fmi.scriptstep.text.Set source code field</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.EBE344D2E469F6E2B12C3EAA3F08178F</StringID>
+	<SourceText>Toggle debug mode on a web viewer</SourceText>
+	<TargetText>Toggle debug mode on a web viewer</TargetText>
+	<Comment>com.fmi.scriptstep.text.Toggle debug mode on a web viewer</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.EDEA8CF93E8230C6046D623C5A7409AD</StringID>
+	<SourceText>Wait for config</SourceText>
+	<TargetText>Wait for config</TargetText>
+	<Comment>com.fmi.scriptstep.text.Wait for config</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.EF2F51B4D93AEA1880102FA20795CCF8</StringID>
+	<SourceText>Clear bzBond web project cache</SourceText>
+	<TargetText>Clear bzBond web project cache</TargetText>
+	<Comment>com.fmi.scriptstep.text.Clear bzBond web project cache</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.F3B5D121AFED05EC10707BE62A0514F6</StringID>
+	<SourceText>Handling for getting the Web Viewer name from FileMaker</SourceText>
+	<TargetText>Handling for getting the Web Viewer name from FileMaker</TargetText>
+	<Comment>com.fmi.scriptstep.text.Handling for getting the Web Viewer name from FileMaker</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.F52C0681C445F03A2E201DE167F828AB</StringID>
+	<SourceText>THIS IS NOT IN THE SPEC BUT WE HAVE FOUND IT USEFUL FOR TROUBLESHOOTING IN DEVELOPMENT</SourceText>
+	<TargetText>THIS IS NOT IN THE SPEC BUT WE HAVE FOUND IT USEFUL FOR TROUBLESHOOTING IN DEVELOPMENT</TargetText>
+	<Comment>com.fmi.scriptstep.text.THIS IS NOT IN THE SPEC BUT WE HAVE FOUND IT USEFUL FOR TROUBLESHOOTING IN DEVELOPMENT</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.F590EF46B3E44880BA9F8A399C151951</StringID>
+	<SourceText>WebDirect requires Base64 encoded data urls</SourceText>
+	<TargetText>WebDirect requires Base64 encoded data urls</TargetText>
+	<Comment>com.fmi.scriptstep.text.WebDirect requires Base64 encoded data urls</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.F79914AA986059FACE3AA1C362C75CBE</StringID>
+	<SourceText>If the object type is &quot;web viewer&quot; then it is a candidate for the initiating web viewer </SourceText>
+	<TargetText>If the object type is &quot;web viewer&quot; then it is a candidate for the initiating web viewer </TargetText>
+	<Comment>com.fmi.scriptstep.text.If the object type is &quot;web viewer&quot; then it is a candidate for the initiating web viewer</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.FF2F7BF90CB119E34E0E5AF23D892C4B</StringID>
+	<SourceText>Check for error in response header</SourceText>
+	<TargetText>Check for error in response header</TargetText>
+	<Comment>com.fmi.scriptstep.text.Check for error in response header</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.3BD994E39D569C138FCC8063BADAF702</StringID>
+	<SourceText>WEB_PROJECT</SourceText>
+	<TargetText>WEB_PROJECT</TargetText>
+	<Comment>com.fmi.tableoccurrence.WEB_PROJECT</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.WEB_PROJECT::1F4BC13C5D877EA23F5FFE28FDA64377</StringID>
+	<SourceText>URL</SourceText>
+	<TargetText>URL</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.WEB_PROJECT::URL</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.WEB_PROJECT::258832580DD6AC4F2E69AB8442F9B689</StringID>
+	<SourceText>WEB_PROJECT::SOURCE_CODE</SourceText>
+	<TargetText>WEB_PROJECT::SOURCE_CODE</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.WEB_PROJECT::WEB_PROJECT::SOURCE_CODE</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.WEB_PROJECT::5BAF720253FD6D9D107E0AAA5E781C81</StringID>
+	<SourceText>DESCRIPTION</SourceText>
+	<TargetText>DESCRIPTION</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.WEB_PROJECT::DESCRIPTION</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.WEB_PROJECT::6F0078904504BF938D84206AB6EE8346</StringID>
+	<SourceText>SOURCE_CODE</SourceText>
+	<TargetText>SOURCE_CODE</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.WEB_PROJECT::SOURCE_CODE</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.WEB_PROJECT::7B060FD32D275EE9AA22C5CD6C2E7780</StringID>
+	<SourceText>WEB_PROJECT::URL</SourceText>
+	<TargetText>WEB_PROJECT::URL</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.WEB_PROJECT::WEB_PROJECT::URL</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.WEB_PROJECT::935D7D391118D1E1092B78A163C0B558</StringID>
+	<SourceText>NAME</SourceText>
+	<TargetText>NAME</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.WEB_PROJECT::NAME</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.WEB_PROJECT::DBA2B10CEF4873D9256EA815AE0E3FEC</StringID>
+	<SourceText>WEB_PROJECT::NAME</SourceText>
+	<TargetText>WEB_PROJECT::NAME</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.WEB_PROJECT::WEB_PROJECT::NAME</Comment>
+</DynamicTemplateString>

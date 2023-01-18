@@ -1,0 +1,19 @@
+﻿{
+	"Title" : "bzBond-claris",
+
+	"Description" : "bzBond-claris is a FileMaker file that includes tools for web code integration, storage, deployment and debugging. It comprises\r- The `bzBondRelay` script for managing communication between web viewers and FileMaker.\r- The bzBond Web Project Manager for storing, deploying and debugging web code in FileMaker web viewers\r\rFor more information visit https://github.com/beezwax/bzBond",
+
+	"Category" : "Web",
+
+	"Features" :
+		[
+			"JavaScript",
+			"Web",
+			"Web Viewer"
+		],
+
+	"Optimized" :
+		[
+			"Desktop", "Tablet", "Mobile"
+		]
+}
