@@ -6,12 +6,13 @@
 - [Installation](#installation)
   - [FileMaker Add-on](#filemaker-add-on)
   - [Manual Installation](#manual-installation)
+- [Usage: bzBond web project manager](#usage-bzbond-web-project-manager)
 - [Usage: bzBondRelay script](#usage-bzbondrelay-script)
   - [Integrating JavaScript functions with FileMaker scripts](#integrating-javascript-functions-with-filemaker-scripts)
 
 ## Introduction
 
-Part of the bzBond toolset, bzBond-claris is a FileMaker file that includes tools for web code integration, storage, deployment and debugging. It comprises
+bzBond-claris is a FileMaker file that includes tools for web code integration, storage, deployment and debugging. It is part of the bzBond toolset. It contains
 - The `bzBondRelay` script for managing communication between web viewers/JavaScript and FileMaker scripts.
 - The bzBond web project manager for storing, deploying, configuring, and debugging web code for use in FileMaker web viewers.
 
@@ -56,9 +57,109 @@ Part of the bzBond toolset, bzBond-claris is a FileMaker file that includes tool
 
 7. Copy the objects from the `bzBond Default Web Viewer` layout into the `bzBond Default Web Viewer` layout created in step 4
 
-## Usage: bzBondRelay script
+## Usage: bzBond web project manager
 
-### Introduction
+The bzBond web project manager is used for storing, deploying, configuring, and debugging web code for use in FileMaker web viewers.
+
+The bzBond web project manager is opinionated in that it supports integrating web technologies in a specific way. Below are the key design choices and the reasoning behind them.
+
+- Web code is stored as data in a FileMaker table. Code stored in this table is called a "web project". Storing web projects in a table has the following avantages:
+  - It keeps them organized and increases their visibility in a solution.
+  - It allows them to be updated via scripts or the Data API, meaning they can be part of a build chain or continuous delivery approach.
+  - It enables the debugging features that support "live development" of web projects. 
+- Web projects are stored in a single html file. This allows them to be deployed in web viewers as data urls.
+- Web projects are deployed in web viewers using FileMaker scripts. This allows close control over how and when web viewers are populated and helps avoid timing issues.
+- Web viewer "config" is used to determine which web project is deployed in a web viewer. Config can also be used to store useful supporting data such as value lists or script names. Leveraging config allows web projects to contain fewer hard-coded and context specific references, meaning they are more likely to be reusable.
+- Config is defined in the web viewer calculation dialog. This allows web viewers to be added to layouts and configured without leaving the Manage Layout UI.
+
+### bzBond web projects
+
+bzBond web projects are self-contained single html files, sometimes called "inline" files because all of the CSS, JavaScript and HTML code is contained "inline" in the file rather than split into separate files.
+
+#### Creating bzBond web projects
+
+While it is possible to manually craft single-file web projects it is usually not the best approach when external code libraries are required. Instead, web projects are authored as multi-file projects and then "complied" into single files as part of an automated build process.
+
+The bzBond toolset includes a bootstrapping command for quickly creating new bzBond web projects. Providing git and node/npm are installed it can be directly invoked from Terminal or PowerShell with the following command:
+
+`npx -y @beezwax/create-bzbond-app app-name-here --web-only`
+
+For more details see the create-bzbond-app [documentation](../create-bzbond-app/README.md).
+
+### Storing bzBond web projects
+
+### Deploying bzBond web projects
+
+### Debugging and live development for bzBond web projects
+
+### Configuring web viewers to host bzBond web projects 
+
+bzBond can maintain a simple json configuration object for each web viewer in a FileMaker global variable. This object usually contains the name of the web project to be deployed in the web viewer. It can also contain additional information useful to the JavaScript integration, such as the layout context, script names, and supporting data such as value lists.
+
+#### Web viewer config object structure
+
+In FileMaker all web viewer configuration objects are stored in a global variable named `$$_BZBOND__WEB_VIEWER_CONFIG`. The structure is as follows
+
+```
+{
+  "<layout_name>": {
+    "<web_viewer_name>": {
+
+      // web project name in WEB_PROJECT table
+      "webProject": "<web_project_name>"
+
+      // Other properties:
+      ...
+    }
+  }
+}
+```
+
+When using bzBond for code deployment, the "webProject" property links web viewers to web projects stored in the web project manager.
+
+#### Setting web viewer config
+
+The easiest place to set a web viewer's config is in its calculation dialog. This can be done using the following calculation.
+
+**Example web viewer config definition**
+
+```
+Let (
+  $$_BZBOND__WEB_VIEWER_CONFIG =
+    JSONSetElement (
+      $$_BZBOND__WEB_VIEWER_CONFIG;
+      Get ( LayoutName )
+        & "."
+        & "<web_viewer_name>";
+      JSONSetElement (
+        "{}";
+        [
+          "webProject";
+          "<web_project_name>"
+          JSONString
+        ];
+        [
+          "otherConfigItem";
+          "Some item"
+          JSONString
+        ];
+        [
+          "aValueList";
+          List (
+            "value1";
+            "value2";
+            "value3"
+          )
+          JSONString
+        ]
+      );
+      JSONObject
+    );
+  ""
+)
+```
+
+## Usage: bzBondRelay script
 
 The `bzBondRelay` script manages FileMaker interactions with web code. These interactions are between FileMaker scripts and FileMaker web viewers, or FileMaker scripts and the [bzBond-server](../bzBond-server/) app.
 
@@ -209,100 +310,4 @@ Set Variable[ $javaScriptResult; Get ( ScriptResult ) ]
     }]
   }
 }
-```
-
-## bzBond web project manager
-
-### Introduction
-
-The bzBond web project manager is used for storing, deploying, configuring, and debugging web code for use in FileMaker web viewers.
-
-bzBond-claris is opinionated. It supports integrating web technologies in a specific way. Below are the key design choices and the reasoning behind them.
-
-- Web code is stored as data in a FileMaker table. Code stored in this table is called a "web project". Storing web projects in a table has the following avantages:
-  - It keeps them organized and increases their visibility in a solution.
-  - It allows them to be updated via scripts or the Data API, meaning they can be part of a build chain or continuous delivery approach.
-  - It enables debugging features that support "live development" of web projects. 
-- Web projects are stored in a single html file. This allows them to be deployed as data urls.
-- Web projects are deployed in web viewers using FileMaker scripts. This allows close control over how and when web viewers are populated and helps avoid timing issues.
-- Web viewer "config" is used to determine which web project is deployed in a web viewer. Config can also be used to store useful supporting data such as value lists or script names. Leveraging config allows web projects to contain fewer hard-coded and context specific references, meaning they are more likely to be reusable.
-- Config is defined in the web viewer calculation dialog. This allows web viewers to be added to layouts and configured without leaving the Manage Layout UI.
-
-### bzBond web projects
-
-bzBond web projects are self-contained single html files, sometimes called "inline" files because all of the CSS, JavaScript and HTML code is contained "inline" in the file rather than split into separate files.
-
-#### Creating bzBond web projects
-
-While it is possible to manually craft single-file web projects it is usually not best practice. Instead, web projects are authored as multi-file projects
-
-### Web code storage
-
-### Web code deployment
-
-### Debugging
-
-### Web viewer config
-
-bzBond can maintain a simple json configuration object for each web viewer in a FileMaker global variable. This object can contain any information useful to the JavaScript integration, such as the layout context, script names, and supporting data such as value lists.
-
-#### Web viewer config object structure
-
-In FileMaker all web viewer configuration objects are stored in a global variable named `$$_BZBOND__WEB_VIEWER_CONFIG`. The structure is as follows
-
-```
-{
-  "<layout_name>": {
-    "<web_viewer_name>": {
-
-      // web project name in WEB_PROJECT table
-      "webProject": "<web_project_name>"
-
-      // Other properties:
-      ...
-    }
-  }
-}
-```
-
-When using bzBond for code deployment, the "webProject" links web viewers to web projects stored in the web project manager.
-
-#### Setting web viewer config
-
-The easiest place to set a web viewer's config is in its calculation dialog. This can be done using the following calculation.
-
-```
-Let (
-  $$_BZBOND__WEB_VIEWER_CONFIG =
-    JSONSetElement (
-      $$_BZBOND__WEB_VIEWER_CONFIG;
-      Get ( LayoutName )
-        & "."
-        & "<web_viewer_name>";
-      JSONSetElement (
-        "{}";
-        [
-          "webProject";
-          "<web_project_name>"
-          JSONString
-        ];
-        [
-          "otherConfigItem";
-          "Some item"
-          JSONString
-        ];
-        [
-          "aValueList";
-          List (
-            "value1";
-            "value2";
-            "value3"
-          )
-          JSONString
-        ]
-      );
-      JSONObject
-    );
-  ""
-)
 ```
