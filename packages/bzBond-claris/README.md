@@ -109,6 +109,27 @@ Perform Script [bzBondRelay]
 Set Variable[ $javaScriptResult; Get ( ScriptResult ) ]
 ```
 
+When run on the client the parameters are
+
+**mode**
+- type: string
+- value: Always `"PERFORM_JAVASCRIPT"`
+
+**webViewerName**
+- type: string
+- value: The name of the web viewer to run the JavaScript. The web viewer needs to have bzBond-js installed
+
+**Example parameters**
+
+```
+{
+  "mode": "PERFORM_JAVASCRIPT",
+  "webViewerName": "JS_Runner",
+  "function": "(a, b) => a + b",
+  "parameters": [40, 2]
+}
+```
+
 #### Running JavaScript functions using Perform JavaScript in web viewer (client only)
 
 It also possible to use this functionality by directly calling `Perform Javascript in Web Viewer` script step on a web viewer that has bzBond intalled. This only works on the client as web viewers are not supported on the server.
