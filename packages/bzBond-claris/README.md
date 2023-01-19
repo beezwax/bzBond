@@ -109,17 +109,60 @@ Perform Script [bzBondRelay]
 Set Variable[ $javaScriptResult; Get ( ScriptResult ) ]
 ```
 
-When run on the client the parameters are
+##### Script parameters
 
 **mode**
-- type: string
-- value: Always `"PERFORM_JAVASCRIPT"`
+- Type: string
+- Value: Always `"PERFORM_JAVASCRIPT"`
 
 **webViewerName**
-- type: string
-- value: The name of the web viewer to run the JavaScript. The web viewer needs to have bzBond-js installed
+- Type: string
+- Value: The name of the web viewer that will run the JavaScript. The web viewer needs to have bzBond-js installed
+- Notes:
+  - Not required when running on server
+  - If blank on client, an attempt will be made to run the script on the currently selected object.
 
-**Example parameters**
+**function**
+- Type: string
+- Value: either
+  - a function in the global (window) JavaScript context of the web viewer OR
+  - a JavaScript function (arrow or classic) defined as a string
+- Notes:
+  - 
+
+**parameters**
+- Type: array of strings
+- Value: An array or parameters to pass to the function.
+  - Passing functions as parameters is supported. Prefix a parameter with the 'ƒ' symbol (⌥ + f on macs) to indicate that it is a function. For example: 
+  ```
+  [
+    40,
+    2,
+    ƒ(c) => c * 2
+  ]
+  ```
+- Notes:
+  - Optional (some JS functions do not need parameters)
+  - Not required when route is `"code"`
+
+**route**
+- Type: string
+- Value: `"function"` or `"code"`.
+  - When `"function"` the supplied function is executed with the parameters provided in the `$parameters` variable
+  - When `"code"` the result of the last statement in of the code will be returned
+- Notes:
+  - Not required on client (only functions are supported)
+  - Defaults to `"function"` on server
+
+**useBbox**
+- Type: boolean
+- Value: if [bBox plug-in v0.99+](https://www.beezwax.net/products/bbox) is installed on the FileMaker server and this parameter is true then the JavaScript code will run using bBox.
+- Notes:
+  - Not applicable on client
+  - Optional on server.
+  - Defaults to `false`
+
+**Simple example**
 
 ```
 {
@@ -128,7 +171,42 @@ When run on the client the parameters are
   "function": "(a, b) => a + b",
   "parameters": [40, 2]
 }
+
+// Result
+{
+  "response": {
+    "result": 42,
+    "messages": [{
+      code: "0",
+      message: "Ok"
+    }]
+  }
+}
 ```
+
+**Function parameter example**
+
+```
+{
+  "mode": "PERFORM_JAVASCRIPT",
+  "webViewerName": "JS_Runner",
+  "function": "(a, b, c) => a + b",
+  "parameters": [40, 2, ƒ(n) => a * 2]
+}
+
+// Result
+{
+  "response": {
+    "result": 84,
+    "messages": [{
+      code: "0",
+      message: "Ok"
+    }]
+  }
+}
+```
+
+
 
 #### Running JavaScript functions using Perform JavaScript in web viewer (client only)
 
