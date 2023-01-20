@@ -326,14 +326,14 @@ The `response.result` prop will be appropriately formatted (eg: as a number for 
 
 **webViewerName**
 - Type: string
-- Value: The name of the web viewer that will run the JavaScript. The web viewer needs to have bzBond-js installed
+- Value: the name of the web viewer that will run the JavaScript. The web viewer needs to have bzBond-js installed
 - Notes:
   - Not required when running on server
   - If blank on client, an attempt will be made to run the script on the currently selected object.
 
 **function**
 - Type: string
-- Value: either
+- Value:
   - when running on the client or on server where the `route` parameter is `"function"` 
     - a function in the global (window) JavaScript context of the web viewer OR
     - a JavaScript function (arrow or classic) defined as a string OR
@@ -344,7 +344,7 @@ The `response.result` prop will be appropriately formatted (eg: as a number for 
 
 **parameters**
 - Type: array
-- Value: An array or parameters to pass to the function.
+- Value: an array of parameters to pass to the function.
   - Passing functions as parameters is supported. Prefix a parameter with the 'ƒ' symbol (⌥ + f on macs) to indicate that it is a function. For example: 
   ```
   [
