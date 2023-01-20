@@ -418,7 +418,7 @@ The `response.result` prop will be appropriately formatted (eg: as a number for 
 }
 ```
 
-**code route example**
+**`code` route example**
 ```
 {
   "mode": "PERFORM_JAVASCRIPT",
