@@ -7,8 +7,21 @@
   - [FileMaker Add-on](#filemaker-add-on)
   - [Manual Installation](#manual-installation)
 - [Usage: bzBond web project manager](#usage-bzbond-web-project-manager)
+  - [bzBond web projects](#bzbond-web-projects)
+    - [Creating bzBond web projects](#creating-bzbond-web-projects)
+  - [Storing web projects in the bzBond web project manager](#storing-web-projects-in-the-bzbond-web-project-manager)
+  - [Deploying bzBond web projects in web viewers](#deploying-bzbond-web-projects-in-web-viewers)
+    - [Full parameters for `bzBond Load Web Viewer`](#full-parameters-for-bzbond-load-web-viewer)
+    - [Loading all web viewers on a layout](#loading-all-web-viewers-on-a-layout)
+    - [Loading web viewers with script triggers](#loading-web-viewers-with-script-triggers)
+  - [Debugging and live development for bzBond web projects](#debugging-and-live-development-for-bzbond-web-projects)
+    - [Enable debug mode for a web project](#enable-debug-mode-for-a-web-project)
+    - [Enable debug mode for a web viewer](#enable-debug-mode-for-a-web-viewer)
+  - [Web viewer config](#web-viewer-config)
 - [Usage: bzBondRelay script](#usage-bzbondrelay-script)
   - [Integrating JavaScript functions with FileMaker scripts](#integrating-javascript-functions-with-filemaker-scripts)
+    - [Running JavaScript functions with the `bzBondRelay` script (client and server)](#running-javascript-functions-with-the-bzbondrelay-script-client-and-server)
+      - [bzBondRelay script parameters and examples for performing JavaScript](#bzbondrelay-script-parameters-and-examples-for-performing-javascript)
 
 ## Introduction
 
@@ -80,25 +93,142 @@ bzBond web projects are self-contained single html files, sometimes called "inli
 
 While it is possible to manually craft single-file web projects it is usually not the best approach when external code libraries are required. Instead, web projects are authored as multi-file projects and then "complied" into single files as part of an automated build process.
 
-The bzBond toolset includes a bootstrapping command for quickly creating new bzBond web projects. Providing git and node/npm are installed it can be directly invoked from Terminal or PowerShell with the following command:
+The bzBond toolset includes a bootstrapping command for quickly creating new bzBond web projects that include a build process. Providing git and node/npm are installed it can be directly invoked from Terminal or PowerShell with the following command:
 
-`npx -y @beezwax/create-bzbond-app app-name-here --web-only`
+`npx -y @beezwax/create-bzbond-app <your_web_project_name_here> --web-only`
+
+e.g.
+
+`npx -y @beezwax/create-bzbond-app my-web-project --web-only`
 
 For more details see the create-bzbond-app [documentation](../create-bzbond-app/README.md).
 
-### Storing bzBond web projects
+### Storing web projects in the bzBond web project manager
 
-### Deploying bzBond web projects
+The simplest way to store a web project in the web project manager is copy and paste:
+
+1. Run the build process for your web project
+2. Copy the resulting html file contents to the clipboard
+3. In FileMaker go to the solution's `bzBond Web Project Manager` layout
+4. Press the "Add Web Project" button in the bottom right of the screen (or use the FileMaker New Record command)
+5. Enter the name of the web project in `Web Project Name` field
+6. Paste the html file contents into the `Source Code` field
+
+Another method is to populate source code via a local or remote url:
+
+1. Enter a url that uses the `http`, `https`, or `file` protocol into the `URL`  field
+2. To update the web project source code from the url, click the download button on the right of the field.
+
+### Deploying bzBond web projects in web viewers
+
+To link a web viewer to a web project:
+
+1. Enter the following calculation in the web viewer calculation dialog.
+
+```
+Let (
+  $$_BZBOND__WEB_VIEWER_CONFIG =
+    JSONSetElement (
+      $$_BZBOND__WEB_VIEWER_CONFIG;
+      Get ( LayoutName )
+        & "."
+        & "<web_viewer_name>";
+      JSONSetElement (
+        "{}";
+        [
+          "webProject";
+          "<web_project_name>"
+          JSONString
+        ]
+      );
+      JSONObject
+    );
+  ""
+)
+```
+
+- Replace the "<web_viewer_name>" placeholder with the name of the web viewer
+- Replace the "<web_project_name>" placeholder with the name of the web project to deploy in the web viewer. Make sure it matches the name in the web project manager.
+
+2. To deploy the web project in the web viewer call the the script `bzBond Load Web Viewer` with the webViewer parameter set to the web viewer name: `{ "webViewer": "<web_viewer_name>"}`
+
+#### Full parameters for `bzBond Load Web Viewer`
+
+**webViewer**
+- Type: string
+- Value: the name of the web viewer to load
+- Notes:
+  - Required
+
+**waitForLoad**
+- Type: boolean
+- Value: if true the script stack does not continue until the `bzBond` object is availale in the web viewer
+- Notes:
+  - Default: false
+  - Setting this parameter to true solves timing issues that can occur due to web viewers running on a separate thread to the FileMaker script engine. In particular, if a script stack starts on a different layout to the one containing the web viewer then setting the `waitForLoad` parameter to true is recommended.
+
+**waitForConfig**
+- Type: boolean
+- Value: if true the script stack does not continue until the `$config` variable has been set.
+- Notes:
+  - Default: false
+  - Setting this parameter to true solves timing issues that can occur due to web viewers running on a separate thread to the FileMaker script engine. In particular, if a script stack starts on a different layout to the one containing the web viewer then setting the `waitForConfig` parameter to true is recommended.
+
+**clearCache**
+- Type: boolean
+- Value: if true the cached code of the web project is reset to value in the web project manager.
+- Notes:
+  - Default: false
+  - This is to handle cases where a web project or web viewer has been loaded and then the web project code has subsequently been modified.
+
+**noCache**
+- Type: boolean
+- Value: if true the cached code of the web project is ignored and the web project code is retrieved from the web project manager.
+- Notes:
+  - Default: false
+  - This is mostly used in development where the web project is being frequently updated in the web project manager and the latest latest version is always required.
+
+**goToWebViewer**
+- Type: boolean
+- Value: if true the web viewer will be made the active object after it is loaded. This is useful for layout where focus should be immediately on the web viewer, for example in a data entry form.
+- Notes:
+  - Default: true
+  - This is mostly used in development where the web project is being frequently updated in the web project manager and the latest latest version is always required.
+
+#### Loading all web viewers on a layout
+
+To load all web viewers on a layout rather than specifying them by name:
+
+1. Go to the layout containing the web viewers
+2. Run the script `bzBond Load Web Viewers On Current Layout`
+
+Note that you can specify the same parameters as for [`bzBond Load Web Viewer`](#full-parameters-for-bzbond-load-web-viewer) with the exception of `webViewer`. The specified parameters will be applied to all web viewers on the layout.
+
+#### Loading web viewers with script triggers
+
+It is possible to use script triggers to load web viewers as soon as layouts are loaded. The recommended script triggers are
+- `OnLayoutEnter` (Enable for Browse mode only)
+- `OnModeEnter` (Enable for Browse mode only)
 
 ### Debugging and live development for bzBond web projects
 
-### Configuring web viewers to host bzBond web projects 
+"Live development" –where code changes can be observed in real time in an application's UI– is in FileMaker's DNA, and it's also a popular approach in web development. bzBond web projects support live development through debug mode, which can be applied at the web project or web viewer level. To enable live development:
 
-bzBond can maintain a simple json configuration object for each web viewer in a FileMaker global variable. This object usually contains the name of the web project to be deployed in the web viewer. It can also contain additional information useful to the JavaScript integration, such as the layout context, script names, and supporting data such as value lists.
+#### Enable debug mode for a web project
 
-#### Web viewer config object structure
+1. Go to the bzBond Web Project Manager layout and navigate to the target web project
+2. Click the "Manage Debugging" button in the top right corner
+3. Click the "Turn on Debugging For This Project" button and enter the url of your dev server, for example `http://localhost:8080`, then press OK.
 
-In FileMaker all web viewer configuration objects are stored in a global variable named `$$_BZBOND__WEB_VIEWER_CONFIG`. The structure is as follows
+#### Enable debug mode for a web viewer
+1. Go to the bzBond Web Project Manager layout
+2. Click the "Manage Debugging" button in the top right corner
+3. Click the "Debug Web Viewer..." button
+4. Enter the name of the web viewer and the url of your dev server, for example `http://localhost:8080`, then press OK
+
+### Web viewer config
+
+All web viewer configuration objects are stored in a global variable named `$$_BZBOND__WEB_VIEWER_CONFIG`. The structure is as follows
 
 ```
 {
@@ -115,13 +245,9 @@ In FileMaker all web viewer configuration objects are stored in a global variabl
 }
 ```
 
-When using bzBond for code deployment, the "webProject" property links web viewers to web projects stored in the web project manager.
+As well as defining the web project to deploy in a web viewer web viewer config can also contain additional information useful to the web project, such as the layout context, script names, and supporting data such as value lists. The config object can be easily accessed from the web project. 
 
-#### Setting web viewer config
-
-The easiest place to set a web viewer's config is in its calculation dialog. This can be done using the following calculation.
-
-**Example web viewer config definition**
+Below is an example of a web viewer calculation with additional config:
 
 ```
 Let (
@@ -139,12 +265,12 @@ Let (
           JSONString
         ];
         [
-          "otherConfigItem";
-          "Some item"
+          "tableContext";
+          Get ( LayoutTableName )
           JSONString
         ];
         [
-          "aValueList";
+          "valueList";
           List (
             "value1";
             "value2";
@@ -183,7 +309,7 @@ bzBond-claris allows FileMaker scripts to run JavaScript functions and access th
 
 The `response.result` prop will be appropriately formatted (eg: as a number for numbers, string for strings, object for objects, etc...).
 
-#### Running JavaScript functions by calling bzBondRelay (client and server)
+#### Running JavaScript functions with the `bzBondRelay` script (client and server)
 
 The recommended way to leverage JavaScript functions in FileMaker scripts is using the `"PERFORM_JAVASCRIPT"` mode of the `bzBondRelay` script. It allows you to call the `bzBondRelay` script with specific parameters and get a result back via `Get ( ScriptResult )`, which is a familar pattern. It also works server-side server if you have either the [bBox plug-in v0.99+](https://www.beezwax.net/products/bbox) or [bzBond-server](../bzBond-server/) microserver framework installed on the server.
 
@@ -194,7 +320,7 @@ Perform Script [ bzBondRelay; <parameters> ]
 Set Variable[ $javaScriptResult; Get ( ScriptResult ) ]
 ```
 
-##### Script parameters
+##### bzBondRelay script parameters and examples for performing JavaScript
 
 **mode**
 - Type: string
@@ -234,7 +360,7 @@ Set Variable[ $javaScriptResult; Get ( ScriptResult ) ]
 - Type: string
 - Value: `"function"` or `"code"`.
   - When `"function"` the supplied function is executed with the parameters provided in the `$parameters` variable
-  - When `"code"` the result of the last statement in of the code will be returned
+  - When `"code"` the result of the last statement in the `$function` variable will be returned
 - Notes:
   - Not required on client (only functions are supported)
   - Defaults to `"function"` on server
@@ -275,7 +401,7 @@ Set Variable[ $javaScriptResult; Get ( ScriptResult ) ]
 {
   "mode": "PERFORM_JAVASCRIPT",
   "webViewerName": "JS_Runner",
-  "function": "(a, b, c) => a + b",
+  "function": "(a, b, c) => c(a + b)",
   "parameters": [40, 2, ƒ(n) => a * 2]
 }
 
