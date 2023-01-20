@@ -27,7 +27,7 @@
 
 bzBond-claris is the part of the bzBond toolset that handles web code integration, storage, deployment and debugging. It contains
 - The `bzBondRelay` script for managing communication between web viewers/JavaScript and FileMaker scripts.
-- The bzBond web project manager for storing, deploying, configuring, and debugging web code for use in FileMaker web viewers.
+- The bzBond Web Project Manager for storing, deploying, configuring, and debugging web code for use in FileMaker web viewers.
 
 ## Installation
 
