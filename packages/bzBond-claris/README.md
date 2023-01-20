@@ -15,8 +15,8 @@
     - [Loading all web viewers on a layout](#loading-all-web-viewers-on-a-layout)
     - [Loading web viewers with script triggers](#loading-web-viewers-with-script-triggers)
   - [Debugging and live development for bzBond web projects](#debugging-and-live-development-for-bzbond-web-projects)
-    - [Enable debug mode for a web project](#enable-debug-mode-for-a-web-project)
-    - [Enable debug mode for a web viewer](#enable-debug-mode-for-a-web-viewer)
+    - [Enabling debug mode for all web viewers using a web project](#enabling-debug-mode-for-all-web-viewers-using-a-web-project)
+    - [Enabling debug mode for a single web viewer](#enabling-debug-mode-for-a-single-web-viewer)
   - [Web viewer config](#web-viewer-config)
 - [Usage: bzBondRelay script](#usage-bzbondrelay-script)
   - [Integrating JavaScript functions with FileMaker scripts](#integrating-javascript-functions-with-filemaker-scripts)
@@ -76,13 +76,13 @@ The bzBond web project manager is used for storing, deploying, configuring, and 
 
 The bzBond web project manager is opinionated in that it supports integrating web technologies in a specific way. Below are the key design choices and the reasoning behind them.
 
-- Web code is stored as data in a FileMaker table. Code stored in this table is called a "web project". Storing web projects in a table has the following avantages:
+- Web code is stored as data in a FileMaker table. Code stored in this table is called a "web project". Storing web projects in a table has the following advantages:
   - It keeps them organized and increases their visibility in a solution.
   - It allows them to be updated via scripts or the Data API, meaning they can be part of a build chain or continuous delivery approach.
-  - It enables the debugging features that support "live development" of web projects. 
+  - It enables the debugging features that support "live development" for web projects. 
 - Web projects are stored in a single html file. This allows them to be deployed in web viewers as data urls.
 - Web projects are deployed in web viewers using FileMaker scripts. This allows close control over how and when web viewers are populated and helps avoid timing issues.
-- Web viewer "config" is used to determine which web project is deployed in a web viewer. Config can also be used to store useful supporting data such as value lists or script names. Leveraging config allows web projects to contain fewer hard-coded and context specific references, meaning they are more likely to be reusable.
+- Web viewer "config" is used to determine which web project is deployed in a web viewer. Config can also be used to store useful supporting data such as value lists or script names. Leveraging config allows web projects to contain fewer hard-coded and context specific references, meaning they are more likely to be reusable within and between solutions.
 - Config is defined in the web viewer calculation dialog. This allows web viewers to be added to layouts and configured without leaving the Manage Layout UI.
 
 ### bzBond web projects
@@ -105,7 +105,7 @@ For more details see the create-bzbond-app [documentation](../create-bzbond-app/
 
 ### Storing web projects in the bzBond web project manager
 
-The simplest way to store a web project in the web project manager is copy and paste:
+The simplest way to store a web project in the web project manager is copy-and-paste:
 
 1. Run the build process for your web project
 2. Copy the resulting html file contents to the clipboard
@@ -116,7 +116,7 @@ The simplest way to store a web project in the web project manager is copy and p
 
 Another method is to populate source code via a local or remote url:
 
-1. Enter a url that uses the `http`, `https`, or `file` protocol into the `URL`  field
+1. Enter a url that uses the `http`, `https`, or `file` protocol in the `URL`  field
 2. To update the web project source code from the url, click the download button on the right of the field.
 
 ### Deploying bzBond web projects in web viewers
@@ -162,37 +162,37 @@ Let (
 
 **waitForLoad**
 - Type: boolean
-- Value: if true the script stack does not continue until the `bzBond` object is availale in the web viewer
+- Value: if `true` the script stack does not continue until the `bzBond` object is availale in the web viewer
 - Notes:
-  - Default: false
-  - Setting this parameter to true solves timing issues that can occur due to web viewers running on a separate thread to the FileMaker script engine. In particular, if a script stack starts on a different layout to the one containing the web viewer then setting the `waitForLoad` parameter to true is recommended.
+  - Default: `false`
+  - Setting this parameter to true solves timing issues that can occur due to web viewers running on a separate thread to the FileMaker script engine. In particular, if a script stack starts on a different layout to the one containing the web viewer then setting the `waitForLoad` parameter to `true` is recommended.
 
 **waitForConfig**
 - Type: boolean
 - Value: if true the script stack does not continue until the `$config` variable has been set.
 - Notes:
-  - Default: false
-  - Setting this parameter to true solves timing issues that can occur due to web viewers running on a separate thread to the FileMaker script engine. In particular, if a script stack starts on a different layout to the one containing the web viewer then setting the `waitForConfig` parameter to true is recommended.
+  - Default: `false`
+  - Setting this parameter to true solves timing issues that can occur due to web viewers running on a separate thread to the FileMaker script engine. In particular, if a script stack starts on a different layout to the one containing the web viewer then setting the `waitForConfig` parameter to `true` is recommended.
 
 **clearCache**
 - Type: boolean
-- Value: if true the cached code of the web project is reset to value in the web project manager.
+- Value: if `true` the cached code of the web project is reset to value in the web project manager.
 - Notes:
   - Default: false
   - This is to handle cases where a web project or web viewer has been loaded and then the web project code has subsequently been modified.
 
 **noCache**
 - Type: boolean
-- Value: if true the cached code of the web project is ignored and the web project code is retrieved from the web project manager.
+- Value: if `true` the cached code of the web project is ignored and the web project code is retrieved from the web project manager.
 - Notes:
-  - Default: false
+  - Default: `false`
   - This is mostly used in development where the web project is being frequently updated in the web project manager and the latest latest version is always required.
 
 **goToWebViewer**
 - Type: boolean
-- Value: if true the web viewer will be made the active object after it is loaded. This is useful for layout where focus should be immediately on the web viewer, for example in a data entry form.
+- Value: if `true` the web viewer will be made the active object after it is loaded. This is useful for layout where focus should be immediately on the web viewer, for example in a data entry form.
 - Notes:
-  - Default: true
+  - Default: `true`
   - This is mostly used in development where the web project is being frequently updated in the web project manager and the latest latest version is always required.
 
 #### Loading all web viewers on a layout
@@ -212,15 +212,15 @@ It is possible to use script triggers to load web viewers as soon as layouts are
 
 ### Debugging and live development for bzBond web projects
 
-"Live development" –where code changes can be observed in real time in an application's UI– is in FileMaker's DNA, and it's also a popular approach in web development. bzBond web projects support live development through debug mode, which can be applied at the web project or web viewer level. To enable live development:
+"Live development" –where code changes can be observed in real time in an application's UI– is in FileMaker's DNA, and it's also a popular approach in web development. bzBond web projects support live development through debug mode, which can be applied at the web project or web viewer level.
 
-#### Enable debug mode for a web project
+#### Enabling debug mode for all web viewers using a web project
 
 1. Go to the bzBond Web Project Manager layout and navigate to the target web project
 2. Click the "Manage Debugging" button in the top right corner
 3. Click the "Turn on Debugging For This Project" button and enter the url of your dev server, for example `http://localhost:8080`, then press OK.
 
-#### Enable debug mode for a web viewer
+#### Enabling debug mode for a single web viewer
 1. Go to the bzBond Web Project Manager layout
 2. Click the "Manage Debugging" button in the top right corner
 3. Click the "Debug Web Viewer..." button
@@ -245,7 +245,7 @@ All web viewer configuration objects are stored in a global variable named `$$_B
 }
 ```
 
-As well as defining the web project to deploy in a web viewer web viewer config can also contain additional information useful to the web project, such as the layout context, script names, and supporting data such as value lists. The config object can be easily accessed from the web project. 
+As well as defining the web project to deploy in a web viewer, config can also contain additional information useful to the web project, such as the layout context, script names, and supporting data such as value lists. The config object can be easily accessed from the web project. See the [bzBond-js documentation](../bzBond-js/README.md#bzbondsyncconfig) for details. 
 
 Below is an example of a web viewer calculation with additional config:
 
@@ -289,11 +289,20 @@ Let (
 
 The `bzBondRelay` script manages FileMaker interactions with web code. These interactions are between FileMaker scripts and FileMaker web viewers, or FileMaker scripts and the [bzBond-server](../bzBond-server/) app.
 
-The majority of these functions are called from the [bzBond-js](../bzBond-js/) and are documented there. The exception is the Perform JavaScript feature, which enables JavaScript functions to be integrated into a regular FileMaker script flow.
+The majority of these functions are called from [bzBond-js](../bzBond-js/) and are documented there. The exception is the Perform JavaScript feature, which enables JavaScript functions to be integrated into a regular FileMaker script flow.
 
-### Integrating JavaScript functions with FileMaker scripts
+### Running JavaScript functions with the `bzBondRelay` script (client and server)
 
-bzBond-claris allows FileMaker scripts to run JavaScript functions and access the results via `Get ( ScriptResult )`. The format of the result is the same as FileMaker Data API:
+The recommended way to leverage JavaScript functions in FileMaker scripts is using the `"PERFORM_JAVASCRIPT"` mode of the `bzBondRelay` script. It allows you to call the `bzBondRelay` script with specific parameters and get a result back via `Get ( ScriptResult )`, which is a familar pattern. It also works server-side server if you have either the [bBox plug-in v0.99+](https://www.beezwax.net/products/bbox) or [bzBond-server](../bzBond-server/) microservice framework installed on the server.
+
+The script pattern is
+
+```
+Perform Script [ bzBondRelay; <parameters> ]
+Set Variable[ $javaScriptResult; Get ( ScriptResult ) ]
+```
+
+The format of the result is the same as FileMaker Data API:
 
 ```
 {
@@ -308,17 +317,6 @@ bzBond-claris allows FileMaker scripts to run JavaScript functions and access th
 ```
 
 The `response.result` prop will be appropriately formatted (eg: as a number for numbers, string for strings, object for objects, etc...).
-
-#### Running JavaScript functions with the `bzBondRelay` script (client and server)
-
-The recommended way to leverage JavaScript functions in FileMaker scripts is using the `"PERFORM_JAVASCRIPT"` mode of the `bzBondRelay` script. It allows you to call the `bzBondRelay` script with specific parameters and get a result back via `Get ( ScriptResult )`, which is a familar pattern. It also works server-side server if you have either the [bBox plug-in v0.99+](https://www.beezwax.net/products/bbox) or [bzBond-server](../bzBond-server/) microserver framework installed on the server.
-
-The script pattern is
-
-```
-Perform Script [ bzBondRelay; <parameters> ]
-Set Variable[ $javaScriptResult; Get ( ScriptResult ) ]
-```
 
 ##### bzBondRelay script parameters and examples for performing JavaScript
 
@@ -336,13 +334,16 @@ Set Variable[ $javaScriptResult; Get ( ScriptResult ) ]
 **function**
 - Type: string
 - Value: either
-  - a function in the global (window) JavaScript context of the web viewer OR
-  - a JavaScript function (arrow or classic) defined as a string
+  - when running on the client or on server where the `route` parameter is `"function"` 
+    - a function in the global (window) JavaScript context of the web viewer OR
+    - a JavaScript function (arrow or classic) defined as a string OR
+  - when running on server where the `route` parameter is `"code"`
+    - JavaScript code to execute 
 - Notes:
-  - Use the `Insert Text` script step to define functions without having to worry about escaping quotes.
+  - Use the `Insert Text` script step to define functions or code without having to worry about escaping quotes.
 
 **parameters**
-- Type: array of strings
+- Type: array
 - Value: An array or parameters to pass to the function.
   - Passing functions as parameters is supported. Prefix a parameter with the 'ƒ' symbol (⌥ + f on macs) to indicate that it is a function. For example: 
   ```
@@ -354,13 +355,13 @@ Set Variable[ $javaScriptResult; Get ( ScriptResult ) ]
   ```
 - Notes:
   - Optional (some JS functions do not need parameters)
-  - Not required when route is `"code"`
+  - Not required when `route` is `"code"`
 
 **route**
 - Type: string
 - Value: `"function"` or `"code"`.
-  - When `"function"` the supplied function is executed with the parameters provided in the `$parameters` variable
-  - When `"code"` the result of the last statement in the `$function` variable will be returned
+  - When `"function"` the function defined in the `function` parameter is executed with the parameters provided in the `parameters` parameter
+  - When `"code"` the result of the last statement in the `function` parameter will be returned
 - Notes:
   - Not required on client (only functions are supported)
   - Defaults to `"function"` on server
