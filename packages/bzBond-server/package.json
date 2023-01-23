@@ -1,6 +1,6 @@
 {
   "name": "@beezwax/bzbond-server",
-  "version": "0.4.17",
+  "version": "0.4.22",
   "description": "Extensible JavaScript microservice for bzBond",
   "author": "Beezwax",
   "repository": {
@@ -15,7 +15,7 @@
     "build": "ncc build ./server.js -o dist"
   },
   "dependencies": {
-    "@beezwax/bzbond-js": "^0.4.17",
+    "@beezwax/bzbond-js": "^0.4.22",
     "fastify": "^3.27.4",
     "vm2": "^3.9.11"
   },
