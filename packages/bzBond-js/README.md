@@ -1,4 +1,4 @@
-# bzBond
+# bzBond-js
 
 ## Table of Contents
 
@@ -22,7 +22,7 @@
 
 ## Introduction
 
-bzBond-js is part of the bzBond toolset. It manages interactions between FileMaker scripts and FileMaker Web Viewers. It requires [bzBond-claris](../bzBond-claris/README.md).
+bzBond-js is part of the [bzBond](/) toolset. It manages interactions between FileMaker scripts and FileMaker Web Viewers. It requires [bzBond-claris](../bzBond-claris/).
 
 ### Features
 
