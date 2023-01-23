@@ -33,7 +33,7 @@ bzBond-claris is the part of the [bzBond](/) toolset that handles web code integ
 
 ### FileMaker Add-on
 
-1. [Download](https://github.com/beezwax/bzBond/archive/refs/heads/main.zip) or clone the [bzBond](https://github.com/beezwax/bzbond) repo
+1. [Download](https://github.com/beezwax/bzBond/archive/refs/heads/main.zip) or clone the [bzBond](/) repo
 2. Unzip the repo if it was downloaded rather than cloned
 3. Copy the contents of the [bzBond-addOn](bzBond-addOn) folder to the FileMaker Add-on folder:
 - macOS: `~/Library/Application Support/FileMaker/Extensions/AddonModules`
@@ -44,7 +44,7 @@ bzBond-claris is the part of the [bzBond](/) toolset that handles web code integ
 
 ### Manual installation
 
-1. Download the [bzBond-claris.fmp12](https://github.com/beezwax/bzbond/blob/main/packages/bzBond-claris/bzBond-claris.fmp12?raw=true) source file.
+1. Download the [bzBond-claris.fmp12](bzBond-claris.fmp12?raw=true) source file.
 
 2. Copy the `WEB_PROJECT` table into the target file
 
