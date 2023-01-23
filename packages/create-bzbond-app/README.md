@@ -1,10 +1,12 @@
 # create-bzbond-app
 
+## Introduction
+
 create-bzbond-app is the best way to create new bzBond projects. It requires [node/npm](https://nodejs.org/en/download/) and [git](https://git-scm.com/downloads).
 
 ## Usage
 
-### Create an all-in-one project
+### Create an all-in-one bzBond project
 
 ```
 npx -y @beezwax/create-bzbond-app <app-name>
@@ -12,7 +14,7 @@ npx -y @beezwax/create-bzbond-app <app-name>
 npx -y @beezwax/create-bzbond-app my-aio-app
 ```
 
-### Create a web-only project
+### Create a web-only bzBond project
 
 ```
 npx -y @beezwax/create-bzbond-app <app-name> --web-only
@@ -20,7 +22,7 @@ npx -y @beezwax/create-bzbond-app <app-name> --web-only
 npx -y @beezwax/create-bzbond-app my-web-only-app --web-only
 ```
 
-### Create a claris-only project
+### Create a claris-only bzBond project
 
 ```
 npx -y @beezwax/create-bzbond-app <app-name> --claris-only
