@@ -101,7 +101,7 @@ e.g.
 
 `npx -y @beezwax/create-bzbond-app my-web-project --web-only`
 
-For more details see the create-bzbond-app [documentation](../create-bzbond-app/README.md).
+For more details see the create-bzbond-app [documentation](../create-bzbond-app/).
 
 ### Storing web projects in the bzBond web project manager
 
