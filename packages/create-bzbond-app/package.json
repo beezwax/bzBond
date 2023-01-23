@@ -3,6 +3,11 @@
   "version": "0.4.2",
   "description": "Executable to create a bzbond app",
   "author": "Beezwax",
+  "repository": {
+    "url": "https://github.com/beezwax/bzBond.git/",
+    "type": "git",
+    "directory": "packages/create-bzBond-app"
+  },
   "license": "MIT",
   "bin": "./bin/cli.js",
   "publishConfig": {

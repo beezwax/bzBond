@@ -4,6 +4,11 @@
   "description": "JavaScript assets for bzBond toolset",
   "main": "bzBond.js",
   "author": "Beezwax",
+  "repository": {
+    "url": "https://github.com/beezwax/bzBond.git/",
+    "type": "git",
+    "directory": "packages/bzBond-js"
+  },
   "license": "MIT",
   "scripts": {
     "build": "npm run test && webpack --config webpack.config.js",
