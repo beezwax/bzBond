@@ -4,7 +4,7 @@
   "description": "Claris platform assets for bzBond toolset",
   "author": "Beezwax",
   "repository": {
-    "url": "https://github.com/beezwax/bzBond/tree/main/packages/bzBond-claris",
+    "url": "https://github.com/beezwax/bzBond/packages/bzBond-claris",
     "type": "git"
   },
   "license": "MIT",
