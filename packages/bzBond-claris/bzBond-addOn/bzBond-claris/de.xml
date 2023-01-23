@@ -560,13 +560,6 @@
 </DynamicTemplateString>
 
 <DynamicTemplateString>
-	<StringID>com.fmi.calculation.text.85F18E33BDA7B8A51B77274CDE0168C2</StringID>
-	<SourceText>.js</SourceText>
-	<TargetText>.js</TargetText>
-	<Comment>com.fmi.calculation.text..js</Comment>
-</DynamicTemplateString>
-
-<DynamicTemplateString>
 	<StringID>com.fmi.calculation.text.8707CB82B8627E58DCCFC25F00E4F906</StringID>
 	<SourceText>Cloud</SourceText>
 	<TargetText>Cloud</TargetText>
@@ -1435,6 +1428,13 @@
 </DynamicTemplateString>
 
 <DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.20A7FF7A4B7D5CA4F3BF7022430E8311</StringID>
+	<SourceText>Encode JavaScript file to run</SourceText>
+	<TargetText>Encode JavaScript file to run</TargetText>
+	<Comment>com.fmi.scriptstep.text.Encode JavaScript file to run</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
 	<StringID>com.fmi.scriptstep.text.240131728BFFFD5959188A676133E8AD</StringID>
 	<SourceText>Show a dialog when the result could not be returned and user has chosen to show a dialog in this case</SourceText>
 	<TargetText>Show a dialog when the result could not be returned and user has chosen to show a dialog in this case</TargetText>
@@ -1894,13 +1894,6 @@
 	<SourceText>Turn off debug mode for all web viewers</SourceText>
 	<TargetText>Turn off debug mode for all web viewers</TargetText>
 	<Comment>com.fmi.scriptstep.text.Turn off debug mode for all web viewers</Comment>
-</DynamicTemplateString>
-
-<DynamicTemplateString>
-	<StringID>com.fmi.scriptstep.text.D957E3D31DBD5FB6E364A1D8F7A405EF</StringID>
-	<SourceText>Create JavaScript file to run</SourceText>
-	<TargetText>Create JavaScript file to run</TargetText>
-	<Comment>com.fmi.scriptstep.text.Create JavaScript file to run</Comment>
 </DynamicTemplateString>
 
 <DynamicTemplateString>
