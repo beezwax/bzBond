@@ -25,7 +25,6 @@
     "@babel/preset-env": "^7.12.13",
     "@babel/runtime-corejs3": "^7.12.13",
     "babel-loader": "^8.2.2",
-    "clean-webpack-plugin": "^4.0.0",
     "core-js": "^3.10.1",
     "css-loader": "^5.0.1",
     "find-process": "^1.4.7",
