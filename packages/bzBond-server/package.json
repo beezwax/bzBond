@@ -11,8 +11,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "fastify start -l info --watch --pretty-logs server.js",
-    "test": "NODE_ENV=test mocha",
-    "build": "ncc build ./server.js -o dist"
+    "test": "NODE_ENV=test mocha"
   },
   "dependencies": {
     "@beezwax/bzbond-js": "^0.4.22",
@@ -23,7 +22,6 @@
     "access": "public"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.34.0",
     "chai": "^4.3.7",
     "mocha": "^10.1.0",
     "prettier": "^2.7.1"

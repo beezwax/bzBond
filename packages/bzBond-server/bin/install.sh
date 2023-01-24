@@ -13,8 +13,10 @@ fi
 
 # Check FileMaker's node
 NODE_PATH="/opt/FileMaker/FileMaker Server/node/bin/node"
+NPM_PATH="/opt/FileMaker/FileMaker Server/node/bin/npm"
 if [ "$(uname)" = "Darwin" ]; then
   NODE_PATH="/Library/FileMaker Server/node/bin/node"
+  NPM_PATH="/Library/FileMaker Server/node/bin/npm"
 fi
 
 if ! command -v "$NODE_PATH" &> /dev/null; then
@@ -23,12 +25,24 @@ if ! command -v "$NODE_PATH" &> /dev/null; then
   exit
 fi
 
+if ! command -v "$NPM_PATH" &> /dev/null; then
+  echo "ERROR: Could not find npm binary at '$NPM_PATH'."
+  echo "Nothing was installed."
+  exit
+fi
+
+echo "Downloading latest version..."
 cd /tmp
 git clone https://github.com/beezwax/bzBond.git
 sudo mkdir -p /var/www/bzbond-server
-sudo cp -r /tmp/bzBond/packages/bzBond-server/dist/* /var/www/bzbond-server
+sudo cp -r /tmp/bzBond/packages/bzBond-server/* /var/www/bzbond-server
+
+echo "Installing dependencies..."
+cd /var/www/bzbond-server
+sudo "$NODE_PATH" "$NPM_PATH" install
 rm -rf /tmp/bzBond
 
+echo "Setting up services..."
 if [ "$(uname)" = "Darwin" ]; then
   # macOS installation
   sudo tee -a /Library/LaunchDaemons/net.beezwax.bzbond-server.plist &> /dev/null <<EOF
@@ -42,7 +56,7 @@ if [ "$(uname)" = "Darwin" ]; then
     <key>ProgramArguments</key>
     <array>
       <string>$NODE_PATH</string>
-      <string>/var/www/bzbond-server/index.js</string>
+      <string>/var/www/bzbond-server/server.js</string>
     </array>
 
     <key>WorkingDirectory</key>
@@ -81,7 +95,7 @@ After=network.target
 [Service]
 Type=simple
 User=fmserver
-ExecStart="$NODE_PATH" /var/www/bzbond-server/index.js
+ExecStart="$NODE_PATH" /var/www/bzbond-server/server.js
 Restart=on-failure
 
 [Install]
@@ -93,5 +107,6 @@ EOF
   sudo systemctl enable bzbond-server
 
   echo "bzBond server installed!"
+  echo
   echo "Use 'sudo systemctl status bzbond-server' to check its status"
 fi
