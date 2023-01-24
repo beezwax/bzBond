@@ -102,8 +102,19 @@ module.exports = class CLI {
           fs.writeFileSync(packageJson, JSON.stringify(json, null, 2), 'utf8');
         }),
         new Command (process.platform === "darwin" ? `cd ${repoPath} && git add -A && git commit -m "Initial commit"` : `cd ${repoPath}`),
-        new Command (`cd ${repoPath} && npm run start_silent`, undefined, {message: "\x1b[33mStarting Dev Server\x1b[0m", noWait: true}),
-        new FunctionCommand (deployAndRunFmWebProject, [repoPath], {message: "\x1b[33mDeploying Web Project in FileMaker\x1b[0m"})
+        new Command (`cd ${repoPath} && npm run build`, undefined, {message: "\x1b[33mBuilding project...\x1b[0m", noWait: true, async: true, callback: () => {
+          const commandsAfterBuild = [
+            new Command (`cd ${repoPath} && npm run start_silent`, undefined, {message: "\x1b[33mStarting Dev Server\x1b[0m", noWait: true}),
+            new FunctionCommand (deployAndRunFmWebProject, [repoPath], {message: "\x1b[33mDeploying Web Project in FileMaker\x1b[0m"})
+          ];
+          for(const command of commandsAfterBuild) {
+            const error = command.run();
+            if(error !== null) {
+              console.error(`Failed to execute ${command.command}`, error);
+              return;
+            }
+          }
+        }})
       ];
     }
     for(const command of commands) {
@@ -123,6 +134,8 @@ class Command {
     this.execFunction = options.noWait ? exec : execSync;
     this.message = options.message ? options.message : "";
     this.waitMs = options.waitMs;
+    this.async = options.async;
+    this.callback = options.callback;
   }
 
   run () {
@@ -130,7 +143,11 @@ class Command {
       if(this.message) {
         console.log(this.message);
       }
-      this.execFunction(`${this.command}`, {stdio: "inherit"});
+      if(this.async) {
+        this.execFunction(`${this.command}`, this.callback, {stdio: "inherit"})
+      } else {
+        this.execFunction(`${this.command}`, {stdio: "inherit"});
+      }
     } catch (e) {
       return e;
     }
