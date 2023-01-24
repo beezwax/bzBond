@@ -107,7 +107,7 @@ For more details see the create-bzbond-app [documentation](../create-bzbond-app/
 
 The simplest way to store a web project in the web project manager is copy-and-paste:
 
-1. Run the build process for your web project
+1. Run the [build process for your web project](../bzBond-web-template/README.md#building-a-single-file-web-project-for-use-in-the-bzbond-web-project-manager)
 2. Copy the resulting html file contents to the clipboard
 3. In FileMaker go to the solution's `bzBond Web Project Manager` layout
 4. Press the "Add Web Project" button in the bottom right of the screen (or use the FileMaker New Record command)
