@@ -19,15 +19,14 @@
     - [Enabling debug mode for a single web viewer](#enabling-debug-mode-for-a-single-web-viewer)
   - [Web viewer config](#web-viewer-config)
 - [Usage: bzBondRelay script](#usage-bzbondrelay-script)
-  - [Integrating JavaScript functions with FileMaker scripts](#integrating-javascript-functions-with-filemaker-scripts)
     - [Running JavaScript functions with the `bzBondRelay` script (client and server)](#running-javascript-functions-with-the-bzbondrelay-script-client-and-server)
       - [bzBondRelay script parameters and examples for performing JavaScript](#bzbondrelay-script-parameters-and-examples-for-performing-javascript)
 
 ## Introduction
 
 bzBond-claris is the part of the [bzBond](/) toolset that handles web code integration, storage, deployment and debugging. It contains
-- The `bzBondRelay` script for managing communication between web viewers/JavaScript and FileMaker scripts.
-- The bzBond Web Project Manager for storing, deploying, configuring, and debugging web code for use in FileMaker web viewers.
+- The `bzBondRelay` script for managing communication between web viewers/JavaScript and Claris/FileMaker scripts.
+- The bzBond Web Project Manager for storing, deploying, configuring, and debugging web code for use in Claris/FileMaker web viewers.
 
 ## Installation
 
@@ -38,7 +37,7 @@ bzBond-claris is the part of the [bzBond](/) toolset that handles web code integ
 3. Copy the contents of the [bzBond-addOn](bzBond-addOn) folder to the FileMaker Add-on folder:
 - macOS: `~/Library/Application Support/FileMaker/Extensions/AddonModules`
 - Windows: `Users\<YOUR_USERNAME>\AppData\Local\FileMaker\Extensions\AddonModules`
-4. In your target FileMaker file go into layout mode on any layout
+4. In your target Claris/FileMaker file go into layout mode on any layout
 5. In the left panel click the `Add-ons` tab
 6. Click the + icon and select bzBond-claris. It will be under the `Web` heading.
 
@@ -72,16 +71,16 @@ bzBond-claris is the part of the [bzBond](/) toolset that handles web code integ
 
 ## Usage: bzBond web project manager
 
-The bzBond web project manager is used for storing, deploying, configuring, and debugging web code for use in FileMaker web viewers.
+The bzBond web project manager is used for storing, deploying, configuring, and debugging web code for use in Claris/FileMaker web viewers.
 
 The bzBond web project manager is opinionated in that it supports integrating web technologies in a specific way. Below are the key design choices and the reasoning behind them.
 
-- Web code is stored as data in a FileMaker table. Code stored in this table is called a "web project". Storing web projects in a table has the following advantages:
+- Web code is stored as data in a Claris/FileMaker table. Code stored in this table is called a "web project". Storing web projects in a table has the following advantages:
   - It keeps them organized and increases their visibility in a solution.
   - It allows them to be updated via scripts or the Data API, meaning they can be part of a build chain or continuous delivery approach.
   - It enables the debugging features that support "live development" for web projects. 
 - Web projects are stored in a single html file. This allows them to be deployed in web viewers as data urls.
-- Web projects are deployed in web viewers using FileMaker scripts. This allows close control over how and when web viewers are populated and helps avoid timing issues.
+- Web projects are deployed in web viewers using Claris/FileMaker scripts. This allows close control over how and when web viewers are populated and helps avoid timing issues.
 - Web viewer "config" is used to determine which web project is deployed in a web viewer. Config can also be used to store useful supporting data such as value lists or script names. Leveraging config allows web projects to contain fewer hard-coded and context specific references, meaning they are more likely to be reusable within and between solutions.
 - Config is defined in the web viewer calculation dialog. This allows web viewers to be added to layouts and configured without leaving the Manage Layout UI.
 
@@ -109,8 +108,8 @@ The simplest way to store a web project in the web project manager is copy-and-p
 
 1. Run the [build process for your web project](../bzBond-web-template/README.md#building-a-single-file-web-project-for-use-in-the-bzbond-web-project-manager)
 2. Copy the resulting html file contents to the clipboard
-3. In FileMaker go to the solution's `bzBond Web Project Manager` layout
-4. Press the "Add Web Project" button in the bottom right of the screen (or use the FileMaker New Record command)
+3. In Claris/FileMaker Pro go to the solution's `bzBond Web Project Manager` layout
+4. Press the "Add Web Project" button in the bottom right of the screen (or use the `New Record` command)
 5. Enter the name of the web project in `Web Project Name` field
 6. Paste the html file contents into the `Source Code` field
 
@@ -165,14 +164,14 @@ Let (
 - Value: if `true` the script stack does not continue until the `bzBond` object is availale in the web viewer
 - Notes:
   - Default: `false`
-  - Setting this parameter to true solves timing issues that can occur due to web viewers running on a separate thread to the FileMaker script engine. In particular, if a script stack starts on a different layout to the one containing the web viewer then setting the `waitForLoad` parameter to `true` is recommended.
+  - Setting this parameter to true solves timing issues that can occur due to web viewers running on a separate thread to the Claris/FileMaker script engine. In particular, if a script stack starts on a different layout to the one containing the web viewer then setting the `waitForLoad` parameter to `true` is recommended.
 
 **waitForConfig**
 - Type: boolean
 - Value: if true the script stack does not continue until the `$config` variable has been set.
 - Notes:
   - Default: `false`
-  - Setting this parameter to true solves timing issues that can occur due to web viewers running on a separate thread to the FileMaker script engine. In particular, if a script stack starts on a different layout to the one containing the web viewer then setting the `waitForConfig` parameter to `true` is recommended.
+  - Setting this parameter to true solves timing issues that can occur due to web viewers running on a separate thread to the Cl;Claris/FileMaker script engine. In particular, if a script stack starts on a different layout to the one containing the web viewer then setting the `waitForConfig` parameter to `true` is recommended.
 
 **clearCache**
 - Type: boolean
@@ -287,13 +286,13 @@ Let (
 
 ## Usage: bzBondRelay script
 
-The `bzBondRelay` script manages FileMaker interactions with web code. These interactions are between FileMaker scripts and FileMaker web viewers, or FileMaker scripts and the [bzBond-server](../bzBond-server/) app.
+The `bzBondRelay` script manages Claris/FileMaker interactions with web code. These interactions are between Claris/FileMaker scripts and web viewers, or Claris/FileMaker scripts and the [bzBond-server](../bzBond-server/) app.
 
-The majority of these functions are called from [bzBond-js](../bzBond-js/) and are documented there. The exception is the Perform JavaScript feature, which enables JavaScript functions to be integrated into a regular FileMaker script flow.
+The majority of these functions are called from [bzBond-js](../bzBond-js/) and are documented there. The exception is the Perform JavaScript feature, which enables JavaScript functions to be integrated into a regular Claris/FileMaker script flow.
 
 ### Running JavaScript functions with the `bzBondRelay` script (client and server)
 
-The recommended way to leverage JavaScript functions in FileMaker scripts is using the `"PERFORM_JAVASCRIPT"` mode of the `bzBondRelay` script. It allows you to call the `bzBondRelay` script with specific parameters and get a result back via `Get ( ScriptResult )`, which is a familar pattern. It also works server-side server if you have either the [bBox plug-in v0.99+](https://www.beezwax.net/products/bbox) or [bzBond-server](../bzBond-server/) microservice framework installed on the server.
+The recommended way to leverage JavaScript functions in Claris/FileMaker scripts is using the `"PERFORM_JAVASCRIPT"` mode of the `bzBondRelay` script. It allows you to call the `bzBondRelay` script with specific parameters and get a result back via `Get ( ScriptResult )`, which is a familar pattern. It also works server-side server if you have either the [bBox plug-in v0.99+](https://www.beezwax.net/products/bbox) or [bzBond-server](../bzBond-server/) microservice framework installed on the server.
 
 The script pattern is
 
@@ -368,7 +367,7 @@ The `response.result` prop will be appropriately formatted (eg: as a number for 
 
 **useBbox**
 - Type: boolean
-- Value: if [bBox plug-in v0.99+](https://www.beezwax.net/products/bbox) is installed on the FileMaker server and this parameter is true then the JavaScript code will run using bBox.
+- Value: if [bBox plug-in v0.99+](https://www.beezwax.net/products/bbox) is installed on Claris/FileMaker Server and this parameter is true then the JavaScript code will run using the `bBox_JavaScriptNode` function.
 - Notes:
   - Not applicable on client
   - Optional on server.
