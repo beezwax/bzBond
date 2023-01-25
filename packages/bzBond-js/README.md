@@ -7,27 +7,25 @@
 - [Installation](#installation)
 - [Requirements](#requirements)
 - [Usage](#usage)
-  - [Performing FileMaker Scripts from JavaScript](#performing-filemaker-scripts-from-javascript)
-    - [PerformScript](#bzbondperformscriptscriptname-scriptparameter--options)
+  - [Performing Claris/FileMaker Scripts from JavaScript](#performing-clarisfilemaker-scripts-from-javascript)
+    - [PerformScript](#bzbondperformscriptscriptname-scriptparameter-options)
     - [{Set/Get}WebViewerName](#bzbondsetwebviewernamewebviewername--bzbondgetwebviewername)
-    - [SetWebViewerNameFromFM](#bzbondsetwebviewernamefromfm)
+    - [SetWebViewerNameFromClaris](#bzbondsetwebviewernamefromclaris)
     - [{Set/Get}RelayScriptName](#bzbondsetrelayscriptnamerelayscriptname--bzbondgetrelayscriptname)
     - [SyncConfig](#bzbondsyncconfig)
     - [RegisterScript](#bzbondregisterscriptpluginoptions)
   - [Promise rejection and Error Handling](#promise-rejection-and-error-handling)
-  - [Performing JavaScript functions from FileMaker](#performing-javascript-functions-from-filemaker)
+  - [Integrating JavaScript functions with Claris/FileMaker scripts](#integrating-javascript-functions-with-clarisfilemaker-scripts)
 - [Contributors](#contributors)
-
----
 
 ## Introduction
 
 bzBond-js is part of the [bzBond](/) toolset. It manages interactions between FileMaker scripts and FileMaker Web Viewers. It requires [bzBond-claris](../bzBond-claris/).
 
-### Features
+## Features
 
-- Call FileMaker scripts from web viewers using `bzBond.PerformScript`. This function returns a **JavaScript Promise** including the script result.
-- Use JavaScript functions in FileMaker scripts by calling the `bzBondRelay` script. Function results can be accessed in `Get ( ScriptResult )`
+- Call Claris/FileMaker scripts from web viewers using `bzBond.PerformScript`. This function returns a **JavaScript Promise** including the script result.
+- Use JavaScript functions in Claris/FileMaker scripts by calling the `bzBondRelay` script. Function results can be accessed in `Get ( ScriptResult )`
 - Extensible through a built-in plugin registration system.
 
 ## Installation
@@ -37,7 +35,7 @@ bzBond-js is part of the [bzBond](/) toolset. It manages interactions between Fi
 npm i @beezwax/bzbond-js
 ```
 
-2. Download the [bzBond-claris.fmp12](https://github.com/beezwax/bzbond/blob/main/packages/bzBond-claris/bzBond-claris.fmp12?raw=true) FileMaker file, and copy the `bzBondRelay` script into the target FileMaker file.
+2. Download the [bzBond-claris.fmp12](https://github.com/beezwax/bzbond/blob/main/packages/bzBond-claris/bzBond-claris.fmp12?raw=true) Claris/FileMaker file, and copy the `bzBondRelay` script into the target Claris/FileMaker file.
 
 ## Requirements
 
@@ -53,7 +51,7 @@ npm i @beezwax/bzbond-js
 
 ## Usage
 
-### Performing FileMaker Scripts from JavaScript
+### Performing Claris/FileMaker Scripts from JavaScript
 
 #### bzBond.PerformScript(scriptName, [scriptParameter, options])
 
@@ -71,9 +69,9 @@ The (optional) **options** parameter can contain any of the following (defaults 
 {
     webViewerName: "",         // The name of the web viewer hosting the web code.
     timeout: null,             // Number of milliseconds to wait before a promise is rejected.
-    callType: 0                // The FileMaker 'call type'.
-    relayScript: "bzBondRelay" // The relay script as it is named in the FileMaker solution.
-    ignoreResult: false        // When true, promise resolves immediately - does not wait for FileMaker script.
+    callType: 0                // The Claris/FileMaker 'call type'.
+    relayScript: "bzBondRelay" // The relay script as it is named in the Claris/FileMaker solution.
+    ignoreResult: false        // When true, promise resolves immediately - does not wait for Claris/FileMaker script.
 }
 ```
 
@@ -106,7 +104,7 @@ This method manually associates bzBond with the name of the Web Viewer the code 
     bzBond.GetWebViewerName(); // "myWebViewer"
 ```
 
-#### bzBond.SetWebViewerNameFromFM()
+#### bzBond.SetWebViewerNameFromClaris()
 
 Determines the name of the web viewer that bzBond is running in and stores it as part of the bzBond instance. This is useful for ensuring that subsequent `bzBond.PerformScript` calls do not invoke potentially expensive searches for the initiating web viewer.
 
@@ -114,7 +112,7 @@ Returns a **promise**
 
 ```
 bzBond.GetWebViewerName(); // ""
-bzBond.SetWebViewerNameFromFM()
+bzBond.SetWebViewerNameFromClaris()
     .then((result) => {
         console.log(result) // "myWV"
         console.log(bzBond.GetWebViewerName()) // "myWV"
@@ -124,7 +122,7 @@ bzBond.SetWebViewerNameFromFM()
 
 #### bzBond.SetRelayScriptName(relayScriptName) | bzBond.GetRelayScriptName()
 
-If you choose to change the name of the Relay Script in FileMaker, use this step to ensure bzBond calls to FileMaker perform the correct script.
+If you choose to change the name of the Relay Script in Claris/FileMaker Pro, use this step to ensure bzBond calls to Claris/FileMaker Pro perform the correct script.
 
 ```
 bzBond.GetRelayScriptName(); // "bzBondRelay" (default)
@@ -137,22 +135,22 @@ bzBond.GetRelayScriptName(); // "My Relay Script"
 To learn more about web viewer config see [bzBond-claris](../bzBond-claris/README.md#web-viewer-config)
 
 - `SyncConfig` returns the Web Viewer JSON config as a **promise** result.
-- `SetWebViewerConfigFromClaris` gets the current web viewer config state from FileMaker and updates the config stored in bzBond-js.
+- `SetWebViewerConfigFromClaris` gets the current web viewer config state from Claris/FileMaker Pro and updates the config stored in bzBond-js.
 - `SetWebViewerConfig(webViewerConfig)` allows manual overwrite of the configuration stored in bzBond-js.
 - `GetConfig` returns the current configuration stored in bzBond-js.
 
 #### bzBond.RegisterScript(pluginOptions)
 
-It possible to extend bzBond-js by registering custom FileMaker scripts, which can then be can be called as methods.
+It possible to extend bzBond-js by registering custom Claris/FileMaker scripts, which can then be can be called as methods.
 
-1. Create a script in FileMaker.
+1. Create a script in Claris/FileMaker Pro.
 2. Perform `bzBond.RegisterScript` giving it the appropriate **pluginOptions**:
   - `exec`: the method that becomes available to use on the `bzBond` class.
-  - `scriptName`: the FileMaker script that will be run when the method defined in `exec` is called.
+  - `scriptName`: the Claris/FileMaker script that will be run when the method defined in `exec` is called.
   - `throwIf`: (optional) callback function that takes the result of the script defined in `scriptName` as a parameter. If the function returns `true` an error will be thrown.
 
 ```
-// In this example, we create a FileMaker script called 'Execute Data Api', and associate that with the method 'executeDataApi'
+// In this example, we create a Claris/FileMaker script called 'Execute Data Api', and associate that with the method 'executeDataApi'
 bzBond.RegisterScript({
     exec: "executeDataApi",
     scriptName: "Execute Data Api",
@@ -190,22 +188,20 @@ bzBond.executeDataApi(myQuery, { timeout: 3000, callType: "interrupt" })
 
 ### Promise rejection and Error Handling
 
-The promises settled by the bzBond relay script will only reject when the specified FileMaker script is missing.
+The promises settled by the bzBond relay script will only reject when the specified Claris/FileMaker script is missing.
 
-Otherwise, the result of the script's `Exit Script[]` step will be returned as the result of **resolved promise** and **not** a rejected promise. Because there is no standard way to indicate that a FileMaker script resulted in an error, the result of the promise will need to be inspected and an error thrown if required.
+Otherwise, the result of the script's `Exit Script[]` step will be returned as the result of **resolved promise** and **not** a rejected promise. Because there is no standard way to indicate that a Claris/FileMaker script resulted in an error, the result of the promise will need to be inspected and an error thrown if required.
 
 Note that when registering a plugin, the `throwIf` parameter can be used set the result state(s) that should throw errors.
 
-### Integrating JavaScript functions with FileMaker scripts
+### Integrating JavaScript functions with Claris/FileMaker scripts
 
-bzBond-js works with bzBond-claris to allow Javascript functions defined in FileMaker scripts to run and return results in the regular FileMaker script flow. See the [bzBond-claris](../bzBond-claris/README.md#integrating-javascript-functions-with-filemaker-scripts) documentation for more details
-
-
+bzBond-js works with bzBond-claris to allow Javascript functions defined in FileMaker scripts to run and return results in the regular FileMaker script flow. See the [bzBond-claris](../bzBond-claris/README.md#integrating-javascript-functions-with-filemaker-scripts) documentation for more details.
 
 **Errors** are captured and returned for the following scenarios:
 
 - function does not exist in JavaScript.
-- function defined as a string in FileMaker has invalid syntax (eg: `"(a, b,,, => a + b"`).
+- function defined as a string in Claris/FileMaker has invalid syntax (eg: `"(a, b,,, => a + b"`).
 - function executed in JavaScript throws an error.
 - bzBond does not exist in the web viewer (in this case, the PerformJavascript step itself will surface an error - this situation must be manually handled).
 
@@ -224,4 +220,4 @@ bzBond-js works with bzBond-claris to allow Javascript functions defined in File
 
 ## Contributors
 
-> Created by the [Beezwax team](https://www.beezwax.net/)
+Created by [Beezwax](https://www.beezwax.net/)
