@@ -3,6 +3,11 @@
 ## Table of contents
 
 - [Introduction](#introduction)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Authoring](#authoring)
+  - [Live development](#live-development)
+  - [Building a single-file web project for use in the bzBond web project manager](#building-a-single-file-web-project-for-use-in-the-bzbond-web-project-manager)
 
 ## Introduction
 
@@ -19,7 +24,9 @@ The bzBond-web-template is installed via [create-bzbond-app](../create-bzbond-ap
 
 ### Authoring
 
-Web projects created with this template function in the same way as any other npm project: you can freely install packages with `npm install`
+Web projects created with this template function are regular npm projects and can be authored as such. By default the template:
+- Includes bzBond-js as a dependency in `package.json`
+- Includes a default entry point file: [index.js](src/js/index.js) which imports bzBond-js and references syles in [app.scss](src/scss/app.scss). Note that scss files can include plain css, or be entirely plain css. 
 
 ### Live development
 
@@ -32,7 +39,3 @@ To use live development with projects stored in the bzBond web project manager s
 To create a web project that can be added to the [bzBond web project manager](../bzBond-claris/README.md#usage-bzbond-web-project-manager):
 
 Run the command `npm run build`. This creates the single-file web project index.html file at the path `dist/index.html`. See the bzBond-claris [documentation](../bzBond-claris/README.md#storing-web-projects-in-the-bzbond-web-project-manager) for instructions on adding the web project to a FileMaker solution.
-
-
-
-
