@@ -134,13 +134,21 @@ sudo systemctl daemon-reload
 sudo systemctl reset-failed
 ```
 
-# Build
-
-To generate a new build into `./dist`, use:
-
-    $ npm run build
-
 # Logs
 
 You can see the logs for bzBond server with `tail /var/log/bzbond-server` in
 macOS and `journalctl -u bzbond-server.service` in Ubuntu.
+
+# Plugins
+
+After bzBond server is installed, you can run the following command from the
+server:
+
+    $ /var/www/bzbond-server/bin/install-plugin.sh
+
+It will prompt for the plugin info and install it.
+
+You can try the example plugin with:
+
+    name: hello-world
+    url: beezwax/bzbond-server-plugin-example
