@@ -189,6 +189,13 @@
 </DynamicTemplateString>
 
 <DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.234B2D99B8B945A504EA9B64EAAB5FE0</StringID>
+	<SourceText>application/json</SourceText>
+	<TargetText>application/json</TargetText>
+	<Comment>com.fmi.calculation.text.application/json</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
 	<StringID>com.fmi.calculation.text.2531367329E32A5ABD7F5870E55C5442</StringID>
 	<SourceText>Parameter &apos;promiseUUID&apos; is missing</SourceText>
 	<TargetText>Parameter &apos;promiseUUID&apos; is missing</TargetText>
@@ -235,6 +242,13 @@
 	<SourceText>\&quot;</SourceText>
 	<TargetText>\&quot;</TargetText>
 	<Comment>com.fmi.calculation.text.\&quot;</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.324791AD87A6A1690145E52D98DB61A9</StringID>
+	<SourceText>customMethod</SourceText>
+	<TargetText>customMethod</TargetText>
+	<Comment>com.fmi.calculation.text.customMethod</Comment>
 </DynamicTemplateString>
 
 <DynamicTemplateString>
@@ -413,6 +427,13 @@
 </DynamicTemplateString>
 
 <DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.5626CFFDD3DA98904E96A5CC1FD8B34C</StringID>
+	<SourceText> -H \&quot;Content-Type: </SourceText>
+	<TargetText> -H \&quot;Content-Type: </TargetText>
+	<Comment>com.fmi.calculation.text. -H \&quot;Content-Type:</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
 	<StringID>com.fmi.calculation.text.56808B25D4C52E350FDFC55E2FE27C5E</StringID>
 	<SourceText>Enter debug url for project &apos;</SourceText>
 	<TargetText>Enter debug url for project &apos;</TargetText>
@@ -431,6 +452,13 @@
 	<SourceText>. Insert From URL returned a HTTP error</SourceText>
 	<TargetText>. Insert From URL returned a HTTP error</TargetText>
 	<Comment>com.fmi.calculation.text.. Insert From URL returned a HTTP error</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.5C810679B96449F05ABF841C56DC5F7E</StringID>
+	<SourceText> -d @$customBody</SourceText>
+	<TargetText> -d @$customBody</TargetText>
+	<Comment>com.fmi.calculation.text. -d @$customBody</Comment>
 </DynamicTemplateString>
 
 <DynamicTemplateString>
@@ -487,6 +515,13 @@
 	<SourceText>script.name</SourceText>
 	<TargetText>script.name</TargetText>
 	<Comment>com.fmi.calculation.text.script.name</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.6D08E5E25146FF7610C37AD304C39426</StringID>
+	<SourceText>-X </SourceText>
+	<TargetText>-X </TargetText>
+	<Comment>com.fmi.calculation.text.-X</Comment>
 </DynamicTemplateString>
 
 <DynamicTemplateString>
@@ -924,6 +959,13 @@
 </DynamicTemplateString>
 
 <DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.DBFB557941F189091EF17C61A19D2693</StringID>
+	<SourceText>POST</SourceText>
+	<TargetText>POST</TargetText>
+	<Comment>com.fmi.calculation.text.POST</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
 	<StringID>com.fmi.calculation.text.DC1CCA8668278BE6CA60EA61E7505A71</StringID>
 	<SourceText>NameSize</SourceText>
 	<TargetText>NameSize</TargetText>
@@ -963,6 +1005,13 @@
 	<SourceText>-X POST</SourceText>
 	<TargetText>-X POST</TargetText>
 	<Comment>com.fmi.calculation.text.-X POST</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E11F88F1A073B0E34502DF909DD263D3</StringID>
+	<SourceText>customBody</SourceText>
+	<TargetText>customBody</TargetText>
+	<Comment>com.fmi.calculation.text.customBody</Comment>
 </DynamicTemplateString>
 
 <DynamicTemplateString>
@@ -1054,6 +1103,13 @@
 	<SourceText>Source code could not be updated</SourceText>
 	<TargetText>Source code could not be updated</TargetText>
 	<Comment>com.fmi.calculation.text.Source code could not be updated</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.FA6BF3F361E9A321013ECB32D8EA3617</StringID>
+	<SourceText>customContentType</SourceText>
+	<TargetText>customContentType</TargetText>
+	<Comment>com.fmi.calculation.text.customContentType</Comment>
 </DynamicTemplateString>
 
 <DynamicTemplateString>
