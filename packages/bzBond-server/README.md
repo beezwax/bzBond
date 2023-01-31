@@ -141,6 +141,12 @@ macOS and `journalctl -u bzbond-server.service` in Ubuntu.
 
 # Plugins
 
+Plugins allow you to define custom endpoints in your bzBond node server.
+Plugins are npm packages, so you can use any other package you need as you
+usually would, with `npm install` from your plugin's directory.
+
+## Installing plugins
+
 After bzBond server is installed, you can run the following command from the
 server:
 
@@ -153,7 +159,15 @@ You can try the example plugin with:
     name: hello-world
     url: beezwax/bzbond-server-plugin-example
 
-## Creating Plugins
+## Updating plugins
+
+To update a plugin, you'll have to manually update it using git:
+
+    $ cd /var/www/bzbond-server
+    $ npm update my-plugin-name
+    $ sudo systemctl restart bzbond-server
+
+## Creating plugins
 
 You can use the command below to set up a bare bones plugin for you to
 customize:
@@ -163,3 +177,13 @@ customize:
 Or using `wget`
 
     $ wget -qO- curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/create-plugin.sh | bash
+
+## Deleting plugins
+
+For now, the process is manual:
+
+1. `cd /var/www/bzbond-server`
+1. Remove the `require` statement for the plugin you want to uninstall.
+1. Remove the plugin definition from the `plugins` function.
+1. `npm install`
+1. `sudo systemctl restart bzbond-server`
