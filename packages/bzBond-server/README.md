@@ -152,3 +152,14 @@ You can try the example plugin with:
 
     name: hello-world
     url: beezwax/bzbond-server-plugin-example
+
+## Creating Plugins
+
+You can use the command below to set up a bare bones plugin for you to
+customize:
+
+    $ curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/create-plugin.sh | bash
+
+Or using `wget`
+
+    $ wget -qO- curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/create-plugin.sh | bash

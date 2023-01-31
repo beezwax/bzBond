@@ -1,4 +1,3 @@
-// fetch plugin repo
 const { execSync } = require("child_process");
 const fs = require("fs/promises");
 const prompt = require("prompt");
