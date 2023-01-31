@@ -159,6 +159,10 @@ You can try the example plugin with:
     name: hello-world
     url: beezwax/bzbond-server-plugin-example
 
+In the snippet above, it will use GitHub to find the given repository. You can
+also pass a full git URL, or a path to a local git repository, such as
+`/home/my-username/some-git-repo` or `../some-folder/my-git-repo`.
+
 ## Updating plugins
 
 To update a plugin, you'll have to manually update it using git:
