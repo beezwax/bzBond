@@ -178,6 +178,9 @@ Or using `wget`
 
     $ wget -qO- curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/create-plugin.sh | bash
 
+Once your plugin is done, you'll have to install it following the instructions
+above.
+
 ## Deleting plugins
 
 For now, the process is manual:
