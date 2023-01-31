@@ -17,6 +17,6 @@ echo "Plugin $name created!"
 echo "A git repository has been created for you."
 echo
 echo "Next steps:"
+echo " - Read the documentation in README.md"
 echo " - Edit package.json and change your plugin's name and description"
 echo " - Start hacking away by editing the 'index.js' file"
-echo " - Update README.md to explain what your plugin does"
