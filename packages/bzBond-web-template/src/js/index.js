@@ -2,25 +2,24 @@ import bzBond from "@beezwax/bzbond-js";
 import "../scss/app.scss";
 
 const main = document.createElement("main");
+const footer = document.createElement("footer");
 
 const heading = document.createElement("h1");
-heading.innerHTML = "bzBond";
+heading.className = "logo";
 
 const subheading = document.createElement("h2");
-subheading.innerText = typeof bzBond === "function" ? "is working for you" : "is having issues";
+subheading.innerText = typeof bzBond === "function" ? "is up and running" : "is having issues";
 
-const logo = document.createElement("div");
-logo.classList.add("logo");
-logo.innerText = "∞";
-
+const vsCodeButton = document.createElement("button");
+vsCodeButton.innerText = "Open Project in VS Code";
 const instruction = document.createElement("p");
 instruction.classList.add("instruction");
-const vsCodeButton = document.createElement("button");
-vsCodeButton.innerText = "Edit this project in VS Code";
-vsCodeButton.classList.add("launch-editor");
+const indexFilePath = document.createElement("p");
+indexFilePath.classList.add("index-path");
 fetch(document.location)
   .then((response) => {
-    instruction.innerHTML = `Don't have VS Code? To update this page edit and save <span class="project-path">${response.headers.get("projectPath")}/src/js/index.js</span>.`;
+    instruction.innerHTML = `Don't have <a href="https://code.visualstudio.com/">VS Code</a>? To update this page edit and save`;
+    indexFilePath.textContent = `${response.headers.get("projectPath")}/src/js/index.js`;
     vsCodeButton.addEventListener("click", () => {
       window.open(`vscode://file/${response.headers.get("projectPath")}/`, '_blank');
       window.open(`vscode://file/${response.headers.get("projectPath")}/src/js/index.js`, '_blank');
@@ -33,13 +32,21 @@ learnLink.setAttribute("href", "https://github.com/beezwax/bzBond");
 learnLink.setAttribute("target", "_blank");
 learnLink.innerText = `Learn bzBond`;
 learn.appendChild(learnLink);
+learn.className = "learn";
+
+const cornerGraphic = document.createElement("div");
+cornerGraphic.className = "corner-graphic";
 
 main.appendChild(heading);
 main.appendChild(subheading);
-main.appendChild(logo);
 if(window.location.hostname === "localhost") {
   main.appendChild(vsCodeButton);
   main.appendChild(instruction);
+  main.appendChild(indexFilePath);
 }
-main.appendChild(learn);
+footer.appendChild(learn);
+
+
 document.body.appendChild(main);
+document.body.appendChild(footer);
+document.body.appendChild(cornerGraphic);
