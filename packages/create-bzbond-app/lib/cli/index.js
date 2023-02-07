@@ -104,6 +104,7 @@ module.exports = class CLI {
         new Command (process.platform === "darwin" ? `cd ${repoPath} && git add -A && git commit -m "Initial commit"` : `cd ${repoPath}`),
         new Command (`cd ${repoPath} && npm run build`, undefined, {message: "\x1b[33mBuilding project...\x1b[0m", noWait: true, async: true, callback: () => {
           const commandsAfterBuild = [
+            new Command (process.platform === "darwin" ? `cd ${repoPath} && git add -A && git commit -m "Initial build"` : `cd ${repoPath}`),
             new Command (`cd ${repoPath} && npm run start_silent`, undefined, {message: "\x1b[33mStarting Dev Server\x1b[0m", noWait: true}),
             new FunctionCommand (deployAndRunFmWebProject, [repoPath], {message: "\x1b[33mDeploying Web Project in FileMaker\x1b[0m"})
           ];
