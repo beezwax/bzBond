@@ -1638,6 +1638,13 @@
 </DynamicTemplateString>
 
 <DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.7415386669D6B60426C1D8AC42AE75A3</StringID>
+	<SourceText>Clear cache</SourceText>
+	<TargetText>Clear cache</TargetText>
+	<Comment>com.fmi.scriptstep.text.Clear cache</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
 	<StringID>com.fmi.scriptstep.text.786C74B4CB96DA5B2ACEBADD809A2ABD</StringID>
 	<SourceText>Wait for FMBond object</SourceText>
 	<TargetText>Wait for FMBond object</TargetText>
