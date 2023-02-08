@@ -1,4 +1,4 @@
-<p align="center"><img src="bzBond_logo.png" width="75"/></p>
+<p align="center"><img src="./bzBond_logo_and_text.svg" width="208"/></p>
 
 <h2 align="center">Quality tools for Claris Web Integrations</h2>
 
