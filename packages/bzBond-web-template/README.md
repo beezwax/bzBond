@@ -17,7 +17,7 @@
 
 The bzBond-web-template is the part of the [bzBond](/) toolset that supports web project authoring. It is an npm project with the following features:
 - A build process, accessed via the command `npm run build`, which generates a single-file web project of the type required by the [bzBond web project manager](../bzBond-claris/README.md#usage-bzbond-web-project-manager)
-- The (bzBond-js)[https://www.npmjs.com/package/@beezwax/bzbond-js] npm package to allow easy access to bzBond's features
+- The [bzBond-js](https://www.npmjs.com/package/@beezwax/bzbond-js) npm package to allow easy access to bzBond's features
 - An example [index.js](src/js/index.js) file to demonstrate how to get started with live development and web project authoring.
 
 ## Installation
