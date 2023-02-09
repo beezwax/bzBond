@@ -421,7 +421,6 @@ The `response.result` prop will be appropriately formatted (eg: as a number for 
 ```
 {
   "mode": "PERFORM_JAVASCRIPT",
-  "webViewerName": "JS_Runner",
   "function": "(40 + 2) * 2",
   "route": "code"
 }
