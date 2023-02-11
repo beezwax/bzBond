@@ -12,7 +12,8 @@ module.exports = merge(common, {
       after: {
         root: './dist',
         include: [
-            'app.bundle.js'
+            'app.bundle.js',
+            'app.bundle.js.LICENSE.txt'
         ]
       }
     })
