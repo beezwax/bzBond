@@ -1,5 +1,6 @@
 const { execSync } = require("child_process");
 const fs = require("fs/promises");
+const path = require("path");
 const prompt = require("prompt");
 
 const camelize = (str) =>
@@ -20,8 +21,9 @@ const main = async () => {
   const nodePath = "/opt/FileMaker/FileMaker Server/node/bin/node";
   const npmPath = "/opt/FileMaker/FileMaker Server/node/bin/npm";
   const ouput = execSync(`sudo "${nodePath}" "${npmPath}" i ${url}`);
+  const pluginsPath = path.resolve(__dirname, "../plugins.js");
 
-  const file = await fs.readFile("plugins.js", { encoding: "utf8" });
+  const file = await fs.readFile(pluginsPath, { encoding: "utf8" });
 
   const importStatement = `
 const {
@@ -33,9 +35,10 @@ const {
   const body = file.replace(/\[([\s\S]*)\]/g, `[$1${pluginElement}\n]`);
   const newFile = `${importStatement}\n${body}`;
 
-  await fs.writeFile("plugins.js", newFile);
+  await fs.writeFile(pluginsPath, newFile);
 
   execSync("sudo systemctl restart bzbond-server");
+  console.log(`Plugin ${name} installed`);
 };
 
 main();
