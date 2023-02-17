@@ -6,4 +6,4 @@ if [ "$(uname)" = "Darwin" ]; then
   NODE_PATH="/Library/FileMaker Server/node/bin/node"
 fi
 
-sudo "$NODE_PATH" /var/www/bzbond-server/scripts/install-plugin.js
+sudo "$NODE_PATH" /var/www/bzbond-server/scripts/install-plugin.js "$1" "$2"
