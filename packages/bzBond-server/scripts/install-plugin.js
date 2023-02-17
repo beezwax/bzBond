@@ -17,9 +17,12 @@ const main = async () => {
 
   const camelizedName = camelize(name);
 
-  // TODO: support macOS
-  const nodePath = "/opt/FileMaker/FileMaker Server/node/bin/node";
-  const npmPath = "/opt/FileMaker/FileMaker Server/node/bin/npm";
+  const toolPaths = {
+    darwin: ["/Library/FileMaker Server/node/bin/node", "/Library/FileMaker Server/node/bin/npm"],
+    linux: ["/opt/FileMaker/FileMaker Server/node/bin/node", "/opt/FileMaker/FileMaker Server/node/bin/npm"]
+  };
+  const [ nodePath, npmPath ] = toolPaths[process.platform];
+  
   const ouput = execSync(`sudo "${nodePath}" "${npmPath}" i ${url}`);
   const pluginsPath = path.resolve(__dirname, "../plugins.js");
 
