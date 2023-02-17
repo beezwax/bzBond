@@ -46,4 +46,6 @@ const {
   console.log(`Plugin ${name} installed`);
 };
 
-main();
+const [name, url] = process.argv.slice(2);
+
+main(name, url);
