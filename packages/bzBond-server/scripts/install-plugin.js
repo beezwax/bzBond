@@ -10,9 +10,11 @@ const camelize = (str) =>
       group.toUpperCase().replace("-", "").replace("_", "")
     );
 
-const main = async () => {
+const main = async (name, url) => {
   console.log("Install bzBond server plugin");
-  const { name, url } = await prompt.get(["name", "url"]);
+  if(!name || !url) {
+    ({ name, url } = await prompt.get(["name", "url"]));
+  }
   if (!name || !url) return;
 
   const camelizedName = camelize(name);
@@ -44,4 +46,6 @@ const {
   console.log(`Plugin ${name} installed`);
 };
 
-main();
+const [name, url] = process.argv.slice(2);
+
+main(name, url);
