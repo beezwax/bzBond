@@ -70,6 +70,13 @@
 </DynamicTemplateString>
 
 <DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.027C5DF6E5D6EA0B0749029D4E4263BC</StringID>
+	<SourceText> --dump-header $header</SourceText>
+	<TargetText> --dump-header $header</TargetText>
+	<Comment>com.fmi.calculation.text. --dump-header $header</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
 	<StringID>com.fmi.calculation.text.07D34851FFEB996C64264381A901A0D7</StringID>
 	<SourceText>116</SourceText>
 	<TargetText>116</TargetText>
