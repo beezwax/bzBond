@@ -39,6 +39,7 @@ git clone https://github.com/beezwax/bzBond.git
 sudo mkdir -p /var/www/bzbond-server
 sudo cp -r /tmp/bzBond/packages/bzBond-server/* /var/www/bzbond-server
 sudo chown -R "$USER" /var/www/bzbond-server
+sudo chmod +x /var/www/bzbond-server/bin/*
 
 echo "Installing dependencies..."
 cd /var/www/bzbond-server || exit
