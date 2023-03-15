@@ -5,6 +5,7 @@ echo "bzBond Server Installation"
 echo "=========================="
 
 USER=$(whoami)
+echo "Installing for $USER"
 
 # Check fmserver user exists
 if ! id fmserver &>/dev/null; then
@@ -38,8 +39,7 @@ cd /tmp || exit
 git clone https://github.com/beezwax/bzBond.git
 sudo mkdir -p /var/www/bzbond-server
 sudo cp -r /tmp/bzBond/packages/bzBond-server/* /var/www/bzbond-server
-sudo chown -R "$USER" /var/www/bzbond-server
-sudo chmod +x /var/www/bzbond-server/bin/*
+sudo chmod -R 755 /var/www/bzbond-server
 
 echo "Installing dependencies..."
 cd /var/www/bzbond-server || exit
@@ -49,6 +49,8 @@ rm -rf /tmp/bzBond
 echo "Setting up services..."
 if [ "$(uname)" = "Darwin" ]; then
   # macOS installation
+  sudo chown -R "$USER" /var/www/bzbond-server
+
   sudo tee -a /Library/LaunchDaemons/net.beezwax.bzbond-server.plist &> /dev/null <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -88,7 +90,6 @@ EOF
 else
   # Ubuntu installation
   sudo chown -R root:root /var/www/bzbond-server
-  sudo chmod -R 755 /var/www/bzbond-server
 
   sudo tee -a /lib/systemd/system/bzbond-server.service &> /dev/null <<EOF
 [Unit]
