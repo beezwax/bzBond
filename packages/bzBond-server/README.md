@@ -176,7 +176,7 @@ To update a plugin, you'll have to manually update it using git:
 You can use the command below to set up a bare bones plugin for you to
 customize:
 
-    $ curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/create-plugin.sh | bash
+    $ bash <(curl -s https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/create-plugin.sh)
 
 Or using `wget`
 
