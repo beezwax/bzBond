@@ -4,6 +4,8 @@ echo "=========================="
 echo "bzBond Server Installation"
 echo "=========================="
 
+USER=$(whoami)
+
 # Check fmserver user exists
 if ! id fmserver &>/dev/null; then
   echo "ERROR: The 'fmserver' user was not found in this system."
@@ -32,13 +34,14 @@ if ! command -v "$NPM_PATH" &> /dev/null; then
 fi
 
 echo "Downloading latest version..."
-cd /tmp
+cd /tmp || echo "Could not navigate to /tmp" && exit
 git clone https://github.com/beezwax/bzBond.git
 sudo mkdir -p /var/www/bzbond-server
 sudo cp -r /tmp/bzBond/packages/bzBond-server/* /var/www/bzbond-server
+sudo chown -r "$USER"
 
 echo "Installing dependencies..."
-cd /var/www/bzbond-server
+cd /var/www/bzbond-server || exit
 sudo "$NODE_PATH" "$NPM_PATH" install
 rm -rf /tmp/bzBond
 
