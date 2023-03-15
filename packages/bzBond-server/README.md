@@ -169,7 +169,15 @@ To update a plugin, you'll have to manually update it using git:
 
     $ cd /var/www/bzbond-server
     $ npm update my-plugin-name
+
+You'll also need to restart the server. If using Ubuntu:
+
     $ sudo systemctl restart bzbond-server
+
+For macOS:
+
+    $ sudo launchctl stop net.beezwax.bzbond-server
+    $ sudo launchctl start net.beezwax.bzbond-server
 
 ## Creating plugins
 
