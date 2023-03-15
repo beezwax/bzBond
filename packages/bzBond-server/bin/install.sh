@@ -34,11 +34,11 @@ if ! command -v "$NPM_PATH" &> /dev/null; then
 fi
 
 echo "Downloading latest version..."
-cd /tmp || echo "Could not navigate to /tmp" && exit
+cd /tmp || exit
 git clone https://github.com/beezwax/bzBond.git
 sudo mkdir -p /var/www/bzbond-server
 sudo cp -r /tmp/bzBond/packages/bzBond-server/* /var/www/bzbond-server
-sudo chown -r "$USER"
+sudo chown -R "$USER" /var/www/bzbond-server
 
 echo "Installing dependencies..."
 cd /var/www/bzbond-server || exit
