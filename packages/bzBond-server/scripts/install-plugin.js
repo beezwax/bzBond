@@ -12,7 +12,7 @@ const camelize = (str) =>
 
 const main = async (name, url) => {
   console.log("Install bzBond server plugin");
-  if(!name || !url) {
+  if (!name || !url) {
     ({ name, url } = await prompt.get(["name", "url"]));
   }
   if (!name || !url) return;
@@ -20,11 +20,17 @@ const main = async (name, url) => {
   const camelizedName = camelize(name);
 
   const toolPaths = {
-    darwin: ["/Library/FileMaker Server/node/bin/node", "/Library/FileMaker Server/node/bin/npm"],
-    linux: ["/opt/FileMaker/FileMaker Server/node/bin/node", "/opt/FileMaker/FileMaker Server/node/bin/npm"]
+    darwin: [
+      "/Library/FileMaker Server/node/bin/node",
+      "/Library/FileMaker Server/node/bin/npm",
+    ],
+    linux: [
+      "/opt/FileMaker/FileMaker Server/node/bin/node",
+      "/opt/FileMaker/FileMaker Server/node/bin/npm",
+    ],
   };
-  const [ nodePath, npmPath ] = toolPaths[process.platform];
-  
+  const [nodePath, npmPath] = toolPaths[process.platform];
+
   const ouput = execSync(`sudo "${nodePath}" "${npmPath}" i ${url}`);
   const pluginsPath = path.resolve(__dirname, "../plugins.js");
 
