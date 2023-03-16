@@ -203,7 +203,7 @@ For now, the process is manual:
 1. `cd /var/www/bzbond-server`
 1. Remove the `require` statement for the plugin you want to uninstall.
 1. Remove the plugin definition from the `plugins` function.
-1. `npm install`
+1. `npm uninstall plugin-name` (alternatively, edit `package.json` and run `npm install`)
 1. `sudo systemctl restart bzbond-server`
 
 For example, if we want to remove the [hello-world](https://github.com/beezwax/bzbond-server-plugin-example) plugin, we transform this:
