@@ -77,15 +77,14 @@ const main = async (name, url) => {
   if (url.startsWith("https://") || url.startsWith("ssh://")) {
     bash(
       `git clone ${url} /var/www/bzbond-server/installed-plugins/${name}`,
-      `git config --global --add safe.directory /var/www/bzbond-server/installed-plugins/${name}`,
-      `sudo "${NODE_PATH}" "${NPM_PATH}" i /var/www/bzbond-server/installed-plugins/${name}`
+      `git config --global --add safe.directory /var/www/bzbond-server/installed-plugins/${name}`
     );
   } else {
-    bash(
-      `sudo cp -r ${url} /var/www/bzbond-server/installed-plugins/${name}`,
-      `sudo "${NODE_PATH}" "${NPM_PATH}" i ${url}`
-    );
+    bash(`sudo cp -r ${url} /var/www/bzbond-server/installed-plugins/${name}`);
   }
+  bash(
+    `sudo "${NODE_PATH}" "${NPM_PATH}" i /var/www/bzbond-server/installed-plugins/${name}`
+  );
 
   const importStatement = `
 const {
