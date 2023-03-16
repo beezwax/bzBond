@@ -1,15 +1,12 @@
 const { execSync } = require("child_process");
 const fs = require("fs/promises");
+const { existsSync } = require("fs");
 const path = require("path");
 const prompt = require("prompt");
 
-const camelize = (str) =>
-  str
-    .toLowerCase()
-    .replace(/([-_][a-z])/g, (group) =>
-      group.toUpperCase().replace("-", "").replace("_", "")
-    );
-
+// Constants
+// =============================================================================
+const IS_DARWIN = process.platform === "darwin";
 const TOOL_PATHS = {
   darwin: [
     "/Library/FileMaker Server/node/bin/node",
@@ -20,31 +17,76 @@ const TOOL_PATHS = {
     "/opt/FileMaker/FileMaker Server/node/bin/npm",
   ],
 };
+const [NODE_PATH, NPM_PATH] = TOOL_PATHS[process.platform];
 
-const IS_DARWIN = process.platform === "darwin";
+// Utilities
+// =============================================================================
+const camelize = (str) =>
+  str
+    .toLowerCase()
+    .replace(/([-_][a-z])/g, (group) =>
+      group.toUpperCase().replace("-", "").replace("_", "")
+    );
 
+const restartServer = () => {
+  console.log("Restarting server...");
+
+  if (IS_DARWIN) {
+    bash(`sudo launchctl stop net.beezwax.bzbond-server`);
+    bash(`sudo launchctl start net.beezwax.bzbond-server`);
+  } else {
+    bash(`sudo systemctl restart bzbond-server`);
+  }
+
+  console.log("bzBond server restarted");
+};
+
+const bash = (...commands) => {
+  commands.forEach((command) => {
+    execSync(command, { cwd: "/var/www/bzbond-server" });
+  });
+};
+
+// Main
+// =============================================================================
 const main = async (name, url) => {
   console.log("Install bzBond server plugin");
   if (!name || !url) {
-    { name, url } = await prompt.get(["name", "url"]);
+    ({ name, url } = await prompt.get(["name", "url"]));
   }
   if (!name || !url) return;
-
-  // run npm install
-  const [nodePath, npmPath] = TOOL_PATHS[process.platform];
-  execSync(`sudo "${nodePath}" "${npmPath}" i ${url}`);
-
-  // restart server
-  if (IS_DARWIN) {
-    execSync(`sudo launchctl stop net.beezwax.bzbond-server`);
-    execSync(`sudo launchctl start net.beezwax.bzbond-server`);
-  } else {
-    execSync(`sudo systemctl restart bzbond-server`);
-  }
 
   const pluginsPath = path.resolve(__dirname, "../plugins.js");
   const file = await fs.readFile(pluginsPath, { encoding: "utf8" });
   const camelizedName = camelize(name);
+
+  // Check if plugin is already installed, if so, update it instead
+  const pluginDirectory = `/var/www/bzbond-server/installed-plugins/${name}`;
+  if (existsSync(pluginDirectory)) {
+    console.log(`The ${name} plugin is already installed. Updating...`);
+    execSync(`sudo "${NODE_PATH}" "${NPM_PATH}" update ${url}`, {
+      cwd: pluginDirectory,
+    });
+    restartServer();
+    console.log("Done!");
+    console.log(`Plugin ${name} updated`);
+    return;
+  }
+
+  // run npm install
+  if (url.startsWith("https://") || url.startsWith("ssh://")) {
+    bash(
+      `git clone ${url} /var/www/bzbond-server/installed-plugins/${name}`,
+      `git config --global --add safe.directory /var/www/bzbond-server/installed-plugins/${name}`,
+      `sudo "${NODE_PATH}" "${NPM_PATH}" i /var/www/bzbond-server/installed-plugins/${name}`
+    );
+  } else {
+    bash(
+      `sudo cp -r ${url} /var/www/bzbond-server/installed-plugins/${name}`,
+      `sudo "${NODE_PATH}" "${NPM_PATH}" i ${url}`
+    );
+  }
+
   const importStatement = `
 const {
   plugin: ${camelizedName}Plugin,
@@ -57,10 +99,12 @@ const {
 
   await fs.writeFile(pluginsPath, newFile);
 
-  execSync("sudo systemctl restart bzbond-server");
+  restartServer();
+
   console.log(`Plugin ${name} installed`);
 };
 
+// Initialize
+// =============================================================================
 const [name, url] = process.argv.slice(2);
-
 main(name, url);

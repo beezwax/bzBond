@@ -165,12 +165,15 @@ also pass a full git URL, or a path to a local git repository, such as
 
 ## Updating plugins
 
-To update a plugin, you'll have to manually update it using git:
+To update a plugin, you can run the following command from the server:
 
-    $ cd /var/www/bzbond-server
-    $ npm update my-plugin-name
+    $ /var/www/bzbond-server/bin/update-plugin.sh my-plugin-name
 
-You'll also need to restart the server. If using Ubuntu:
+Automatic updates will work only if the plugin is a git repository. Otherwise,
+you'll have to manually update it in the
+`/var/www/bzbond-server/installed-plugins/my-plugin-name` folder.
+
+You'll then need to restart the server. If using Ubuntu:
 
     $ sudo systemctl restart bzbond-server
 
@@ -202,3 +205,34 @@ For now, the process is manual:
 1. Remove the plugin definition from the `plugins` function.
 1. `npm install`
 1. `sudo systemctl restart bzbond-server`
+
+For example, if we want to remove the [hello-world](https://github.com/beezwax/bzbond-server-plugin-example) plugin, we transform this:
+
+```javascript
+const {
+  plugin: helloWorldPlugin,
+  options: helloWorldOptions,
+} = require("hello-world");
+const {
+  plugin: anotherPlugin,
+  options: anotherOptions,
+} = require("hello-world");
+const plugins = async () => [
+  // Do not change this file manually, use bzBond's `install-plugin` command
+  { plugin: helloWorldPlugin, options: helloWorldOptions },
+  { plugin: anotherPlugin, options: anotherOptions },
+];
+```
+
+Into this:
+
+```javascript
+const {
+  plugin: anotherPlugin,
+  options: anotherOptions,
+} = require("hello-world");
+const plugins = async () => [
+  // Do not change this file manually, use bzBond's `install-plugin` command
+  { plugin: anotherPlugin, options: anotherOptions },
+];
+```
