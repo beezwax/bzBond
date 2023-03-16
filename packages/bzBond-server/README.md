@@ -213,10 +213,7 @@ const {
   plugin: helloWorldPlugin,
   options: helloWorldOptions,
 } = require("hello-world");
-const {
-  plugin: anotherPlugin,
-  options: anotherOptions,
-} = require("hello-world");
+const { plugin: anotherPlugin, options: anotherOptions } = require("another");
 const plugins = async () => [
   // Do not change this file manually, use bzBond's `install-plugin` command
   { plugin: helloWorldPlugin, options: helloWorldOptions },
@@ -227,10 +224,7 @@ const plugins = async () => [
 Into this:
 
 ```javascript
-const {
-  plugin: anotherPlugin,
-  options: anotherOptions,
-} = require("hello-world");
+const { plugin: anotherPlugin, options: anotherOptions } = require("another");
 const plugins = async () => [
   // Do not change this file manually, use bzBond's `install-plugin` command
   { plugin: anotherPlugin, options: anotherOptions },
