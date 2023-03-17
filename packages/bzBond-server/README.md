@@ -95,7 +95,7 @@ WantedBy=multi-user.target
 ```
 
 2. Load the daemon with `launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server.plist`
-3. Launch bzbond-server with the command `launchctl start /Library/LaunchDaemons/net.beezwax.bzbond-server`
+3. Launch bzbond-server with the command `launchctl start /Library/LaunchDaemons/net.beezwax.bzbond-server.plist`
 4. Test the bzbond-server is running with the command `curl http://localhost:8999` this should output `{"message":"Route GET:/ not found","error":"Not Found","statusCode":404}`
 
 ## Windows Server Installation
