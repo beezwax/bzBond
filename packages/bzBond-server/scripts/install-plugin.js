@@ -32,8 +32,8 @@ const restartServer = () => {
   console.log("Restarting server...");
 
   if (IS_DARWIN) {
-    bash(`sudo launchctl stop net.beezwax.bzbond-server`);
-    bash(`sudo launchctl start net.beezwax.bzbond-server`);
+    bash(`sudo launchctl unload net.beezwax.bzbond-server`);
+    bash(`sudo launchctl load net.beezwax.bzbond-server`);
   } else {
     bash(`sudo systemctl restart bzbond-server`);
   }
