@@ -150,7 +150,7 @@ usually would, with `npm install` from your microbond's directory.
 After bzBond server is installed, you can run the following command from the
 server:
 
-    $ /var/www/bzbond-server/bin/install-microbonds.sh
+    $ /var/www/bzbond-server/bin/install-microbond.sh
 
 It will prompt for the microbond info and install it.
 
