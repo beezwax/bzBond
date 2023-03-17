@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd "/var/www/bzbond-server/installed-plugins/$1" || exit
+cd "/var/www/bzbond-server/installed-microbonds/$1" || exit
 echo "Updating $1"
 sudo git pull || (echo "Not a git repository" && exit)
 
