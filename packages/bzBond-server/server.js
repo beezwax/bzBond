@@ -1,12 +1,12 @@
 const build = require("./app.js");
-const plugins = require("./plugins.js");
+const microbonds = require("./microbonds.js");
 
 // Run the server!
 const start = async () => {
   let app;
 
   try {
-    app = await build({ plugins: await plugins() });
+    app = await build({ microbonds: await microbonds() });
     await app.listen(8999);
   } catch (err) {
     app.log.error(err);

@@ -139,38 +139,38 @@ sudo systemctl reset-failed
 You can see the logs for bzBond server with `tail /var/log/bzbond-server` in
 macOS and `journalctl -u bzbond-server.service` in Ubuntu.
 
-# Plugins
+# Microbonds
 
-Plugins allow you to define custom endpoints in your bzBond node server.
-Plugins are npm packages, so you can use any other package you need as you
-usually would, with `npm install` from your plugin's directory.
+Microbonds allow you to define custom endpoints in the bzBond microservice.
+Microbonds are npm packages, so you can use any other package you need as you
+usually would, with `npm install` from your microbond's directory.
 
-## Installing plugins
+## Installing microbonds
 
 After bzBond server is installed, you can run the following command from the
 server:
 
-    $ /var/www/bzbond-server/bin/install-plugin.sh
+    $ /var/www/bzbond-server/bin/install-microbonds.sh
 
-It will prompt for the plugin info and install it.
+It will prompt for the microbond info and install it.
 
-You can try the example plugin with:
+You can try the example microbond with:
 
     name: hello-world
-    url: https://github.com/beezwax/bzbond-server-plugin-example
+    url: https://github.com/beezwax/bzbond-server-microbond-example
 
 You can pass a full GiiHub URL as shown above, or a path to a local git repository, such as
 `/home/my-username/some-git-repo` or `../some-folder/my-git-repo`.
 
-## Updating plugins
+## Updating microbonds
 
-To update a plugin, you can run the following command from the server:
+To update a microbond, you can run the following command from the server:
 
-    $ /var/www/bzbond-server/bin/update-plugin.sh my-plugin-name
+    $ /var/www/bzbond-server/bin/update-microbond.sh my-microbond-name
 
-Automatic updates will work only if the plugin is a git repository. Otherwise,
+Automatic updates will work only if the microbond is a git repository. Otherwise,
 you'll have to manually update it in the
-`/var/www/bzbond-server/installed-plugins/my-plugin-name` folder.
+`/var/www/bzbond-server/installed-microbond/my-microbond-name` folder.
 
 You'll then need to restart the server. If using Ubuntu:
 
@@ -181,51 +181,51 @@ For macOS:
     $ sudo launchctl unload /Library/LaunchDaemons/net.beezwax.bzbond-server
     $ sudo launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server
 
-## Creating plugins
+## Creating microbonds
 
-You can use the command below to set up a bare bones plugin for you to
+You can use the command below to set up a bare bones microbond for you to
 customize:
 
-    $ bash <(curl -s https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/create-plugin.sh)
+    $ bash <(curl -s https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/create-microbond.sh)
 
 Or using `wget`
 
-    $ wget -qO- curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/create-plugin.sh | bash
+    $ wget -qO- curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/create-microbond.sh | bash
 
-Once your plugin is done, you'll have to install it following the instructions
+Once your microbond is done, you'll have to install it following the instructions
 above.
 
-## Deleting plugins
+## Deleting microbonds
 
 For now, the process is manual:
 
 1. `cd /var/www/bzbond-server`
-1. Remove the `require` statement for the plugin you want to uninstall.
-1. Remove the plugin definition from the `plugins` function.
-1. `npm uninstall plugin-name` (alternatively, edit `package.json` and run `npm install`)
+1. Remove the `require` statement for the microbond you want to uninstall.
+1. Remove the microbond definition from the `microbonds` function.
+1. `npm uninstall microbond-name` (alternatively, edit `package.json` and run `npm install`)
 1. `sudo systemctl restart bzbond-server`
 
-For example, if we want to remove the [hello-world](https://github.com/beezwax/bzbond-server-plugin-example) plugin, we transform this:
+For example, if we want to remove the [hello-world](https://github.com/beezwax/bzbond-server-microbond-example) microbond, we transform this:
 
 ```javascript
 const {
-  plugin: helloWorldPlugin,
+  microbond: helloWorldMicrobond,
   options: helloWorldOptions,
 } = require("hello-world");
-const { plugin: anotherPlugin, options: anotherOptions } = require("another");
-const plugins = async () => [
-  // Do not change this file manually, use bzBond's `install-plugin` command
-  { plugin: helloWorldPlugin, options: helloWorldOptions },
-  { plugin: anotherPlugin, options: anotherOptions },
+const { microbond: anotherMicrobond, options: anotherOptions } = require("another");
+const microbond = async () => [
+  // Do not change this file manually, use bzBond's `install-microbond` command
+  { microbond: helloWorldMicrobond, options: helloWorldOptions },
+  { microbond: anotherMicrobond, options: anotherOptions },
 ];
 ```
 
 Into this:
 
 ```javascript
-const { plugin: anotherPlugin, options: anotherOptions } = require("another");
-const plugins = async () => [
-  // Do not change this file manually, use bzBond's `install-plugin` command
-  { plugin: anotherPlugin, options: anotherOptions },
+const { microbond: anotherMicrobond, options: anotherOptions } = require("another");
+const microbonds = async () => [
+  // Do not change this file manually, use bzBond's `install-microbond` command
+  { microbond: anotherMicrobond, options: anotherOptions },
 ];
 ```

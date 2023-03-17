@@ -1,11 +1,11 @@
 const { expect } = require("chai");
 const build = require("../app.js");
 
-describe("plugins", function () {
-  it("simple plugins", async function () {
-    const testPlugin = {
-      async plugin(fastify, options) {
-        fastify.get("/my-plugin", (request, reply) => {
+describe("microbonds", function () {
+  it("simple microbonds", async function () {
+    const testMicrobond = {
+      async microbond(fastify, options) {
+        fastify.get("/my-microbond", (request, reply) => {
           return "dummy response";
         });
       },
@@ -14,12 +14,12 @@ describe("plugins", function () {
 
     const app = await build({
       options: { logger: false },
-      plugins: [testPlugin],
+      microbonds: [testMicrobond],
     });
 
     const response = await app.inject({
       method: "GET",
-      url: "/my-plugin",
+      url: "/my-microbond",
     });
 
     expect(response.body).to.eq("dummy response");

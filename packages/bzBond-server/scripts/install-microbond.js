@@ -50,57 +50,57 @@ const bash = (...commands) => {
 // Main
 // =============================================================================
 const main = async (name, url) => {
-  console.log("Install bzBond server plugin");
+  console.log("Install bzBond server microbond");
   if (!name || !url) {
     ({ name, url } = await prompt.get(["name", "url"]));
   }
   if (!name || !url) return;
 
-  const pluginsPath = path.resolve(__dirname, "../plugins.js");
-  const file = await fs.readFile(pluginsPath, { encoding: "utf8" });
+  const microbondsPath = path.resolve(__dirname, "../microbonds.js");
+  const file = await fs.readFile(microbondsPath, { encoding: "utf8" });
   const camelizedName = camelize(name);
 
-  // Check if plugin is already installed, if so, update it instead
-  const pluginDirectory = `/var/www/bzbond-server/installed-plugins/${name}`;
-  if (existsSync(pluginDirectory)) {
-    console.log(`The ${name} plugin is already installed. Updating...`);
+  // Check if microbond is already installed, if so, update it instead
+  const microbondDirectory = `/var/www/bzbond-server/installed-microbonds/${name}`;
+  if (existsSync(microbondDirectory)) {
+    console.log(`The ${name} microbond is already installed. Updating...`);
     execSync(`sudo "${NODE_PATH}" "${NPM_PATH}" update ${url.split("/").pop()}`, {
-      cwd: pluginDirectory,
+      cwd: microbondDirectory,
     });
     restartServer();
     console.log("Done!");
-    console.log(`Plugin ${name} updated`);
+    console.log(`Microbond ${name} updated`);
     return;
   }
 
   // run npm install
   if (url.startsWith("https://") || url.startsWith("ssh://")) {
     bash(
-      `git clone ${url} /var/www/bzbond-server/installed-plugins/${name}`,
-      `git config --global --add safe.directory /var/www/bzbond-server/installed-plugins/${name}`
+      `git clone ${url} /var/www/bzbond-server/installed-microbonds/${name}`,
+      `git config --global --add safe.directory /var/www/bzbond-server/installed-microbonds/${name}`
     );
   } else {
-    bash(`sudo cp -r ${url} /var/www/bzbond-server/installed-plugins/${name}`);
+    bash(`sudo cp -r ${url} /var/www/bzbond-server/installed-microbonds/${name}`);
   }
   bash(
-    `sudo "${NODE_PATH}" "${NPM_PATH}" i /var/www/bzbond-server/installed-plugins/${name}`
+    `sudo "${NODE_PATH}" "${NPM_PATH}" i /var/www/bzbond-server/installed-microbonds/${name}`
   );
 
   const importStatement = `
 const {
-  plugin: ${camelizedName}Plugin,
+  microbond: ${camelizedName}Microbond,
   options: ${camelizedName}Options,
 } = require("${name}");
   `.trim();
-  const pluginElement = `  { plugin: ${camelizedName}Plugin, options: ${camelizedName}Options },`;
-  const body = file.replace(/\[([\s\S]*)\]/g, `[$1${pluginElement}\n]`);
+  const microbondElement = `  { microbond: ${camelizedName}Microbond, options: ${camelizedName}Options },`;
+  const body = file.replace(/\[([\s\S]*)\]/g, `[$1${microbondElement}\n]`);
   const newFile = `${importStatement}\n${body}`;
 
-  await fs.writeFile(pluginsPath, newFile);
+  await fs.writeFile(microbondsPath, newFile);
 
   restartServer();
 
-  console.log(`Plugin ${name} installed`);
+  console.log(`Microbond ${name} installed`);
 };
 
 // Initialize
