@@ -179,8 +179,8 @@ You'll then need to restart the server. If using Ubuntu:
 
 For macOS:
 
-    $ sudo launchctl stop net.beezwax.bzbond-server
-    $ sudo launchctl start net.beezwax.bzbond-server
+    $ sudo launchctl unload net.beezwax.bzbond-server
+    $ sudo launchctl load net.beezwax.bzbond-server
 
 ## Creating plugins
 
