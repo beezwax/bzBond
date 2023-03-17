@@ -64,7 +64,7 @@ const main = async (name, url) => {
   const pluginDirectory = `/var/www/bzbond-server/installed-plugins/${name}`;
   if (existsSync(pluginDirectory)) {
     console.log(`The ${name} plugin is already installed. Updating...`);
-    execSync(`sudo "${NODE_PATH}" "${NPM_PATH}" update ${url}`, {
+    execSync(`sudo "${NODE_PATH}" "${NPM_PATH}" update ${url.split("/").pop()}`, {
       cwd: pluginDirectory,
     });
     restartServer();

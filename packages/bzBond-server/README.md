@@ -95,7 +95,7 @@ WantedBy=multi-user.target
 ```
 
 2. Load the daemon with `launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server.plist`
-3. Launch bzbond-server with the command `launchctl start net.beezwax.bzbond-server`
+3. Launch bzbond-server with the command `launchctl start /Library/LaunchDaemons/net.beezwax.bzbond-server`
 4. Test the bzbond-server is running with the command `curl http://localhost:8999` this should output `{"message":"Route GET:/ not found","error":"Not Found","statusCode":404}`
 
 ## Windows Server Installation
@@ -157,10 +157,9 @@ It will prompt for the plugin info and install it.
 You can try the example plugin with:
 
     name: hello-world
-    url: beezwax/bzbond-server-plugin-example
+    url: https://github.com/beezwax/bzbond-server-plugin-example
 
-In the snippet above, it will use GitHub to find the given repository. You can
-also pass a full git URL, or a path to a local git repository, such as
+You can pass a full GiiHub URL as shown above, or a path to a local git repository, such as
 `/home/my-username/some-git-repo` or `../some-folder/my-git-repo`.
 
 ## Updating plugins
@@ -179,8 +178,8 @@ You'll then need to restart the server. If using Ubuntu:
 
 For macOS:
 
-    $ sudo launchctl unload net.beezwax.bzbond-server
-    $ sudo launchctl load net.beezwax.bzbond-server
+    $ sudo launchctl unload /Library/LaunchDaemons/net.beezwax.bzbond-server
+    $ sudo launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server
 
 ## Creating plugins
 
