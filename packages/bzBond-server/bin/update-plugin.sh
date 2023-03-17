@@ -5,8 +5,8 @@ echo "Updating $1"
 sudo git pull || (echo "Not a git repository" && exit)
 
 if [ "$(uname)" = "Darwin" ]; then
-  sudo launchctl unload net.beezwax.bzbond-server
-  sudo launchctl load net.beezwax.bzbond-server
+  sudo launchctl unload /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
+  sudo launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
 else
   sudo systemctl restart bzbond-server
 fi
