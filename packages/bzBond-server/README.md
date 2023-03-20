@@ -21,7 +21,7 @@ Or using `wget`
 
     $ wget -qO- curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.sh | bash
 
-## Manual Installation: Ubuntu and macOS
+## Manual Installation: Ubuntu, macOS
 
 1. Download a ZIP with the repo using [this
    link](https://github.com/beezwax/bzBond/archive/refs/heads/main.zip)
@@ -97,6 +97,13 @@ WantedBy=multi-user.target
 2. Load the daemon with `launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server.plist`
 3. Launch bzbond-server with the command `launchctl start /Library/LaunchDaemons/net.beezwax.bzbond-server.plist`
 4. Test the bzbond-server is running with the command `curl http://localhost:8999` this should output `{"message":"Route GET:/ not found","error":"Not Found","statusCode":404}`
+
+### Manual Installation: Windows Server
+
+1. [Download](https://git-scm.com/downloads) and run the Windows git installer. All options can be left at their defaults during the installation.
+2. [Download](https://nodejs.org/en/download) and run the node/npm Windows installer. All options can be left at their defaults during the installation.
+3. Install the node-windows npm package globally with the command: `npm install -g node-windows`
+4. Open PowerShell and navigate to the `C:/Program Files`
 
 ## Windows Server Installation
 
