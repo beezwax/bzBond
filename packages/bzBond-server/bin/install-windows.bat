@@ -1,0 +1,1 @@
+echo "bzBond-server installation"

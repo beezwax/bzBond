@@ -105,6 +105,7 @@ WantedBy=multi-user.target
 3. Install the node-windows npm package globally with the command: `npm install -g node-windows`
 4. Open PowerShell and navigate to the `C:/Program Files`
 
+
 ## Windows Server Installation
 
 Coming soon
