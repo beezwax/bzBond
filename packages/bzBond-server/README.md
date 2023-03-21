@@ -21,6 +21,10 @@ Or using `wget`
 
     $ wget -qO- curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.sh | bash
 
+If you are using Windows server the installation script can be run
+
+`powershell -exec bypass -c "(New-Object Net.WebClient).Proxy.Credentials=[Net.CredentialCache]::DefaultNetworkCredentials;iwr('https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install-windows.ps1')|iex"`
+
 ## Manual Installation: Ubuntu, macOS
 
 1. Download a ZIP with the repo using [this

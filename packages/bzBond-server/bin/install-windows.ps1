@@ -1,1 +1,3 @@
-echo "bzBond-server installation"
+echo "=========================="
+echo "bzBond Server Installation"
+echo "=========================="
