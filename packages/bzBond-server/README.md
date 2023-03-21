@@ -190,8 +190,8 @@ You'll then need to restart the server. If using Ubuntu:
 
 For macOS:
 
-    $ sudo launchctl unload /Library/LaunchDaemons/net.beezwax.bzbond-server
-    $ sudo launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server
+    $ sudo launchctl unload /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
+    $ sudo launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
 
 ## Creating microbonds
 
