@@ -2,162 +2,46 @@
 
 # Introduction
 
-bzbond-server is a microservice that runs on your Claris/FileMaker server and
-allows you to run JavaScript code. It is intended to be accessed through the
-bzBond relay script in the mode `PERFORM_JAVASCRIPT` only when the script is
-running on the server.
+bzBond-server is a microservice for Claris/FileMaker server that allows execution of JavaScript code. It is intended to be accessed via the bzBondRelay script. For more details on usIt also acts as a host for additional microservices, called microbonds.
 
 # Installation
 
 These installations assume a default installation of Claris/FileMaker Server
 on the specified platform.
 
-If you are using macOS or Linux, you can use the following command to install
-bzbond-server:
+## macOS/Linux
 
-    $ curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.sh | bash
+For macOS or Linux, use the following command to install bzBond-server:
+
+```
+$ curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.sh | bash
+```
 
 Or using `wget`
 
-    $ wget -qO- curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.sh | bash
+```
+$ wget -qO- curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.sh | bash
+```
 
-If you are using Windows server the installation script can be run
+## Windows Server
+
+Note you must manually install [node](https://nodejs.org/en/download) and [git](https://git-scm.com/downloads) before installing.
+
+Run the following command in PowerShell to install bzBond-server:
 
 `powershell -exec bypass -c "(New-Object Net.WebClient).Proxy.Credentials=[Net.CredentialCache]::DefaultNetworkCredentials;iwr('https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install-windows.ps1')|iex"`
 
-## Manual Installation: Ubuntu, macOS
+# Usage
 
-1. Download a ZIP with the repo using [this
-   link](https://github.com/beezwax/bzBond/archive/refs/heads/main.zip)
-1. Unzip the repository and copy the files inside the `./packages/bzBond/dist/` directory into `/var/www/bzbond-server`
-1. Ensure `root` is the owner and group for the directory and its contents
-   (`chown -R root:root /var/www/bzbond-server`)
-1. Ensure the permissions are rwxr-xr-x for the directory and its contents (755) (`chmod -R 755 /var/www/bzbond-server`)
-
-### Ubuntu
-
-1. Create the following file in `/lib/systemd/system/bzbond-server.service`
-
-```
-[Unit]
-Description=bzbond-server – JavaScript microservice for FileMaker Server
-Documentation=https://github.com/beezwax/bzbond
-After=network.target
-
-[Service]
-Type=simple
-User=fmserver
-ExecStart="/opt/FileMaker/FileMaker Server/node/bin/node" /var/www/bzbond-server/server.js
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target
-```
-
-2. Run the command `sudo systemctl daemon-reload` to refresh systemd
-3. Launch bzbond-server with the command `sudo systemctl start bzbond-server`
-4. Test the bzbond-server is running with the command `curl http://localhost:8999` this should output `{"message":"Route GET:/ not found","error":"Not Found","statusCode":404}`
-5. Check the status of bzbond-server with the command `sudo systemctl status bzbond-server`
-6. Ensure bzbond-server starts with the system with the command `sudo systemctl enable bzbond-server`
-
-1: [https://nodesource.com/blog/running-your-node-js-app-with-systemd-part-1/](https://nodesource.com/blog/running-your-node-js-app-with-systemd-part-1/)
-
-### macOS
-
-1. Create the following file in `/Library/LaunchDaemons/net.beezwax.bzbond-server.plist`
-
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-  <dict>
-    <key>Label</key>
-    <string>net.beezwax.bzbond-server</string>
-
-    <key>ProgramArguments</key>
-    <array>
-      <string>/Library/FileMaker Server/node/bin/node</string>
-      <string>/var/www/bzbond-server/index.js</string>
-    </array>
-
-    <key>WorkingDirectory</key>
-    <string>/var/www/bzbond-server</string>
-
-    <key>StandardOutPath</key>
-    <string>/var/log/bzbond-server/access.log</string>
-
-    <key>StandardErrorPath</key>
-    <string>/var/log/bzbond-server/error.log</string>
-
-    <key>RunAtLoad</key>
-    <true/>
-
-    <key>KeepAlive</key>
-    <true/>
-  </dict>
-</plist>
-```
-
-2. Load the daemon with `launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server.plist`
-3. Launch bzbond-server with the command `launchctl start /Library/LaunchDaemons/net.beezwax.bzbond-server.plist`
-4. Test the bzbond-server is running with the command `curl http://localhost:8999` this should output `{"message":"Route GET:/ not found","error":"Not Found","statusCode":404}`
-
-### Manual Installation: Windows Server
-
-1. [Download](https://git-scm.com/downloads) and run the Windows git installer. All options can be left at their defaults during the installation.
-2. [Download](https://nodejs.org/en/download) and run the node/npm Windows installer. All options can be left at their defaults during the installation.
-3. Install the node-windows npm package globally with the command: `npm install -g node-windows`
-4. Open PowerShell and navigate to the `C:/Program Files`
-
-
-## Windows Server Installation
-
-Coming soon
-
-# Uninstall
-
-If you are using macOS or Linux, you can use the following command to uninstall
-bzbond-server:
-
-    $ curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/uninstall.sh | bash
-
-Or using `wget`
-
-    $ wget -qO- curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/uninstall.sh | bash
-
-## Manual uninstall: macOS
-
-```
-rm -rf /tmp/bzBond
-sudo rm -rf /var/www/bzbond-server
-sudo launchctl remove net.beezwax.bzbond-server
-sudo rm /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
-```
-
-## Manual Uninstall: Ubuntu
-
-```
-rm -rf /tmp/bzBond
-sudo rm -rf /var/www/bzbond-server
-sudo systemctl stop bzbond-server
-sudo systemctl disable bzbond-server
-sudo rm /lib/systemd/system/bzbond-server.service
-sudo systemctl daemon-reload
-sudo systemctl reset-failed
-```
-
-# Logs
-
-You can see the logs for bzBond server with `tail /var/log/bzbond-server` in
-macOS and `journalctl -u bzbond-server.service` in Ubuntu.
+For details on using bzBond-server see [Running JavaScript functions with the `bzBondRelay` script (client and server)](../bzBond-claris/README.md#running-javascript-functions-with-the-bzbondrelay-script-client-and-server)
 
 # Microbonds
 
-Microbonds allow you to define custom endpoints in the bzBond microservice.
-Microbonds are npm packages, so you can use any other package you need as you
-usually would, with `npm install` from your microbond's directory.
+Microbonds are custom endpoints in the bzBond microservice. Microbonds are npm packages, so allow use of any npm package via `npm install`.
 
 ## Installing microbonds
+
+
 
 After bzBond server is installed, you can run the following command from the
 server:
@@ -241,3 +125,123 @@ const microbonds = async () => [
   { microbond: anotherMicrobond, options: anotherOptions },
 ];
 ```
+
+# Logs
+
+You can see the logs for bzBond server with `tail /var/log/bzbond-server` in
+macOS and `journalctl -u bzbond-server.service` in Ubuntu.
+
+# Uninstall
+
+If you are using macOS or Linux, you can use the following command to uninstall
+bzBond-server:
+
+    $ curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/uninstall.sh | bash
+
+Or using `wget`
+
+    $ wget -qO- curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/uninstall.sh | bash
+
+## Manual uninstall: macOS
+
+```
+rm -rf /tmp/bzBond
+sudo rm -rf /var/www/bzbond-server
+sudo launchctl remove net.beezwax.bzbond-server
+sudo rm /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
+```
+
+## Manual Uninstall: Ubuntu
+
+```
+rm -rf /tmp/bzBond
+sudo rm -rf /var/www/bzbond-server
+sudo systemctl stop bzbond-server
+sudo systemctl disable bzbond-server
+sudo rm /lib/systemd/system/bzbond-server.service
+sudo systemctl daemon-reload
+sudo systemctl reset-failed
+```
+
+# Manual Installation
+
+## Manual Installation: Ubuntu, macOS
+
+1. Download a ZIP with the repo using [this
+   link](https://github.com/beezwax/bzBond/archive/refs/heads/main.zip)
+1. Unzip the repository and copy the files inside the `./packages/bzBond/dist/` directory into `/var/www/bzbond-server`
+1. Ensure `root` is the owner and group for the directory and its contents
+   (`chown -R root:root /var/www/bzbond-server`)
+1. Ensure the permissions are rwxr-xr-x for the directory and its contents (755) (`chmod -R 755 /var/www/bzbond-server`)
+
+### Ubuntu
+
+1. Create the following file in `/lib/systemd/system/bzbond-server.service`
+
+```
+[Unit]
+Description=bzbond-server – JavaScript microservice for FileMaker Server
+Documentation=https://github.com/beezwax/bzbond
+After=network.target
+
+[Service]
+Type=simple
+User=fmserver
+ExecStart="/opt/FileMaker/FileMaker Server/node/bin/node" /var/www/bzbond-server/server.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+2. Run the command `sudo systemctl daemon-reload` to refresh systemd
+3. Launch bzbond-server with the command `sudo systemctl start bzbond-server`
+4. Test the bzbond-server is running with the command `curl http://localhost:8999` this should output `{"message":"Route GET:/ not found","error":"Not Found","statusCode":404}`
+5. Check the status of bzbond-server with the command `sudo systemctl status bzbond-server`
+6. Ensure bzbond-server starts with the system with the command `sudo systemctl enable bzbond-server`
+
+1: [https://nodesource.com/blog/running-your-node-js-app-with-systemd-part-1/](https://nodesource.com/blog/running-your-node-js-app-with-systemd-part-1/)
+
+### macOS
+
+1. Create the following file in `/Library/LaunchDaemons/net.beezwax.bzbond-server.plist`
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>net.beezwax.bzbond-server</string>
+
+    <key>ProgramArguments</key>
+    <array>
+      <string>/Library/FileMaker Server/node/bin/node</string>
+      <string>/var/www/bzbond-server/index.js</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/var/www/bzbond-server</string>
+
+    <key>StandardOutPath</key>
+    <string>/var/log/bzbond-server/access.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/var/log/bzbond-server/error.log</string>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <true/>
+  </dict>
+</plist>
+```
+
+2. Load the daemon with `launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server.plist`
+3. Launch bzbond-server with the command `launchctl start /Library/LaunchDaemons/net.beezwax.bzbond-server.plist`
+4. Test the bzbond-server is running with the command `curl http://localhost:8999` this should output `{"message":"Route GET:/ not found","error":"Not Found","statusCode":404}`
+
+
+
+
