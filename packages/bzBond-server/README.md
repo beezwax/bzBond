@@ -1,247 +1,167 @@
-# bzbond-server
-
 # Introduction
 
-bzBond-server is a microservice for Claris/FileMaker server that allows execution of JavaScript code. It is intended to be accessed via the bzBondRelay script. For more details on usIt also acts as a host for additional microservices, called microbonds.
+bzBond-server is a microservice for [Claris/FileMaker Server](https://www.claris.com/filemaker/server/) that enables execution of JavaScript code. It also acts as a host for additional microservices, called Microbonds. 
 
 # Installation
 
-These installations assume a default installation of Claris/FileMaker Server
-on the specified platform.
+These installations assume a default installation of Claris/FileMaker Server on the specified platform.
 
-## macOS/Linux
+## Installation on macOS/Linux
 
-For macOS or Linux, use the following command to install bzBond-server:
+On macOS or Linux use the following command to install bzBond-server:
 
-```
-$ curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.sh | bash
-```
+`curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.sh | bash`
 
-Or using `wget`
+## Installation on Windows Server
 
-```
-$ wget -qO- curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.sh | bash
-```
+**Note: Install [node](https://nodejs.org/en/download) and [git](https://git-scm.com/downloads) before installing bzBond-server.**
 
-## Windows Server
+On Windows Server use the following command in PowerShell to install bzBond-server:
 
-Note you must manually install [node](https://nodejs.org/en/download) and [git](https://git-scm.com/downloads) before installing.
-
-Run the following command in PowerShell to install bzBond-server:
-
-`powershell -exec bypass -c "(New-Object Net.WebClient).Proxy.Credentials=[Net.CredentialCache]::DefaultNetworkCredentials;iwr('https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install-windows.ps1')|iex"`
+`powershell -exec bypass -c "(New-Object Net.WebClient).Proxy.Credentials=[Net.CredentialCache]::DefaultNetworkCredentials;iwr('https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.ps1')|iex"`
 
 # Usage
 
-For details on using bzBond-server see [Running JavaScript functions with the `bzBondRelay` script (client and server)](../bzBond-claris/README.md#running-javascript-functions-with-the-bzbondrelay-script-client-and-server)
+For details on using bzBond-server see the bzBond-claris documentation for [running JavaScript functions with the `bzBondRelay` script (client and server)](../bzBond-claris/README.md#running-javascript-functions-with-the-bzbondrelay-script-client-and-server).
 
 # Microbonds
 
-Microbonds are custom endpoints in the bzBond microservice. Microbonds are npm packages, so allow use of any npm package via `npm install`.
+Microbonds are custom endpoints in the bzBond-server microservice that extend its capabilities. Microbonds can perform specific tasks, interact with external APIs, or provide an interface for other applications installed on the server.
 
-## Installing microbonds
+## Installing Microbonds
 
+### Installing Microbonds on macOS/Linux
 
+On macOS/Linux use the following command to install a Microbond:
 
-After bzBond server is installed, you can run the following command from the
-server:
+`/var/www/bzbond-server/bin/install-microbond.sh`
 
-    $ /var/www/bzbond-server/bin/install-microbond.sh
+### Installing Microbonds on Windows Server
 
-It will prompt for the microbond info and install it.
+On Windows Server use the following command to install a Microbond:
 
-You can try the example microbond with:
+`"C:\Program Files\bzBond-server\bin\install-microbond.ps1"`
 
-    name: hello-world
-    url: https://github.com/beezwax/bzbond-server-microbond-example
+### Microbond installation with command line arguments
 
-You can pass a full GiiHub URL as shown above, or a path to a local git repository, such as
-`/home/my-username/some-git-repo` or `../some-folder/my-git-repo`.
+The installer will prompt for the Microbond name and source url. The Microbond name and source url can also be provided as command line arguments.
+
+#### Example of Microbond installation command including name and source url on macOS/Linux
+
+`/var/www/bzbond-server/bin/install-microbond.sh hello-world https://github.com/beezwax/bzbond-server-microbond-example`
+
+#### Example of Microbond installation command including name and source url on Windows Server
+
+`"C:\Program Files\bzBond-server\bin\install-microbond.ps1" hello-world https://github.com/beezwax/bzbond-server-microbond-example`
+
+Supported URL formats are full GitHub URLs (as shown above), or a path to a local git repository.
+
+### Microbond installation local git repo url format
+
+#### Examples of local git repo url format for Microbond installation on macOS/Linux
+
+`/home/my-username/a-microbond-git-repo`
+
+`../some-folder/a-microbond-git-repo`
+
+#### Examples of local git repo url format for Microbond installation on Windows Server
+
+`C:\Users\my-username\a-microbond-git-repo`
+
+`..\some-folder\a-microbond-git-repo`
 
 ## Updating microbonds
 
-To update a microbond, you can run the following command from the server:
+### Updating microbonds on macOS/Linux:
 
-    $ /var/www/bzbond-server/bin/update-microbond.sh my-microbond-name
+On macOS/Linux use the following command to update a Microbond:
 
-Automatic updates will work only if the microbond is a git repository. Otherwise,
-you'll have to manually update it in the
-`/var/www/bzbond-server/installed-microbond/my-microbond-name` folder.
+`/var/www/bzbond-server/bin/update-microbond.sh microbond-name`
 
-You'll then need to restart the server. If using Ubuntu:
+### Updating microbonds on Windows Server:
 
-    $ sudo systemctl restart bzbond-server
+On Windows Server use the following command to update a Microbond:
 
-For macOS:
+`"C:\Program Files\bzBond-server\update-microbond.ps1" microbond-name`
 
-    $ sudo launchctl unload /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
-    $ sudo launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
+## Creating Microbonds
 
-## Creating microbonds
+Microbonds are npm packages. The quickest way to create one is using the create-microbond script.
 
-You can use the command below to set up a bare bones microbond for you to
-customize:
+### Create a Microbond on macOS/Linux
 
-    $ bash <(curl -s https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/create-microbond.sh)
+On macOS/Linux use the following command to create a Microbond:
 
-Or using `wget`
+`bash <(curl -s https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/create-microbond.sh)`
 
-    $ wget -qO- curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/create-microbond.sh | bash
+### Create a Microbond on Windows
 
-Once your microbond is done, you'll have to install it following the instructions
-above.
+On Windows use the following command to create a Microbond:
 
-## Deleting microbonds
+`powershell -exec bypass -c "(New-Object Net.WebClient).Proxy.Credentials=[Net.CredentialCache]::DefaultNetworkCredentials;iwr('https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/create-microbond.ps1')|iex"`
 
-For now, the process is manual:
+### Creating Microbonds: Namespacing
 
-1. `cd /var/www/bzbond-server`
-1. Remove the `require` statement for the microbond you want to uninstall.
-1. Remove the microbond definition from the `microbonds` function.
-1. `npm uninstall microbond-name` (alternatively, edit `package.json` and run `npm install`)
-1. `sudo systemctl restart bzbond-server`
+It is strongly recommended that Microbond names and routes are namespaced to prevent collisions.
 
-For example, if we want to remove the [hello-world](https://github.com/beezwax/bzbond-server-microbond-example) microbond, we transform this:
+To illustrate, consider Beezwax-created Microbonds. These Microbonds and their routes are namespaced `bzmb`. The namespace is followed by a hyphen (`-`) and then a descriptive name. For example `bzmb-array`.
 
-```javascript
-const {
-  microbond: helloWorldMicrobond,
-  options: helloWorldOptions,
-} = require("hello-world");
-const { microbond: anotherMicrobond, options: anotherOptions } = require("another");
-const microbond = async () => [
-  // Do not change this file manually, use bzBond's `install-microbond` command
-  { microbond: helloWorldMicrobond, options: helloWorldOptions },
-  { microbond: anotherMicrobond, options: anotherOptions },
-];
-```
+Routes within a Microbond must also adopt namespacing as duplicate routes are not allowed. For example a route to sort an array with `bzmb-array` would be named `bzmb-array-sort`.
 
-Into this:
+## Publishing Microbonds
 
-```javascript
-const { microbond: anotherMicrobond, options: anotherOptions } = require("another");
-const microbonds = async () => [
-  // Do not change this file manually, use bzBond's `install-microbond` command
-  { microbond: anotherMicrobond, options: anotherOptions },
-];
-```
+Microbonds can be published by simply pushing the local git repo to github and making it public.
+
+Microbonds that are private or otherwise unsuitable for publishing will need to be privately "published" (i.e. copied) to a location accessible to the server where they are being installed. See the [installing Microbonds](#microbond-installation-local-git-repo-url-format) for examples of local repo references.
+
+## Unistalling Microbonds
+
+### Uninstalling Microbonds on macOS/Linux
+
+On macOS/Linux use the following command to uninstall a Microbond:
+
+`/var/www/bzbond-server/bin/uninstall-microbond.sh microbond-name`
+
+### Uninstalling Microbonds on Windows Server
+
+On Windows Server use the following command to uninstall a Microbond:
+
+`"C:\Program Files\bzBond-server\bin\uninstall-microbond.ps1" microbond-name`
 
 # Logs
 
-You can see the logs for bzBond server with `tail /var/log/bzbond-server` in
-macOS and `journalctl -u bzbond-server.service` in Ubuntu.
+## bzBond-Server logs for macOS/Linux
+
+On macOS/Linux the bzBond-server log location is: `/var/log/bzbond-server`
+
+### Viewing bzBond-Server logs macOS
+
+On macOS use the following command to view the bzBond-server log:
+
+`tail /var/log/bzbond-server`
+
+### Viewing bzBond-Server logs Linux
+
+On Linux use the following command to view the bzBond-server log:
+
+`journalctl -u bzbond-server.service`
+
+## bzBond-Server logs for Windows Server
+
+On Windows Server logs for bzBond-server can be viewed in the Computer Management app in the following location:
+
+`Computer Management (Local) > System Tools > Event Viewer > Windows Logs > Application`
 
 # Uninstall
 
-If you are using macOS or Linux, you can use the following command to uninstall
-bzBond-server:
+## Uninstalling on macOS/Linux
 
-    $ curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/uninstall.sh | bash
+On macOS/Linux use the following command to uninstall bzBond-server:
 
-Or using `wget`
+`curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/uninstall.sh | bash`
 
-    $ wget -qO- curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/uninstall.sh | bash
+## Uninstalling on Windows Server
 
-## Manual uninstall: macOS
+On Windows Server use the following command to uninstall bzBond-server:
 
-```
-rm -rf /tmp/bzBond
-sudo rm -rf /var/www/bzbond-server
-sudo launchctl remove net.beezwax.bzbond-server
-sudo rm /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
-```
-
-## Manual Uninstall: Ubuntu
-
-```
-rm -rf /tmp/bzBond
-sudo rm -rf /var/www/bzbond-server
-sudo systemctl stop bzbond-server
-sudo systemctl disable bzbond-server
-sudo rm /lib/systemd/system/bzbond-server.service
-sudo systemctl daemon-reload
-sudo systemctl reset-failed
-```
-
-# Manual Installation
-
-## Manual Installation: Ubuntu, macOS
-
-1. Download a ZIP with the repo using [this
-   link](https://github.com/beezwax/bzBond/archive/refs/heads/main.zip)
-1. Unzip the repository and copy the files inside the `./packages/bzBond/dist/` directory into `/var/www/bzbond-server`
-1. Ensure `root` is the owner and group for the directory and its contents
-   (`chown -R root:root /var/www/bzbond-server`)
-1. Ensure the permissions are rwxr-xr-x for the directory and its contents (755) (`chmod -R 755 /var/www/bzbond-server`)
-
-### Ubuntu
-
-1. Create the following file in `/lib/systemd/system/bzbond-server.service`
-
-```
-[Unit]
-Description=bzbond-server – JavaScript microservice for FileMaker Server
-Documentation=https://github.com/beezwax/bzbond
-After=network.target
-
-[Service]
-Type=simple
-User=fmserver
-ExecStart="/opt/FileMaker/FileMaker Server/node/bin/node" /var/www/bzbond-server/server.js
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target
-```
-
-2. Run the command `sudo systemctl daemon-reload` to refresh systemd
-3. Launch bzbond-server with the command `sudo systemctl start bzbond-server`
-4. Test the bzbond-server is running with the command `curl http://localhost:8999` this should output `{"message":"Route GET:/ not found","error":"Not Found","statusCode":404}`
-5. Check the status of bzbond-server with the command `sudo systemctl status bzbond-server`
-6. Ensure bzbond-server starts with the system with the command `sudo systemctl enable bzbond-server`
-
-1: [https://nodesource.com/blog/running-your-node-js-app-with-systemd-part-1/](https://nodesource.com/blog/running-your-node-js-app-with-systemd-part-1/)
-
-### macOS
-
-1. Create the following file in `/Library/LaunchDaemons/net.beezwax.bzbond-server.plist`
-
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-  <dict>
-    <key>Label</key>
-    <string>net.beezwax.bzbond-server</string>
-
-    <key>ProgramArguments</key>
-    <array>
-      <string>/Library/FileMaker Server/node/bin/node</string>
-      <string>/var/www/bzbond-server/index.js</string>
-    </array>
-
-    <key>WorkingDirectory</key>
-    <string>/var/www/bzbond-server</string>
-
-    <key>StandardOutPath</key>
-    <string>/var/log/bzbond-server/access.log</string>
-
-    <key>StandardErrorPath</key>
-    <string>/var/log/bzbond-server/error.log</string>
-
-    <key>RunAtLoad</key>
-    <true/>
-
-    <key>KeepAlive</key>
-    <true/>
-  </dict>
-</plist>
-```
-
-2. Load the daemon with `launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server.plist`
-3. Launch bzbond-server with the command `launchctl start /Library/LaunchDaemons/net.beezwax.bzbond-server.plist`
-4. Test the bzbond-server is running with the command `curl http://localhost:8999` this should output `{"message":"Route GET:/ not found","error":"Not Found","statusCode":404}`
-
-
-
-
+`powershell -exec bypass -c "(New-Object Net.WebClient).Proxy.Credentials=[Net.CredentialCache]::DefaultNetworkCredentials;iwr('https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/uninstall.ps1')|iex"`
