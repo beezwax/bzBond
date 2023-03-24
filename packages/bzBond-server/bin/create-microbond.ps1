@@ -10,7 +10,7 @@ git clone https://github.com/beezwax/bzbond-server-microbond-example.git "$name"
 Set-Location "$name"
 Remove-Item -Path .git -Recurse -Force
 (Get-Content package.json).
-  replace('"name": "hello-world"', '"name": "' + $name + '"').
+  replace('"name": "bzmb-hello-world"', '"name": "' + $name + '"').
   replace('"version": "1.0.0"', '"verison": "0.1.0"').
   replace('"author": "Beezwax"', '"author": "author"').
   replace('minimal example ', '') | Set-Content package.json

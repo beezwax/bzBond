@@ -11,7 +11,7 @@ fi
 git clone https://github.com/beezwax/bzbond-server-microbond-example.git "$name"
 cd "$name"
 rm -rf .git
-sed -i -n 's/"name": "hello-world"/"name": "my-microbond"/' package.json
+sed -i -n 's/"name": "bzmb-hello-world"/"name": "my-microbond"/' package.json
 sed -i -n 's/"version": "1.0.0"/"version": "0.1.0"/' package.json
 sed -i -n 's/"author": "Beezwax"/"author": "author"/' package.json
 sed -i -n 's/minimal example //' package.json
