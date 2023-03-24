@@ -14,6 +14,7 @@ sudo rm -rf /var/www/bzbond-server
 echo "Removing daemon..."
 if [ "$(uname)" = "Darwin" ]; then
   # macOS uninstall
+  sudo launchctl unload /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
   sudo launchctl remove /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
   sudo rm /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
 else
