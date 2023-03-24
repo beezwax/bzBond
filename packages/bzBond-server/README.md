@@ -40,7 +40,7 @@ On macOS/Linux use the following command to install a Microbond:
 
 On Windows Server use the following command to install a Microbond:
 
-`"C:\Program Files\bzBond-server\bin\install-microbond.ps1"`
+`powershell -File "C:\Program Files\bzBond-server\bin\install-microbond.ps1"`
 
 ### Microbond installation with command line arguments
 
@@ -48,11 +48,11 @@ The installer will prompt for the Microbond name and source url. The Microbond n
 
 #### Example of Microbond installation command including name and source url on macOS/Linux
 
-`/var/www/bzbond-server/bin/install-microbond.sh hello-world https://github.com/beezwax/bzbond-server-microbond-example`
+`/var/www/bzbond-server/bin/install-microbond.sh bzmb-hello-world https://github.com/beezwax/bzbond-server-microbond-example`
 
 #### Example of Microbond installation command including name and source url on Windows Server
 
-`"C:\Program Files\bzBond-server\bin\install-microbond.ps1" hello-world https://github.com/beezwax/bzbond-server-microbond-example`
+`powershell -File "C:\Program Files\bzBond-server\bin\install-microbond.ps1" bzmb-hello-world https://github.com/beezwax/bzbond-server-microbond-example`
 
 Supported URL formats are full GitHub URLs (as shown above), or a path to a local git repository.
 
@@ -82,7 +82,7 @@ On macOS/Linux use the following command to update a Microbond:
 
 On Windows Server use the following command to update a Microbond:
 
-`"C:\Program Files\bzBond-server\update-microbond.ps1" microbond-name`
+`"C:\Program Files\bzBond-server\bin\update-microbond.ps1" microbond-name`
 
 ## Creating Microbonds
 
@@ -126,7 +126,7 @@ On macOS/Linux use the following command to uninstall a Microbond:
 
 On Windows Server use the following command to uninstall a Microbond:
 
-`"C:\Program Files\bzBond-server\bin\uninstall-microbond.ps1" microbond-name`
+`powershell -File "C:\Program Files\bzBond-server\bin\uninstall-microbond.ps1" microbond-name`
 
 # Logs
 
