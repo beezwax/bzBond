@@ -7,6 +7,7 @@ const prompt = require("prompt");
 // Constants
 // =============================================================================
 const IS_DARWIN = process.platform === "darwin";
+const IS_WINDOWS = process.platform === "win32";
 const TOOL_PATHS = {
   darwin: [
     "/Library/FileMaker Server/node/bin/node",
@@ -16,6 +17,10 @@ const TOOL_PATHS = {
     "/opt/FileMaker/FileMaker Server/node/bin/node",
     "/opt/FileMaker/FileMaker Server/node/bin/npm",
   ],
+  win32: [
+    "node",
+    "npm"
+  ]
 };
 const [NODE_PATH, NPM_PATH] = TOOL_PATHS[process.platform];
 
@@ -34,6 +39,8 @@ const restartServer = () => {
   if (IS_DARWIN) {
     bash(`sudo launchctl unload /Library/LaunchDaemons/net.beezwax.bzbond-server.plist`);
     bash(`sudo launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server.plist`);
+  } else if (IS_WINDOWS) {
+    bash(`Restart-Service -Name bzBond-server`);
   } else {
     bash(`sudo systemctl restart bzbond-server`);
   }
@@ -43,7 +50,9 @@ const restartServer = () => {
 
 const bash = (...commands) => {
   commands.forEach((command) => {
-    execSync(command, { cwd: "/var/www/bzbond-server" });
+    const cwd = IS_WINDOWS ? "C:\\Program Files\\bzBond-server" : "/var/www/bzbond-server";
+    const shell = IS_WINDOWS ? "powershell.exe" : undefined;
+    execSync(command, { cwd, shell });
   });
 };
 
@@ -61,10 +70,11 @@ const main = async (name, url) => {
   const camelizedName = camelize(name);
 
   // Check if microbond is already installed, if so, update it instead
-  const microbondDirectory = `/var/www/bzbond-server/installed-microbonds/${name}`;
+  const microbondDirectory = IS_WINDOWS ? `C:\\Program Files\\bzBond-server\\installed-microbonds\\${name}`: `/var/www/bzbond-server/installed-microbonds/${name}`;
   if (existsSync(microbondDirectory)) {
     console.log(`The ${name} microbond is already installed. Updating...`);
-    execSync(`sudo "${NODE_PATH}" "${NPM_PATH}" update ${url.split("/").pop()}`, {
+    const npmCall = IS_WINDOWS ? NPM_PATH : `sudo "${NODE_PATH}" "${NPM_PATH}"`;
+    execSync(`${npmCall} update ${url.split("/").pop()}`, {
       cwd: microbondDirectory,
     });
     restartServer();
@@ -76,15 +86,25 @@ const main = async (name, url) => {
   // run npm install
   if (url.startsWith("https://") || url.startsWith("ssh://")) {
     bash(
-      `git clone ${url} /var/www/bzbond-server/installed-microbonds/${name}`,
-      `git config --global --add safe.directory /var/www/bzbond-server/installed-microbonds/${name}`
+      `git clone ${url} "${microbondDirectory}"`,
+      `git config --global --add safe.directory "${microbondDirectory}"`
     );
   } else {
-    bash(`sudo cp -r ${url} /var/www/bzbond-server/installed-microbonds/${name}`);
+    if (IS_WINDOWS) {
+      bash(`Copy-Item -Path "${url}" -Destination "${microbondDirectory}" -Recurse -Force`);
+    } else {
+      bash(`sudo cp -r ${url} ${microbondDirectory}`);
+    }
   }
-  bash(
-    `sudo "${NODE_PATH}" "${NPM_PATH}" i /var/www/bzbond-server/installed-microbonds/${name}`
-  );
+  if (IS_WINDOWS) {
+    bash(
+      `${NPM_PATH} i "${microbondDirectory}"`
+    )
+  } else {
+    bash(
+      `sudo "${NODE_PATH}" "${NPM_PATH}" i ${microbondDirectory}`
+    );
+  }
 
   const importStatement = `
 const {

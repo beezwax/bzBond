@@ -4,7 +4,7 @@ Write-Output "=========================="
 
 ### require administator rights
 if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
-  write-Warning "This setup needs admin permissions. Please run this file as admin."     
+  Write-Warning "This script requires admin permissions. Try again as admin."
   break
 }
 
