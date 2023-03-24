@@ -1,6 +1,6 @@
 {
   "name": "@beezwax/bzbond-web-template",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "bzBond toolset web template",
   "author": "Beezwax",
   "repository": {
@@ -17,7 +17,7 @@
     "build": "webpack --config webpack.prod.js"
   },
   "dependencies": {
-    "@beezwax/bzbond-js": "^0.9.0"
+    "@beezwax/bzbond-js": "^0.9.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",
