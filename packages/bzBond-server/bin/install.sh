@@ -91,6 +91,7 @@ if [ "$(uname)" = "Darwin" ]; then
 EOF
 
   sudo launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
+  sudo chmod a+x /var/log/bzbond-server
 
   echo "bzBond server installed!"
 else
@@ -116,7 +117,6 @@ EOF
   sudo systemctl daemon-reload
   sudo systemctl start bzbond-server
   sudo systemctl enable bzbond-server
-  sudo chmod a+x /var/log/bzbond-server
 
   echo "bzBond server installed!"
   echo
