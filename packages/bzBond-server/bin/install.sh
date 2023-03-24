@@ -15,8 +15,8 @@ if ! id fmserver &>/dev/null; then
 fi
 
 # Check bzbond is not already installed
-bzBondDir="/var/www/bzbond-server/"
-if [ -d "$bzBondDir" ]; then
+BZBOND_DIR="/var/www/bzbond-server/"
+if [ -d "$BZBOND_DIR" ]; then
   echo "bzBond is already installed"
   exit 1
 fi
