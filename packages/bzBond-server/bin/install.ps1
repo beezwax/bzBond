@@ -8,6 +8,12 @@ if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
   break
 }
 
+### check if bzbond is already installed
+if (Test-Path -Path "C:\Program Files\bzBond-server") {
+  Write-Output "bzBond already installed"
+  break
+}
+
 ### check node installed
 if (Get-Command node -errorAction SilentlyContinue) {
   Write-Output "node installed"

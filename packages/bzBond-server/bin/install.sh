@@ -14,6 +14,13 @@ if ! id fmserver &>/dev/null; then
   exit
 fi
 
+# Check bzbond is not already installed
+bzBondDir ="/var/www/bzbond-server/"
+if [ -d "$bzBondDir" ]; then
+  echo "bzBond is already installed"
+  exit 1
+fi
+
 # Check FileMaker's node
 NODE_PATH="/opt/FileMaker/FileMaker Server/node/bin/node"
 NPM_PATH="/opt/FileMaker/FileMaker Server/node/bin/npm"
@@ -109,6 +116,7 @@ EOF
   sudo systemctl daemon-reload
   sudo systemctl start bzbond-server
   sudo systemctl enable bzbond-server
+  sudo chmod a+x /var/log/bzbond-server
 
   echo "bzBond server installed!"
   echo

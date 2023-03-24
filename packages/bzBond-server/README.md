@@ -132,13 +132,17 @@ On Windows Server use the following command to uninstall a Microbond:
 
 ## bzBond-Server logs for macOS/Linux
 
-On macOS/Linux the bzBond-server log location is: `/var/log/bzbond-server`
+On macOS/Linux the bzBond-server log folder is: `/var/log/bzbond-server`. There are two log files, `error.log` and `access.log`. The `error.log` file shows errors encountered during the execution of JavaScript code. The `access.log` file shows all calls to bzBond-server. It also logs when the bzBond-server service starts.
 
 ### Viewing bzBond-Server logs macOS
 
-On macOS use the following command to view the bzBond-server log:
+On macOS use the following command to view the most recent entries in the bzBond-server logs:
 
-`tail /var/log/bzbond-server`
+`tail /var/log/bzbond-server/error.log`
+
+or
+
+`tail /var/log/bzbond-server/access.log`
 
 ### Viewing bzBond-Server logs Linux
 
