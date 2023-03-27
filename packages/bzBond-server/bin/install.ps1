@@ -47,8 +47,9 @@ if ($proxy) {
 } else {
   $npmCommand = "npm install" 
 }
+$npmCommandNodeWindows = $npmCommand + " node-windows"
 Invoke-Expression $npmCommand
-Invoke-Expression $npmCommand + " node-windows"
+Invoke-Expression $npmCommandNodeWindows
 Remove-Item -Path C:\Temp\bzBond -Recurse -Force
 
 ### install as service
