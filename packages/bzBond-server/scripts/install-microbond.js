@@ -107,7 +107,7 @@ const main = async (name, url, proxy) => {
     bash(
       `sudo "${NODE_PATH}" "${NPM_PATH}" ${proxy ? `--proxy ${proxy} ` : ""}i --prefix ${microbondDirectory}`
     );
-  }--prefix 
+  } 
 
   const importStatement = `
 const {
