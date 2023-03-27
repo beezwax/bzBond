@@ -4,6 +4,14 @@ echo "=========================="
 echo "bzBond Server Installation"
 echo "=========================="
 
+# Check for proxy switch
+while getopts ":x:" opt; do
+  case $opt in
+    x) PROXY="$OPTARG"
+    ;;
+  esac
+done
+
 USER=$(whoami)
 echo "Installing for $USER"
 
@@ -50,7 +58,12 @@ sudo chmod -R 755 /var/www/bzbond-server
 
 echo "Installing dependencies..."
 cd /var/www/bzbond-server || exit
-sudo "$NODE_PATH" "$NPM_PATH" install
+if [ -z "$PROXY" ]; then
+  sudo "$NODE_PATH" "$NPM_PATH" install
+else
+  echo "Installing with proxy $PROXY"
+  sudo "$NODE_PATH" "$NPM_PATH" --proxy $PROXY install
+fi
 rm -rf /tmp/bzBond
 
 echo "Setting up services..."

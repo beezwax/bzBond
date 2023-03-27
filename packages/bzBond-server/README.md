@@ -2,6 +2,48 @@
 
 bzBond-server is a microservice for [Claris/FileMaker Server](https://www.claris.com/filemaker/server/) that enables execution of JavaScript code. It also acts as a host for additional microservices, called Microbonds. 
 
+# Table of contents
+
+- [Installation](#installation)
+  - [Installation on macOS/Linux](#installation-on-macoslinux)
+  - [Installation on Windows Server](#installation-on-windows-server)
+  - [Installation with a proxy on macOS/Linux](#installation-with-a-proxy-on-macoslinux)
+  - [Installation with a proxy on Windows Server](#installation-with-a-proxy-on-windows-server)
+- [Usage](#usage)
+- [Microbonds](#microbonds)
+  - [Microbond installation](#microbond-installation)
+    - [Microbond installation on macOS/Linux](#microbond-installation-on-macoslinux)
+    - [Microbond installation on Windows Server](#microbond-installation-on-windows-server)
+    - [Microbond installation with command line arguments](#microbond-installation-with-command-line-arguments)
+      - [Example of Microbond installation command including name and source url on macOS/Linux](#example-of-microbond-installation-command-including-name-and-source-url-on-macoslinux)
+      - [Example of Microbond installation command including name and source url on Windows Server](#example-of-microbond-installation-command-including-name-and-source-url-on-windows-server)
+    - [Microbond installation local git repo url format](#microbond-installation-local-git-repo-url-format)
+      - [Examples of local git report url format for Microbond Installation on macOS/Linux](#examples-of-local-git-repo-url-format-for-microbond-installation-on-macoslinux)
+      - [Examples of local git report url format for Microbond Installation on Windows Server](#examples-of-local-git-repo-url-format-for-microbond-installation-on-windows-server)
+    - [Microbond installation with a proxy on macOS/Linux](#microbond-installation-with-a-proxy-on-macoslinux)
+    - [Microbond installation with a proxy on Windows Server](#microbond-installation-with-a-proxy-on-windows-server)
+  - [Microbond update](#microbond-update)
+    - [Microbond update on macOS/Linux](#microbond-update-on-macoslinux)
+    - [Microbond update on Windows Server](#microbond-update-on-windows-server)
+    - [Microbond update with a proxy on macOS/Linux](#microbond-update-with-a-proxy-on-macoslinux)
+    - [Microbond update with a proxy on Windows Server](#microbond-update-with-a-proxy-on-windows-server)
+  - [Microbond creation](#microbond-creation)
+    - [Microbond creation on macOS/Linux](#microbond-creation-on-macoslinux)
+    - [Microbond creation on Windows](#microbond-creation-on-windows)
+    - [Microbond creation: Namespacing](#microbond-creation-namespacing)
+  - [Microbond publishing](#microbond-publishing)
+  - [Microbond uninstallation](#microbond-uninstallation)
+    - [Microbond uninstallation on macOS/Linux](#microbond-uninstallation-on-macoslinux)
+    - [Microbond uninstallation on Windows Server](#microbond-uninstallation-on-windows-server)
+- [Logs](#logs)
+  - [bzBond-server logs on macOS/Linux](#bzbond-server-logs-on-macoslinux)
+    - [Viewing bzBond-server logs on macOS](#viewing-bzbond-server-logs-on-macos)
+    - [Viewing bzBond-server logs on Linux](#viewing-bzbond-server-logs-on-linux)
+  - [Viewing bzBond-server logs on Windows Server](#viewing-bzbond-server-logs-on-windows-server)
+- [Uninstallation](#uninstallation)
+  - [Uninstallation on macOS/Linux](#uninstallation-on-macoslinux)
+  - [Uninstallation on Windows Server](#uninstallation-on-windows-server)
+
 # Installation
 
 These installations assume a default installation of Claris/FileMaker Server on the specified platform.
@@ -18,7 +60,27 @@ On macOS or Linux use the following command to install bzBond-server:
 
 On Windows Server use the following command in PowerShell to install bzBond-server:
 
-`powershell -exec bypass -c "(New-Object Net.WebClient).Proxy.Credentials=[Net.CredentialCache]::DefaultNetworkCredentials;iwr('https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.ps1')|iex"`
+`powershell Invoke-WebRequest https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.ps1 -OutFile "$($env:USERPROFILE)\AppData\Local\Temp\install.ps1"|powershell -File "$($env:USERPROFILE)\AppData\Local\Temp\install.ps1"`
+
+## Installation with a proxy on macOS/Linux
+
+On macOS/Linux reference the proxy in the installation command as follows:
+
+`curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.sh | bash -s -x http://proxy.address.com:port#`
+
+For example:
+
+`curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.sh | bash -s -x http://proxy.example.com:443`
+
+## Installation with a proxy on Windows Server
+
+On Windows Server reference the proxy in the installation command as follows
+
+`powershell Invoke-WebRequest https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.ps1 -OutFile "$($env:USERPROFILE)\AppData\Local\Temp\install.ps1"|powershell -File "$($env:USERPROFILE)\AppData\Local\Temp\install.ps1" -proxy http://proxy.address.com:port#`
+
+For example:
+
+`powershell Invoke-WebRequest https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.ps1 -OutFile "$($env:USERPROFILE)\AppData\Local\Temp\install.ps1"|powershell -File "$($env:USERPROFILE)\AppData\Local\Temp\install.ps1" -proxy http://proxy.example.com:443`
 
 # Usage
 
@@ -28,15 +90,15 @@ For details on using bzBond-server see the bzBond-claris documentation for [runn
 
 Microbonds are custom endpoints in the bzBond-server microservice that extend its capabilities. Microbonds can perform specific tasks, interact with external APIs, or provide an interface for other applications installed on the server.
 
-## Installing Microbonds
+## Microbond installation
 
-### Installing Microbonds on macOS/Linux
+### Microbond installation on macOS/Linux
 
 On macOS/Linux use the following command to install a Microbond:
 
 `/var/www/bzbond-server/bin/install-microbond.sh`
 
-### Installing Microbonds on Windows Server
+### Microbond installation on Windows Server
 
 On Windows Server use the following command to install a Microbond:
 
@@ -70,37 +132,77 @@ Supported URL formats are full GitHub URLs (as shown above), or a path to a loca
 
 `..\some-folder\a-microbond-git-repo`
 
-## Updating microbonds
+### Microbond installation with a proxy on macOS/Linux
 
-### Updating microbonds on macOS/Linux:
+On macOS/Linux reference the proxy in the installation command as follows:
+
+`/var/www/bzbond-server/bin/install-microbond.sh -x http://proxy.address.com:port#`
+
+For example:
+
+`/var/www/bzbond-server/bin/install-microbond.sh -x http://proxy.example.com:443`
+
+### Microbond installation with a proxy on Windows Server
+
+On Windows Server reference the proxy in the installation command as follows:
+
+`powershell -File "C:\Program Files\bzBond-server\bin\install-microbond.ps1" -x http://proxy.address.com:port#`
+
+For example:
+
+`powershell -File "C:\Program Files\bzBond-server\bin\install-microbond.ps1" -x http://proxy.example.com:443`
+
+## Microbond update
+
+### Microbond update on macOS/Linux
 
 On macOS/Linux use the following command to update a Microbond:
 
 `/var/www/bzbond-server/bin/update-microbond.sh microbond-name`
 
-### Updating microbonds on Windows Server:
+### Microbond update on Windows Server
 
 On Windows Server use the following command to update a Microbond:
 
-`"C:\Program Files\bzBond-server\bin\update-microbond.ps1" microbond-name`
+`powershell -File "C:\Program Files\bzBond-server\bin\update-microbond.ps1" microbond-name`
 
-## Creating Microbonds
+### Microbond update with a proxy on macOS/Linux
+
+On macOS/Linux use the following command to update a Microbond with a proxy:
+
+`/var/www/bzbond-server/bin/update-microbond.sh microbond-name http://proxy.address.com:port#`
+
+For example:
+
+`/var/www/bzbond-server/bin/update-microbond.sh microbond-name http://proxy.example.com:443`
+
+### Microbond update with a proxy on Windows Server
+
+On Windows Server use the following command to update a Microbond with a proxy:
+
+`powershell -File "C:\Program Files\bzBond-server\bin\update-microbond.ps1" microbond-name http://proxy.address.com:port#`
+
+For example:
+
+`powershell -File "C:\Program Files\bzBond-server\bin\update-microbond.ps1" microbond-name http://proxy.example.com:443`
+
+## Microbond creation
 
 Microbonds are npm packages. The quickest way to create one is using the create-microbond script.
 
-### Create a Microbond on macOS/Linux
+### Microbond creation on macOS/Linux
 
 On macOS/Linux use the following command to create a Microbond:
 
 `bash <(curl -s https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/create-microbond.sh)`
 
-### Create a Microbond on Windows
+### Microbond creation on Windows
 
 On Windows use the following command to create a Microbond:
 
 `powershell -exec bypass -c "(New-Object Net.WebClient).Proxy.Credentials=[Net.CredentialCache]::DefaultNetworkCredentials;iwr('https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/create-microbond.ps1')|iex"`
 
-### Creating Microbonds: Namespacing
+### Microbond creation: Namespacing
 
 It is strongly recommended that Microbond names and routes are namespaced to prevent collisions.
 
@@ -108,21 +210,21 @@ To illustrate, consider Beezwax-created Microbonds. These Microbonds and their r
 
 Routes within a Microbond must also adopt namespacing as duplicate routes are not allowed. For example a route to sort an array with `bzmb-array` would be named `bzmb-array-sort`.
 
-## Publishing Microbonds
+## Microbond publishing
 
 Microbonds can be published by simply pushing the local git repo to github and making it public.
 
 Microbonds that are private or otherwise unsuitable for publishing will need to be privately "published" (i.e. copied) to a location accessible to the server where they are being installed. See the [installing Microbonds](#microbond-installation-local-git-repo-url-format) for examples of local repo references.
 
-## Unistalling Microbonds
+## Microbond uninstallation
 
-### Uninstalling Microbonds on macOS/Linux
+### Microbond uninstallation on macOS/Linux
 
 On macOS/Linux use the following command to uninstall a Microbond:
 
 `/var/www/bzbond-server/bin/uninstall-microbond.sh microbond-name`
 
-### Uninstalling Microbonds on Windows Server
+### Microbond uninstallation on Windows Server
 
 On Windows Server use the following command to uninstall a Microbond:
 
@@ -130,11 +232,11 @@ On Windows Server use the following command to uninstall a Microbond:
 
 # Logs
 
-## bzBond-Server logs for macOS/Linux
+## bzBond-Server logs on macOS/Linux
 
 On macOS/Linux the bzBond-server log folder is: `/var/log/bzbond-server`. There are two log files, `error.log` and `access.log`. The `error.log` file shows errors encountered during the execution of JavaScript code. The `access.log` file shows all calls to bzBond-server. It also logs when the bzBond-server service starts.
 
-### Viewing bzBond-Server logs macOS
+### Viewing bzBond-Server logs on macOS
 
 On macOS use the following command to view the most recent entries in the bzBond-server logs:
 
@@ -144,28 +246,28 @@ or
 
 `tail /var/log/bzbond-server/access.log`
 
-### Viewing bzBond-Server logs Linux
+### Viewing bzBond-Server logs on Linux
 
 On Linux use the following command to view the bzBond-server log:
 
 `journalctl -u bzbond-server.service`
 
-## bzBond-Server logs for Windows Server
+## Viewing bzBond-Server logs on Windows Server
 
 On Windows Server logs for bzBond-server can be viewed in the Computer Management app in the following location:
 
 `Computer Management (Local) > System Tools > Event Viewer > Windows Logs > Application`
 
-# Uninstall
+# Uninstallation
 
-## Uninstalling on macOS/Linux
+## Uninstallation on macOS/Linux
 
 On macOS/Linux use the following command to uninstall bzBond-server:
 
 `curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/uninstall.sh | bash`
 
-## Uninstalling on Windows Server
+## Uninstallation on Windows Server
 
 On Windows Server use the following command to uninstall bzBond-server:
 
-`powershell -exec bypass -c "(New-Object Net.WebClient).Proxy.Credentials=[Net.CredentialCache]::DefaultNetworkCredentials;iwr('https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/uninstall.ps1')|iex"`
+`powershell Invoke-WebRequest https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/uninstall.ps1 -OutFile "$($env:USERPROFILE)\AppData\Local\Temp\uninstall.ps1"|powershell -File "$($env:USERPROFILE)\AppData\Local\Temp\uninstall.ps1""`

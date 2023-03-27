@@ -1,6 +1,7 @@
 param (
   [string]$name,
-  [string]$url
+  [string]$url,
+  [string]$proxy
 )
 
 Write-Output "===================================="
@@ -14,4 +15,4 @@ if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 }
 
 ### run node installation script
-node "C:\Program Files\bzBond-server\scripts\install-microbond.js" "$name" "$url"
+node "C:\Program Files\bzBond-server\scripts\install-microbond.js" -n "$name" -u "$url" -x "$proxy"

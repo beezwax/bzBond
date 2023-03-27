@@ -1,5 +1,6 @@
 param (
-  [Parameter(Mandatory=$true)][string]$name
+  [Parameter(Mandatory=$true)][string]$name,
+  [string]$proxy
 )
 
 ### require administator rights
@@ -16,6 +17,17 @@ git pull
 if ($LASTEXITCODE) {
   Set-Location $currentLocation
   Write-Error "Cannot update: $name is not a git repository" -ErrorAction Stop
+}
+
+if ($proxy) {
+  $npmCommand = "npm --proxy " + $proxy + " install"
+} else {
+  $npmCommand = "npm install" 
+}
+Invoke-Expression $npmCommand
+if ($LASTEXITCODE) {
+  Set-Location $currentLocation
+  Write-Error "Could not update dependencies" -ErrorAction Stop
 }
 
 Write-Output "Microbond $name updated successfully"

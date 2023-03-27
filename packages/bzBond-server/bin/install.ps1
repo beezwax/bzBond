@@ -1,3 +1,7 @@
+param(
+  [string]$proxy
+)
+
 Write-Output "=========================="
 Write-Output "bzBond Server Installation"
 Write-Output "=========================="
@@ -38,8 +42,13 @@ Copy-Item -Path C:\Temp\bzBond\packages\bzBond-server -Destination "C:\Program F
 
 ### install dependencies
 Set-Location "C:\Program Files\bzBond-server"
-npm install
-npm install node-windows
+if ($proxy) {
+  $npmCommand = "npm --proxy " + $proxy + " install"
+} else {
+  $npmCommand = "npm install" 
+}
+Invoke-Expression $npmCommand
+Invoke-Expression $npmCommand + " node-windows"
 Remove-Item -Path C:\Temp\bzBond -Recurse -Force
 
 ### install as service

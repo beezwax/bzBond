@@ -3,6 +3,7 @@ const fs = require("fs/promises");
 const { existsSync } = require("fs");
 const path = require("path");
 const prompt = require("prompt");
+const { ArgumentParser } = require('argparse');
 
 // Constants
 // =============================================================================
@@ -58,7 +59,7 @@ const bash = (...commands) => {
 
 // Main
 // =============================================================================
-const main = async (name, url) => {
+const main = async (name, url, proxy) => {
   console.log("Install bzBond server microbond");
   if (!name || !url) {
     ({ name, url } = await prompt.get(["name", "url"]));
@@ -98,11 +99,11 @@ const main = async (name, url) => {
   }
   if (IS_WINDOWS) {
     bash(
-      `${NPM_PATH} i "${microbondDirectory}"`
+      `${NPM_PATH} ${proxy ? `--proxy ${proxy} ` : ""}i "${microbondDirectory}"`
     )
   } else {
     bash(
-      `sudo "${NODE_PATH}" "${NPM_PATH}" i ${microbondDirectory}`
+      `sudo "${NODE_PATH}" "${NPM_PATH}" ${proxy ? `--proxy ${proxy} ` : ""}i ${microbondDirectory}`
     );
   }
 
@@ -125,5 +126,11 @@ const {
 
 // Initialize
 // =============================================================================
-const [name, url] = process.argv.slice(2);
-main(name, url);
+const parser = new ArgumentParser({
+  description: 'Microbond details'
+});
+parser.add_argument("-n", "--name", {nargs: "*"});
+parser.add_argument("-u", "--url", {nargs: "*"});
+parser.add_argument("-x", "--proxy", {nargs: "*"});
+const { name: [name], url: [url], proxy: [proxy] } = parser.parse_args();
+main(name, url, proxy);
