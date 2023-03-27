@@ -99,11 +99,9 @@ const main = async (name, url, proxy) => {
   }
   if (IS_WINDOWS) {
     bash(
-      `${NPM_PATH} ${proxy ? `--proxy ${proxy} ` : ""}i "${microbondDirectory}"`
+      `${NPM_PATH} ${proxy ? `--proxy ${proxy} ` : ""}i --prefix ${microbondDirectory}`
     )
   } else {
-    const command = `sudo "${NODE_PATH}" "${NPM_PATH}" ${proxy ? `--proxy ${proxy} ` : ""}i --prefix ${microbondDirectory}`;
-    console.log(command);
     bash(
       `sudo "${NODE_PATH}" "${NPM_PATH}" ${proxy ? `--proxy ${proxy} ` : ""}i --prefix ${microbondDirectory}`
     );
