@@ -270,4 +270,4 @@ On macOS/Linux use the following command to uninstall bzBond-server:
 
 On Windows Server use the following command to uninstall bzBond-server:
 
-`powershell Invoke-WebRequest https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/uninstall.ps1 -OutFile "$($env:USERPROFILE)\AppData\Local\Temp\uninstall.ps1"|powershell -File "$($env:USERPROFILE)\AppData\Local\Temp\uninstall.ps1""`
+`powershell Invoke-WebRequest https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/uninstall.ps1 -OutFile "$($env:USERPROFILE)\AppData\Local\Temp\uninstall.ps1"|powershell -File "$($env:USERPROFILE)\AppData\Local\Temp\uninstall.ps1"`
