@@ -30,6 +30,8 @@ if ($LASTEXITCODE) {
   Write-Error "Could not update dependencies" -ErrorAction Stop
 }
 
-Write-Output "Microbond $name updated successfully"
+Write-Output "Microbond $name updated"
+Write-Output "Restarting service..."
 Restart-Service -Name bzBond-server
+Write-Output "Service restarted"
 Set-Location $currentLocation

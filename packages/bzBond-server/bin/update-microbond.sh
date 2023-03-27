@@ -35,9 +35,11 @@ else
   sudo "$NODE_PATH" "$NPM_PATH" --proxy $PROXY install || (echo "Could not update dependencies" && exit)
 fi
 
+echo "Restarting service..."
 if [ "$(uname)" = "Darwin" ]; then
   sudo launchctl unload /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
   sudo launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
 else
   sudo systemctl restart bzbond-server
 fi
+echo "Service restarted"
