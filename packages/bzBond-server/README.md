@@ -142,6 +142,20 @@ For example:
 
 `/var/www/bzbond-server/bin/install-microbond.sh -x http://proxy.example.com:443`
 
+When installing on macOS/Linux with command line arguments and a proxy either positional _or_ named parameters must be used, they cannot be mixed.
+
+Positional example:
+
+`/var/www/bzbond-server/bin/install-microbond.sh microbond-name url http://proxy.example.com:443`
+
+Named example:
+
+`/var/www/bzbond-server/bin/install-microbond.sh -n microbond-name -u url -x http://proxy.example.com:443`
+
+Mixed example (will __not__ work):
+
+`/var/www/bzbond-server/bin/install-microbond.sh microbond-name url - x http://proxy.example.com:443`
+
 ### Microbond installation with a proxy on Windows Server
 
 On Windows Server reference the proxy in the installation command as follows:

@@ -12,13 +12,13 @@ while getopts ":n:u:x:" opt; do
   esac
 done
 
-if [ -z "$NAME"]; then
+if [ -z "$NAME" ]; then
   NAME=$1
 fi
-if [ -z "$URL"]; then
+if [ -z "$URL" ]; then
   URL=$2
 fi
-if [ -z "$PROXY"]; then
+if [ -z "$PROXY" ]; then
   PROXY=$3
 fi
 

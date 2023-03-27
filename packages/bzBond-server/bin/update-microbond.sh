@@ -10,10 +10,10 @@ while getopts ":n:x:" opt; do
   esac
 done
 
-if [ -z "$NAME"]; then
+if [ -z "$NAME" ]; then
   NAME=$1
 fi
-if [ -z "$PROXY"]; then
+if [ -z "$PROXY" ]; then
   PROXY=$2
 fi
 
