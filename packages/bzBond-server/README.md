@@ -76,11 +76,11 @@ For example:
 
 On Windows Server reference the proxy in the installation command as follows
 
-`powershell Invoke-WebRequest https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.ps1 -OutFile "$($env:USERPROFILE)\AppData\Local\Temp\install.ps1"|powershell -File "$($env:USERPROFILE)\AppData\Local\Temp\install.ps1" -proxy http://proxy.address.com:port#`
+`powershell Invoke-WebRequest https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.ps1 -OutFile "$($env:USERPROFILE)\AppData\Local\Temp\install.ps1"|powershell -File "$($env:USERPROFILE)\AppData\Local\Temp\install.ps1" -Proxy http://proxy.address.com:port#`
 
 For example:
 
-`powershell Invoke-WebRequest https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.ps1 -OutFile "$($env:USERPROFILE)\AppData\Local\Temp\install.ps1"|powershell -File "$($env:USERPROFILE)\AppData\Local\Temp\install.ps1" -proxy http://proxy.example.com:443`
+`powershell Invoke-WebRequest https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.ps1 -OutFile "$($env:USERPROFILE)\AppData\Local\Temp\install.ps1"|powershell -File "$($env:USERPROFILE)\AppData\Local\Temp\install.ps1" -Proxy http://proxy.example.com:443`
 
 # Usage
 
@@ -146,11 +146,11 @@ For example:
 
 On Windows Server reference the proxy in the installation command as follows:
 
-`powershell -File "C:\Program Files\bzBond-server\bin\install-microbond.ps1" -x http://proxy.address.com:port#`
+`powershell -File "C:\Program Files\bzBond-server\bin\install-microbond.ps1" -Proxy http://proxy.address.com:port#`
 
 For example:
 
-`powershell -File "C:\Program Files\bzBond-server\bin\install-microbond.ps1" -x http://proxy.example.com:443`
+`powershell -File "C:\Program Files\bzBond-server\bin\install-microbond.ps1" -Proxy http://proxy.example.com:443`
 
 ## Microbond update
 

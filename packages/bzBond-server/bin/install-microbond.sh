@@ -15,9 +15,11 @@ done
 if [ -z "$NAME"]; then
   NAME=$1
 fi
-
 if [ -z "$URL"]; then
   URL=$2
+fi
+if [ -z "$PROXY"]; then
+  PROXY=$3
 fi
 
 # Check FileMaker's node

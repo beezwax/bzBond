@@ -1,5 +1,5 @@
 param(
-  [string]$proxy
+  [string]$Proxy
 )
 
 Write-Output "=========================="
@@ -42,8 +42,8 @@ Copy-Item -Path C:\Temp\bzBond\packages\bzBond-server -Destination "C:\Program F
 
 ### install dependencies
 Set-Location "C:\Program Files\bzBond-server"
-if ($proxy) {
-  $npmCommand = "npm --proxy " + $proxy + " install"
+if ($Proxy) {
+  $npmCommand = "npm --proxy " + $Proxy + " install"
 } else {
   $npmCommand = "npm install" 
 }

@@ -1,12 +1,21 @@
 #!/bin/bash
 
 # Check for proxy switch
-while getopts ":x:" opt; do
+while getopts ":n:x:" opt; do
   case $opt in
+    n) NAME="$OPTARG"
+    ;;
     x) PROXY="$OPTARG"
     ;;
   esac
 done
+
+if [ -z "$NAME"]; then
+  NAME=$1
+fi
+if [ -z "$PROXY"]; then
+  PROXY=$2
+fi
 
 # Check FileMaker's node
 NODE_PATH="/opt/FileMaker/FileMaker Server/node/bin/node"
@@ -16,8 +25,8 @@ if [ "$(uname)" = "Darwin" ]; then
   NPM_PATH="/Library/FileMaker Server/node/bin/npm"
 fi
 
-cd "/var/www/bzbond-server/installed-microbonds/$1" || exit
-echo "Updating $1"
+cd "/var/www/bzbond-server/installed-microbonds/$NAME" || exit
+echo "Updating $NAME"
 sudo git pull || (echo "Not a git repository" && exit)
 if [ -z "$PROXY" ]; then
   sudo "$NODE_PATH" "$NPM_PATH" install || (echo "Could not update dependencies" && exit)

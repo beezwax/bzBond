@@ -87,7 +87,7 @@ const main = async (name, url, proxy) => {
   // run npm install
   if (url.startsWith("https://") || url.startsWith("ssh://")) {
     bash(
-      `git clone ${url} "${microbondDirectory}"`,
+      `git clone ${url} "${microbondDirectory}"${proxy ? ` --config http.proxy="${proxy}"` : ""}`,
       `git config --global --add safe.directory "${microbondDirectory}"`
     );
   } else {
