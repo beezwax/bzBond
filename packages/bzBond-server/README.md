@@ -66,11 +66,11 @@ On Windows Server use the following command in PowerShell to install bzBond-serv
 
 On macOS/Linux reference the proxy in the installation command as follows:
 
-`curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.sh | bash -s -x http://proxy.address.com:port#`
+`curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.sh | bash -s -- -x http://proxy.address.com:port#`
 
 For example:
 
-`curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.sh | bash -s -x http://proxy.example.com:443`
+`curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.sh | bash -s -- -x http://proxy.example.com:443`
 
 ## Installation with a proxy on Windows Server
 
