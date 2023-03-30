@@ -36,9 +36,9 @@ if (Get-Command git -errorAction SilentlyContinue) {
 
 ### clone bzBond from git
 Write-Output "Downloading latest version..."
-Set-Location C:\Temp
+Set-Location $($env:USERPROFILE)\AppData\Local\Temp
 git clone https://github.com/beezwax/bzBond.git
-Copy-Item -Path C:\Temp\bzBond\packages\bzBond-server -Destination "C:\Program Files\bzBond-server" -Recurse -Force
+Copy-Item -Path $($env:USERPROFILE)\AppData\Local\Temp\bzBond\packages\bzBond-server -Destination "C:\Program Files\bzBond-server" -Recurse -Force
 
 ### install dependencies
 Set-Location "C:\Program Files\bzBond-server"
@@ -50,7 +50,7 @@ if ($Proxy) {
 $npmCommandNodeWindows = $npmCommand + " node-windows"
 Invoke-Expression $npmCommand
 Invoke-Expression $npmCommandNodeWindows
-Remove-Item -Path C:\Temp\bzBond -Recurse -Force
+Remove-Item -Path $($env:USERPROFILE)\AppData\Local\bzBond -Recurse -Force
 
 ### install as service
 node "C:\Program Files\bzBond-server\scripts\install-win-service.js"
