@@ -36,7 +36,7 @@ if (Get-Command git -errorAction SilentlyContinue) {
 
 ### clone bzBond from git
 Write-Output "Downloading latest version..."
-Set-Location $($env:USERPROFILE)\AppData\Local\Temp
+Set-Location "$($env:USERPROFILE)\AppData\Local\Temp"
 git clone https://github.com/beezwax/bzBond.git
 Copy-Item -Path "$($env:USERPROFILE)\AppData\Local\Temp\bzBond\packages\bzBond-server" -Destination "C:\Program Files\bzBond-server" -Recurse -Force
 
