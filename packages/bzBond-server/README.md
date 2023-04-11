@@ -9,6 +9,7 @@ bzBond-server is a microservice for [Claris/FileMaker Server](https://www.claris
   - [Installation on Windows Server](#installation-on-windows-server)
   - [Installation with a proxy on macOS/Linux](#installation-with-a-proxy-on-macoslinux)
   - [Installation with a proxy on Windows Server](#installation-with-a-proxy-on-windows-server)
+- [Updating](#updating)
 - [Usage](#usage)
 - [Microbonds](#microbonds)
   - [Microbond installation](#microbond-installation)
@@ -81,6 +82,42 @@ On Windows Server reference the proxy in the installation command as follows
 For example:
 
 `powershell Invoke-WebRequest https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.ps1 -OutFile "$($env:USERPROFILE)\AppData\Local\Temp\install.ps1"|powershell -File "$($env:USERPROFILE)\AppData\Local\Temp\install.ps1" -Proxy http://proxy.example.com:443`
+
+# Updating
+
+Use these instructions to update bzBond-server to the latest version
+
+## Updating on macOS/Linux
+
+On macOS or Linux use the following command to update bzBond-server:
+
+`curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/update.sh | bash`
+
+## Updating on Windows Server
+
+On Windows Server use the following command in PowerShell to update bzBond-server:
+
+`powershell Invoke-WebRequest https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/update.ps1 -OutFile "$($env:USERPROFILE)\AppData\Local\Temp\update.ps1"|powershell -File "$($env:USERPROFILE)\AppData\Local\Temp\update.ps1"`
+
+## Updating with a proxy on macOS/Linux
+
+On macOS/Linux reference the proxy in the update command as follows:
+
+`curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/update.sh | bash -s -- -x http://proxy.address.com:port#`
+
+For example:
+
+`curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/update.sh | bash -s -- -x http://proxy.example.com:443`
+
+## Updating with a proxy on Windows Server
+
+On Windows Server reference the proxy in the update command as follows
+
+`powershell Invoke-WebRequest https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/update.ps1 -OutFile "$($env:USERPROFILE)\AppData\Local\Temp\update.ps1"|powershell -File "$($env:USERPROFILE)\AppData\Local\Temp\update.ps1" -Proxy http://proxy.address.com:port#`
+
+For example:
+
+`powershell Invoke-WebRequest https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/update.ps1 -OutFile "$($env:USERPROFILE)\AppData\Local\Temp\update.ps1"|powershell -File "$($env:USERPROFILE)\AppData\Local\Temp\update.ps1" -Proxy http://proxy.example.com:443`
 
 # Usage
 
@@ -270,7 +307,13 @@ On Linux use the following command to view the bzBond-server log:
 
 On Windows Server logs for bzBond-server can be viewed in the Computer Management app in the following location:
 
-`Computer Management (Local) > System Tools > Event Viewer > Windows Logs > Application`
+Error Log:
+
+`C:\Program Files\bzBond-server\daemon\bzbondserver.err.log`
+
+Request log:
+
+`C:\Program Files\bzBond-server\daemon\bzbondserver.out.log`
 
 # Uninstallation
 
