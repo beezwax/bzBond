@@ -5,6 +5,14 @@ echo "bzBond Server Update"
 echo "=========================="
 echo "Updating..."
 
+# Check for proxy switch
+while getopts ":x:" opt; do
+  case $opt in
+    x) PROXY="$OPTARG"
+    ;;
+  esac
+done
+
 # Check FileMaker's node
 NODE_PATH="/opt/FileMaker/FileMaker Server/node/bin/node"
 NPM_PATH="/opt/FileMaker/FileMaker Server/node/bin/npm"
@@ -28,8 +36,8 @@ cd /var/www/bzbond-server || exit
 if [ -z "$1" ]; then
   sudo "$NODE_PATH" "$NPM_PATH" install
 else
-  echo "Updating with proxy $1"
-  sudo "$NODE_PATH" "$NPM_PATH" --proxy $1 install
+  echo "Updating with proxy $PROXY"
+  sudo "$NODE_PATH" "$NPM_PATH" --proxy $PROXY install
 fi
 rm -rf /tmp/bzBond
 
