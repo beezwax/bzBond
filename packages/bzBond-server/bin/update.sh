@@ -42,7 +42,7 @@ fi
 rm -rf /tmp/bzBond
 
 # Restore microbonds
-mv -f microbonds.js.bak microbonds.js
+sudo mv -f microbonds.js.bak microbonds.js
 
 # Restart service
 echo "Restarting service..."
