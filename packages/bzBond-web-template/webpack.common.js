@@ -5,7 +5,7 @@ module.exports = {
   entry: "./src/js/index.js",
   plugins: [
     new HtmlWebpackPlugin({
-      title: "FMBond App",
+      title: "bzBond App",
       inject: "body",
     }),
   ],
