@@ -1,5 +1,22 @@
 #!/bin/bash
 
+# Check for proxy switch
+while getopts ":n:x:" opt; do
+  case $opt in
+    n) NAME="$OPTARG"
+    ;;
+    x) PROXY="$OPTARG"
+    ;;
+  esac
+done
+
+if [ -z "$NAME" ]; then
+  NAME=$1
+fi
+if [ -z "$PROXY" ]; then
+  PROXY=$2
+fi
+
 echo "======================================"
 echo "bzBond Server Microbond Uninstallation"
 echo "======================================"
@@ -11,4 +28,4 @@ if [ "$(uname)" = "Darwin" ]; then
 fi
 
 # Run uninstall script
-sudo "$NODE_PATH" /var/www/bzbond-server/scripts/uninstall-microbond.js "$1"
+sudo "$NODE_PATH" /var/www/bzbond-server/scripts/uninstall-microbond.js  -n "$NAME" -x "$PROXY"

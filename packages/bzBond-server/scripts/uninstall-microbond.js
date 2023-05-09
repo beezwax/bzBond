@@ -3,6 +3,7 @@ const fs = require("fs/promises");
 const { existsSync } = require("fs");
 const path = require("path");
 const prompt = require("prompt");
+const { ArgumentParser } = require('argparse');
 
 // Constants
 // =============================================================================
@@ -58,7 +59,7 @@ const bash = (...commands) => {
 
 // Main
 // =============================================================================
-const main = async (name) => {
+const main = async (name, proxy) => {
   console.log("Uninstall bzBond server microbond");
   if (!name) {
     ({ name } = await prompt.get(["name"]));
@@ -94,11 +95,11 @@ const main = async (name) => {
   // Uninstall from app
   if (IS_WINDOWS) {
     bash(
-      `${NPM_PATH} uninstall "${name}"`,
+      `${NPM_PATH} ${proxy ? `--proxy ${proxy} ` : ""}uninstall "${name}"`,
     );
   } else {
     bash(
-      `sudo "${NODE_PATH}" "${NPM_PATH}" uninstall "${name}"`
+      `sudo "${NODE_PATH}" "${NPM_PATH}" ${proxy ? `--proxy ${proxy} ` : ""}uninstall "${name}"`
     );
   }
   
@@ -116,5 +117,10 @@ const main = async (name) => {
 
 // Initialize
 // =============================================================================
-const [name] = process.argv.slice(2);
-main(name);
+const parser = new ArgumentParser({
+  description: 'Microbond details'
+});
+parser.add_argument("-n", "--name", {nargs: "*"});
+parser.add_argument("-x", "--proxy", {nargs: "*"});
+const { name: [name], proxy: [proxy] } = parser.parse_args();
+main(name, proxy);

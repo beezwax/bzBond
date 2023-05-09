@@ -1,5 +1,6 @@
 param (
-  [string]$name
+  [string]$Name,
+  [string]$Proxy
 )
 
 Write-Output "======================================"
@@ -13,4 +14,4 @@ if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 }
 
 ### run node installation script
-node "C:\Program Files\bzBond-server\scripts\uninstall-microbond.js" "$name"
+node "C:\Program Files\bzBond-server\scripts\uninstall-microbond.js" -n "$Name" -x "$Proxy"

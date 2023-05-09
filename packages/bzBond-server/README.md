@@ -191,7 +191,7 @@ Named example:
 
 Mixed example (will __not__ work):
 
-`/var/www/bzbond-server/bin/install-microbond.sh microbond-name url - x http://proxy.example.com:443`
+`/var/www/bzbond-server/bin/install-microbond.sh microbond-name url -x http://proxy.example.com:443`
 
 ### Microbond installation with a proxy on Windows Server
 
@@ -280,6 +280,40 @@ On macOS/Linux use the following command to uninstall a Microbond:
 On Windows Server use the following command to uninstall a Microbond:
 
 `powershell -File "C:\Program Files\bzBond-server\bin\uninstall-microbond.ps1" microbond-name`
+
+### Microbond uninstallation with a proxy on macOS/Linux
+
+On macOS/Linux reference the proxy in the uninstallation command as follows:
+
+`/var/www/bzbond-server/bin/uninstall-microbond.sh -x http://proxy.address.com:port#`
+
+For example:
+
+`/var/www/bzbond-server/bin/uninstall-microbond.sh -x http://proxy.example.com:443`
+
+When uninstalling on macOS/Linux with command line arguments and a proxy either positional or named parameters must be used, they cannot be mixed.
+
+Positional example:
+
+`/var/www/bzbond-server/bin/uninstall-microbond.sh microbond-name http://proxy.example.com:443`
+
+Named example:
+
+`/var/www/bzbond-server/bin/uninstall-microbond.sh -n microbond-name -x http://proxy.example.com:443`
+
+Mixed example (will __not__ work):
+
+`/var/www/bzbond-server/bin/uninstall-microbond.sh microbond-name -x http://proxy.example.com:443`
+
+### Microbond uninstallation with a proxy on Windows Server
+
+On Windows Server reference the proxy in the uninstallation command as follows:
+
+`powershell -File "C:\Program Files\bzBond-server\bin\uninstall-microbond.ps1" -Name micrbond-name -Proxy http://proxy.address.com:port#`
+
+For example:
+
+`powershell -File "C:\Program Files\bzBond-server\bin\uninstall-microbond.ps1" -Name micrbond-name -Proxy http://proxy.example.com:443`
 
 # Logs
 
