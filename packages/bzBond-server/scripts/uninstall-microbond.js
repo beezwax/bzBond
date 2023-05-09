@@ -3,12 +3,26 @@ const fs = require("fs/promises");
 const { existsSync } = require("fs");
 const path = require("path");
 const prompt = require("prompt");
-const packageJson = require("../package.json");
 
 // Constants
 // =============================================================================
 const IS_DARWIN = process.platform === "darwin";
 const IS_WINDOWS = process.platform === "win32";
+const TOOL_PATHS = {
+  darwin: [
+    "/Library/FileMaker Server/node/bin/node",
+    "/Library/FileMaker Server/node/bin/npm",
+  ],
+  linux: [
+    "/opt/FileMaker/FileMaker Server/node/bin/node",
+    "/opt/FileMaker/FileMaker Server/node/bin/npm",
+  ],
+  win32: [
+    "node",
+    "npm"
+  ]
+};
+const [NODE_PATH, NPM_PATH] = TOOL_PATHS[process.platform];
 
 // Utilities
 // =============================================================================
@@ -57,7 +71,6 @@ const main = async (name) => {
   const microbondsPath = path.resolve(__dirname, "../microbonds.js");
   const microBondsFile = await fs.readFile(microbondsPath, { encoding: "utf8" });
   const camelizedName = camelize(name);
-  const packageJsonPath = path.resolve(__dirname, "../package.json");
 
   // Ensure microbond is installed
   const microbondDirectory = IS_WINDOWS ? `C:\\Program Files\\bzBond-server\\installed-microbonds\\${name}`: `/var/www/bzbond-server/installed-microbonds/${name}`;
@@ -77,10 +90,17 @@ const main = async (name) => {
   );
 
   await fs.writeFile(microbondsPath, newMicrobondsFile);
-
-  // Edit package.json
-  delete packageJson.dependencies[name];
-  await fs.writeFile(packageJsonPath, JSON.stringify(packageJson, null, 2));
+  
+  // Uninstall from app
+  if (IS_WINDOWS) {
+    bash(
+      `${NPM_PATH} uninstall "${name}"`,
+    );
+  } else {
+    bash(
+      `sudo "${NODE_PATH}" "${NPM_PATH}" uninstall "${name}"`
+    );
+  }
   
   // Delete microbond folder
   if (IS_WINDOWS) {
