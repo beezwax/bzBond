@@ -585,9 +585,17 @@ function tryStringify(possibleJSON) {
 /* Hoist to window/global level if available - quirk required because FileMaker */
 if (typeof window !== "undefined") {
   window.bzBond = bzBond;
+
+  // To allow WebDirect solutions to run the PerformJavaScript
+  // function we have to create an "alias" to it
+  window.bzBondPeformJavaScript = (func, arr) => bzBond.PerformJavaScript(func, arr);
 }
 if (typeof global !== "undefined") {
   global.bzBond = bzBond;
+
+  // To allow WebDirect solutions to run the PerformJavaScript
+  // function we have to create an "alias" to it
+  global.bzBondPeformJavaScript = (func, arr) => bzBond.PerformJavaScript(func, arr);
 }
 
 module.exports = bzBond;
