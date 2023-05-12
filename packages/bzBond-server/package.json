@@ -1,6 +1,6 @@
 {
   "name": "@beezwax/bzbond-server",
-  "version": "0.9.32",
+  "version": "0.9.33",
   "description": "Extensible JavaScript microservice for bzBond",
   "author": "Beezwax",
   "repository": {
@@ -14,7 +14,7 @@
     "test": "NODE_ENV=test mocha"
   },
   "dependencies": {
-    "@beezwax/bzbond-js": "^0.9.23",
+    "@beezwax/bzbond-js": "^0.9.33",
     "argparse": "^2.0.1",
     "fastify": "^3.27.4",
     "prompt": "^1.3.0",
