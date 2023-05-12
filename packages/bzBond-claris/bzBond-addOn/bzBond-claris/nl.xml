@@ -812,6 +812,13 @@
 </DynamicTemplateString>
 
 <DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.AF4E1BCC2DDD9781F2A7F0BBD428ADD6</StringID>
+	<SourceText>bzBondPerformJavaScript</SourceText>
+	<TargetText>bzBondPerformJavaScript</TargetText>
+	<Comment>com.fmi.calculation.text.bzBondPerformJavaScript</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
 	<StringID>com.fmi.calculation.text.AF57223E36CDC7BFCE5B62C3BEBA0337</StringID>
 	<SourceText>Error</SourceText>
 	<TargetText>Error</TargetText>
