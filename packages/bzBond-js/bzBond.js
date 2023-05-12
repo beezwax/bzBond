@@ -588,14 +588,14 @@ if (typeof window !== "undefined") {
 
   // To allow WebDirect solutions to run the PerformJavaScript
   // function we have to create an "alias" to it
-  window.bzBondPeformJavaScript = (func, arr) => bzBond.PerformJavaScript(func, arr);
+  window.bzBondPerformJavaScript = (func, arr) => bzBond.PerformJavaScript(func, arr);
 }
 if (typeof global !== "undefined") {
   global.bzBond = bzBond;
 
   // To allow WebDirect solutions to run the PerformJavaScript
   // function we have to create an "alias" to it
-  global.bzBondPeformJavaScript = (func, arr) => bzBond.PerformJavaScript(func, arr);
+  global.bzBondPerformJavaScript = (func, arr) => bzBond.PerformJavaScript(func, arr);
 }
 
 module.exports = bzBond;
