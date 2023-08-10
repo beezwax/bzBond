@@ -3927,7 +3927,7 @@ callTypeMap.set(5, CALL_TYPE.INTERRUPT).set("5", CALL_TYPE.INTERRUPT).set("inter
 /* Default options used in every call. Can be overridden by the options parameter in .PerformScript */
 
 var DEFAULT_CALL_OPTIONS = {
-  // null|number in milliseconds to wait before rejecting.
+  /* null|number in milliseconds to wait before rejecting. */
   timeout: null,
   // False = Will return FileMaker's result as a promise
   // True = Will always return a resolved promise without waiting for FileMaker to execute
@@ -4222,11 +4222,21 @@ function tryStringify(possibleJSON) {
 
 
 if (typeof window !== "undefined") {
-  window.bzBond = bzBond;
+  window.bzBond = bzBond; // To allow WebDirect solutions to run the PerformJavaScript
+  // function we have to create an "alias" to it
+
+  window.bzBondPerformJavaScript = function (func, arr) {
+    return bzBond.PerformJavaScript(func, arr);
+  };
 }
 
 if (typeof __webpack_require__.g !== "undefined") {
-  __webpack_require__.g.bzBond = bzBond;
+  __webpack_require__.g.bzBond = bzBond; // To allow WebDirect solutions to run the PerformJavaScript
+  // function we have to create an "alias" to it
+
+  __webpack_require__.g.bzBondPerformJavaScript = function (func, arr) {
+    return bzBond.PerformJavaScript(func, arr);
+  };
 }
 
 module.exports = bzBond;
