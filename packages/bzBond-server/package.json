@@ -14,11 +14,10 @@
     "test": "NODE_ENV=test mocha"
   },
   "dependencies": {
-    "@beezwax/bzbond-js": "^0.9.38",
     "argparse": "^2.0.1",
     "fastify": "^3.27.4",
     "prompt": "^1.3.0",
-    "vm2": "^3.9.18"
+    "ses": "^0.18.8"
   },
   "publishConfig": {
     "access": "public"

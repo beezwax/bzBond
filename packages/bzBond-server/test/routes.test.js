@@ -10,45 +10,71 @@ describe("routes", function () {
         method: "POST",
         url: "/code",
         payload: {
-          jsCode: "2 + 2",
+          jsCode: "40 + 2",
         },
       });
-
-      expect(response.body).to.eq("4");
+      expect(JSON.parse(response.body).response.result).to.eq(42);
     });
   });
 
   describe("/function", function () {
-    it("calls the function with no parameters", async function () {
+    it("calls a function with no parameters", async function () {
       const app = await build({ options: { logger: false } });
 
       const response = await app.inject({
         method: "POST",
         url: "/function",
         payload: {
-          func: "foo",
+          func: "() => 42",
         },
       });
 
-      expect(JSON.parse(response.body).func).to.eq("foo");
+      expect(JSON.parse(response.body).response.result).to.eq(42);
     });
 
-    it("calls the function with parameters", async function () {
+    it("calls a function with parameters", async function () {
       const app = await build({ options: { logger: false } });
 
       const response = await app.inject({
         method: "POST",
         url: "/function",
         payload: {
-          func: "foo",
-          arguments: ["bar", "baz"],
+          func: "(a, b) => a + b",
+          arguments: [40, 2],
         },
       });
 
-      const parsedResponse = JSON.parse(response.body);
-      expect(parsedResponse.func).to.eq("foo");
-      expect(parsedResponse.args[0]).to.eq("bar");
-      expect(parsedResponse.args[1]).to.eq("baz");
+      expect(JSON.parse(response.body).response.result).to.eq(42);
+    });
+
+    it("throws an error for an invalid function", async function () {
+      const app = await build({ options: { logger: false } });
+
+      const response = await app.inject({
+        method: "POST",
+        url: "/function",
+        payload: {
+          func: "(a) => a + b",
+          arguments: [40, 2],
+        },
+      });
+
+      expect(JSON.parse(response.body).messages[0].code).to.eq("500");
+    });
+
+    it("handles function parameters", async function () {
+      const app = await build({ options: { logger: false } });
+
+      const response = await app.inject({
+        method: "POST",
+        url: "/function",
+        payload: {
+          func: "(a, b, c) => c(a + b)",
+          arguments: [40, 2, "ƒ(x) => x * 2"],
+        },
+      });
+      
+      expect(JSON.parse(response.body).response.result).to.eq(84);
     });
   });
 });
