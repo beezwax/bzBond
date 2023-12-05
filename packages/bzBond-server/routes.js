@@ -1,5 +1,6 @@
+require("ses");
+lockdown();
 const vm = require("vm");
-const ses = require("ses");
 
 const MAX_TIMEOUT = 45000;
 const BODY_LIMIT = 104857600;
@@ -32,8 +33,8 @@ async function routes(fastify, options) {
     "/function",
     { schema: functionSchema, bodyLimit: BODY_LIMIT },
     (request, reply) => {
-      const func = request.body.func;
-      // const params = request.body.arguments ? JSON.parse(request.body.arguments) : [];
+      const a = new Compartment({fn: request.body.func});
+      const func = a.evaluate(`new Function("return " + fn)()`);
       const timeout = request.body.timeout
         ? Math.min(MAX_TIMEOUT, request.body.timeout)
         : MAX_TIMEOUT;
@@ -42,7 +43,8 @@ async function routes(fastify, options) {
         const arguments = request.body.arguments;
         const params = arguments.map(arg => {
           if (typeof arg === "string" && arg.substring(0, 1) === "ƒ") {
-            return new Function("return " + arg.slice(1))();
+            const b = new Compartment({fn: arg.slice(1)});
+            return b.evaluate(`new Function("return " + fn)()`);
           } else {
             return arg;
           }
@@ -52,10 +54,11 @@ async function routes(fastify, options) {
           Date,
           atob,
           btoa,
+          func,
           params
         });
         try {
-          const result = vm.runInNewContext(c.evaluate(`(${func})(...params)`, {c}, {timeout}));
+          const result = vm.runInNewContext(`c.evaluate("func(...params)")`, {c}, {timeout});
           return {
             messages: [
               {
@@ -85,10 +88,11 @@ async function routes(fastify, options) {
           Math,
           Date,
           atob,
-          btoa
+          btoa,
+          func
         });
         try {
-          const result = vm.runInNewContext(c.evaluate(`(${func})()`, {c}, {timeout}));
+          const result = vm.runInNewContext(`c.evaluate("func()")`, {c}, {timeout});
           return {
             messages: [
               {
@@ -125,14 +129,18 @@ async function routes(fastify, options) {
         ? Math.min(MAX_TIMEOUT, request.body.timeout)
         : MAX_TIMEOUT;
 
+      const script = new vm.Script(request.body.jsCode);
+
       const c = new Compartment({
         Math,
         Date,
         atob,
-        btoa
+        btoa,
+        script,
+        timeout
       });
       try {
-        const result = vm.runInNewContext(c.evaluate(request.body.jsCode), {c}, {timeout});
+        const result = c.evaluate(`script.runInNewContext({}, {timeout})`);
         return {
           messages: [
             {
