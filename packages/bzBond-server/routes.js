@@ -147,7 +147,7 @@ async function routes(fastify, options) {
       } catch (error) {
         reply
           .code(500)
-          .send(error);
+          .send(error.toString());
       }
     }
   );
