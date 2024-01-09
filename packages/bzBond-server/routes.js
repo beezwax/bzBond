@@ -141,17 +141,7 @@ async function routes(fastify, options) {
       });
       try {
         const result = c.evaluate(`script.runInNewContext({}, {timeout})`);
-        return {
-          messages: [
-            {
-              message: "Ok",
-              code: "0"
-            }
-          ],
-          response: {
-            result
-          }
-        };
+        return result;
       } catch (error) {
         return {
           messages: [
