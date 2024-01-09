@@ -141,19 +141,13 @@ async function routes(fastify, options) {
       });
       try {
         const result = c.evaluate(`script.runInNewContext({}, {timeout})`);
-        return result;
+        reply
+          .code(200)
+          .send(result);
       } catch (error) {
-        return {
-          messages: [
-            {
-              message: error.toString(),
-              code: "500"
-            }
-          ],
-          response: {
-            result: ""
-          }
-        };
+        reply
+          .code(500)
+          .send(error);
       }
     }
   );
