@@ -287,6 +287,13 @@
 </DynamicTemplateString>
 
 <DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.3A52C3CCD1D2533275F10E6CB8684FFF</StringID>
+	<SourceText>0.</SourceText>
+	<TargetText>0.</TargetText>
+	<Comment>com.fmi.calculation.text.0.</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
 	<StringID>com.fmi.calculation.text.3CD55711E329B05C54C90CD2AE84F2F5</StringID>
 	<SourceText>\&quot;.\&quot;</SourceText>
 	<TargetText>\&quot;.\&quot;</TargetText>
