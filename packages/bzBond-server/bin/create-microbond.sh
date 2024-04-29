@@ -15,6 +15,7 @@ sed -i -n 's/"name": "bzmb-hello-world"/"name": "my-microbond"/' package.json
 sed -i -n 's/"version": "1.0.0"/"version": "0.1.0"/' package.json
 sed -i -n 's/"author": "Beezwax"/"author": "author"/' package.json
 sed -i -n 's/minimal example //' package.json
+rm package.json-n
 git init
 
 echo
