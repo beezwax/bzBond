@@ -1,0 +1,15 @@
+{
+  "name": "@beezwax/bzbond-server-claris",
+  "version": "0.9.43",
+  "description": "Claris platform assets for bzBond-server",
+  "author": "Beezwax",
+  "repository": {
+    "url": "https://github.com/beezwax/bzBond.git/",
+    "type": "git",
+    "directory": "packages/bzBond-server-claris"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}
