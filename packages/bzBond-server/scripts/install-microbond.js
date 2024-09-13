@@ -121,6 +121,20 @@ const {
 
   await fs.writeFile(microbondsPath, newFile);
 
+  // Run microbond post-install script
+  let postInstall;
+  try {
+    postInstall = require(`${microbondDirectory}/scripts/post-install.js`);
+    console.log("Running post-install script");
+    postInstall();
+  } catch (error) {
+    if(!postInstall) {
+      console.log("No post-install script found");
+    } else {
+      console.log(`Error running post-install script for microbond: ${JSON.stringify(error)}`);
+    }
+  }
+
   restartServer();
 
   console.log(`Microbond ${name} installed`);
