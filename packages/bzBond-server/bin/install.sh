@@ -4,10 +4,12 @@ echo "=========================="
 echo "bzBond Server Installation"
 echo "=========================="
 
-# Check for proxy switch
-while getopts ":x:" opt; do
+# Check for proxy and branc params
+while getopts ":x:b:" opt; do
   case $opt in
     x) PROXY="$OPTARG"
+    ;;
+    b) BRANCH="$OPTARG"
     ;;
   esac
 done
@@ -49,13 +51,19 @@ if ! command -v "$NPM_PATH" &> /dev/null; then
   exit
 fi
 
+# Download bzbond
 echo "Downloading latest version..."
 cd /tmp || exit
-git clone https://github.com/beezwax/bzBond.git
+if [ -z "$BRANCH" ]; then
+  git clone https://github.com/beezwax/bzBond.git
+else
+  git clone --single-branch --branch "$BRANCH" https://github.com/beezwax/bzBond.git
+fi
 sudo mkdir -p /var/www/bzbond-server
 sudo cp -r /tmp/bzBond/packages/bzBond-server/* /var/www/bzbond-server
 sudo chmod -R 755 /var/www/bzbond-server
 
+# Install dependencies
 echo "Installing dependencies..."
 cd /var/www/bzbond-server || exit
 if [ -z "$PROXY" ]; then
@@ -66,6 +74,26 @@ else
 fi
 rm -rf /tmp/bzBond
 
+SYMLINK_DIRECTORY=/usr/local/bin/
+NODE_SYMLINK_PATH=/usr/local/bin/node
+NPM_SYMLINK_PATH=/usr/local/bin/npm
+
+# Create symlinks for node and npm
+echo "Creating links..."
+if [ ! -f $NODE_SYMLINK_PATH ]; then
+  sudo ln -s "$NODE_PATH" $SYMLINK_DIRECTORY
+  echo "nodejs link created"
+else
+  echo "nodejs link already exists"
+fi
+if [ ! -f $NPM_SYMLINK_PATH ]; then
+  sudo ln -s "$NPM_PATH" $SYMLINK_DIRECTORY
+  echo "npm link created"
+else
+  echo "npm link already exists"
+fi
+
+# Set up and start service
 echo "Setting up services..."
 if [ "$(uname)" = "Darwin" ]; then
   # macOS installation
