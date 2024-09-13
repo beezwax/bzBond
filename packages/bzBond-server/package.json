@@ -1,6 +1,6 @@
 {
   "name": "@beezwax/bzbond-server",
-  "version": "0.9.45",
+  "version": "0.9.46",
   "description": "Extensible JavaScript microservice for bzBond",
   "author": "Beezwax",
   "repository": {
