@@ -7,7 +7,7 @@ const start = async () => {
 
   try {
     app = await build({ microbonds: await microbonds() });
-    await app.listen(8999);
+    await app.listen({port: 8999});
   } catch (err) {
     app.log.error(err);
     process.exit(1);
