@@ -4,12 +4,14 @@ echo "=========================="
 echo "bzBond Server Installation"
 echo "=========================="
 
-# Check for proxy and branc params
-while getopts ":x:b:" opt; do
+# Check for proxy, branch, and version params
+while getopts ":x:b:v:" opt; do
   case $opt in
     x) PROXY="$OPTARG"
     ;;
     b) BRANCH="$OPTARG"
+    ;;
+    v) VERSION="$OPTARG"
     ;;
   esac
 done
@@ -52,12 +54,16 @@ if ! command -v "$NPM_PATH" &> /dev/null; then
 fi
 
 # Download bzbond
-echo "Downloading latest version..."
 cd /tmp || exit
-if [ -z "$BRANCH" ]; then
-  git clone https://github.com/beezwax/bzBond.git
-else
+if [[ ! -z "$BRANCH" ]]; then
+  echo "Downloading branch $BRANCH..."
   git clone --single-branch --branch "$BRANCH" https://github.com/beezwax/bzBond.git
+elif [[ ! -z "$VERSION"]]; then
+  echo "Downloading version $VERSION..."
+  git clone --branch "$VERSION" https://github.com/beezwax/bzBond.git
+else
+  echo "Downloading latest version..."
+  git clone https://github.com/beezwax/bzBond.git
 fi
 sudo mkdir -p /var/www/bzbond-server
 sudo cp -r /tmp/bzBond/packages/bzBond-server/* /var/www/bzbond-server

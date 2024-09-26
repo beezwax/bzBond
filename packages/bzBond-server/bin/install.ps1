@@ -1,5 +1,7 @@
 param(
-  [string]$Proxy
+  [string]$Proxy,
+  [string]$Branch,
+  [string]$Version
 )
 
 Write-Output "=========================="
@@ -35,9 +37,18 @@ if (Get-Command git -errorAction SilentlyContinue) {
 }
 
 ### clone bzBond from git
-Write-Output "Downloading latest version..."
 Set-Location "$($env:USERPROFILE)\AppData\Local\Temp"
-git clone https://github.com/beezwax/bzBond.git
+if ($Branch) {
+  Write-Output "Downloading branch $Branch..."
+  $gitCommand = "git clone --single-branch --branch " + $Branch + " https://github.com/beezwax/bzBond.git"
+} elseif ($Version) {
+  Write-Output "Downloading version $Version..."
+  $gitCommand = "git clone --branch " + $Version + " https://github.com/beezwax/bzBond.git"
+} else {
+  Write-Output "Downloading latest version..."
+  $gitCommand "git clone https://github.com/beezwax/bzBond.git"
+}
+Invoke-Expression $gitCommand
 Copy-Item -Path "$($env:USERPROFILE)\AppData\Local\Temp\bzBond\packages\bzBond-server" -Destination "C:\Program Files\bzBond-server" -Recurse -Force
 
 ### install dependencies
