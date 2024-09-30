@@ -9,6 +9,9 @@ bzBond-server is a microservice for [Claris/FileMaker Server](https://www.claris
   - [Installation on Windows Server](#installation-on-windows-server)
   - [Installation with a proxy on macOS/Linux](#installation-with-a-proxy-on-macoslinux)
   - [Installation with a proxy on Windows Server](#installation-with-a-proxy-on-windows-server)
+  - [Installing a specific version](#installing-a-specific-version)
+    - [Installing a specific version on macOS/Linux](#installing-a-specific-version-on-macoslinux)
+    - [Installing a specific version on Windows Server](#installing-a-specific-version-on-windows-server)
 - [Updating](#updating)
 - [Usage](#usage)
 - [Microbonds](#microbonds)
@@ -82,6 +85,30 @@ On Windows Server reference the proxy in the installation command as follows
 For example:
 
 `powershell Invoke-WebRequest https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.ps1 -OutFile "$($env:USERPROFILE)\AppData\Local\Temp\install.ps1"|powershell -File "$($env:USERPROFILE)\AppData\Local\Temp\install.ps1" -Proxy http://proxy.example.com:443`
+
+## Installing a specific version
+
+Sometimes for compatibility or testing reasons it is necessary to install a version of bzBond other than the latest.
+
+### Installing a specific version on macOS/Linux
+
+On macOS/Linux reference the version tag you want to install in the installation command as follows:
+
+`curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.sh | bash -s -- -v v#.#.#`
+
+For example:
+
+`curl -o- https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.sh | bash -s -- -v v0.9.47`
+
+### Installing a specific version on Windows Server
+
+On Windows Server reference the version tag you want to install in the installation command as follows:
+
+`powershell Invoke-WebRequest https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.ps1 -OutFile "$($env:USERPROFILE)\AppData\Local\Temp\install.ps1"|powershell -File "$($env:USERPROFILE)\AppData\Local\Temp\install.ps1" -Version v#.#.#`
+
+For example:
+
+`powershell Invoke-WebRequest https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/install.ps1 -OutFile "$($env:USERPROFILE)\AppData\Local\Temp\install.ps1"|powershell -File "$($env:USERPROFILE)\AppData\Local\Temp\install.ps1" -Version v0.9.47`
 
 # Updating
 
