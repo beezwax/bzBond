@@ -1,6 +1,6 @@
 {
   "name": "@beezwax/create-bzbond-app",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "Executable to create a bzbond app",
   "author": "Beezwax",
   "repository": {
