@@ -13,6 +13,12 @@ bzBond-server is a microservice for [Claris/FileMaker Server](https://www.claris
     - [Installing a specific version on macOS/Linux](#installing-a-specific-version-on-macoslinux)
     - [Installing a specific version on Windows Server](#installing-a-specific-version-on-windows-server)
 - [Updating](#updating)
+  - [Updating on macOS](#updating-on-macoslinux)
+  - [Updating on Windows Server](#updating-on-windows-server)
+- [Restarting](#restarting)
+  - [Restarting on macOS](#restarting-on-macos)
+  - [Restarting on Linux](#restarting-on-linux)
+  - [Restarting on Windows Server](#restarting-on-windows-server)
 - [Usage](#usage)
 - [Microbonds](#microbonds)
   - [Microbond installation](#microbond-installation)
@@ -145,6 +151,31 @@ On Windows Server reference the proxy in the update command as follows
 For example:
 
 `powershell Invoke-WebRequest https://raw.githubusercontent.com/beezwax/bzBond/main/packages/bzBond-server/bin/update.ps1 -OutFile "$($env:USERPROFILE)\AppData\Local\Temp\update.ps1"|powershell -File "$($env:USERPROFILE)\AppData\Local\Temp\update.ps1" -Proxy http://proxy.example.com:443`
+
+# Restarting
+
+Sometimes it might be necessary to manually restart the bzBond-server service
+
+## Restarting on macOS
+
+On macOS run the following commands to restart the bzBond-server service:
+
+```
+sudo launchctl unload /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
+sudo launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
+```
+
+## Restarting on Linux
+
+On Linux run the following command to restart the bzBond-server service:
+
+`sudo systemctl restart bzbond-server`
+
+## Restarting on Windows Server
+
+On Windows Server run the following command to restart the bzBond-server service:
+
+`Restart-Service -Name bzBond-server`
 
 # Usage
 
