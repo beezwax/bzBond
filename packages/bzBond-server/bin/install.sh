@@ -58,7 +58,7 @@ cd /tmp || exit
 if [[ ! -z "$BRANCH" ]]; then
   echo "Downloading branch $BRANCH..."
   git clone --single-branch --branch "$BRANCH" https://github.com/beezwax/bzBond.git
-elif [[ ! -z "$VERSION"]]; then
+elif [[ ! -z "$VERSION" ]]; then
   echo "Downloading version $VERSION..."
   git clone --branch "$VERSION" https://github.com/beezwax/bzBond.git
 else
