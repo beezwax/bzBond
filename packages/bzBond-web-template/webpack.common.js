@@ -7,6 +7,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "bzBond App",
       inject: "body",
+      template: 'src/index.html'
     }),
   ],
   output: {
