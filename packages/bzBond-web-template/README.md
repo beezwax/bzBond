@@ -31,6 +31,7 @@ The bzBond-web-template is installed via [create-bzbond-app](../create-bzbond-ap
 Web projects created with this template function are regular npm projects and can be authored as such. By default the template:
 - Includes bzBond-js as a dependency in `package.json`
 - Includes a default entry point file: [index.js](src/js/index.js) which imports bzBond-js and references syles in [app.scss](src/scss/app.scss). Note that scss files can include plain css, or be entirely plain css.
+- Includes an template html file [index.html](src/index.html) into which is injected the `index.js` file.
 
 #### bzBond JavaScript Patterns
 
