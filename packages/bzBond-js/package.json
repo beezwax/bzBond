@@ -1,6 +1,6 @@
 {
   "name": "@beezwax/bzbond-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "JavaScript assets for bzBond toolset",
   "main": "bzBond.js",
   "author": "Beezwax",
