@@ -24,7 +24,7 @@
     "webpack": "^5.94.0",
     "webpack-cli": "^4.2.0"
   },
-  "gitHead": "043ab024c4d932d3ed83e9cee7bd2735a10aab27",
+  "gitHead": "9724edb61b8f3230e6f7ca910280e7e1c153eedc",
   "publishConfig": {
     "access": "public"
   }
