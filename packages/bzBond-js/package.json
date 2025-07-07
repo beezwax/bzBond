@@ -1,6 +1,6 @@
 {
   "name": "@beezwax/bzbond-js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "JavaScript assets for bzBond toolset",
   "main": "bzBond.js",
   "author": "Beezwax",
@@ -24,7 +24,7 @@
     "webpack": "^5.94.0",
     "webpack-cli": "^4.2.0"
   },
-  "gitHead": "dc58bc7fc4915590853a0ec14ce460245414333d",
+  "gitHead": "129b65107d47238071e01c1a64d0e7230aaa19d7",
   "publishConfig": {
     "access": "public"
   }

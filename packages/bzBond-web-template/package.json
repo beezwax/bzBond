@@ -1,6 +1,6 @@
 {
   "name": "@beezwax/bzbond-web-template",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "bzBond toolset web template",
   "author": "Beezwax",
   "repository": {
@@ -17,7 +17,7 @@
     "build": "webpack --config webpack.prod.js"
   },
   "dependencies": {
-    "@beezwax/bzbond-js": "^1.0.2"
+    "@beezwax/bzbond-js": "^1.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",
@@ -41,7 +41,7 @@
     "webpack-merge": "^5.8.0",
     "whatwg-fetch": "^3.6.2"
   },
-  "gitHead": "dc58bc7fc4915590853a0ec14ce460245414333d",
+  "gitHead": "129b65107d47238071e01c1a64d0e7230aaa19d7",
   "publishConfig": {
     "access": "public"
   }

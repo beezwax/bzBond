@@ -1,6 +1,6 @@
 {
   "name": "@beezwax/bzbond-claris",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Claris platform assets for bzBond toolset",
   "author": "Beezwax",
   "repository": {
@@ -9,7 +9,7 @@
     "directory": "packages/bzBond-claris"
   },
   "license": "MIT",
-  "gitHead": "dc58bc7fc4915590853a0ec14ce460245414333d",
+  "gitHead": "129b65107d47238071e01c1a64d0e7230aaa19d7",
   "publishConfig": {
     "access": "public"
   }
