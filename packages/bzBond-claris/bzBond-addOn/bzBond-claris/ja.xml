@@ -609,6 +609,13 @@
 </DynamicTemplateString>
 
 <DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.86859D064F6412BBD704587516B4E8D4</StringID>
+	<SourceText>=== RESULT ===</SourceText>
+	<TargetText>=== RESULT ===</TargetText>
+	<Comment>com.fmi.calculation.text.=== RESULT ===</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
 	<StringID>com.fmi.calculation.text.8707CB82B8627E58DCCFC25F00E4F906</StringID>
 	<SourceText>Cloud</SourceText>
 	<TargetText>Cloud</TargetText>
@@ -634,6 +641,13 @@
 	<SourceText>0123456789</SourceText>
 	<TargetText>0123456789</TargetText>
 	<Comment>com.fmi.calculation.text.0123456789</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.8CBE4BCFB5B2C5ACE0DAA6A1356F45E8</StringID>
+	<SourceText>=== HEADERS ===</SourceText>
+	<TargetText>=== HEADERS ===</TargetText>
+	<Comment>com.fmi.calculation.text.=== HEADERS ===</Comment>
 </DynamicTemplateString>
 
 <DynamicTemplateString>
