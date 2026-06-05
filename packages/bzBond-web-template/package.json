@@ -41,7 +41,7 @@
     "webpack-merge": "^5.8.0",
     "whatwg-fetch": "^3.6.2"
   },
-  "gitHead": "9e81968eec36e276fb99c450b6ee9ee156dfa003",
+  "gitHead": "99d9eb04e3f04386c992259c442d226f4ce82c0a",
   "publishConfig": {
     "access": "public"
   }

@@ -9,7 +9,7 @@
     "directory": "packages/bzBond-claris"
   },
   "license": "MIT",
-  "gitHead": "de32cbb1541613739339c39e22899a3823a3c9d3",
+  "gitHead": "99d9eb04e3f04386c992259c442d226f4ce82c0a",
   "publishConfig": {
     "access": "public"
   }
