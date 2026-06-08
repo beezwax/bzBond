@@ -2,7 +2,7 @@ require("ses");
 lockdown();
 const vm = require("vm");
 
-const MAX_TIMEOUT = 45000;
+const MAX_TIMEOUT = 120000;
 const BODY_LIMIT = 104857600;
 
 const functionSchema = {
@@ -33,17 +33,17 @@ async function routes(fastify, options) {
     "/function",
     { schema: functionSchema, bodyLimit: BODY_LIMIT },
     (request, reply) => {
-      const a = new Compartment({fn: request.body.func});
+      const a = new Compartment({ fn: request.body.func });
       const func = a.evaluate(`new Function("return " + fn)()`);
       const timeout = request.body.timeout
         ? Math.min(MAX_TIMEOUT, request.body.timeout)
         : MAX_TIMEOUT;
-      
+
       if (request.body.arguments) {
         const arguments = request.body.arguments;
         const params = arguments.map(arg => {
           if (typeof arg === "string" && arg.substring(0, 1) === "ƒ") {
-            const b = new Compartment({fn: arg.slice(1)});
+            const b = new Compartment({ fn: arg.slice(1) });
             return b.evaluate(`new Function("return " + fn)()`);
           } else {
             return arg;
@@ -58,7 +58,7 @@ async function routes(fastify, options) {
           params
         });
         try {
-          const result = vm.runInNewContext(`c.evaluate("func(...params)")`, {c}, {timeout});
+          const result = vm.runInNewContext(`c.evaluate("func(...params)")`, { c }, { timeout });
           return {
             messages: [
               {
@@ -92,7 +92,7 @@ async function routes(fastify, options) {
           func
         });
         try {
-          const result = vm.runInNewContext(`c.evaluate("func()")`, {c}, {timeout});
+          const result = vm.runInNewContext(`c.evaluate("func()")`, { c }, { timeout });
           return {
             messages: [
               {
