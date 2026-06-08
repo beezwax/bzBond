@@ -10,6 +10,13 @@ while getopts ":n:x:" opt; do
   esac
 done
 
+# Handle running as root
+if [ "$USER" = "root" ]; then
+  COMMAND_PREFIX=""
+else
+  COMMAND_PREFIX="sudo "
+fi
+
 if [ -z "$NAME" ]; then
   NAME=$1
 fi
@@ -28,4 +35,4 @@ if [ "$(uname)" = "Darwin" ]; then
 fi
 
 # Run uninstall script
-sudo "$NODE_PATH" /var/www/bzbond-server/scripts/uninstall-microbond.js  -n "$NAME" -x "$PROXY"
+${COMMAND_PREFIX}"$NODE_PATH" /var/www/bzbond-server/scripts/uninstall-microbond.js  -n "$NAME" -x "$PROXY"

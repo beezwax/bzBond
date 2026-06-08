@@ -10,6 +10,13 @@ while getopts ":n:x:" opt; do
   esac
 done
 
+# Handle running as root
+if [ "$USER" = "root" ]; then
+  COMMAND_PREFIX=""
+else
+  COMMAND_PREFIX="sudo "
+fi
+
 if [ -z "$NAME" ]; then
   NAME=$1
 fi
@@ -27,19 +34,19 @@ fi
 
 cd "/var/www/bzbond-server/installed-microbonds/$NAME" || exit
 echo "Updating $NAME"
-sudo git pull || (echo "Not a git repository" && exit)
+${COMMAND_PREFIX}git pull || (echo "Not a git repository" && exit)
 if [ -z "$PROXY" ]; then
-  sudo "$NODE_PATH" "$NPM_PATH" install || (echo "Could not update dependencies" && exit)
+  ${COMMAND_PREFIX}"$NODE_PATH" "$NPM_PATH" install || (echo "Could not update dependencies" && exit)
 else
   echo "Installing with proxy $PROXY"
-  sudo "$NODE_PATH" "$NPM_PATH" --proxy $PROXY install || (echo "Could not update dependencies" && exit)
+  ${COMMAND_PREFIX}"$NODE_PATH" "$NPM_PATH" --proxy $PROXY install || (echo "Could not update dependencies" && exit)
 fi
 
 echo "Restarting service..."
 if [ "$(uname)" = "Darwin" ]; then
-  sudo launchctl unload /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
-  sudo launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
+  ${COMMAND_PREFIX}launchctl unload /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
+  ${COMMAND_PREFIX}launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
 else
-  sudo systemctl restart bzbond-server
+  ${COMMAND_PREFIX}systemctl restart bzbond-server
 fi
 echo "Service restarted"

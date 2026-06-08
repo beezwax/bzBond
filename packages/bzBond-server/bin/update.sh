@@ -13,6 +13,13 @@ while getopts ":x:" opt; do
   esac
 done
 
+# Handle command prefix for root user
+if [ "$USER" = "root" ]; then
+  COMMAND_PREFIX=""
+else
+  COMMAND_PREFIX="sudo "
+fi
+
 # Check FileMaker's node
 NODE_PATH="/opt/FileMaker/FileMaker Server/node/bin/node"
 NPM_PATH="/opt/FileMaker/FileMaker Server/node/bin/npm"
@@ -23,7 +30,7 @@ fi
 
 # Backup microbonds
 cd /var/www/bzbond-server || exit
-sudo cp microbonds.js microbonds.js.bak
+${COMMAND_PREFIX}cp microbonds.js microbonds.js.bak
 
 # Download latest version
 echo "Downloading latest version..."
@@ -31,26 +38,26 @@ cd /tmp || exit
 git clone https://github.com/beezwax/bzBond.git || exit
 
 # Update to latest version
-sudo cp -rf /tmp/bzBond/packages/bzBond-server/* /var/www/bzbond-server
+${COMMAND_PREFIX}cp -rf /tmp/bzBond/packages/bzBond-server/* /var/www/bzbond-server
 cd /var/www/bzbond-server || exit
 if [ -z "$1" ]; then
-  sudo "$NODE_PATH" "$NPM_PATH" install
+  ${COMMAND_PREFIX}"$NODE_PATH" "$NPM_PATH" install
 else
   echo "Updating with proxy $PROXY"
-  sudo "$NODE_PATH" "$NPM_PATH" --proxy $PROXY install
+  ${COMMAND_PREFIX}"$NODE_PATH" "$NPM_PATH" --proxy $PROXY install
 fi
 rm -rf /tmp/bzBond
 
 # Restore microbonds
-sudo mv -f microbonds.js.bak microbonds.js
+${COMMAND_PREFIX}mv -f microbonds.js.bak microbonds.js
 
 # Restart service
 echo "Restarting service..."
 if [ "$(uname)" = "Darwin" ]; then
-  sudo launchctl unload /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
-  sudo launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
+  ${COMMAND_PREFIX}launchctl unload /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
+  ${COMMAND_PREFIX}launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
 else
-  sudo systemctl restart bzbond-server
+  ${COMMAND_PREFIX}systemctl restart bzbond-server
 fi
 echo "Service restarted"
 echo "bzBond Server updated"

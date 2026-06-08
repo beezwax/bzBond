@@ -12,6 +12,13 @@ while getopts ":n:u:x:" opt; do
   esac
 done
 
+# Handle running as root
+if [ "$USER" = "root" ]; then
+  COMMAND_PREFIX=""
+else
+  COMMAND_PREFIX="sudo "
+fi
+
 if [ -z "$NAME" ]; then
   NAME=$1
 fi
@@ -28,4 +35,4 @@ if [ "$(uname)" = "Darwin" ]; then
   NODE_PATH="/Library/FileMaker Server/node/bin/node"
 fi
 
-sudo "$NODE_PATH" /var/www/bzbond-server/scripts/install-microbond.js -n "$NAME" -u "$URL" -x "$PROXY"
+${COMMAND_PREFIX}"$NODE_PATH" /var/www/bzbond-server/scripts/install-microbond.js -n "$NAME" -u "$URL" -x "$PROXY"

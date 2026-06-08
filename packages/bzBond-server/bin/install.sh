@@ -19,6 +19,13 @@ done
 USER=$(whoami)
 echo "Installing for $USER"
 
+# Handle command prefix for root user
+if [ "$USER" = "root" ]; then
+  COMMAND_PREFIX=""
+else
+  COMMAND_PREFIX="sudo "
+fi
+
 # Check fmserver user exists
 if ! id fmserver &>/dev/null; then
   echo "ERROR: The 'fmserver' user was not found in this system."
@@ -65,18 +72,18 @@ else
   echo "Downloading latest version..."
   git clone https://github.com/beezwax/bzBond.git
 fi
-sudo mkdir -p /var/www/bzbond-server
-sudo cp -r /tmp/bzBond/packages/bzBond-server/* /var/www/bzbond-server
-sudo chmod -R 755 /var/www/bzbond-server
+${COMMAND_PREFIX}mkdir -p /var/www/bzbond-server
+${COMMAND_PREFIX}cp -r /tmp/bzBond/packages/bzBond-server/* /var/www/bzbond-server
+${COMMAND_PREFIX}chmod -R 755 /var/www/bzbond-server
 
 # Install dependencies
 echo "Installing dependencies..."
 cd /var/www/bzbond-server || exit
 if [ -z "$PROXY" ]; then
-  sudo "$NODE_PATH" "$NPM_PATH" install
+  ${COMMAND_PREFIX}"$NODE_PATH" "$NPM_PATH" install
 else
   echo "Installing with proxy $PROXY"
-  sudo "$NODE_PATH" "$NPM_PATH" --proxy $PROXY install
+  ${COMMAND_PREFIX}"$NODE_PATH" "$NPM_PATH" --proxy $PROXY install
 fi
 rm -rf /tmp/bzBond
 
@@ -87,13 +94,13 @@ NPM_SYMLINK_PATH=/usr/local/bin/npm
 # Create symlinks for node and npm
 echo "Creating links..."
 if [ ! -f $NODE_SYMLINK_PATH ]; then
-  sudo ln -s "$NODE_PATH" $SYMLINK_DIRECTORY
+  ${COMMAND_PREFIX}ln -s "$NODE_PATH" $SYMLINK_DIRECTORY
   echo "nodejs link created"
 else
   echo "nodejs link already exists"
 fi
 if [ ! -f $NPM_SYMLINK_PATH ]; then
-  sudo ln -s "$NPM_PATH" $SYMLINK_DIRECTORY
+  ${COMMAND_PREFIX}ln -s "$NPM_PATH" $SYMLINK_DIRECTORY
   echo "npm link created"
 else
   echo "npm link already exists"
@@ -103,9 +110,9 @@ fi
 echo "Setting up services..."
 if [ "$(uname)" = "Darwin" ]; then
   # macOS installation
-  sudo chown -R "$USER" /var/www/bzbond-server
+  ${COMMAND_PREFIX}chown -R "$USER" /var/www/bzbond-server
 
-  sudo tee -a /Library/LaunchDaemons/net.beezwax.bzbond-server.plist &> /dev/null <<EOF
+  ${COMMAND_PREFIX}tee -a /Library/LaunchDaemons/net.beezwax.bzbond-server.plist &> /dev/null <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -137,15 +144,15 @@ if [ "$(uname)" = "Darwin" ]; then
 </plist>
 EOF
 
-  sudo launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
-  sudo chmod a+x /var/log/bzbond-server
+  ${COMMAND_PREFIX}launchctl load /Library/LaunchDaemons/net.beezwax.bzbond-server.plist
+  ${COMMAND_PREFIX}chmod a+x /var/log/bzbond-server
 
   echo "bzBond server installed!"
 else
   # Ubuntu installation
-  sudo chown -R root:root /var/www/bzbond-server
+  ${COMMAND_PREFIX}chown -R root:root /var/www/bzbond-server
 
-  sudo tee -a /lib/systemd/system/bzbond-server.service &> /dev/null <<EOF
+  ${COMMAND_PREFIX}tee -a /lib/systemd/system/bzbond-server.service &> /dev/null <<EOF
 [Unit]
 Description=bzbond-server – JavaScript microservice for FileMaker Server
 Documentation=https://github.com/beezwax/bzbond
@@ -161,11 +168,11 @@ Restart=on-failure
 WantedBy=multi-user.target
 EOF
 
-  sudo systemctl daemon-reload
-  sudo systemctl start bzbond-server
-  sudo systemctl enable bzbond-server
+  ${COMMAND_PREFIX}systemctl daemon-reload
+  ${COMMAND_PREFIX}systemctl start bzbond-server
+  ${COMMAND_PREFIX}systemctl enable bzbond-server
 
   echo "bzBond server installed!"
   echo
-  echo "Use 'sudo systemctl status bzbond-server' to check its status"
+  echo "Use '${COMMAND_PREFIX}systemctl status bzbond-server' to check its status"
 fi
